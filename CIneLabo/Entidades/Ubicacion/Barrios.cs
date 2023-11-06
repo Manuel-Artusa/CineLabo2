@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cines.Clases.Ubicacion
+namespace CIneLabo.Entidades.Personas;.Entidades.Personas.Clases.Ubicacion
 {
     internal class Barrios : Localidades
     {

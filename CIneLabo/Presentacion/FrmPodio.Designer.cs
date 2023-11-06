@@ -1,4 +1,4 @@
-﻿namespace Cines.Presentacion
+﻿namespace CIneLabo.Entidades.Personas;.Entidades.Personas.Presentacion
 {
     partial class FrmPodio
     {
@@ -109,7 +109,7 @@
             // 
             // gbSegundo
             // 
-            gbSegundo.BackgroundImage = CinesFront.Properties.Resources.segundo_lugar;
+            
             gbSegundo.BackgroundImageLayout = ImageLayout.Zoom;
             gbSegundo.Location = new Point(75, 98);
             gbSegundo.Name = "gbSegundo";
@@ -120,7 +120,7 @@
             // gbPrimero
             // 
             gbPrimero.AccessibleRole = AccessibleRole.None;
-            gbPrimero.BackgroundImage = CinesFront.Properties.Resources.trofeo;
+            
             gbPrimero.BackgroundImageLayout = ImageLayout.Zoom;
             gbPrimero.Location = new Point(205, 49);
             gbPrimero.Name = "gbPrimero";
@@ -130,7 +130,7 @@
             // 
             // gbTercero
             // 
-            gbTercero.BackgroundImage = CinesFront.Properties.Resources.trofeo__1_;
+            
             gbTercero.BackgroundImageLayout = ImageLayout.Zoom;
             gbTercero.Location = new Point(330, 122);
             gbTercero.Name = "gbTercero";

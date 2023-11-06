@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using 
 
-namespace Cines.Presentacion
+namespace CIneLabo.Entidades.Personas;.Entidades.Personas.Presentacion
 {
     public partial class FrmPodio : Form
     {

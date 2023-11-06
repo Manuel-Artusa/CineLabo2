@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Cines.Presentacion
+namespace CIneLabo.Entidades.Personas;.Entidades.Personas.Presentacion
 {
     public partial class FrmAsientosMasVendidos : Form
     {

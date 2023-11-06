@@ -1,4 +1,4 @@
-﻿namespace Cines.Presentacion
+﻿namespace CIneLabo.Presentacion
 {
     partial class FrmAsientosMasVendidos
     {
@@ -62,7 +62,7 @@
             // gpPantalla
             // 
             gpPantalla.BackColor = Color.Yellow;
-            gpPantalla.BackgroundImage = Properties.Resources.pantalla_de_cine;
+            
             gpPantalla.BackgroundImageLayout = ImageLayout.Zoom;
             gpPantalla.Location = new Point(443, 46);
             gpPantalla.Name = "gpPantalla";
@@ -72,7 +72,7 @@
             // 
             // button18
             // 
-            button18.BackgroundImage = Properties.Resources.silla;
+            
             button18.BackgroundImageLayout = ImageLayout.Zoom;
             button18.Location = new Point(593, 292);
             button18.Name = "button18";
@@ -82,7 +82,7 @@
             // 
             // button17
             // 
-            button17.BackgroundImage = Properties.Resources.silla;
+            
             button17.BackgroundImageLayout = ImageLayout.Zoom;
             button17.Location = new Point(644, 292);
             button17.Name = "button17";
@@ -92,7 +92,7 @@
             // 
             // button16
             // 
-            button16.BackgroundImage = Properties.Resources.silla;
+            
             button16.BackgroundImageLayout = ImageLayout.Zoom;
             button16.Location = new Point(702, 292);
             button16.Name = "button16";
@@ -102,7 +102,7 @@
             // 
             // button14
             // 
-            button14.BackgroundImage = Properties.Resources.silla;
+            
             button14.BackgroundImageLayout = ImageLayout.Zoom;
             button14.Location = new Point(466, 201);
             button14.Name = "button14";
@@ -112,7 +112,7 @@
             // 
             // button13
             // 
-            button13.BackgroundImage = Properties.Resources.silla;
+            
             button13.BackgroundImageLayout = ImageLayout.Zoom;
             button13.Location = new Point(519, 201);
             button13.Name = "button13";
@@ -122,7 +122,7 @@
             // 
             // button12
             // 
-            button12.BackgroundImage = Properties.Resources.silla;
+            
             button12.BackgroundImageLayout = ImageLayout.Zoom;
             button12.Location = new Point(593, 201);
             button12.Name = "button12";
@@ -132,7 +132,7 @@
             // 
             // button11
             // 
-            button11.BackgroundImage = Properties.Resources.silla;
+            
             button11.BackgroundImageLayout = ImageLayout.Zoom;
             button11.Location = new Point(644, 201);
             button11.Name = "button11";
@@ -142,7 +142,7 @@
             // 
             // button10
             // 
-            button10.BackgroundImage = Properties.Resources.silla;
+            
             button10.BackgroundImageLayout = ImageLayout.Zoom;
             button10.Location = new Point(702, 201);
             button10.Name = "button10";
@@ -152,7 +152,7 @@
             // 
             // button9
             // 
-            button9.BackgroundImage = Properties.Resources.silla;
+            
             button9.BackgroundImageLayout = ImageLayout.Zoom;
             button9.Location = new Point(415, 248);
             button9.Name = "button9";
@@ -162,7 +162,7 @@
             // 
             // button8
             // 
-            button8.BackgroundImage = Properties.Resources.silla;
+            
             button8.BackgroundImageLayout = ImageLayout.Zoom;
             button8.Location = new Point(466, 248);
             button8.Name = "button8";
@@ -172,7 +172,7 @@
             // 
             // button7
             // 
-            button7.BackgroundImage = Properties.Resources.silla;
+            
             button7.BackgroundImageLayout = ImageLayout.Zoom;
             button7.Location = new Point(519, 248);
             button7.Name = "button7";
@@ -182,7 +182,7 @@
             // 
             // button6
             // 
-            button6.BackgroundImage = Properties.Resources.silla;
+            
             button6.BackgroundImageLayout = ImageLayout.Zoom;
             button6.Location = new Point(415, 201);
             button6.Name = "button6";
@@ -192,7 +192,7 @@
             // 
             // button5
             // 
-            button5.BackgroundImage = Properties.Resources.silla;
+            
             button5.BackgroundImageLayout = ImageLayout.Zoom;
             button5.Location = new Point(593, 248);
             button5.Name = "button5";
@@ -202,7 +202,7 @@
             // 
             // button4
             // 
-            button4.BackgroundImage = Properties.Resources.silla;
+            
             button4.BackgroundImageLayout = ImageLayout.Zoom;
             button4.Location = new Point(644, 248);
             button4.Name = "button4";
@@ -212,7 +212,7 @@
             // 
             // button3
             // 
-            button3.BackgroundImage = Properties.Resources.silla;
+            
             button3.BackgroundImageLayout = ImageLayout.Zoom;
             button3.Location = new Point(415, 290);
             button3.Name = "button3";
@@ -222,7 +222,7 @@
             // 
             // button2
             // 
-            button2.BackgroundImage = Properties.Resources.silla;
+           
             button2.BackgroundImageLayout = ImageLayout.Zoom;
             button2.Location = new Point(466, 290);
             button2.Name = "button2";
@@ -232,7 +232,7 @@
             // 
             // button1
             // 
-            button1.BackgroundImage = Properties.Resources.silla;
+            
             button1.BackgroundImageLayout = ImageLayout.Zoom;
             button1.Location = new Point(519, 290);
             button1.Name = "button1";
@@ -242,7 +242,7 @@
             // 
             // btnS1
             // 
-            btnS1.BackgroundImage = Properties.Resources.silla;
+            
             btnS1.BackgroundImageLayout = ImageLayout.Zoom;
             btnS1.Location = new Point(702, 248);
             btnS1.Name = "btnS1";

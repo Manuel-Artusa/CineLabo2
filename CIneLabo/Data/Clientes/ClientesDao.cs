@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cines.Clases.Cines.Cines
+namespace CIneLabo.Entidades.Personas;.Data.Clientes
 {
-    class Asientos
+    internal class ClientesDao : IClientesDao
     {
     }
 }

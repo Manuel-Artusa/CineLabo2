@@ -1,4 +1,4 @@
-﻿namespace Cines.Clases.Ubicacion
+﻿namespace CIneLabo.Entidades.Personas;.Entidades.Personas.Clases.Ubicacion
 {
     internal class Localidades : Provincias
     {

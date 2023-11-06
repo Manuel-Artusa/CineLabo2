@@ -1,4 +1,4 @@
-namespace CIneLabo
+namespace CIneLabo.Entidades.Personas;
 {
     internal static class Program
     {

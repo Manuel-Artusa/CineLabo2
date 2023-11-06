@@ -1,6 +1,6 @@
-﻿using Cines.Clases.Ubicacion;
+﻿using CIneLabo.Entidades.Personas;.Entidades.Personas.Clases.Ubicacion;
 
-namespace Cines.Clases.Personas
+namespace CIneLabo.Entidades.Personas;.Entidades.Personas.Clases.Personas
 {
     internal class Empleados
     {

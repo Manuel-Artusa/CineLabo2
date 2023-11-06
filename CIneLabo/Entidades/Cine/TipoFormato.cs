@@ -1,4 +1,4 @@
-﻿namespace Cines.Clases.Cine
+﻿namespace CIneLabo.Entidades.Personas;.Entidades.Personas.Clases.Cine
 {
     internal class TipoFormato
     {

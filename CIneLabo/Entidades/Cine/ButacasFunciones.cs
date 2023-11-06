@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cines.Clases.Cines.Cine
+namespace CIneLabo.Entidades.Personas;.Entidades.Personas.Clases.Cines.Cine
 {
     internal class ButacasFunciones
     {

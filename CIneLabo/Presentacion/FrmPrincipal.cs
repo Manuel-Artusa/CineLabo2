@@ -1,4 +1,4 @@
-﻿using Cines.Presentacion;
+﻿using CIneLabo.Entidades.Personas;.Entidades.Personas.Presentacion;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Cines
+namespace CIneLabo.Entidades.Personas;.Entidades.Personas
 {
     public partial class FrmPrincipal : Form
     {

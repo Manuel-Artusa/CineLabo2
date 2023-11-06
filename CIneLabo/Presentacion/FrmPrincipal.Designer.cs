@@ -1,4 +1,4 @@
-﻿namespace Cines
+﻿namespace CIneLabo.Entidades.Personas;.Entidades.Personas
 {
     partial class FrmPrincipal
     {

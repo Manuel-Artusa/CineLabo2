@@ -1,7 +1,7 @@
-﻿using Cines.Clases.Cine;
-using Cines.Clases.Personas;
+﻿using CIneLabo.Entidades.Personas;.Entidades.Personas.Clases.Cine;
+using CIneLabo.Entidades.Personas;.Entidades.Personas.Clases.Personas;
 
-namespace Cines.Clases.Ventas
+namespace CIneLabo.Entidades.Personas;.Entidades.Personas.Clases.Ventas
 {
     internal class Comprobantes
     {

@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Cines.Clases.Personas;
+using CIneLabo.Entidades.Personas;.Entidades.Personas.Clases.Personas;
 
-namespace Cines.Clases.Cine
+namespace CIneLabo.Entidades.Personas;.Entidades.Personas.Clases.Cine
 {
     internal class Reservas
     {

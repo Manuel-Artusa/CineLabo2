@@ -1,4 +1,4 @@
-﻿namespace Cines.Clases.Personas
+﻿namespace CIneLabo.Entidades.Personas;.Entidades.Personas.Clases.Personas
 {
     internal class TipoDocumentos
     {

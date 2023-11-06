@@ -1,4 +1,4 @@
-﻿namespace Cines.Presentacion
+﻿namespace CIneLabo.Entidades.Personas;.Entidades.Personas.Presentacion
 {
     partial class FrmVentas
     {

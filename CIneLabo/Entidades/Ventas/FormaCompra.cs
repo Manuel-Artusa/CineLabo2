@@ -1,4 +1,4 @@
-﻿namespace Cines.Clases.Ventas
+﻿namespace CIneLabo.Entidades.Personas;.Entidades.Personas.Clases.Ventas
 {
     internal class FormaCompra
     {
