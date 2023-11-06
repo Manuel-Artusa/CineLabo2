@@ -1,12 +1,14 @@
-﻿using CIneLabo.Entidades.Personas;.Entidades.Personas.Clases.Cine;
-using CIneLabo.Entidades.Personas;.Entidades.Personas.Clases.Personas;
+﻿using CIneLabo.Entidades.Personas;
+using CIneLabo.Entidades.Cine;
 
-namespace CIneLabo.Entidades.Personas;.Entidades.Personas.Clases.Ventas
+
+
+namespace CIneLabo.Entidades.Ventas
 {
     internal class Comprobantes
     {
         private int IdComprobante { get; set; }
-        private Clientes cliente { get; set; }
+        private Cliente cliente { get; set; }
         private Empleados empleado { get; set; }
         private DateTime fecha { get; set; }
         private Cines cine { get; set; }
@@ -17,7 +19,7 @@ namespace CIneLabo.Entidades.Personas;.Entidades.Personas.Clases.Ventas
         public Comprobantes()
         {
             IdComprobante = 0;
-            cliente = new Clientes();
+            cliente = new Cliente();
             empleado = new Empleados();
             fecha = DateTime.Now;
             cine = new Cines();
@@ -25,7 +27,7 @@ namespace CIneLabo.Entidades.Personas;.Entidades.Personas.Clases.Ventas
             estado = new EstadoPago();
 
         }
-        public Comprobantes(int id, Clientes cli, Empleados emp,DateTime fec, Cines cin, FormaCompra form, EstadoPago est)
+        public Comprobantes(int id, Cliente cli, Empleados emp,DateTime fec, Cines cin, FormaCompra form, EstadoPago est)
         {
             IdComprobante = id;
             cliente = cli;
