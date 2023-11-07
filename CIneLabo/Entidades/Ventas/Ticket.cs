@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CIneLabo.Entidades.Personas;.Entidades.Personas.Clases.Cine;
-using CIneLabo.Entidades.Personas;.Entidades.Personas.Clases.Cines;
-using CIneLabo.Entidades.Personas;.Entidades.Personas.Clases.Cines.Cine;
+using CIneLabo.Entidades.Cine;
 
-namespace CIneLabo.Entidades.Personas;.Entidades.Personas.Clases.Ventas
+namespace CIneLabo.Entidades.Ventas
 {
     internal class Ticket
     {

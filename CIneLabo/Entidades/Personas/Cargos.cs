@@ -1,7 +1,8 @@
 ﻿using System.CodeDom;
 
-namespace CIneLabo.Entidades.Personas;.Entidades.Personas.Clases.Personas
+namespace CIneLabo.Entidades.Personas
 {
+
     internal class Cargos
     {
         private int IdCargos { get; set; }
@@ -16,7 +17,7 @@ namespace CIneLabo.Entidades.Personas;.Entidades.Personas.Clases.Personas
         {
             IdCargos = id;
             Cargo = carg;
-            
+
         }
     }
 }

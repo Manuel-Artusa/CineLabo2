@@ -1,4 +1,4 @@
-﻿namespace CIneLabo.Entidades.Personas;.Entidades.Personas.Presentacion
+﻿namespace CIneLabo.Presentacion
 {
     partial class FrmPodio
     {
@@ -109,7 +109,6 @@
             // 
             // gbSegundo
             // 
-            
             gbSegundo.BackgroundImageLayout = ImageLayout.Zoom;
             gbSegundo.Location = new Point(75, 98);
             gbSegundo.Name = "gbSegundo";
@@ -120,7 +119,6 @@
             // gbPrimero
             // 
             gbPrimero.AccessibleRole = AccessibleRole.None;
-            
             gbPrimero.BackgroundImageLayout = ImageLayout.Zoom;
             gbPrimero.Location = new Point(205, 49);
             gbPrimero.Name = "gbPrimero";
@@ -130,7 +128,6 @@
             // 
             // gbTercero
             // 
-            
             gbTercero.BackgroundImageLayout = ImageLayout.Zoom;
             gbTercero.Location = new Point(330, 122);
             gbTercero.Name = "gbTercero";

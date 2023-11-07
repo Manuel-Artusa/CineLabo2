@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CIneLabo.Entidades.Personas;.Entidades.Personas.Clases.Personas
+namespace CIneLabo.Entidades.Personas
 {
+
     internal class Actores : Persona
     {
         private int id_actor { get; set; }
@@ -26,7 +27,7 @@ namespace CIneLabo.Entidades.Personas;.Entidades.Personas.Clases.Personas
         {
             id_actor = id;
             Fec_Comienzo = comienzo;
-            Fec_Nacimiento= nac;
+            Fec_Nacimiento = nac;
             Persona = pers;
         }
     }

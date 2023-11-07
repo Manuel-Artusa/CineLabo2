@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CIneLabo.Entidades.Personas;.Entidades.Personas.Clases.Ubicacion;
+using CIneLabo.Entidades.Ubicacion;
 
-namespace CIneLabo.Entidades.Personas;.Entidades.Personas.Clases.Cine
+namespace CIneLabo.Entidades.Cine
 {
     internal class Cines
     {

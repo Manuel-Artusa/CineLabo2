@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CIneLabo.Entidades.Personas;.Entidades.Personas.Clases.Personas
+namespace CIneLabo.Entidades.Personas
 {
+
     internal class Directores : Persona
     {
         private int id_Director { get; set; }

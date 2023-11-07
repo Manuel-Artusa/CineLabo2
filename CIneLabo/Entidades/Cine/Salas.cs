@@ -1,4 +1,4 @@
-﻿namespace CIneLabo.Entidades.Personas;.Entidades.Personas.Clases.Cine
+﻿namespace CIneLabo.Entidades.Cine
 {
     internal class Salas
     {

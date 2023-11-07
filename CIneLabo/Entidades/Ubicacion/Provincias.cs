@@ -1,7 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace CIneLabo.Entidades.Personas;.Entidades.Personas.Clases.Ubicacion
-{
+namespace CIneLabo.Entidades.Ubicacion 
+{ 
+
     internal class Provincias : PaisOrigen
     {
         public int IdProvincia { get; set; }

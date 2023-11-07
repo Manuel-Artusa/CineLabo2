@@ -1,6 +1,6 @@
-﻿namespace CIneLabo.Entidades.Personas;.Entidades.Personas.Clases.Personas
+﻿namespace CIneLabo.Entidades.Personas
 {
-    internal class TipoDocumentos
+    public class TipoDocumentos
     {
         private int IdTipoDocumento { get; set; }
         private string Tipo { get; set; }

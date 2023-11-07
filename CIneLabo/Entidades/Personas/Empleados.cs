@@ -1,7 +1,8 @@
-﻿using CIneLabo.Entidades.Personas;.Entidades.Personas.Clases.Ubicacion;
+﻿using CIneLabo.Entidades.Ubicacion;
 
-namespace CIneLabo.Entidades.Personas;.Entidades.Personas.Clases.Personas
+namespace CIneLabo.Entidades.Personas
 {
+
     internal class Empleados
     {
         private int IdEmpleado { get; set; }
@@ -19,14 +20,14 @@ namespace CIneLabo.Entidades.Personas;.Entidades.Personas.Clases.Personas
             barrio = new Barrios();
             cargo = new Cargos();
         }
-        public Empleados(int id, Persona pers,string mail, Barrios bar, Cargos carg)
+        public Empleados(int id, Persona pers, string mail, Barrios bar, Cargos carg)
         {
             IdEmpleado = id;
             persona = pers;
             Mail = mail;
             barrio = bar;
             cargo = carg;
-            
+
         }
     }
 }

@@ -1,5 +1,6 @@
-﻿namespace CIneLabo.Entidades.Personas;.Entidades.Personas.Clases.Ubicacion
-{
+﻿namespace CIneLabo.Entidades.Ubicacion 
+{ 
+
     internal class Localidades : Provincias
     {
         private int id_localidad { get; set; }
