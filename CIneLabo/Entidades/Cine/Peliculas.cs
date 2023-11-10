@@ -7,30 +7,30 @@ using CIneLabo.Entidades.Ubicacion;
 
 namespace CIneLabo.Entidades.Cine
 {
-    internal class Peliculas
+    public class Peliculas
     {
-        private int IdPelicula { get; set; }
-        private string Titulo { get; set; }
-        private double Duracion { get; set; }
+        public int IdPelicula { get; set; }
+        public string Titulo { get; set; }
+        private DateTime Duracion { get; set; }
         private Genero Genero { get; set; }
         private Clasificacion clasificacion { get; set; }
 
         private Idioma Idioma { get; set; }
         private DateTime Fec_Estreno { get; set; }
-        private PaisOrigen Pais { get; set; }
+        
 
         public Peliculas()
         {
             IdPelicula = 0;
             Titulo = string.Empty;
-            Duracion = 0;
+            Duracion = DateTime.Now;
             Genero = new Genero();
             clasificacion = new Clasificacion();
             Idioma = new Idioma();
             Fec_Estreno = DateTime.Now;
-            Pais = new PaisOrigen();
+            
         }
-        public Peliculas(int id, string title, double dur, Genero gen, Clasificacion clasf, Idioma idiom, DateTime estreno, PaisOrigen pais)
+        public Peliculas(int id, string title, DateTime dur, Genero gen, Clasificacion clasf, Idioma idiom, DateTime estreno)
         {
             IdPelicula = id;
             Titulo = title;
@@ -39,7 +39,7 @@ namespace CIneLabo.Entidades.Cine
             clasificacion = clasf;
             Idioma = idiom;
             Fec_Estreno = estreno;
-            Pais = pais;
+            
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using CIneLabo.Entidades.Personas;.Entidades.Personas.Presentacion;
+﻿using CIneLabo.Entidades.Personas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,13 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CIneLabo.Entidades.Personas;.Entidades.Personas
+namespace CIneLabo.Presentacion
 {
     public partial class FrmPrincipal : Form
     {
         public FrmPrincipal()
         {
-            InitializeComponent();
+            
         }
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
@@ -25,7 +25,7 @@ namespace CIneLabo.Entidades.Personas;.Entidades.Personas
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
-            new FrmVentas().ShowDialog();
+
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace CIneLabo.Entidades.Personas;.Entidades.Personas
+﻿namespace CIneLabo.Presentacion
 {
     partial class FrmPrincipal
     {

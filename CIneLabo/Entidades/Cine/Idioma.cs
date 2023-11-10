@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CIneLabo.Entidades.Cine
 {
-    internal class Idioma
+    public class Idioma
     {
         private int Id_Idioma { get; set; }
         private string Lenguaje { get; set; }

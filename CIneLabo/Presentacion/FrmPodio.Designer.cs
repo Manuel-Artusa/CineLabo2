@@ -40,7 +40,7 @@
             gbPrimero = new GroupBox();
             gbTercero = new GroupBox();
             btnActualizar = new Button();
-            cmbGenero = new ComboBox();
+            cboGenero = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dgvPodio).BeginInit();
             SuspendLayout();
             // 
@@ -148,13 +148,13 @@
             btnActualizar.Text = "Actualizar";
             btnActualizar.UseVisualStyleBackColor = false;
             // 
-            // cmbGenero
+            // cboGenero
             // 
-            cmbGenero.FormattingEnabled = true;
-            cmbGenero.Location = new Point(75, 19);
-            cmbGenero.Name = "cmbGenero";
-            cmbGenero.Size = new Size(121, 23);
-            cmbGenero.TabIndex = 6;
+            cboGenero.FormattingEnabled = true;
+            cboGenero.Location = new Point(75, 19);
+            cboGenero.Name = "cboGenero";
+            cboGenero.Size = new Size(121, 23);
+            cboGenero.TabIndex = 6;
             // 
             // FrmPodio
             // 
@@ -162,7 +162,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
             ClientSize = new Size(453, 473);
-            Controls.Add(cmbGenero);
+            Controls.Add(cboGenero);
             Controls.Add(btnActualizar);
             Controls.Add(gbTercero);
             Controls.Add(gbPrimero);
@@ -196,6 +196,6 @@
         private DataGridViewTextBoxColumn ColNombre;
         private DataGridViewTextBoxColumn ColPuntos;
         private Button btnActualizar;
-        private ComboBox cmbGenero;
+        private ComboBox cboGenero;
     }
 }

@@ -23,7 +23,7 @@ namespace CIneLabo.Data.Clientes
                 string nombre = r["NOMBRE_CLIENTE"].ToString();
                 string apellido = r["APELLIDO_CLIENTE"].ToString();
                 double puntaje = Convert.ToDouble(r["Puntaje"].ToString());
-                lstClientes.Add(new Cliente())
+                lstClientes.Add(new Cliente());
             }
 
             return lstClientes;

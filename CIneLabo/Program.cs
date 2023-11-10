@@ -1,4 +1,6 @@
-namespace CIneLabo.Entidades.Personas;
+using CIneLabo.Presentacion;
+
+namespace CIneLabo
 {
     internal static class Program
     {
@@ -11,7 +13,7 @@ namespace CIneLabo.Entidades.Personas;
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            Application.Run(new FrmPodio());
         }
     }
 }

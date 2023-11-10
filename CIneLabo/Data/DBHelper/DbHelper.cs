@@ -16,7 +16,7 @@ namespace CIneLabo.Data.DBHelper
         private SqlConnection conexion;
         private DbHelper()
         {
-            conexion = new SqlConnection();
+            conexion = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=cine2;Integrated Security=True");
         }
 
         public SqlConnection GetConnection()
