@@ -2,8 +2,8 @@
 {
     public class TipoDocumentos
     {
-        private int IdTipoDocumento { get; set; }
-        private string Tipo { get; set; }
+        public int IdTipoDocumento { get; set; }
+        public string Tipo { get; set; }
 
         public TipoDocumentos()
         {

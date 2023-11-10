@@ -24,15 +24,15 @@ namespace CIneLabo.Data
                 DateTime duracion = DateTime.Parse(fila["Duracion"].ToString());
                 
                 int idGenero = int.Parse(fila["id_genero"].ToString());
-                string nombreGenero = fila["Descripcion"].ToString();
+                string nombreGenero = fila["NombreGenero"].ToString();
                 Genero genero = new Genero(idGenero, nombreGenero);
 
                 int idClasificacion = int.Parse(fila["id_clasificacion"].ToString());
-                string descripcion = fila["Descripcion"].ToString();  // Ajusta el nombre del campo según tu base de datos
+                string descripcion = fila["DescripcionClasificacion"].ToString();  // Ajusta el nombre del campo según tu base de datos
                 Clasificacion clasificacion = new Clasificacion(idClasificacion, descripcion);
 
                 int idIdioma = int.Parse(fila["id_idioma"].ToString());
-                string lenguaje = fila["idioma"].ToString();  // Ajusta el nombre del campo según tu base de datos
+                string lenguaje = fila["Lenguaje"].ToString();  // Ajusta el nombre del campo según tu base de datos
                 Idioma idioma = new Idioma(idIdioma, lenguaje);
 
                 DateTime fecEstreno = DateTime.Parse(fila["Fec_Estreno"].ToString());

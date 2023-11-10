@@ -8,8 +8,8 @@ namespace CIneLabo.Entidades.Cine
 {
     public class Genero
     {
-        private int IdGenero { get; set; }
-        private string genero { get; set; }
+        public int IdGenero { get; set; }
+        public string genero { get; set; }
 
         public Genero()
         {
