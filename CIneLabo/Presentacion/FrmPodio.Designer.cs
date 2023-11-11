@@ -56,6 +56,7 @@
             dgvPodio.RowTemplate.Height = 25;
             dgvPodio.Size = new Size(429, 218);
             dgvPodio.TabIndex = 0;
+            dgvPodio.CellContentClick += dgvPodio_CellContentClick;
             // 
             // Colposicion
             // 
@@ -147,6 +148,7 @@
             btnActualizar.TabIndex = 0;
             btnActualizar.Text = "Actualizar";
             btnActualizar.UseVisualStyleBackColor = false;
+            btnActualizar.Click += btnActualizar_Click;
             // 
             // cboGenero
             // 

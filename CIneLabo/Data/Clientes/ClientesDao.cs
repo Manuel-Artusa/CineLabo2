@@ -52,11 +52,48 @@ namespace CIneLabo.Data.Clientes
 
                 int telefono = int.Parse(fila["Telefono"].ToString());
                 string mail = fila["Mail"].ToString();
+                decimal puntaje = decimal.Parse(fila["TotalGastado"].ToString());
 
-                Cliente cliente = new Cliente(idliente, persona, tipodocumentos, documento, telefono, mail);
+                Cliente cliente = new Cliente(idliente, persona, tipodocumentos, documento, telefono, mail, puntaje);
             }
             return listaClientes;
         }
+        public List<Cliente> ObtenerClientesPuntajeGenero(string genero)
+        {
+            List<Cliente> clientes = new List<Cliente>();
+            string sp = "SP_CONSULTAR_CLIENTES_POR_GENERO_PUNTAJE";
 
+            List<Parametro> lst = new List<Parametro>();
+            lst.Add(new Parametro("@GeneroPelicula", genero));
+            DataTable dt = DbHelper.GetInstancia().Consultar(sp, lst);
+
+            foreach (DataRow row in dt.Rows)
+            {
+                Cliente cliente = new Cliente();
+                cliente.IdCliente = int.Parse(row["ID_CLIENTE"].ToString());
+
+                string nombre = row["NOMBRE_CLINTE"].ToString();
+                string apellido = row["APELLIDO_CLIENTE"].ToString();
+
+                Persona persona = new Persona(nombre, apellido);
+                cliente.Persona = persona;
+                int idtipodoc = int.Parse(row["ID_TIPO_DOC"].ToString());
+                string tipodoc = row["TIPO"].ToString();
+
+                TipoDocumentos tipodocumentos = new TipoDocumentos(idtipodoc, tipodoc);
+                cliente.documento = tipodocumentos;
+                cliente.NroDocumento = int.Parse(row["DOCUMENTO"].ToString());
+
+                cliente.Telefono = int.Parse(row["Telefono"].ToString());
+                cliente.Mail = row["Mail"].ToString();
+
+                cliente.Puntaje = decimal.Parse(row["TotalGastado"].ToString());
+
+                clientes.Add(cliente);
+
+
+            }
+            return clientes;
+        }
     }
 }

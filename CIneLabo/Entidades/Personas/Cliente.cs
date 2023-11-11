@@ -9,6 +9,7 @@
         public int NroDocumento { get; set; }
         public int Telefono { get; set; }
         public string Mail { get; set; }
+        public decimal Puntaje { get; set; }
 
         public Cliente()
         {
@@ -18,8 +19,9 @@
             NroDocumento = 0;
             Telefono = 0;
             Mail = string.Empty;
+            Puntaje = 0;
         }
-        public Cliente(int id, Persona pers, TipoDocumentos doc, int nroD, int tel, string email)
+        public Cliente(int id, Persona pers, TipoDocumentos doc, int nroD, int tel, string email,decimal punt)
         {
             IdCliente = id;
             Persona = pers;
@@ -27,7 +29,7 @@
             NroDocumento = nroD;
             Telefono = tel;
             Mail = email;
-
+            Puntaje = punt;
         }
     }
 }

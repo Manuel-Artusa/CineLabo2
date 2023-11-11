@@ -43,6 +43,19 @@ namespace CIneLabo.Data.DBHelper
             conexion.Close();
             return tabla;
         }
+        public DataTable Consultar(string nombreSP,string param)
+        {
+            conexion.Open();
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = conexion;
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = nombreSP;
+            comando.Parameters.Add(param);
+            DataTable tabla = new DataTable();
+            tabla.Load(comando.ExecuteReader());
+            conexion.Close();
+            return tabla;
+        }
         public DataTable Consultar(string nombreSP, List<Parametro> lParams)
         {
             conexion.Open();
