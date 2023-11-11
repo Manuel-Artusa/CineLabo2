@@ -1,7 +1,7 @@
 ﻿namespace CIneLabo.Entidades.Ubicacion 
 { 
 
-    internal class Localidades : Provincias
+    public class Localidades : Provincias
     {
         private int id_localidad { get; set; }
         private string nom_localidad { get; set; }

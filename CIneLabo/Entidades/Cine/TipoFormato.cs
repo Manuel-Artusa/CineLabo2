@@ -1,6 +1,6 @@
 ﻿namespace CIneLabo.Entidades.Cine
 {
-    internal class TipoFormato
+    public class TipoFormato
     {
         private int IdTipoFormato { get; set; }
         private string Tipo { get; set; }

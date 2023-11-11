@@ -1,7 +1,7 @@
 ﻿namespace CIneLabo.Entidades.Ubicacion 
 { 
 
-    internal class PaisOrigen
+    public class PaisOrigen
     {
         private int IdPais { get; set; }
         private string Pais { get; set; }

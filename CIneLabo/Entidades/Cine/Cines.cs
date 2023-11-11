@@ -7,7 +7,7 @@ using CIneLabo.Entidades.Ubicacion;
 
 namespace CIneLabo.Entidades.Cine
 {
-    internal class Cines
+    public class Cines
     {
         private int IdCines { get; set; }
         private Barrios Barrios { get; set; }

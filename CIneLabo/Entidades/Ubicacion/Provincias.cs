@@ -3,7 +3,7 @@
 namespace CIneLabo.Entidades.Ubicacion 
 { 
 
-    internal class Provincias : PaisOrigen
+    public class Provincias : PaisOrigen
     {
         public int IdProvincia { get; set; }
 

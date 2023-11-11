@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CIneLabo.Entidades.Ubicacion
 {
-    internal class Barrios : Localidades
+    public class Barrios : Localidades
     {
         private int idBarrio { get; set; }
         private string barrio { get; set; }

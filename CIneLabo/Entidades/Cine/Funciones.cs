@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CIneLabo.Entidades.Cine
 {
-    internal class Funciones
+    public class Funciones
     {
         private int IdFuncion { get; set; }
         private DateTime Hora { get; set; }

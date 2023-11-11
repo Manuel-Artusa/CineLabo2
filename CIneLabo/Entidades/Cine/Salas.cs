@@ -1,6 +1,6 @@
 ﻿namespace CIneLabo.Entidades.Cine
 {
-    internal class Salas
+    public class Salas
     {
         private int IdSala { get; set; }
         private int Numero { get; set; }

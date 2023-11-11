@@ -1,4 +1,5 @@
 using CIneLabo.Presentacion;
+using CinesFront.Presentacion;
 
 namespace CIneLabo
 {
@@ -13,7 +14,7 @@ namespace CIneLabo
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new FrmPodio());
+            Application.Run(new FrmButacasDisponibles());
         }
     }
 }
