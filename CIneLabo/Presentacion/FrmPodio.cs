@@ -29,7 +29,7 @@ namespace CIneLabo.Presentacion
             daopel = new DaoPeliculas();
             daogen = new DaoGeneros();
             daocli = new ClientesDao();
-            
+
         }
         private void FrmPodio_Load(object sender, EventArgs e)
         {
@@ -37,6 +37,38 @@ namespace CIneLabo.Presentacion
             CargarGeneros();
 
         }
+
+
+
+        private void Mostrartop3Clientes(Genero generoSeleccionado)
+        {
+            generoSeleccionado = (Genero)cboGenero.SelectedItem;
+            string sp = "SP_CONSULTAR_TOP3_CLIENTES_POR_GENERO_PUNTAJE";
+            List<Parametro> lst = new List<Parametro>();
+            lst.Add(new Parametro("@GeneroPelicula", generoSeleccionado.genero));
+            DataTable table = DbHelper.GetInstancia().Consultar(sp, lst);
+
+            if (table.Rows.Count >= 3)
+            {
+                // Mostrar el primer cliente en el TextBox1
+                MostrarClienteEnTextBox(table.Rows[0], txtPrimero);
+
+                // Mostrar el segundo cliente en el TextBox2
+                MostrarClienteEnTextBox(table.Rows[1], txtSegundo);
+
+                // Mostrar el tercer cliente en el TextBox3
+                MostrarClienteEnTextBox(table.Rows[2], txtTercero);
+            }
+            else
+            {
+                MessageBox.Show("No se encontraron suficientes clientes para el género seleccionado.");
+            }
+        }
+        private void MostrarClienteEnTextBox(DataRow cliente, TextBox textBox)
+        {
+            textBox.Text = $"{cliente["NOMBRE_CLIENTE"]} {cliente["APELLIDO_CLIENTE"]} - Total Gastado: {cliente["TotalGastado"]}";
+        }
+
 
         private void CargarGeneros()
         {
@@ -59,20 +91,21 @@ namespace CIneLabo.Presentacion
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            string generoSeleccionado = cboGenero.SelectedItem.ToString();
+            Genero generoSeleccionado = (Genero)cboGenero.SelectedItem;
 
-            
+
             string sp = "SP_CONSULTAR_CLIENTES_POR_GENERO_PUNTAJE";
             List<Parametro> lst = new List<Parametro>();
-            lst.Add(new Parametro("@GeneroPelicula", generoSeleccionado));
+            lst.Add(new Parametro("@GeneroPelicula", generoSeleccionado.genero));
             DataTable table = DbHelper.GetInstancia().Consultar(sp, lst);
             dgvPodio.Rows.Clear();
             foreach (DataRow fila in table.Rows)
             {
                 dgvPodio.Rows.Add(new object[] { fila["ID_CLIENTE"].ToString(),
-                                                   fila["NOMBRE_CLIENTE"],
+                                                   fila["NOMBRE_APELLIDO"],
                                                    fila["TotalGastado"].ToString()});
             }
+            Mostrartop3Clientes(generoSeleccionado);
         }
     }
 }
