@@ -1,0 +1,1046 @@
+ALTER TABLE PROVINCIAS
+ALTER COLUMN PROVINCIA VARCHAR(50); -- Aumenta la longitud a 50 caracteres (ajusta según tus necesidades)
+-- Inserta las provincias de Argentina en la tabla PROVINCIAS sin mencionar el campo ID_PROVINCIA
+-- Inserta las provincias de Argentina en la tabla PROVINCIAS
+INSERT INTO PROVINCIAS ( PROVINCIA)
+VALUES
+( 'Buenos Aires'),
+( 'Catamarca'),
+( 'Chaco'),
+( 'Chubut'),
+( 'Córdoba'),
+( 'Corrientes'),
+( 'Entre Ríos'),
+( 'Formosa'),
+( 'Jujuy'),
+( 'La Pampa'),
+( 'La Rioja'),
+( 'Mendoza'),
+( 'Misiones'),
+( 'Neuquén'),
+( 'Río Negro'),
+( 'Salta'),
+( 'San Juan'),
+( 'San Luis'),
+( 'Santa Cruz'),
+( 'Santa Fe'),
+( 'Santiago del Estero'),
+( 'Tierra del Fuego'),
+( 'Tucumán');
+
+-- Modifica la longitud de la columna LOCACLIDAD a un valor mayor (ajusta según tus necesidades)
+ALTER TABLE LOCALIDADES
+ALTER COLUMN LOCACLIDAD VARCHAR(50);
+-- Inserciones de localidades en la tabla LOCALIDADES para algunas provincias de Argentina
+INSERT INTO LOCALIDADES ( LOCACLIDAD, ID_PROVINCIA)
+VALUES
+( 'La Plata', 1), -- Buenos Aires
+( 'Mar del Plata', 1), -- Buenos Aires
+( 'Córdoba', 2), -- Córdoba
+( 'Villa Carlos Paz', 2), -- Córdoba
+( 'Mendoza', 3), -- Mendoza
+( 'San Rafael', 3), -- Mendoza
+( 'Santa Rosa', 4), -- La Pampa
+( 'General Pico', 4); -- La Pampa
+
+-- Inserciones de 5 barrios ficticios en la tabla BARRIOS para cada localidad en Argentina
+
+ALTER TABLE BARRIOS
+ALTER COLUMN BARRIOS VARCHAR(50);
+-- Buenos Aires
+INSERT INTO BARRIOS (BARRIOS, ID_LOCALIDAD)
+VALUES
+( 'Barrio Norte', 1), -- La Plata
+( 'Barrio Centro', 1), -- La Plata
+( 'Barrio Los Pinos', 1), -- La Plata
+( 'Barrio La Loma', 1), -- La Plata
+( 'Barrio San Carlos', 1) -- La Plata
+
+-- Córdoba
+INSERT INTO BARRIOS ( BARRIOS, ID_LOCALIDAD)
+VALUES
+( 'Barrio Güemes', 3), -- Córdoba
+( 'Barrio Nueva Córdoba', 3), -- Córdoba
+( 'Barrio Alberdi', 3), -- Córdoba
+( 'Barrio General Paz', 3), -- Córdoba
+( 'Barrio Observatorio', 3) -- Córdoba
+
+-- Mendoza
+INSERT INTO BARRIOS ( BARRIOS, ID_LOCALIDAD)
+VALUES
+( 'Barrio Ciudad', 5), -- Mendoza
+( 'Barrio Godoy Cruz', 5), -- Mendoza
+( 'Barrio Las Heras', 5), -- Mendoza
+( 'Barrio Maipú', 5), -- Mendoza
+( 'Barrio Luján de Cuyo', 5) -- Mendoza
+
+-- La Pampa
+INSERT INTO BARRIOS ( BARRIOS, ID_LOCALIDAD)
+VALUES
+( 'Barrio Centro', 7), -- Santa Rosa
+( 'Barrio Malvinas', 7), -- Santa Rosa
+( 'Barrio El Faro', 7), -- Santa Rosa
+( 'Barrio Los Troncos', 7), -- Santa Rosa
+( 'Barrio San Martín', 7); -- Santa Rosa
+
+SELECT * FROM PROVINCIAS
+SELECT * FROM LOCALIDADES
+SELECT * FROM BARRIOS
+INSERT INTO TIPO_FORMATO ( DESCRIPCION)
+VALUES
+('2D'),
+( '3D'),
+( 'IMAX'),
+( '4D'),
+( 'Dolby Atmos');
+
+INSERT INTO GENERO ( DESCRIPCION)
+VALUES
+( 'Acción'),
+( 'Comedia'),
+( 'Drama'),
+( 'Ciencia ficción'),
+( 'Aventura'),
+( 'Fantasía'),
+( 'Romance'),
+( 'Suspense'),
+( 'Terror'),
+( 'Documental');
+
+INSERT INTO SALAS(CANTIDAD_ASIENTOS)
+VALUES
+(18),
+(18),
+(18),
+(18),
+(18),
+(18),
+(18),
+(18),
+(18),
+(18);
+
+INSERT INTO CLASIFICACION ( DESCRIPCION)
+VALUES
+( 'Apta para todo púb'),
+( 'Mayores de 13 años'),
+( 'Mayores de 16 años'),
+( 'Mayores de 18 años'),
+( 'Restringida');
+
+alter table FORMA_PAGO
+alter column descripcion varchar (50);
+INSERT INTO FORMA_PAGO (DESCRIPCION)
+VALUES
+( 'Tarjeta de crédito'),
+( 'Efectivo'),
+( 'Transferencia bancaria'),
+( 'PayPal'),
+( 'Cheque'),
+( 'Pago móvil');
+
+INSERT INTO TIPOS_DOC ( DESCRIPCION)
+VALUES
+( 'DNI'),
+( 'Pasaporte'),
+( 'Cédula de identidad'),
+( 'Licencia de conducir'),
+( 'Tarjeta de residente');
+
+INSERT INTO CARGOS ( DESCRIPCION)
+VALUES
+( 'Gerente'),
+( 'Cajero'),
+( 'Conserje'),
+( 'Proyeccionista'),
+( 'Asistente de ventas'),
+( 'Limpieza'),
+( 'Técnico de sonido'),
+( 'Técnico proyección');
+
+INSERT INTO IDIOMAS (IDIOMA)
+VALUES
+( 'Español'),
+( 'Inglés'),
+('Francés'),
+( 'Alemán'),
+( 'Italiano'),
+( 'Portugués'),
+( 'Chino'),
+( 'Japonés'),
+( 'Coreano'),
+( 'Ruso');
+
+-- Inserciones de Actores sin ID con Fechas Invertidas
+INSERT INTO ACTORES (NOMBRE, APELLIDO, FEC_COMIENZO, FEC_NAC)
+VALUES
+('Brad', 'Pitt', '18-12-1963', '01-01-1990'),
+('Tom', 'Hanks', '09-07-1956', '15-02-1980'),
+('Meryl', 'Streep', '22-06-1949', '10-05-1975'),
+('Angelina', 'Jolie', '04-06-1975', '20-03-1995'),
+('Leonardo', 'DiCaprio', '11-11-1974', '01-09-1989'),
+('Tom', 'Cruise', '03-07-1962', '01-02-1981'),
+('Julia', 'Roberts', '28-10-1967', '15-05-1988'),
+('Johnny', 'Depp', '09-06-1963', '10-09-1984'),
+('Will', 'Smith', '25-09-1968', '05-03-1990'),
+('Scarlett', 'Johansson', '22-11-1984', '12-08-2001'),
+('Robert', 'Downey Jr.', '04-04-1965', '21-07-1983'),
+('Jennifer', 'Lawrence', '15-08-1990', '18-06-2007'),
+('Denzel', 'Washington', '28-12-1954', '01-10-1980'),
+('Charlize', 'Theron', '07-08-1975', '10-03-1994'),
+('Matt', 'Damon', '08-10-1970', '20-04-1992'),
+('Nicole', 'Kidman', '20-06-1967', '05-09-1983'),
+('Bradley', 'Cooper', '05-01-1975', '28-11-2001'),
+('Natalie', 'Portman', '09-06-1981', '15-08-1994'),
+('Chris', 'Hemsworth', '11-08-1983', '11-07-2004'),
+('Anne', 'Hathaway', '12-11-1982', '22-03-1998'),
+( 'Harrison', 'Ford', '12-01-1974','13-07-1942'),
+( 'Keanu', 'Reeves', '28-08-1986','02-09-1964'),
+( 'Emma', 'Watson', '07-05-2001', '15-04-1990'),
+( 'Samuel', 'L. Jackson', '07-05-2004', '15-04-1995'),
+( 'Angelina', 'Jolie', '07-05-2008', '15-04-1999');
+
+INSERT INTO DIRECTORES (NOMBRE, APELLIDO, FEC_COMIENZO, FEC_NAC)
+VALUES
+('Steven', 'Spielberg', '18-12-1946', '18-06-1975'),
+('Christopher', 'Nolan', '30-07-1970', '25-08-1998'),
+('Martin', 'Scorsese', '17-11-1942', '12-04-1980'),
+('Quentin', 'Tarantino', '27-03-1963', '05-03-1990'),
+('James', 'Cameron', '16-08-1954', '10-02-1985'),
+('Peter', 'Jackson', '31-10-1961', '15-05-1988'),
+('Ridley', 'Scott', '30-11-1937', '21-07-1982'),
+('James', 'Cameron', '16-08-1954', '02-09-2000'),
+('George', 'Lucas', '14-05-1944', '18-11-1973'),
+('Tim', 'Burton', '25-08-1958', '01-03-1996'),
+('Alfred', 'Hitchcock', '13-08-1899', '05-12-1981'),
+('Stanley', 'Kubrick', '26-07-1928', '01-04-1970'),
+('Robert', 'Zemeckis', '14-05-1952', '15-10-1988'),
+('Catherine', 'Hardwicke', '21-10-1955', '11-07-1994'),
+('Spike', 'Lee', '20-03-1957', '22-08-1995'),
+('Clint', 'Eastwood', '31-05-1930', '10-04-1982'),
+('Woody', 'Allen', '01-12-1935', '28-08-1980'),
+('Greta', 'Gerwig', '04-08-1983', '18-06-2007'),
+('Peter', 'Farrelly', '17-12-1956', '20-11-1998'),
+('Francis', 'Ford Coppola', '07-04-1939', '15-09-1971');
+
+
+alter table cines 
+alter column NOMBRE_CINE varchar (100)
+-- Inserciones de cines relacionados con los barrios en Buenos Aires
+INSERT INTO CINES (ID_BARRIO, NOMBRE_CINE)
+VALUES
+(1, 'Cine Buenos Aires (Barrio Norte)'),
+(2, 'Cine La Plata (Barrio Centro)'),
+(3, 'Cine Los Pinos (Barrio Los Pinos)'),
+(4, 'Cine La Loma (Barrio La Loma)'),
+(5, 'Cine San Carlos (Barrio San Carlos)');
+
+-- Inserciones de cines relacionados con los barrios en Córdoba
+INSERT INTO CINES (ID_BARRIO, NOMBRE_CINE)
+VALUES
+(6, 'Cine Güemes (Barrio Güemes)'),
+(7, 'Cine Nueva Córdoba (Barrio Nueva Córdoba)'),
+(8, 'Cine Alberdi (Barrio Alberdi)'),
+(9, 'Cine General Paz (Barrio General Paz)'),
+(10, 'Cine Observatorio (Barrio Observatorio)');
+
+-- Inserciones de cines relacionados con los barrios en Mendoza
+INSERT INTO CINES (ID_BARRIO, NOMBRE_CINE)
+VALUES
+(11, 'Cine Ciudad (Barrio Ciudad)'),
+(12, 'Cine Godoy Cruz (Barrio Godoy Cruz)'),
+(13, 'Cine Las Heras (Barrio Las Heras)'),
+(14, 'Cine Maipú (Barrio Maipú)'),
+(15, 'Cine Luján de Cuyo (Barrio Luján de Cuyo)');
+
+-- Inserciones de cines relacionados con los barrios en La Pampa
+INSERT INTO CINES (ID_BARRIO, NOMBRE_CINE)
+VALUES
+(16, 'Cine Centro (Barrio Centro)'),
+(17, 'Cine Malvinas (Barrio Malvinas)'),
+(18, 'Cine El Faro (Barrio El Faro)'),
+(19, 'Cine Los Troncos (Barrio Los Troncos)'),
+(20, 'Cine San Martín (Barrio San Martín)');
+
+alter table EMPLEADOS
+alter column EMAIL varchar (50)
+
+
+
+-- Inserciones de empleados
+INSERT INTO EMPLEADOS ( NOMBRE_EMPLEADO, APELLIDO_EMPLEADO, EMAIL, ID_BARRIO, ID_CARGO)
+VALUES
+('Juan', 'Pérez', 'juan.perez@email.com', 1, 1), -- Cargo 1, Barrio 1
+('María', 'González', 'maria.gonzalez@email.com', 2, 2), -- Cargo 2, Barrio 2
+('Carlos', 'Martínez', 'carlos.martinez@email.com', 3, 1), -- Cargo 1, Barrio 3
+('Laura', 'Rodríguez', 'laura.rodriguez@email.com', 4, 2), -- Cargo 2, Barrio 4
+('Pedro', 'López', 'pedro.lopez@email.com', 5, 1); -- Cargo 1, Barrio 5
+-- Continúa con más empleados si es necesario
+
+alter table PAIS_ORIGEN
+alter column PAIS VARCHAR (50)
+-- Inserciones de países de origen
+INSERT INTO PAIS_ORIGEN (PAIS)
+VALUES
+('Argentina'),
+('Estados Unidos'),
+('Reino Unido'),
+('Francia'),
+('España'),
+('Italia'),
+('Alemania'),
+('Canadá'),
+('Australia'),
+('Japón'),
+('Brasil'),
+('México'),
+('Chile'),
+('Colombia');
+-- Continúa con más inserciones de países si es necesario
+
+select * from BUTACAS --no
+select * from BUTACAS_FUNCION --no
+select * from CLIENTES --no
+select * from RESERVAS --no
+-- Películas Taquilleras
+set dateformat dMy
+INSERT INTO PELICULAS (TITULO, DURACION, ID_GENERO, ID_CLASIFICACION, ID_TIPO_FORMATO, ID_IDIOMA, FEC_ESTRENO, ID_PAIS_ORIGEN)
+VALUES
+('Casablanca', '1:42:00', 6, 4, 1, 1, '26-11-1942', 6), -- Casablanca (1942)
+('Lo que el Viento se Llevó', '3:53:00', 7, 4, 1, 1, '15-12-1939', 7), -- Lo que el Viento se Llevó (1939)
+('El Padrino', '2:55:00', 8, 3, 2, 1, '15-03-1972', 8), -- El Padrino (1972)
+('Cantando Bajo la Lluvia', '1:43:00', 1, 4, 1, 1, '27-03-1952', 9), -- Cantando Bajo la Lluvia (1952)
+('Tiempos Modernos', '1:27:00', 2, 4, 1, 1, '05-02-1936', 10); -- Tiempos Modernos (1936)
+
+-- Películas Antiguas (Continuación)
+INSERT INTO PELICULAS (TITULO, DURACION, ID_GENERO, ID_CLASIFICACION, ID_TIPO_FORMATO, ID_IDIOMA, FEC_ESTRENO, ID_PAIS_ORIGEN)
+VALUES
+('Ciudadano Kane', '1:59:00', 1, 4, 1, 1, '05-09-1941', 11), -- Ciudadano Kane (1941)
+('El Mago de Oz', '1:42:00', 1, 4, 1, 1, '15-08-1939', 12), -- El Mago de Oz (1939)
+('Lo que el Viento se Llevó', '3:58:00', 2, 4, 1, 1, '20-01-1961', 7), -- Lo que el Viento se Llevó (Reestreno en 1961)
+('12 Hombres en Pugna', '1:36:00', 5, 4, 1, 1, '10-04-1957', 13), -- 12 Hombres en Pugna (1957)
+('El Ciudadano Ilustre', '1:58:00', 9, 4, 1, 1, '08-09-2016', 14); -- El Ciudadano Ilustre (2016)
+
+-- Películas (Continuación)
+INSERT INTO PELICULAS (TITULO, DURACION, ID_GENERO, ID_CLASIFICACION, ID_TIPO_FORMATO, ID_IDIOMA, FEC_ESTRENO, ID_PAIS_ORIGEN)
+VALUES
+('El Resplandor', '2:24:00', 3, 2, 1, 1, '23-05-1980', 5), -- El Resplandor (1980)
+('Blade Runner', '1:57:00', 1, 2, 1, 2, '25-06-1982', 2), -- Blade Runner (1982)
+('ET, el Extraterrestre', '1:55:00', 6, 3, 1, 4, '11-06-1982', 3), -- ET, el Extraterrestre (1982)
+('Star Wars: Episodio IV - Una Nueva Esperanza', '2:01:00', 6, 2, 1, 3, '25-05-1977', 4), -- Star Wars: Episodio IV (1977)
+('Los Cazafantasmas', '1:45:00', 1, 3, 1, 2, '08-06-1984', 5); -- Los Cazafantasmas (1984)
+
+-- Películas de Marvel
+INSERT INTO PELICULAS (TITULO, DURACION, ID_GENERO, ID_CLASIFICACION, ID_TIPO_FORMATO, ID_IDIOMA, FEC_ESTRENO, ID_PAIS_ORIGEN)
+VALUES
+('Iron Man', '2:06:00', 1, 3, 1, 1, '02-05-2008', 4), -- Iron Man (2008)
+('Los Vengadores', '2:23:00', 1, 2, 1, 1, '25-04-2012', 4), -- Los Vengadores (2012)
+('Guardianes de la Galaxia', '2:01:00', 1, 3, 1, 1, '31-07-2014', 4), -- Guardianes de la Galaxia (2014)
+('Black Panther', '2:14:00', 1, 2, 1, 1, '13-02-2018', 4), -- Black Panther (2018)
+('Avengers: Endgame', '3:02:00', 1, 2, 1, 1, '24-04-2019', 4); -- Avengers: Endgame (2019)
+
+-- Puedes continuar con más películas de Marvel si lo deseas
+select * from FUNCIONES
+
+-- Inserciones de Funciones
+INSERT INTO FUNCIONES (HORA, FECHA, ID_SALA, ID_PELICULA, PRECIO_ACTUAL)
+VALUES
+('15:00:00', '16-10-2023', 1, 16, 10.50), -- Función de "El Señor de los Anillos: La Comunidad del Anillo" en la Sala 1
+('18:30:00', '16-10-2023', 2, 17, 10.50), -- Función de "El Señor de los Anillos: La Comunidad del Anillo" en la Sala 2
+('16:15:00', '16-10-2023', 3, 16, 9.75), -- Función de "Spider-Man" en la Sala 3
+('20:00:00', '16-10-2023', 4, 17, 9.75), -- Función de "Spider-Man" en la Sala 4
+('17:45:00', '16-10-2023', 5, 16, 11.25), -- Función de "Piratas del Caribe: La Maldición del Perla Negra" en la Sala 5
+('19:30:00', '16-10-2023', 6, 17, 11.25), -- Función de "Piratas del Caribe: La Maldición del Perla Negra" en la Sala 6
+('14:00:00', '16-10-2023', 7, 16, 12.00), -- Función de "Black Panther" en la Sala 7
+('17:30:00', '16-10-2023', 8, 17, 12.00), -- Función de "Black Panther" en la Sala 8
+('19:15:00', '16-10-2023', 9, 16, 13.50), -- Función de "Avengers: Endgame" en la Sala 9
+('22:00:00', '16-10-2023', 10, 17, 13.50); -- Función de "Avengers: Endgame" en la Sala 10
+
+-- Inserciones de Funciones (Continuación)
+INSERT INTO FUNCIONES (HORA, FECHA, ID_SALA, ID_PELICULA, PRECIO_ACTUAL)
+VALUES
+('15:00:00', '16-10-2023', 1, 15, 10.50), -- Función de "El Señor de los Anillos: La Comunidad del Anillo" en la Sala 1
+('18:30:00', '16-10-2023', 2, 11, 10.50), -- Función de "El Señor de los Anillos: La Comunidad del Anillo" en la Sala 2
+('16:15:00', '16-10-2023', 3, 10, 9.75), -- Función de "Spider-Man" en la Sala 3
+('20:00:00', '16-10-2023', 4, 12, 9.75), -- Función de "Spider-Man" en la Sala 4
+('17:45:00', '16-10-2023', 5, 8, 11.25), -- Función de "Piratas del Caribe: La Maldición del Perla Negra" en la Sala 5
+('19:30:00', '16-10-2023', 6, 7, 11.25), -- Función de "Piratas del Caribe: La Maldición del Perla Negra" en la Sala 6
+('14:00:00', '16-10-2023', 7, 7, 12.00), -- Función de "Black Panther" en la Sala 7
+('17:30:00', '16-10-2023', 8, 5, 12.00), -- Función de "Black Panther" en la Sala 8
+('19:15:00', '16-10-2023', 9, 6, 13.50), -- Función de "Avengers: Endgame" en la Sala 9
+('22:00:00', '16-10-2023', 10, 14, 13.50); -- Función de "Avengers: Endgame" en la Sala 10
+
+-- Función de "Avengers: Endgame" en la Sala 10
+-- Puedes continuar con más funciones si es necesario
+
+
+select * from FUNCIONES
+
+   select * from SALAS
+     select * from CINES
+	 -- Inserciones de Funciones (Diferentes Días)
+-- Inserciones de Funciones (Diferentes Días)
+-- Día 1
+INSERT INTO FUNCIONES (HORA, FECHA, ID_SALA, ID_PELICULA, PRECIO_ACTUAL)
+VALUES
+('15:00:00', '16-10-2023', 1, 16, 10.50), -- Función 1 en la Sala 1
+('18:30:00', '16-10-2023', 2, 17, 10.50); -- Función 2 en la Sala 2
+
+-- Día 2
+INSERT INTO FUNCIONES (HORA, FECHA, ID_SALA, ID_PELICULA, PRECIO_ACTUAL)
+VALUES
+('16:15:00', '17-10-2023', 3, 16, 9.75), -- Función 3 en la Sala 3
+('20:00:00', '17-10-2023', 4, 17, 9.75); -- Función 4 en la Sala 4
+
+-- Día 3
+INSERT INTO FUNCIONES (HORA, FECHA, ID_SALA, ID_PELICULA, PRECIO_ACTUAL)
+VALUES
+('17:45:00', '18-10-2023', 5, 16, 11.25), -- Función 5 en la Sala 5
+('19:30:00', '18-10-2023', 6, 17, 11.25); -- Función 6 en la Sala 6
+
+-- Día 4
+INSERT INTO FUNCIONES (HORA, FECHA, ID_SALA, ID_PELICULA, PRECIO_ACTUAL)
+VALUES
+('14:00:00', '19-10-2023', 7, 16, 12.00), -- Función 7 en la Sala 7
+('17:30:00', '19-10-2023', 8, 17, 12.00); -- Función 8 en la Sala 8
+
+-- Día 5
+INSERT INTO FUNCIONES (HORA, FECHA, ID_SALA, ID_PELICULA, PRECIO_ACTUAL)
+VALUES
+('19:15:00', '20-10-2023', 9, 16, 13.50), -- Función 9 en la Sala 9
+('22:00:00', '20-10-2023', 10, 17, 13.50); -- Función 10 en la Sala 10
+
+-- Día 6
+INSERT INTO FUNCIONES (HORA, FECHA, ID_SALA, ID_PELICULA, PRECIO_ACTUAL)
+VALUES
+('15:30:00', '21-10-2023', 1, 15, 10.50), -- Función 11 en la Sala 1
+('18:00:00', '21-10-2023', 2, 11, 10.50); -- Función 12 en la Sala 2
+
+-- Día 7
+INSERT INTO FUNCIONES (HORA, FECHA, ID_SALA, ID_PELICULA, PRECIO_ACTUAL)
+VALUES
+('15:30:00', '22-10-2023', 3, 10, 9.75), -- Función 13 en la Sala 3
+('18:00:00', '22-10-2023', 4, 12, 9.75); -- Función 14 en la Sala 4
+
+-- Día 8
+INSERT INTO FUNCIONES (HORA, FECHA, ID_SALA, ID_PELICULA, PRECIO_ACTUAL)
+VALUES
+('15:30:00', '23-10-2023', 5, 8, 11.25), -- Función 15 en la Sala 5
+('18:00:00', '23-10-2023', 6, 7, 11.25); -- Función 16 en la Sala 6
+
+-- Día 9
+INSERT INTO FUNCIONES (HORA, FECHA, ID_SALA, ID_PELICULA, PRECIO_ACTUAL)
+VALUES
+('15:30:00', '24-10-2023', 7, 7, 12.00), -- Función 17 en la Sala 7
+('18:00:00', '24-10-2023', 8, 5, 12.00); -- Función 18 en la Sala 8
+
+-- Día 10
+INSERT INTO FUNCIONES (HORA, FECHA, ID_SALA, ID_PELICULA, PRECIO_ACTUAL)
+VALUES
+('15:30:00', '25-10-2023', 9, 6, 13.50), -- Función 19 en la Sala 9
+('18:00:00', '25-10-2023', 10, 14, 13.50); -- Función 20 en la Sala 10
+
+
+select * from SALAS
+select * from CINES
+select * from CLIENTES
+select * from EMPLEADOS
+select * from FUNCIONES
+select * from ACTORES
+
+-- Inserciones en la tabla ACTORES_PELICULAS
+INSERT INTO ACTORES_PELICULAS (ID_ACTOR, ID_PELICULA)
+VALUES
+(1, 1),  -- Brad Pitt en Casablanca (1942)
+(2, 2),  -- Tom Hanks en Lo que el Viento se Llevó (1939)
+(3, 3),  -- Meryl Streep en El Padrino (1972)
+(4, 4),  -- Angelina Jolie en Cantando Bajo la Lluvia (1952)
+(5, 5),  -- Leonardo DiCaprio en Tiempos Modernos (1936)
+(6, 6),  -- Tom Cruise en Ciudadano Kane (1941)
+(7, 7),  -- Julia Roberts en El Mago de Oz (1939)
+(8, 8),  -- Johnny Depp en Lo que el Viento se Llevó (Reestreno en 1961)
+(9, 9),  -- Will Smith en 12 Hombres en Pugna (1957)
+(10, 10), -- Scarlett Johansson en El Ciudadano Ilustre (2016)
+(11, 11), -- Robert Downey Jr. en El Resplandor (1980)
+(12, 12), -- Jennifer Lawrence en Blade Runner (1982)
+(13, 13), -- Denzel Washington en ET, el Extraterrestre (1982)
+(14, 14), -- Charlize Theron en Star Wars: Episodio IV (1977)
+(15, 15), -- Matt Damon en Los Cazafantasmas (1984)
+(16, 16), -- Nicole Kidman en Iron Man (2008)
+(17, 17), -- Bradley Cooper en Los Vengadores (2012)
+(18, 18), -- Natalie Portman en Guardianes de la Galaxia (2014)
+(19, 19), -- Chris Hemsworth en Black Panther (2018)
+(20, 20);
+INSERT INTO ACTORES_PELICULAS (ID_ACTOR, ID_PELICULA)
+VALUES-- Anne Hathaway en Avengers: Endgame (2019)
+(11,20),
+(19,20),
+(10,20);
+-- Insertar productos en la tabla PRODUCTOS_CANDY_BAR
+INSERT INTO PRODUCTOS_CANDY_BAR (NOMBRE, DESCRIPCION, PRECIO, ID_CINE)
+VALUES
+    ('Palomitas', 'Bolsa grande de palomitas', 5.99, 1),
+    ('Refresco', 'Lata de refresco', 2.49, 1),
+    ('Nachos', 'Bandeja de nachos con queso', 4.99, 1),
+    ('Chocolate', 'Barra de chocolate', 1.99, 1);
+	-- Insertar ventas en la tabla VENTAS_CANDY_BAR
+
+
+-- Insertar butacas
+insert into BUTACAS (NRO_BUTACA, FILA, ID_SALA)
+VALUES 
+-- Sala 1
+-- Fila 1
+(1, 1, 1),
+(2, 1, 1),
+(3, 1, 1),
+(4, 1, 1),
+(5, 1, 1),
+(6, 1, 1),
+-- Fila 2
+(7, 2, 1),
+(8, 2, 1),
+(9, 2, 1),
+(10, 2, 1),
+(11, 2, 1),
+(12, 2, 1),
+-- Fila 3
+(13, 3, 1),
+(14, 3, 1),
+(15, 3, 1),
+(16, 3, 1),
+(17, 3, 1),
+(18, 3, 1),
+
+-- Sala 2
+-- Fila 1
+(1, 1, 2),
+(2, 1, 2),
+(3, 1, 2),
+(4, 1, 2),
+(5, 1, 2),
+(6, 1, 2),
+-- Fila 2
+(7, 2, 2),
+(8, 2, 2),
+(9, 2, 2),
+(10, 2, 2),
+(11, 2, 2),
+(12, 2, 2),
+-- Fila 3
+(13, 3, 2),
+(14, 3, 2),
+(15, 3, 2),
+(16, 3, 2),
+(17, 3, 2),
+(18, 3, 2),
+
+--Sala 3
+-- Fila 1
+(1, 1, 3),
+(2, 1, 3),
+(3, 1, 3),
+(4, 1, 3),
+(5, 1, 3),
+(6, 1, 3),
+-- Fila 2
+(7, 2, 3),
+(8, 2, 3),
+(9, 2, 3),
+(10, 2, 3),
+(11, 2, 3),
+(12, 2, 3),
+-- Fila 3
+(13, 3, 3),
+(14, 3, 3),
+(15, 3, 3),
+(16, 3, 3),
+(17, 3, 3),
+(18, 3, 3),
+
+--Sala 4
+-- Fila 1
+(1, 1, 4),
+(2, 1, 4),
+(3, 1, 4),
+(4, 1, 4),
+(5, 1, 4),
+(6, 1, 4),
+-- Fila 2
+(7, 2, 4),
+(8, 2, 4),
+(9, 2, 4),
+(10, 2, 4),
+(11, 2, 4),
+(12, 2, 4),
+-- Fila 3
+(13, 3, 4),
+(14, 3, 4),
+(15, 3, 4),
+(16, 3, 4),
+(17, 3, 4),
+(18, 3, 4),
+
+--Sala 5
+-- Fila 1
+(1, 1, 5),
+(2, 1, 5),
+(3, 1, 5),
+(4, 1, 5),
+(5, 1, 5),
+(6, 1, 5),
+-- Fila 2
+(7, 2, 5),
+(8, 2, 5),
+(9, 2, 5),
+(10, 2, 5),
+(11, 2, 5),
+(12, 2, 5),
+-- Fila 3
+(13, 3, 5),
+(14, 3, 5),
+(15, 3, 5),
+(16, 3, 5),
+(17, 3, 5),
+(18, 3, 5),
+
+--Sala 6
+-- Fila 1
+(1, 1, 6),
+(2, 1, 6),
+(3, 1, 6),
+(4, 1, 6),
+(5, 1, 6),
+(6, 1, 6),
+-- Fila 2
+(7, 2, 6),
+(8, 2, 6),
+(9, 2, 6),
+(10, 2, 6),
+(11, 2, 6),
+(12, 2, 6),
+-- Fila 3
+(13, 3, 6),
+(14, 3, 6),
+(15, 3, 6),
+(16, 3, 6),
+(17, 3, 6),
+(18, 3, 6),
+
+--Sala 7
+-- Fila 1
+(1, 1, 7),
+(2, 1, 7),
+(3, 1, 7),
+(4, 1, 7),
+(5, 1, 7),
+(6, 1, 7),
+-- Fila 2
+(7, 2, 7),
+(8, 2, 7),
+(9, 2, 7),
+(10, 2, 7),
+(11, 2, 7),
+(12, 2, 7),
+-- Fila 3
+(13, 3, 7),
+(14, 3, 7),
+(15, 3, 7),
+(16, 3, 7),
+(17, 3, 7),
+(18, 3, 7),
+
+--Sala 8
+-- Fila 1
+(1, 1, 8),
+(2, 1, 8),
+(3, 1, 8),
+(4, 1, 8),
+(5, 1, 8),
+(6, 1, 8),
+-- Fila 2
+(7, 2, 8),
+(8, 2, 8),
+(9, 2, 8),
+(10, 2, 8),
+(11, 2, 8),
+(12, 2, 8),
+-- Fila 3
+(13, 3, 8),
+(14, 3, 8),
+(15, 3, 8),
+(16, 3, 8),
+(17, 3, 8),
+(18, 3, 8),
+
+--Sala 9
+-- Fila 1
+(1, 1, 9),
+(2, 1, 9),
+(3, 1, 9),
+(4, 1, 9),
+(5, 1, 9),
+(6, 1, 9),
+-- Fila 2
+(7, 2, 9),
+(8, 2, 9),
+(9, 2, 9),
+(10, 2, 9),
+(11, 2, 9),
+(12, 2, 9),
+-- Fila 3
+(13, 3, 9),
+(14, 3, 9),
+(15, 3, 9),
+(16, 3, 9),
+(17, 3, 9),
+(18, 3, 9),
+
+--Sala 10
+-- Fila 1
+(1, 1, 10),
+(2, 1, 10),
+(3, 1, 10),
+(4, 1, 10),
+(5, 1, 10),
+(6, 1, 10),
+-- Fila 2
+(7, 2, 10),
+(8, 2, 10),
+(9, 2, 10),
+(10, 2, 10),
+(11, 2, 10),
+(12, 2, 10),
+-- Fila 3
+(13, 3, 10),
+(14, 3, 10),
+(15, 3, 10),
+(16, 3, 10),
+(17, 3, 10),
+(18, 3, 10);
+
+INSERT INTO BUTACAS_FUNCION (ID_BUTACAS_FUNCION, ID_BUTACA, ID_FUNCION)
+VALUES (1, 1, 1),
+       (2, 2, 1),
+       (3, 3, 1),
+       (4, 4, 1),
+       (5, 5, 2),
+       (6, 6, 2),
+       (7, 7, 2),
+       (8, 8, 2),
+	   (9, 9, 3),
+    (10, 10, 3),
+    (11, 11, 3),
+    (12, 12, 3),
+    (13, 13, 4),
+    (14, 14, 4),
+    (15, 15, 4),
+    (16, 16, 4),
+	(17, 17, 5),
+    (18, 18, 5),
+    (19, 19, 5),
+    (20, 20, 5),
+    (21, 21, 6),
+    (22, 22, 6),
+    (23, 23, 6),
+    (24, 24, 6),
+	(25, 25, 7),
+    (26, 26, 7),
+    (27, 27, 7),
+    (28, 28, 7),
+    (29, 29, 8),
+    (30, 30, 8),
+    (31, 31, 8),
+    (32, 32, 8),
+	(33, 33, 9),
+    (34, 34, 9),
+    (35, 35, 9),
+    (36, 36, 9),
+    (37, 37, 10),
+    (38, 38, 10),
+    (39, 39, 10),
+    (40, 40, 10),
+	(41, 41, 11),
+    (42, 42, 11),
+    (43, 43, 11),
+    (44, 44, 11),
+    (45, 45, 12),
+    (46, 46, 12),
+    (47, 47, 12),
+    (48, 48, 12),
+	(49, 49, 13),
+    (50, 50, 13),
+    (51, 51, 13),
+    (52, 52, 14),
+    (53, 53, 14),
+    (54, 54, 14),
+    (55, 55, 15),
+    (56, 56, 15);
+
+-- Insert para la tabla CLIENTES
+INSERT INTO CLIENTES (NOMBRE_CLIENTE, APELLIDO_CLIENTE, ID_TIPO_DOC, DOCUMENTO, TELEFONO, EMAIL)
+VALUES
+    ('Juan', 'Pérez', 1, 12345678, 987654321, 'juan.perez@example.com'),
+    ('María', 'González', 2, 23456789, 876543210, 'maria.gonzalez@example.com'),
+    ('Carlos', 'López', 1, 34567890, 765432109, 'carlos.lopez@example.com'),
+    ('Laura', 'Martínez', 2, 45678901, 654321098, 'laura.martinez@example.com'),
+    ('Luis', 'Ramírez', 1, 56789012, 543210987, 'luis.ramirez@example.com'),
+    ('Ana', 'Sánchez', 2, 67890123, 432109876, 'ana.sanchez@example.com'),
+    ('Javier', 'Hernández', 1, 78901234, 321098765, 'javier.hernandez@example.com'),
+    ('Sofía', 'Díaz', 2, 89012345, 210987654, 'sofia.diaz@example.com'),
+    ('Carlos', 'González', 1, 12345678, 987654321, 'carlos.gonzalez@example.com'),
+    ('Laura', 'Martínez', 2, 23456789, 876543219, 'laura.martinez@example.com'),
+    ('Roberto', 'Pérez', 1, 34567890, 765432198, 'roberto.perez@example.com'),
+    ('Isabel', 'López', 2, 45678901, 654321987, 'isabel.lopez@example.com'),
+    ('Ana', 'Ramírez', 1, 56789012, 543219876, 'ana.ramirez@example.com'),
+    ('Javier', 'Sánchez', 2, 67890123, 432198765, 'javier.sanchez@example.com'),
+    ('Marta', 'Torres', 1, 78901234, 321987654, 'marta.torres@example.com'),
+    ('Andrés', 'López', 2, 89012345, 219876543, 'andres.lopez@example.com'),
+    ('Jennifer', 'Lopez', 1, 12345678, 555555555, 'jlo@example.com'),
+    ('Brad', 'Pitt', 2, 23456789, 666666666, 'brad@example.com'),
+    ('Angelina', 'Jolie', 1, 34567890, 777777777, 'angelina@example.com'),
+    ('Leonardo', 'DiCaprio', 2, 45678901, 888888888, 'leo@example.com'),
+    ('Lionel', 'Messi', 1, 20345678, 1122334455, 'lionel@example.com'),
+    ('Diego', 'Maradona', 2, 30456789, 2233445566, 'diego@example.com'),
+    ('Carlos', 'Gardel', 1, 40567890, 3344556677, 'carlos@example.com'),
+    ('Eva', 'Perón', 2, 50678901, 4455667788, 'eva@example.com'),
+    ('Marta', 'Minujin', 1, 60789012, 5566778899, 'marta@example.com'),
+    ('Jorge Luis', 'Borges', 2, 70890123, 6677889900, 'borges@example.com'),
+    ('Susana', 'Giménez', 1, 80901234, 7788990011, 'susana@example.com'),
+    ('René', 'Favaloro', 2, 90012345, 8899001122, 'rene@example.com'),
+    ('Juan', 'Pérez', 1, 56789012, 5566778899, 'juanperez@example.com'),
+    ('Ana', 'García', 2, 67890123, 6677889900, 'anagarcia@example.com'),
+    ('Luis', 'Rodríguez', 1, 78901234, 7788990011, 'luisrodriguez@example.com'),
+    ('Laura', 'Martínez', 2, 89012345, 8899001122, 'lauramartinez@example.com'),
+    ('María', 'López', 1, 90123456, 9000111222, 'marialopez@example.com'),
+    ('Carlos', 'Fernández', 2, 12345678, 1001112223, 'carlosfernandez@example.com'),
+    ('Elena', 'Gómez', 1, 23456789, 1112223344, 'elenagomez@example.com'),
+    ('Pedro', 'Sánchez', 2, 34567890, 2223334455, 'pedrosanchez@example.com');
+
+INSERT INTO COMPROBANTES (ID_CLIENTE, ID_EMPLEADO, FECHA, ID_CINE)
+VALUES
+    (1, 3, '2023-11-03 12:30:00', 2),
+    (2, 3, '2023-11-03 14:45:00', 2),
+    (3, 3, '2023-11-03 17:15:00', 3),
+    (4, 4, '2023-11-03 19:30:00', 2),
+    (5, 5, '2023-11-03 20:15:00', 2),
+    (6, 5, '2023-11-03 21:30:00', 3),
+    (7, 4, '2023-11-03 16:45:00', 2),
+    (8, 4, '2023-11-03 19:00:00', 3),
+    (6, 5, '2023-11-04 08:15:00', 2),
+    (7, 5, '2023-11-02 20:30:00', 3),
+    (8, 4, '2023-11-01 17:45:00', 2),
+    (9, 4, '2023-11-01 18:00:00', 3),
+    (5, 5, '2023-11-03 20:15:00', 2),
+    (6, 5, '2023-11-03 21:30:00', 3),
+    (7, 4, '2023-11-03 16:45:00', 2),
+    (8, 4, '2023-11-03 19:00:00', 3),
+    (6, 5, '2023-11-04 08:15:00', 2),
+    (7, 5, '2023-11-02 20:30:00', 3),
+    (8, 4, '2023-11-01 17:45:00', 2),
+    (9, 4, '2023-11-01 18:00:00', 3),
+    (5, 5, '2023-10-10 20:15:00', 2),
+    (6, 5, '2023-10-09 21:30:00', 3),
+    (7, 4, '2023-10-08 16:45:00', 2),
+    (8, 4, '2023-10-07 19:00:00', 3),
+    (6, 5, '2023-10-06 08:15:00', 2),
+    (7, 5, '2023-10-05 20:30:00', 3),
+    (8, 4, '2023-10-04 17:45:00', 2),
+    (9, 4, '2023-10-03 18:00:00', 3),
+    (6, 5, '2023-09-10 20:15:00', 2),
+    (7, 5, '2023-09-09 21:30:00', 3),
+    (8, 4, '2023-09-08 16:45:00', 2),
+    (10, 4, '2023-09-07 19:00:00', 3),
+    (12, 5, '2023-09-06 08:15:00', 2),
+    (13, 5, '2023-09-05 20:30:00', 3),
+    (14, 4, '2023-09-04 17:45:00', 2),
+    (15, 4, '2023-09-03 18:00:00', 3),
+    (1, 3, '2023-11-03 12:30:00', 2),
+    (2, 3, '2023-11-03 14:45:00', 2),
+    (3, 3, '2023-11-03 17:15:00', 3),
+    (4, 4, '2023-11-03 19:30:00', 2),
+    (5, 5, '2023-11-03 20:15:00', 2),
+    (6, 5, '2023-11-03 21:30:00', 3),
+    (7, 4, '2023-11-03 16:45:00', 2),
+    (8, 4, '2023-11-03 19:00:00', 3),
+    (6, 5, '2023-11-04 08:15:00', 2),
+    (7, 5, '2023-11-02 20:30:00', 3),
+    (8, 4, '2023-11-01 17:45:00', 2),
+    (9, 4, '2023-11-01 18:00:00', 3),
+    (5, 5, '2023-11-03 20:15:00', 2),
+    (6, 5, '2023-11-03 21:30:00', 3),
+    (7, 4, '2023-11-03 16:45:00', 2),
+    (8, 4, '2023-11-03 19:00:00', 3),
+    (6, 5, '2023-11-04 08:15:00', 2),
+    (7, 5, '2023-11-02 20:30:00', 3),
+    (8, 4, '2023-11-01 17:45:00', 2),
+    (9, 4, '2023-11-01 18:00:00', 3),
+    (5, 5, '2023-10-10 20:15:00', 2),
+    (6, 5, '2023-10-09 21:30:00', 3),
+    (7, 4, '2023-10-08 16:45:00', 2),
+    (10, 4, '2023-10-07 19:00:00', 3),
+    (12, 5, '2023-10-06 08:15:00', 2),
+    (13, 5, '2023-10-05 20:30:00', 3),
+    (14, 4, '2023-10-04 17:45:00', 2),
+    (15, 4, '2023-10-03 18:00:00', 3),
+    (16, 4, '2023-10-02 19:15:00', 2),
+    (17, 5, '2023-10-01 22:30:00', 3),
+    (1, 3, '2022-08-03 12:30:00', 2),
+    (2, 3, '2022-08-03 14:45:00', 2),
+    (3, 3, '2022-08-03 17:15:00', 3),
+    (4, 4, '2022-08-03 19:30:00', 2),
+    (5, 5, '2022-08-03 20:15:00', 2),
+    (6, 5, '2022-08-03 21:30:00', 3),
+    (7, 4, '2022-08-03 16:45:00', 2),
+    (8, 4, '2022-08-03 19:00:00', 3),
+    (6, 5, '2022-08-04 08:15:00', 2),
+    (7, 5, '2022-08-02 20:30:00', 3),
+    (8, 4, '2022-08-01 17:45:00', 2),
+    (9, 4, '2022-08-01 18:00:00', 3),
+    (5, 5, '2022-07-10 20:15:00', 2),
+    (6, 5, '2022-07-09 21:30:00', 3),
+    (7, 4, '2022-07-08 16:45:00', 2),
+    (10, 4, '2022-07-07 19:00:00', 3),
+    (12, 5, '2022-07-06 08:15:00', 2),
+    (13, 5, '2022-07-05 20:30:00', 3),
+    (14, 4, '2022-07-04 17:45:00', 2),
+    (15, 4, '2022-07-03 18:00:00', 3),
+    (16, 4, '2022-07-02 19:15:00', 2),
+    (17, 5, '2022-07-01 22:30:00', 3),
+    (1, 3, '2023-11-03 12:30:00', 2),
+    (2, 3, '2023-11-03 14:45:00', 2),
+    (3, 3, '2023-11-03 17:15:00', 3),
+    (4, 4, '2023-11-03 19:30:00', 2),
+    (5, 5, '2023-11-03 20:15:00', 2),
+    (6, 5, '2023-11-03 21:30:00', 3),
+    (7, 4, '2023-11-03 16:45:00', 2),
+    (8, 4, '2023-11-03 19:00:00', 3),
+    (6, 5, '2023-11-04 08:15:00', 2),
+    (7, 5, '2023-11-02 20:30:00', 3),
+    (8, 4, '2023-11-01 17:45:00', 2),
+    (9, 4, '2023-11-01 18:00:00', 3),
+    (5, 5, '2023-11-03 20:15:00', 2),
+    (6, 5, '2023-11-03 21:30:00', 3),
+    (7, 4, '2023-11-03 16:45:00', 2),
+    (8, 4, '2023-11-03 19:00:00', 3),
+    (6, 5, '2023-11-04 08:15:00', 2),
+    (7, 5, '2023-11-02 20:30:00', 3),
+    (8, 4, '2023-11-01 17:45:00', 2),
+    (9, 4, '2023-11-01 18:00:00', 3),
+    (5, 5, '2023-10-10 20:15:00', 2),
+    (6, 5, '2023-10-09 21:30:00', 3),
+    (7, 4, '2023-10-08 16:45:00', 2),
+    (8, 4, '2023-10-07 19:00:00', 3),
+    (6, 5, '2023-10-06 08:15:00', 2),
+    (7, 5, '2023-10-05 20:30:00', 3),
+    (8, 4, '2023-10-04 17:45:00', 2),
+    (9, 4, '2023-10-03 18:00:00', 3),
+    (6, 5, '2023-09-10 20:15:00', 2),
+    (7, 5, '2023-09-09 21:30:00', 3),
+    (8, 4, '2023-09-08 16:45:00', 2),
+    (10, 4, '2023-09-07 19:00:00', 3),
+    (12, 5, '2023-09-06 08:15:00', 2),
+    (13, 5, '2023-09-05 20:30:00', 3),
+    (14, 4, '2023-09-04 17:45:00', 2),
+    (15, 4, '2023-09-03 18:00:00', 3),
+    (1, 3, '2023-11-03 12:30:00', 2),
+    (2, 3, '2023-11-03 14:45:00', 2),
+    (3, 3, '2023-11-03 17:15:00', 3),
+    (4, 4, '2023-11-03 19:30:00', 2),
+    (5, 5, '2023-11-03 20:15:00', 2),
+    (6, 5, '2023-11-03 21:30:00', 3),
+    (7, 4, '2023-11-03 16:45:00', 2),
+    (8, 4, '2023-11-03 19:00:00', 3),
+    (6, 5, '2023-11-04 08:15:00', 2),
+    (7, 5, '2023-11-02 20:30:00', 3),
+    (8, 4, '2023-11-01 17:45:00', 2),
+    (9, 4, '2023-11-01 18:00:00', 3),
+    (5, 5, '2023-11-03 20:15:00', 2),
+    (6, 5, '2023-11-03 21:30:00', 3),
+    (7, 4, '2023-11-03 16:45:00', 2),
+    (8, 4, '2023-11-03 19:00:00', 3),
+    (6, 5, '2023-11-04 08:15:00', 2),
+    (7, 5, '2023-11-02 20:30:00', 3),
+    (8, 4, '2023-11-01 17:45:00', 2),
+    (9, 4, '2023-11-01 18:00:00', 3),
+    (5, 5, '2023-10-10 20:15:00', 2),
+    (6, 5, '2023-10-09 21:30:00', 3),
+    (7, 4, '2023-10-08 16:45:00', 2),
+    (10, 4, '2023-10-07 19:00:00', 3),
+    (12, 5, '2023-10-06 08:15:00', 2),
+    (13, 5, '2023-10-05 20:30:00', 3),
+    (14, 4, '2023-10-04 17:45:00', 2),
+    (15, 4, '2023-10-03 18:00:00', 3),
+    (16, 4, '2023-10-02 19:15:00', 2),
+    (17, 5, '2023-10-01 22:30:00', 3),
+    (1, 3, '2022-08-03 12:30:00', 2),
+    (2, 3, '2022-08-03 14:45:00', 2),
+    (3, 3, '2022-08-03 17:15:00', 3),
+    (4, 4, '2022-08-03 19:30:00', 2),
+    (5, 5, '2022-08-03 20:15:00', 2),
+    (6, 5, '2022-08-03 21:30:00', 3),
+    (7, 4, '2022-08-03 16:45:00', 2),
+    (8, 4, '2022-08-03 19:00:00', 3),
+    (6, 5, '2022-08-04 08:15:00', 2),
+    (7, 5, '2022-08-02 20:30:00', 3),
+    (8, 4, '2022-08-01 17:45:00', 2),
+    (9, 4, '2022-08-01 18:00:00', 3),
+    (5, 5, '2022-07-10 20:15:00', 2),
+    (6, 5, '2022-07-09 21:30:00', 3),
+    (7, 4, '2022-07-08 16:45:00', 2),
+    (10, 4, '2022-07-07 19:00:00', 3),
+    (12, 5, '2022-07-06 08:15:00', 2),
+    (10, 4, '2022-07-07 19:00:00', 3),
+    (12, 5, '2022-07-06 08:15:00', 2);
+
+INSERT INTO DETALLES_COMPROBANTES (ID_COMPROBANTE, ID_FUNCION, ID_BUTACAS_FUNCION, ID_FORMA_PAGO, PRECIO)
+VALUES 
+    (1, 1, 1, 4, 25.00),
+    (2, 2, 2, 5, 30.50),
+    (3, 3, 3, 6, 22.75),
+    (4, 4, 4, 2, 28.00),
+    (5, 4, 4, 3, 28.00),
+    (6, 1, 1, 4, 25.00),
+    (7, 2, 2, 5, 30.50),
+    (8, 3, 3, 6, 22.75),
+    (9, 4, 4, 1, 28.00),
+	(10, 5, 5, 6, 20.25),
+    (11, 6, 6, 4, 35.75),
+    (12, 7, 7, 5, 27.50),
+    (13, 8, 8, 5, 33.25),
+	(15, 9, 10, 5, 18.75),
+    (15, 10, 10, 4, 29.50),
+    (16, 11, 11, 4, 24.25),
+    (17, 12, 12, 4, 31.00),
+	(18, 13, 13, 4, 15.00),
+    (18, 14, 14, 6, 28.50),
+    (20, 15, 15, 5, 22.75),
+    (21, 16, 16, 4, 27.00),
+	(22, 17, 17,2, 32.50),
+    (23, 18, 18, 5, 26.75),
+    (24, 19, 19, 4, 21.25),
+    (25, 20, 20, 2, 23.00),
+    (26, 21, 21, 6, 29.75),
+    (27, 22, 22, 2, 34.25),
+    (28, 23, 23, 5, 27.50),
+    (29, 24, 24, 4, 22.00),
+    (30, 25, 25, 2, 30.75),
+    (31, 26, 26, 5, 25.25);
+
+INSERT INTO VENTAS_CANDY_BAR ( ID_COMPROBANTE, ID_PRODUCTO_CANDY_BAR, CANTIDAD, PRECIO_TOTAL)
+VALUES
+(1,1,1,500.00),
+(1,2,2,350.00),
+(2,1,1,500.00),
+(3,1,1,500.00),
+(4,4,1,70.00),
+(5,4,1,60.00),
+(6,1,1,50.00),
+(7,2,1,500.00),
+(8,1,1,50.00),
+(8,3,1,50.00),
+(10,1,1,50.00),
+(11,1,1,500.00);
+
+
+	select * from PELICULAS
