@@ -118,9 +118,6 @@ namespace SistemaCineBack.Acceso_a_Datos.Dao
                 if (DateTime.TryParse(r["FECHA"].ToString(), out DateTime fecha))
                     f.Fecha = fecha;
 
-                if (int.TryParse(r["ID_SALA"].ToString(), out int idSala))
-                    f.sala.IdSala = idSala;
-
                 if (int.TryParse(r["ID_PELICULA"].ToString(), out int idPelicula))
                 {
                     f.pelicula = TraerPeliculaPorId(idPelicula); // Agregar este método
