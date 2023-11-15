@@ -11,12 +11,12 @@ namespace CIneLabo.Entidades.Cine
     {
         public int IdPelicula { get; set; }
         public string Titulo { get; set; }
-        private DateTime Duracion { get; set; }
-        private Genero Genero { get; set; }
-        private Clasificacion clasificacion { get; set; }
+        public DateTime Duracion { get; set; }
+        public Genero Genero { get; set; }
+        public Clasificacion clasificacion { get; set; }
 
-        private Idioma Idioma { get; set; }
-        private DateTime Fec_Estreno { get; set; }
+        public Idioma Idioma { get; set; }
+        public DateTime Fec_Estreno { get; set; }
         
 
         public Peliculas()

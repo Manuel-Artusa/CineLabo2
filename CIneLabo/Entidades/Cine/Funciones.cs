@@ -9,14 +9,14 @@ namespace CIneLabo.Entidades.Cine
 {
     public class Funciones
     {
-        private int IdFuncion { get; set; }
-        private DateTime Hora { get; set; }
-        private DateTime Fecha { get; set; }
-        private Salas sala { get; set; }
-        private Peliculas pelicula { get; set; }
-        private double Precio { get; set; }
+        public int IdFuncion { get; set; }
+        public DateTime Hora { get; set; }
+        public DateTime Fecha { get; set; }
+        public Salas sala { get; set; }
+        public Peliculas pelicula { get; set; }
+        public double Precio { get; set; }
 
-        private TipoFormato formato { get; set; }
+        public TipoFormato formato { get; set; }
 
         public Funciones()
         {

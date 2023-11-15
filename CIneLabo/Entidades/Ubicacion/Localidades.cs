@@ -3,8 +3,8 @@
 
     public class Localidades : Provincias
     {
-        private int id_localidad { get; set; }
-        private string nom_localidad { get; set; }
+        public int id_localidad { get; set; }
+        public string nom_localidad { get; set; }
 
         public Provincias Provincias { get; set; }
 

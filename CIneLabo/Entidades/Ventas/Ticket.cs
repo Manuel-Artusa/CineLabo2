@@ -7,13 +7,13 @@ using CIneLabo.Entidades.Cine;
 
 namespace CIneLabo.Entidades.Ventas
 {
-    internal class Ticket
+    public class Ticket
     {
-        private int IdTicket { get; set; }
-        private Comprobantes comprobante { get; set; }
-        private Butacas butaca { get; set; }
-        private Funciones funcion { get; set; }
-        private double Precio { get; set; }
+        public int IdTicket { get; set; }
+        public Comprobantes comprobante { get; set; }
+        public Butacas butaca { get; set; }
+        public Funciones funcion { get; set; }
+        public double Precio { get; set; }
 
         public Ticket()
         {

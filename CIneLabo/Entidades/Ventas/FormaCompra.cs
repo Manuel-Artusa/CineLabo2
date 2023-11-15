@@ -1,9 +1,9 @@
 ﻿namespace CIneLabo.Entidades.Ventas
 {
-    internal class FormaCompra
+    public class FormaCompra
     {
-        private int IdFormaCompra { get; set; }
-        private string Forma { get; set; }
+        public int IdFormaCompra { get; set; }
+        public string Forma { get; set; }
 
         public FormaCompra()
         {

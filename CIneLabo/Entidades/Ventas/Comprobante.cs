@@ -5,16 +5,16 @@ using CIneLabo.Entidades.Cine;
 
 namespace CIneLabo.Entidades.Ventas
 {
-    internal class Comprobantes
+    public class Comprobantes
     {
-        private int IdComprobante { get; set; }
-        private Cliente cliente { get; set; }
-        private Empleados empleado { get; set; }
-        private DateTime fecha { get; set; }
-        private Cines cine { get; set; }
-        private FormaCompra forma { get; set; }
+        public int IdComprobante { get; set; }
+        public Cliente cliente { get; set; }
+        public Empleados empleado { get; set; }
+        public DateTime fecha { get; set; }
+        public Cines cine { get; set; }
+        public FormaCompra forma { get; set; }
 
-        private EstadoPago estado { get; set; }
+        public EstadoPago estado { get; set; }
 
         public Comprobantes()
         {

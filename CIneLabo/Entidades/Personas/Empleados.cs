@@ -3,14 +3,14 @@
 namespace CIneLabo.Entidades.Personas
 {
 
-    internal class Empleados
+    public class Empleados
     {
-        private int IdEmpleado { get; set; }
-        private Persona persona { get; set; }
-        private string Mail { get; set; }
-        private Barrios barrio { get; set; }
+        public int IdEmpleado { get; set; }
+        public Persona persona { get; set; }
+        public string Mail { get; set; }
+        public Barrios barrio { get; set; }
 
-        private Cargos cargo { get; set; }
+        public Cargos cargo { get; set; }
 
         public Empleados()
         {

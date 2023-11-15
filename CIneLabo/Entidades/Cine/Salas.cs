@@ -2,14 +2,14 @@
 {
     public class Salas
     {
-        private int IdSala { get; set; }
-        private int Numero { get; set; }
+        public int IdSala { get; set; }
+        public int Numero { get; set; }
 
-        private TipoSala tipo { get; set; }
+        public TipoSala tipo { get; set; }
 
-        private int Asientos { get; set; }
+        public int Asientos { get; set; }
 
-        private Cines cine { get; set; }
+        public Cines cine { get; set; }
 
         public Salas()
         {

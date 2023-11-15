@@ -8,11 +8,11 @@ using CIneLabo.Entidades.Personas;
 
 namespace CIneLabo.Entidades.Cine
 {
-    internal class Reservas
+    public class Reservas
     {
-        private int IdReserva { get; set; }
-        private Cliente Cliente { get; set; }
-        private DateTime FechaReserva { get; set; }
+        public int IdReserva { get; set; }
+        public Cliente Cliente { get; set; }
+        public DateTime FechaReserva { get; set; }
 
         public Reservas()
         {

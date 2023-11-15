@@ -9,10 +9,10 @@ namespace CIneLabo.Entidades.Cine
 {
     public class Cines
     {
-        private int IdCines { get; set; }
-        private Barrios Barrios { get; set; }
+        public int IdCines { get; set; }
+        public Barrios Barrios { get; set; }
 
-        private string Cine { get; set; }
+        public string Cine { get; set; }
 
         public Cines()
         {
