@@ -190,3 +190,41 @@ BEGIN
     WHERE
         NumeroFila <= 3;
 END
+
+CREATE TABLE RegistroValoresDolar (
+    ID INT PRIMARY KEY IDENTITY,
+    ValorAntes DECIMAL(10, 2),
+    FechaRegistro DATETIME
+);
+
+drop procedure AjustarPreciosPorDolar
+CREATE PROCEDURE AjustarPreciosPorDolar
+    @ValorDolarAntes DECIMAL(10, 2),
+    @ValorDolarActual DECIMAL(10, 2)
+AS
+BEGIN
+    DECLARE @PorcentajeCambio DECIMAL(10, 2)
+
+    -- Calcular el porcentaje de cambio en el valor del dólar
+    SET @PorcentajeCambio = ((@ValorDolarActual - @ValorDolarAntes) / @ValorDolarAntes) * 100;
+
+    -- Actualizar los precios de las funciones basados en el porcentaje de cambio
+    UPDATE FUNCIONES
+    SET PRECIO_ACTUAL = PRECIO_ACTUAL + (PRECIO_ACTUAL * (@PorcentajeCambio / 100));
+
+    -- Insertar el último valor del dólar en la tabla de registro
+    INSERT INTO RegistroValoresDolar (ValorAntes, FechaRegistro)
+    VALUES (@ValorDolarActual, GETDATE());
+END;
+
+exec AjustarPreciosPorDolar 900, 925
+
+CREATE PROCEDURE ObtenerUltimoValorDolar
+AS
+BEGIN
+    -- Seleccionar el último valor del dólar de la tabla de registro
+    SELECT TOP 1 ValorAntes, FechaRegistro
+    FROM RegistroValoresDolar
+    ORDER BY FechaRegistro DESC;
+END;
+
