@@ -20,15 +20,15 @@ namespace CIneLabo.Entidades.Cine
             IdButaca = 0;
             NroButaca = 0;
             Fila = 0;
-            sala = new Salas();
+            Sala = new Salas();
 
         }
-        public Butacas(int Id, int Nro,int fila)
+        public Butacas(int Id, int Nro,int fila, Salas sala)
         {
             IdButaca = Id;
             NroButaca = Nro;
             Fila = fila;
-             
+            Sala = sala;
         }
     }
 }

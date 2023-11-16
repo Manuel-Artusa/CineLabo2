@@ -15,17 +15,11 @@
         {
             IdSala = 0;
             Numero = 0;
-            tipo = new TipoSala();
-            Asientos = 0;
-            cine = new Cines();
         }
-        public Salas(int id, int nro, TipoSala tip, int asient, Cines cin)
+        public Salas(int id, int nro)
         {
             IdSala = id;
             Numero = nro;
-            tipo = tip;
-            Asientos = asient;
-            cine = cin;
              
         }
     }

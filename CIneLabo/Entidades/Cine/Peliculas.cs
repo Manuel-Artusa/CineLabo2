@@ -18,6 +18,9 @@ namespace CIneLabo.Entidades.Cine
         public Idioma Idioma { get; set; }
         public DateTime Fec_Estreno { get; set; }
         
+        public Idioma Idioma { get; set; }
+        public DateTime Fec_Estreno { get; set; }
+        public Pais IdPais { get; set; }
 
         public Peliculas()
         {
@@ -28,9 +31,10 @@ namespace CIneLabo.Entidades.Cine
             clasificacion = new Clasificacion();
             Idioma = new Idioma();
             Fec_Estreno = DateTime.Now;
+            IdPais = new Pais();
             
         }
-        public Peliculas(int id, string title, DateTime dur, Genero gen, Clasificacion clasf, Idioma idiom, DateTime estreno)
+        public Peliculas(int id, string title, DateTime dur, Genero gen, Clasificacion clasf, Idioma idiom, DateTime estreno, Pais pais)
         {
             IdPelicula = id;
             Titulo = title;
@@ -39,6 +43,7 @@ namespace CIneLabo.Entidades.Cine
             clasificacion = clasf;
             Idioma = idiom;
             Fec_Estreno = estreno;
+            IdPais = pais;
             
         }
     }

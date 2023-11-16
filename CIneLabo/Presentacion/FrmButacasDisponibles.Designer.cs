@@ -75,6 +75,10 @@
             pbButaca3 = new PictureBox();
             pbButaca2 = new PictureBox();
             pbButaca1 = new PictureBox();
+            button1 = new Button();
+            cboSala = new ComboBox();
+            label24 = new Label();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox19).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbButaca18).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbButaca17).BeginInit();
@@ -98,8 +102,9 @@
             // 
             // cboFunciones
             // 
+            cboFunciones.Enabled = false;
             cboFunciones.FormattingEnabled = true;
-            cboFunciones.Location = new Point(182, 270);
+            cboFunciones.Location = new Point(182, 590);
             cboFunciones.Margin = new Padding(3, 4, 3, 4);
             cboFunciones.Name = "cboFunciones";
             cboFunciones.Size = new Size(246, 28);
@@ -111,11 +116,11 @@
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = SystemColors.ControlLightLight;
-            label4.Location = new Point(14, 270);
+            label4.Location = new Point(12, 590);
             label4.Name = "label4";
             label4.Size = new Size(123, 32);
             label4.TabIndex = 123;
-            label4.Text = "Funcion";
+            label4.Text = "Función";
             // 
             // label3
             // 
@@ -134,12 +139,12 @@
             btnActualizar.BackColor = Color.IndianRed;
             btnActualizar.Cursor = Cursors.Hand;
             btnActualizar.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            btnActualizar.Location = new Point(93, 444);
+            btnActualizar.Location = new Point(94, 675);
             btnActualizar.Margin = new Padding(3, 4, 3, 4);
             btnActualizar.Name = "btnActualizar";
             btnActualizar.Size = new Size(266, 53);
             btnActualizar.TabIndex = 96;
-            btnActualizar.Text = "Actualizar";
+            btnActualizar.Text = "Ver";
             btnActualizar.UseVisualStyleBackColor = false;
             btnActualizar.Click += btnActualizar_Click;
             // 
@@ -149,17 +154,17 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.ControlLightLight;
-            label1.Location = new Point(12, 199);
+            label1.Location = new Point(12, 209);
             label1.Name = "label1";
             label1.Size = new Size(124, 32);
             label1.TabIndex = 95;
-            label1.Text = "Pelicula";
+            label1.Text = "Película";
             label1.Click += label1_Click;
             // 
             // cboPelicula
             // 
             cboPelicula.FormattingEnabled = true;
-            cboPelicula.Location = new Point(182, 199);
+            cboPelicula.Location = new Point(182, 213);
             cboPelicula.Margin = new Padding(3, 4, 3, 4);
             cboPelicula.Name = "cboPelicula";
             cboPelicula.Size = new Size(246, 28);
@@ -666,12 +671,67 @@
             pbButaca1.TabIndex = 125;
             pbButaca1.TabStop = false;
             // 
+            // button1
+            // 
+            button1.BackColor = Color.IndianRed;
+            button1.Cursor = Cursors.Hand;
+            button1.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Location = new Point(94, 299);
+            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Name = "button1";
+            button1.Size = new Size(266, 53);
+            button1.TabIndex = 163;
+            button1.Text = "Salas";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // cboSala
+            // 
+            cboSala.Enabled = false;
+            cboSala.FormattingEnabled = true;
+            cboSala.Location = new Point(182, 397);
+            cboSala.Margin = new Padding(3, 4, 3, 4);
+            cboSala.Name = "cboSala";
+            cboSala.Size = new Size(246, 28);
+            cboSala.TabIndex = 165;
+            cboSala.SelectedIndexChanged += cboSala_SelectedIndexChanged;
+            // 
+            // label24
+            // 
+            label24.AutoSize = true;
+            label24.BackColor = Color.Transparent;
+            label24.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label24.ForeColor = SystemColors.ControlLightLight;
+            label24.Location = new Point(14, 397);
+            label24.Name = "label24";
+            label24.Size = new Size(76, 32);
+            label24.TabIndex = 164;
+            label24.Text = "Sala";
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.IndianRed;
+            button2.Cursor = Cursors.Hand;
+            button2.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.Location = new Point(94, 486);
+            button2.Margin = new Padding(3, 4, 3, 4);
+            button2.Name = "button2";
+            button2.Size = new Size(266, 53);
+            button2.TabIndex = 166;
+            button2.Text = "Funciones";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
             // FrmButacasDisponibles
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Desktop;
             ClientSize = new Size(1759, 999);
+            Controls.Add(button2);
+            Controls.Add(cboSala);
+            Controls.Add(label24);
+            Controls.Add(button1);
             Controls.Add(label19);
             Controls.Add(label18);
             Controls.Add(label17);
@@ -795,5 +855,9 @@
         private PictureBox pbButaca3;
         private PictureBox pbButaca2;
         private PictureBox pbButaca1;
+        private Button button1;
+        private ComboBox cboSala;
+        private Label label24;
+        private Button button2;
     }
 }

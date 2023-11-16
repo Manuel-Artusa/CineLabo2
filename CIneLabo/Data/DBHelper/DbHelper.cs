@@ -18,7 +18,7 @@ namespace CIneLabo.Data.DBHelper
         private DbHelper()
         {
 
-            conexion = new SqlConnection(@"Data Source =.\SQLEXPRESS; Initial Catalog = cine2; Integrated Security = True");
+            conexion = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=cine5;Integrated Security=True");
 
         }
 
@@ -47,36 +47,8 @@ namespace CIneLabo.Data.DBHelper
             return tabla;
         }
 
-        public string ConsultarValorSP(string nombreSP)
-        {
-            string resultado = null;
-
-
-            conexion.Open();
-
-            SqlCommand comando = new SqlCommand();
-            comando.Connection = conexion;
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.CommandText = nombreSP;
-
-            
-            object valor = comando.ExecuteScalar();
-
-            
-
-            resultado = valor.ToString();
-
-
-
-
-            conexion.Close();
-
-
-            return resultado;
-
-        }
-
-        public DataTable Consultar(string nombreSP, string param)
+        
+        public DataTable Consultar(string nombreSP,string param)
         {
             conexion.Open();
             SqlCommand comando = new SqlCommand();
@@ -106,6 +78,53 @@ namespace CIneLabo.Data.DBHelper
             return tabla;
         }
 
+        public DataTable ConsultarConParametros(string nombreSP, string Pelicula, string Fecha)
+        {
+            conexion.Open();
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = conexion;
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = nombreSP;
+            comando.Parameters.AddWithValue("@pelicula", Pelicula);
+            comando.Parameters.AddWithValue("@fecha", Fecha);
+            DataTable tabla = new DataTable();
+            tabla.Load(comando.ExecuteReader());
+            conexion.Close();
+            return tabla;
+        }
+
+        public DataTable ConsultarConParametrosFunciones(string nombreSP, string Pelicula, string Fecha, int Sala)
+        {
+            conexion.Open();
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = conexion;
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = nombreSP;
+            comando.Parameters.AddWithValue("@pelicula", Pelicula);
+            comando.Parameters.AddWithValue("@fecha", Fecha);
+            comando.Parameters.AddWithValue("@sala", Sala);
+            DataTable tabla = new DataTable();
+            tabla.Load(comando.ExecuteReader());
+            conexion.Close();
+            return tabla;
+        }
+
+        public DataTable ConsultarConParametrosButacas(string nombreSP, string Pelicula, string Fecha, int Sala, int Funcion)
+        {
+            conexion.Open();
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = conexion;
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = nombreSP;
+            comando.Parameters.AddWithValue("@pelicula", Pelicula);
+            comando.Parameters.AddWithValue("@fecha", Fecha);
+            comando.Parameters.AddWithValue("@sala", Sala);
+            comando.Parameters.AddWithValue("@funcion", Funcion);
+            DataTable tabla = new DataTable();
+            tabla.Load(comando.ExecuteReader());
+            conexion.Close();
+            return tabla;
+        }
         public DataTable ConsultarConFechas(string v, DateTime fechaInicio, DateTime fechaFin/*, string nombreCine*/)
         {
             conexion.Open();
@@ -123,5 +142,6 @@ namespace CIneLabo.Data.DBHelper
             conexion.Close();
             return dt;
         }
+
     }
 }
