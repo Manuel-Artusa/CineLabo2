@@ -16,7 +16,9 @@ namespace CIneLabo.Data.DBHelper
         private SqlConnection conexion;
         private DbHelper()
         {
+
             conexion = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=cine5;Integrated Security=True");
+
         }
 
         public SqlConnection GetConnection()
@@ -43,6 +45,8 @@ namespace CIneLabo.Data.DBHelper
             conexion.Close();
             return tabla;
         }
+
+        
         public DataTable Consultar(string nombreSP,string param)
         {
             conexion.Open();
@@ -73,7 +77,7 @@ namespace CIneLabo.Data.DBHelper
             return tabla;
         }
 
-        public DataTable ConsultarInformeVentas(string v, DateTime fechaInicio, DateTime fechaFin)
+        public DataTable ConsultarConFechas(string v, DateTime fechaInicio, DateTime fechaFin/*, string nombreCine*/)
         {
             conexion.Open();
 
@@ -84,8 +88,10 @@ namespace CIneLabo.Data.DBHelper
             comando.CommandText = v;
             comando.Parameters.AddWithValue("@FechaInicio", fechaInicio);
             comando.Parameters.AddWithValue("@FechaFin", fechaFin);
+            //comando.Parameters.AddWithValue("@NombreCine", nombreCine);
             SqlDataAdapter adapter = new SqlDataAdapter(comando);
             adapter.Fill(dt);
+            conexion.Close();
             return dt;
         }
     }

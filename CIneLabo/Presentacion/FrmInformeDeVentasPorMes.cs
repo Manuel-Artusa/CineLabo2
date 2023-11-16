@@ -18,10 +18,24 @@ namespace CIneLabo.Presentacion
         {
             InitializeComponent();
             dao = new DaoInformeVentas();
+
         }
 
         private void FrmInformeDeVentasPorMes_Load(object sender, EventArgs e)
         {
+            //cboCine.DataSource = dao.traerCines();
+            //cboCine.ValueMember = "ID_CINE"; 
+            //cboCine.DisplayMember = "NOMBRE_CINE"; 
+            btnGenerarInforme.Enabled = false;
+            btnLimpiar.Enabled = false;
+            DateTime fechita = DateTime.Now.Date;
+            if (dateTimePicker1.Value != fechita || dateTimePicker2.Value != fechita)
+            {
+                btnGenerarInforme.Enabled = true;
+
+            }
+
+
 
         }
 
@@ -29,13 +43,27 @@ namespace CIneLabo.Presentacion
         {
             DateTime fechaIncio = dateTimePicker1.Value;
             DateTime fechaFin = dateTimePicker2.Value;
-            DataTable datosInforme =dao.ObtenerDatosInformeVentasPorMes(fechaIncio,fechaFin);
+            //string NombreCine = cboCine.SelectedItem.ToString();
+            DataTable datosInforme = dao.ObtenerDatosInformeVentasPorMes(fechaIncio, fechaFin/*,NombreCine*/);
 
             // Asignar al DataGridView
             if (datosInforme != null)
             {
                 dataGridView1.DataSource = datosInforme;
             }
+            btnLimpiar.Enabled = true;
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = null;
+            btnLimpiar.Enabled = false;
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
