@@ -37,8 +37,11 @@ namespace CIneLabo.Data
 
                 DateTime fecEstreno = DateTime.Parse(fila["Fec_Estreno"].ToString());
                 ;
+                int idPais = int.Parse(fila["ID_PAIS_ORIGEN"].ToString());
+                string pais = fila["pais"].ToString();  // Ajusta el nombre del campo según tu base de datos
+                Pais paises = new Pais(idPais, pais);
 
-                Peliculas pelicula = new Peliculas(idPeli, titulo, duracion, genero, clasificacion, idioma, fecEstreno);
+                Peliculas pelicula = new Peliculas(idPeli, titulo, duracion, genero, clasificacion, idioma, fecEstreno, paises);
                 lPeliculas.Add(pelicula);
             }
             return lPeliculas;

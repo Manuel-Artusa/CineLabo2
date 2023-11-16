@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace CIneLabo.Entidades.Cine
 {
-    internal class Butacas
+    public class Butacas
     {
-        private int IdButaca { get; set; }
-        private int NroButaca { get; set; }
-        private int Fila { get; set; }
+        public int IdButaca { get; set; }
+        public int NroButaca { get; set; }
+        public int Fila { get; set; }
 
-        private Salas sala { get; set; }
+        public Salas Sala { get; set; }
 
 
         public Butacas()
@@ -20,15 +20,15 @@ namespace CIneLabo.Entidades.Cine
             IdButaca = 0;
             NroButaca = 0;
             Fila = 0;
-            sala = new Salas();
+            Sala = new Salas();
 
         }
-        public Butacas(int Id, int Nro,int fila)
+        public Butacas(int Id, int Nro,int fila, Salas sala)
         {
             IdButaca = Id;
             NroButaca = Nro;
             Fila = fila;
-             
+            Sala = sala;
         }
     }
 }

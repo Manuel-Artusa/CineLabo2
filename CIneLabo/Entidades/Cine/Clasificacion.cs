@@ -2,8 +2,8 @@
 {
     public class Clasificacion
     {
-        private int Id_clasificacion { get; set; }
-        private string Descripcion { get; set; }
+        public int Id_clasificacion { get; set; }
+        public string Descripcion { get; set; }
 
         public Clasificacion()
         {

@@ -1,5 +1,6 @@
 ﻿
 using CIneLabo.Data;
+using CIneLabo.Entidades.Cine;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,21 +16,24 @@ namespace CinesFront.Presentacion
     public partial class FrmButacasDisponibles : Form
     {
         DaoPeliculas daopel;
-      //  DaoFunciones daofun;
-        //private IDao dao = null;
+        DaoSalas daosal;
+        DaoFuncion daofun;
+        DaoButacas daobut;
         private Dictionary<int, PictureBox> diccionarioPictureBox = new Dictionary<int, PictureBox>();
         public FrmButacasDisponibles()
         {
             InitializeComponent();
             daopel = new DaoPeliculas();
-     //       daofun = new DaoFunciones();
+            daosal = new DaoSalas();
+            daofun = new DaoFuncion();
+            daobut = new DaoButacas();
             EnlazarButacasConNumeritos();
-            //           MostrarButacasDisponibles();
+  //          MostrarButacasDisponibles();
         }
 
         public void EnlazarButacasConNumeritos()
         {
-            diccionarioPictureBox.Add(1, pbButaca1);
+            diccionarioPictureBox.Add(1, pbButaca1);// nRO BUTACA
             diccionarioPictureBox.Add(2, pbButaca2);
             diccionarioPictureBox.Add(3, pbButaca3);
             diccionarioPictureBox.Add(4, pbButaca4);
@@ -55,58 +59,16 @@ namespace CinesFront.Presentacion
             cboPelicula.ValueMember = "IdPelicula";
             cboPelicula.DisplayMember = "Titulo";
 
-        //    cboFunciones.DataSource = daofun.TraerFunciones();
 
+            //    cboFunciones.DataSource = daofun.TraerFunciones();
+            cboFunciones.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboSala.DropDownStyle = ComboBoxStyle.DropDownList;
             cboFunciones.DropDownStyle = ComboBoxStyle.DropDownList;
             cboPelicula.DropDownStyle = ComboBoxStyle.DropDownList;
         }
-        /*     public void MostrarButacasDisponibles()
-               {
-                   DateTime fechaSeleccionada = dtpDesde.Value;
-                   string peliculaSelccionada = cboPelicula.SelectedItem?.ToString();
-                   if (peliculaSelccionada != null)
-                   {
-                       List<Butacas> butacas = new List<Butacas>();
-                       butacas = fact.crearDao().TraerButacas(fechaSeleccionada, peliculaSelccionada);
-
-
-                       foreach (var kvp in diccionarioPictureBox)
-                       { //relacionar los picture box y que si el id del picture box figura con el de butacas pintarlo de equis color 
-                           int numeroButaca = kvp.Key;
-                           PictureBox pictureBox = kvp.Value;
-
-                           //buscar butacas con el numero correspondiente en la lista
-                           Butacas but = butacas.FirstOrDefault(but => but.NroButaca == numeroButaca);
-                           if (but != null)
-                           {
-                               if (but.Disponible)
-                               {
-                                   pictureBox.BackColor = Color.Green; //Butaca disponible
-
-                               }
-                               else
-                               {
-                                   pictureBox.BackColor = Color.Red; //butaca no disponible
-                               }
-                           }
-                           else
-                           {
-                               pictureBox.BackColor = Color.Transparent; //no existe
-                           }
-
-
-                       }
-                   }
-                   else
-                   {
-                       MessageBox.Show("Debe seleccionar una pelicula");
-                       cboPelicula.Focus();
-                   }
-               }
-        */
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            //           MostrarButacasDisponibles();
+                   //  MostrarButacasDisponibles();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -118,5 +80,72 @@ namespace CinesFront.Presentacion
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            cboSala.Enabled = true;
+            cboSala.DataSource = daosal.ObtenerSalas(cboPelicula.Text, dtpDesde.Value.ToShortDateString());
+            cboSala.ValueMember = "IdSala";
+            cboSala.DisplayMember = "IdSala";
+        }
+
+        private void cboSala_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            cboFunciones.Enabled = true;
+            cboFunciones.DataSource = daofun.ObtenerFuncion(cboPelicula.Text, dtpDesde.Value.ToShortDateString(), int.Parse(cboSala.Text));
+            cboFunciones.ValueMember = "IdFuncion";
+            cboFunciones.DisplayMember = "Hora";
+        }
+/*        public void MostrarButacasDisponibles()
+        {
+            string peliculaSeleccionada = cboPelicula.DisplayMember;
+            string fechaSeleccionada = dtpDesde.Value.ToShortDateString();
+            int salaSeleccionada = int.Parse(cboSala.Text.ToString()); // No puedo parsear
+            int funcionSeleccionada = int.Parse(cboFunciones.Text);
+
+            if (peliculaSeleccionada != null)
+            {
+                List<Butacas> butacas = new List<Butacas>();
+                butacas = daobut.ObtenerButacas(peliculaSeleccionada, fechaSeleccionada, salaSeleccionada, funcionSeleccionada);
+
+
+                foreach (var kvp in diccionarioPictureBox)
+                { //relacionar los picture box y que si el id del picture box figura con el de butacas pintarlo de equis color 
+                    int numeroButaca = kvp.Key;
+                    PictureBox pictureBox = kvp.Value;
+
+                    //buscar butacas con el numero correspondiente en la lista
+                    Butacas but = butacas.FirstOrDefault(but => but.NroButaca == numeroButaca);
+                    if (but != null)
+                    {
+                        if (but.NroButaca != 0)
+                        {
+                            pictureBox.BackColor = Color.Green; //Butaca disponible
+
+                        }
+                        else
+                        {
+                            pictureBox.BackColor = Color.Red; //butaca no disponible
+                        }
+                    }
+                    else
+                    {
+                        pictureBox.BackColor = Color.Transparent; //no existe
+                    }
+
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar una pelicula");
+                cboPelicula.Focus();
+            }
+        }*/
     }
 }

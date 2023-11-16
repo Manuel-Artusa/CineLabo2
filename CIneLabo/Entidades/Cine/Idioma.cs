@@ -9,8 +9,8 @@ namespace CIneLabo.Entidades.Cine
 {
     public class Idioma
     {
-        private int Id_Idioma { get; set; }
-        private string Lenguaje { get; set; }
+        public int Id_Idioma { get; set; }
+        public string Lenguaje { get; set; }
 
         public Idioma()
         {

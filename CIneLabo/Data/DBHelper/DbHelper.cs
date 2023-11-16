@@ -75,5 +75,53 @@ namespace CIneLabo.Data.DBHelper
             return tabla;
         }
 
+        public DataTable ConsultarConParametros(string nombreSP, string Pelicula, string Fecha)
+        {
+            conexion.Open();
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = conexion;
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = nombreSP;
+            comando.Parameters.AddWithValue("@pelicula", Pelicula);
+            comando.Parameters.AddWithValue("@fecha", Fecha);
+            DataTable tabla = new DataTable();
+            tabla.Load(comando.ExecuteReader());
+            conexion.Close();
+            return tabla;
+        }
+
+        public DataTable ConsultarConParametrosFunciones(string nombreSP, string Pelicula, string Fecha, int Sala)
+        {
+            conexion.Open();
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = conexion;
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = nombreSP;
+            comando.Parameters.AddWithValue("@pelicula", Pelicula);
+            comando.Parameters.AddWithValue("@fecha", Fecha);
+            comando.Parameters.AddWithValue("@sala", Sala);
+            DataTable tabla = new DataTable();
+            tabla.Load(comando.ExecuteReader());
+            conexion.Close();
+            return tabla;
+        }
+
+        public DataTable ConsultarConParametrosButacas(string nombreSP, string Pelicula, string Fecha, int Sala, int Funcion)
+        {
+            conexion.Open();
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = conexion;
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = nombreSP;
+            comando.Parameters.AddWithValue("@pelicula", Pelicula);
+            comando.Parameters.AddWithValue("@fecha", Fecha);
+            comando.Parameters.AddWithValue("@sala", Sala);
+            comando.Parameters.AddWithValue("@funcion", Funcion);
+            DataTable tabla = new DataTable();
+            tabla.Load(comando.ExecuteReader());
+            conexion.Close();
+            return tabla;
+        }
+
     }
 }
