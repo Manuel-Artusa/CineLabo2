@@ -139,6 +139,20 @@ namespace CIneLabo.Data.DBHelper
             conexion.Close();
             return dt;
         }
+        public string ConsultarValorSP(string nombreSP)
+        {
+            string resultado = null;
+            conexion.Open();
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = conexion;
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = nombreSP;
+            object valor = comando.ExecuteScalar();
+            resultado = valor.ToString();
+            conexion.Close();
+            return resultado;
+        }
+
 
     }
 }

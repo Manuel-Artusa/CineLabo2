@@ -62,11 +62,14 @@ namespace CIneLabo.Presentacion
             else
             {
                 MessageBox.Show("No se encontraron suficientes clientes para el género seleccionado.");
+                txtPrimero.Text = string.Empty;
+                txtSegundo.Text = string.Empty;
+                txtTercero .Text = string.Empty;
             }
         }
         private void MostrarClienteEnTextBox(DataRow cliente, TextBox textBox)
         {
-            textBox.Text = $"{cliente["NOMBRE_CLIENTE"]} {cliente["APELLIDO_CLIENTE"]} - Total Gastado: {cliente["TotalGastado"]}";
+            textBox.Text = $"{cliente["NOMBRE_CLIENTE"]} {cliente["APELLIDO_CLIENTE"]} \n Total Gastado: {cliente["TotalGastado"]}";
         }
 
 

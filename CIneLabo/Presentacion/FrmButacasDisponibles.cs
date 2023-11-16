@@ -28,7 +28,7 @@ namespace CinesFront.Presentacion
             daofun = new DaoFuncion();
             daobut = new DaoButacas();
             EnlazarButacasConNumeritos();
-  //          MostrarButacasDisponibles();
+          //  MostrarButacasDisponibles();
         }
 
         public void EnlazarButacasConNumeritos()
@@ -101,17 +101,18 @@ namespace CinesFront.Presentacion
             cboFunciones.ValueMember = "IdFuncion";
             cboFunciones.DisplayMember = "Hora";
         }
-/*        public void MostrarButacasDisponibles()
+ /*        public void MostrarButacasDisponibles()
         {
-            string peliculaSeleccionada = cboPelicula.DisplayMember;
-            string fechaSeleccionada = dtpDesde.Value.ToShortDateString();
-            int salaSeleccionada = int.Parse(cboSala.Text.ToString()); // No puedo parsear
-            int funcionSeleccionada = int.Parse(cboFunciones.Text);
+ //          string peliculaSeleccionada = cboPelicula.DisplayMember;
+ //           string fechaSeleccionada = dtpDesde.Value.ToShortDateString();
+ //           int salaSeleccionada = cboSala.DisplayMember;
+            // No puedo parsear
+ //           int funcionSeleccionada = int.Parse(cboFunciones.ValueMember);
 
-            if (peliculaSeleccionada != null)
-            {
-                List<Butacas> butacas = new List<Butacas>();
-                butacas = daobut.ObtenerButacas(peliculaSeleccionada, fechaSeleccionada, salaSeleccionada, funcionSeleccionada);
+//            if (cboPelicula.SelectedIndex != 0)
+  //          {
+   //             List<Butacas> butacas = new List<Butacas>();
+ //               butacas = daobut.ObtenerButacas(cboPelicula.Text, dtpDesde.Value.ToShortDateString(), int.Parse(cboSala.Text), int.Parse(cboFunciones.Text));
 
 
                 foreach (var kvp in diccionarioPictureBox)
@@ -120,7 +121,8 @@ namespace CinesFront.Presentacion
                     PictureBox pictureBox = kvp.Value;
 
                     //buscar butacas con el numero correspondiente en la lista
-                    Butacas but = butacas.FirstOrDefault(but => but.NroButaca == numeroButaca);
+ //                   Butacas but = butacas.FirstOrDefault(but => but.NroButaca == numeroButaca);
+   //                    Butacas but 
                     if (but != null)
                     {
                         if (but.NroButaca != 0)
@@ -140,7 +142,7 @@ namespace CinesFront.Presentacion
 
 
                 }
-            }
+ /*           }
             else
             {
                 MessageBox.Show("Debe seleccionar una pelicula");
