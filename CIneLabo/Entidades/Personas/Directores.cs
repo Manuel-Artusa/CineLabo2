@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 namespace CIneLabo.Entidades.Personas
 {
 
-    internal class Directores : Persona
+    public class Directores : Persona
     {
-        private int id_Director { get; set; }
-        private DateTime Fec_comienzo { get; set; }
+        public int id_Director { get; set; }
+        public DateTime Fec_comienzo { get; set; }
 
-        private Persona Persona { get; set; }
+        public Persona Persona { get; set; }
         public Directores()
         {
             id_Director = 0;

@@ -3,8 +3,8 @@
 
     public class PaisOrigen
     {
-        private int IdPais { get; set; }
-        private string Pais { get; set; }
+        public int IdPais { get; set; }
+        public string Pais { get; set; }
 
         public PaisOrigen()
         {

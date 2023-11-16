@@ -44,8 +44,8 @@ namespace CIneLabo.Data.DBHelper
             return tabla;
         }
 
-        
-        public DataTable Consultar(string nombreSP,string param)
+
+        public DataTable Consultar(string nombreSP, string param)
         {
             conexion.Open();
             SqlCommand comando = new SqlCommand();
@@ -121,6 +121,23 @@ namespace CIneLabo.Data.DBHelper
             tabla.Load(comando.ExecuteReader());
             conexion.Close();
             return tabla;
+        }
+        public DataTable ConsultarConFechas(string v, DateTime fechaInicio, DateTime fechaFin/*, string nombreCine*/)
+        {
+            conexion.Open();
+
+            SqlCommand comando = new SqlCommand();
+            DataTable dt = new DataTable();
+            comando.Connection = conexion;
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = v;
+            comando.Parameters.AddWithValue("@FechaInicio", fechaInicio);
+            comando.Parameters.AddWithValue("@FechaFin", fechaFin);
+            //comando.Parameters.AddWithValue("@NombreCine", nombreCine);
+            SqlDataAdapter adapter = new SqlDataAdapter(comando);
+            adapter.Fill(dt);
+            conexion.Close();
+            return dt;
         }
 
     }

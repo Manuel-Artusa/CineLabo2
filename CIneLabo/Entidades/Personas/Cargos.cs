@@ -3,10 +3,10 @@
 namespace CIneLabo.Entidades.Personas
 {
 
-    internal class Cargos
+    public class Cargos
     {
-        private int IdCargos { get; set; }
-        private string Cargo { get; set; }
+        public int IdCargos { get; set; }
+        public string Cargo { get; set; }
 
         public Cargos()
         {

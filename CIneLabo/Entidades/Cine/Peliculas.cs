@@ -17,6 +17,9 @@ namespace CIneLabo.Entidades.Cine
 
         public Idioma Idioma { get; set; }
         public DateTime Fec_Estreno { get; set; }
+        
+        public Idioma Idioma { get; set; }
+        public DateTime Fec_Estreno { get; set; }
         public Pais IdPais { get; set; }
 
         public Peliculas()

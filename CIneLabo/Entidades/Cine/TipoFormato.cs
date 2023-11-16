@@ -2,8 +2,8 @@
 {
     public class TipoFormato
     {
-        private int IdTipoFormato { get; set; }
-        private string Tipo { get; set; }
+        public int IdTipoFormato { get; set; }
+        public string Tipo { get; set; }
         public TipoFormato()
         {
             IdTipoFormato = 0;

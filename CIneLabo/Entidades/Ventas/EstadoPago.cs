@@ -1,9 +1,9 @@
 ﻿namespace CIneLabo.Entidades.Ventas
 {
-    internal class EstadoPago
+    public class EstadoPago
     {
-        private int IdEstadoPago { get; set; }
-        private string Estado { get; set; }
+        public int IdEstadoPago { get; set; }
+        public string Estado { get; set; }
 
         public EstadoPago()
         {

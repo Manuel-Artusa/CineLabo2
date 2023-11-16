@@ -5,6 +5,12 @@
         public int IdSala { get; set; }
         public int Numero { get; set; }
 
+        public TipoSala tipo { get; set; }
+
+        public int Asientos { get; set; }
+
+        public Cines cine { get; set; }
+
         public Salas()
         {
             IdSala = 0;

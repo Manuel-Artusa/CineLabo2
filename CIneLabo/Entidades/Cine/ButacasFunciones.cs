@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace CIneLabo.Entidades.Cine
 {
-    internal class ButacasFunciones
+    public class ButacasFunciones
     {
-        private int IdButacasFuncion { get; set; }
-        private Butacas butaca { get; set; }
-        private Funciones funcion { get; set; }
+        public int IdButacasFuncion { get; set; }
+        public Butacas butaca { get; set; }
+        public Funciones funcion { get; set; }
 
-        private Reservas reserva { get; set; }
+        public Reservas reserva { get; set; }
 
         public ButacasFunciones()
         {

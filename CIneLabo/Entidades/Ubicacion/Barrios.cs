@@ -8,8 +8,8 @@ namespace CIneLabo.Entidades.Ubicacion
 {
     public class Barrios : Localidades
     {
-        private int idBarrio { get; set; }
-        private string barrio { get; set; }
+        public int idBarrio { get; set; }
+        public string barrio { get; set; }
 
         public Localidades Localidad { get; set; }
 

@@ -8,15 +8,15 @@ using CIneLabo.Entidades.Personas;
 
 namespace CIneLabo.Entidades.Ventas
 {
-    internal class DetalleComprobante
+    public class DetalleComprobante
     {
-        private int IdDetalleComprobante { get; set; }
-        private Comprobantes comprobante { get; set; }
-        private Funciones funcione { get; set; }
-        private ButacasFunciones butacaXfuncion { get; set; }
+        public int IdDetalleComprobante { get; set; }
+        public Comprobantes comprobante { get; set; }
+        public Funciones funcione { get; set; }
+        public ButacasFunciones butacaXfuncion { get; set; }
 
-        private FormaPago formaPago { get; set; }
-        private double precio { get; set; }
+        public FormaPago formaPago { get; set; }
+        public double precio { get; set; }
 
         public DetalleComprobante()
         {
