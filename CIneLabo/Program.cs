@@ -15,7 +15,7 @@ namespace CIneLabo
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             //Application.Run(new FrmInformeMejoresFormasDePago());
-            Application.Run(new FrmInformeDeVentasPorMes());
+            Application.Run(new FrmActualizacionPrecio());
 
             //Application.Run(new FrmActualizacionPrecio());
 

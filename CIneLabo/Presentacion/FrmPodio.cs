@@ -107,5 +107,7 @@ namespace CIneLabo.Presentacion
             }
             Mostrartop3Clientes(generoSeleccionado);
         }
+
+
     }
 }

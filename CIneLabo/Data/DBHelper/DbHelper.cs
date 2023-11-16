@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CIneLabo.Entidades.Cine;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -17,7 +18,7 @@ namespace CIneLabo.Data.DBHelper
         private DbHelper()
         {
 
-            conexion = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=cine5;Integrated Security=True");
+            conexion = new SqlConnection(@"Data Source =.\SQLEXPRESS; Initial Catalog = cine2; Integrated Security = True");
 
         }
 
@@ -46,8 +47,36 @@ namespace CIneLabo.Data.DBHelper
             return tabla;
         }
 
-        
-        public DataTable Consultar(string nombreSP,string param)
+        public string ConsultarValorSP(string nombreSP)
+        {
+            string resultado = null;
+
+
+            conexion.Open();
+
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = conexion;
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = nombreSP;
+
+            
+            object valor = comando.ExecuteScalar();
+
+            
+
+            resultado = valor.ToString();
+
+
+
+
+            conexion.Close();
+
+
+            return resultado;
+
+        }
+
+        public DataTable Consultar(string nombreSP, string param)
         {
             conexion.Open();
             SqlCommand comando = new SqlCommand();
@@ -84,7 +113,7 @@ namespace CIneLabo.Data.DBHelper
             SqlCommand comando = new SqlCommand();
             DataTable dt = new DataTable();
             comando.Connection = conexion;
-            comando.CommandType= CommandType.StoredProcedure;
+            comando.CommandType = CommandType.StoredProcedure;
             comando.CommandText = v;
             comando.Parameters.AddWithValue("@FechaInicio", fechaInicio);
             comando.Parameters.AddWithValue("@FechaFin", fechaFin);

@@ -31,15 +31,15 @@
             button1 = new Button();
             button2 = new Button();
             txtDolarAntes = new TextBox();
-            textBox2 = new TextBox();
+            txtPorcentaje = new TextBox();
             txtValorDolarActual = new TextBox();
             lblValDolAnt = new Label();
             label1 = new Label();
             label2 = new Label();
-            dataGridView1 = new DataGridView();
+            dgvPeliPrecio = new DataGridView();
             ColPelicula = new DataGridViewTextBoxColumn();
             ColPrecio = new DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPeliPrecio).BeginInit();
             SuspendLayout();
             // 
             // button1
@@ -60,20 +60,22 @@
             button2.TabIndex = 1;
             button2.Text = "Actualizar Precio";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // txtDolarAntes
             // 
+            txtDolarAntes.Enabled = false;
             txtDolarAntes.Location = new Point(30, 55);
             txtDolarAntes.Name = "txtDolarAntes";
             txtDolarAntes.Size = new Size(108, 23);
             txtDolarAntes.TabIndex = 2;
             // 
-            // textBox2
+            // txtPorcentaje
             // 
-            textBox2.Location = new Point(393, 138);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(90, 23);
-            textBox2.TabIndex = 3;
+            txtPorcentaje.Location = new Point(393, 138);
+            txtPorcentaje.Name = "txtPorcentaje";
+            txtPorcentaje.Size = new Size(90, 23);
+            txtPorcentaje.TabIndex = 3;
             // 
             // txtValorDolarActual
             // 
@@ -106,24 +108,24 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Silver;
-            label2.Location = new Point(393, 103);
+            label2.Location = new Point(393, 107);
             label2.Name = "label2";
-            label2.Size = new Size(90, 15);
+            label2.Size = new Size(113, 15);
             label2.TabIndex = 7;
-            label2.Text = "Precio Sugerido";
+            label2.Text = "Porcentaje Sugerido";
             // 
-            // dataGridView1
+            // dgvPeliPrecio
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ColPelicula, ColPrecio });
-            dataGridView1.Location = new Point(30, 118);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(294, 254);
-            dataGridView1.TabIndex = 8;
+            dgvPeliPrecio.AllowUserToAddRows = false;
+            dgvPeliPrecio.AllowUserToDeleteRows = false;
+            dgvPeliPrecio.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPeliPrecio.Columns.AddRange(new DataGridViewColumn[] { ColPelicula, ColPrecio });
+            dgvPeliPrecio.Location = new Point(30, 118);
+            dgvPeliPrecio.Name = "dgvPeliPrecio";
+            dgvPeliPrecio.ReadOnly = true;
+            dgvPeliPrecio.RowTemplate.Height = 25;
+            dgvPeliPrecio.Size = new Size(294, 254);
+            dgvPeliPrecio.TabIndex = 8;
             // 
             // ColPelicula
             // 
@@ -144,19 +146,19 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(546, 416);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvPeliPrecio);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(lblValDolAnt);
             Controls.Add(txtValorDolarActual);
-            Controls.Add(textBox2);
+            Controls.Add(txtPorcentaje);
             Controls.Add(txtDolarAntes);
             Controls.Add(button2);
             Controls.Add(button1);
             Name = "FrmActualizacionPrecio";
             Text = "Actualizacion Precio Entradas";
             Load += FrmActualizacionPrecio_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPeliPrecio).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -166,12 +168,12 @@
         private Button button1;
         private Button button2;
         private TextBox txtDolarAntes;
-        private TextBox textBox2;
+        private TextBox txtPorcentaje;
         private TextBox txtValorDolarActual;
         private Label lblValDolAnt;
         private Label label1;
         private Label label2;
-        private DataGridView dataGridView1;
+        private DataGridView dgvPeliPrecio;
         private DataGridViewTextBoxColumn ColPelicula;
         private DataGridViewTextBoxColumn ColPrecio;
     }
