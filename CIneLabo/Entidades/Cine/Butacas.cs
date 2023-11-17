@@ -12,7 +12,7 @@ namespace CIneLabo.Entidades.Cine
         public int NroButaca { get; set; }
         public int Fila { get; set; }
 
-        public Salas sala { get; set; }
+        public Salas Sala { get; set; }
 
 
         public Butacas()
