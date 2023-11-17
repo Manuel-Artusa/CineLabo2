@@ -79,6 +79,7 @@
             cboSala = new ComboBox();
             label24 = new Label();
             button2 = new Button();
+            btnSalir = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox19).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbButaca18).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbButaca17).BeginInit();
@@ -647,7 +648,7 @@
             // 
             // pbButaca2
             // 
-            pbButaca2.BackColor = Color.Maroon;
+            pbButaca2.BackColor = Color.Black;
             pbButaca2.BackgroundImage = CIneLabo.Properties.Resources.Butaca;
             pbButaca2.Image = CIneLabo.Properties.Resources.Butaca;
             pbButaca2.Location = new Point(718, 173);
@@ -722,12 +723,27 @@
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
+            // btnSalir
+            // 
+            btnSalir.BackColor = Color.IndianRed;
+            btnSalir.Cursor = Cursors.Hand;
+            btnSalir.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            btnSalir.Location = new Point(94, 780);
+            btnSalir.Margin = new Padding(3, 4, 3, 4);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(266, 53);
+            btnSalir.TabIndex = 167;
+            btnSalir.Text = "Salir";
+            btnSalir.UseVisualStyleBackColor = false;
+            btnSalir.Click += btnSalir_Click;
+            // 
             // FrmButacasDisponibles
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Desktop;
             ClientSize = new Size(1759, 999);
+            Controls.Add(btnSalir);
             Controls.Add(button2);
             Controls.Add(cboSala);
             Controls.Add(label24);
@@ -859,5 +875,6 @@
         private ComboBox cboSala;
         private Label label24;
         private Button button2;
+        private Button btnSalir;
     }
 }

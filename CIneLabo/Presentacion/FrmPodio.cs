@@ -64,7 +64,7 @@ namespace CIneLabo.Presentacion
                 MessageBox.Show("No se encontraron suficientes clientes para el género seleccionado.");
                 txtPrimero.Text = string.Empty;
                 txtSegundo.Text = string.Empty;
-                txtTercero .Text = string.Empty;
+                txtTercero.Text = string.Empty;
             }
         }
         private void MostrarClienteEnTextBox(DataRow cliente, TextBox textBox)
@@ -109,6 +109,14 @@ namespace CIneLabo.Presentacion
                                                    fila["TotalGastado"].ToString()});
             }
             Mostrartop3Clientes(generoSeleccionado);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Estas seguro que desea volver al menú principal?", "SALIR", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }

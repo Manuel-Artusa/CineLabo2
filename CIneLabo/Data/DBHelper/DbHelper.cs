@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CIneLabo.Entidades.Cine;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -16,7 +17,9 @@ namespace CIneLabo.Data.DBHelper
         private SqlConnection conexion;
         private DbHelper()
         {
-            conexion = new SqlConnection("Data Source=.\\sqlexpress;Initial Catalog=cine2;Integrated Security=True");
+
+            conexion = new SqlConnection(@"Data Source =.\SQLEXPRESS; Initial Catalog = cine2; Integrated Security = True");
+
         }
 
         public SqlConnection GetConnection()
@@ -44,8 +47,8 @@ namespace CIneLabo.Data.DBHelper
             return tabla;
         }
 
-
-        public DataTable Consultar(string nombreSP, string param)
+        
+        public DataTable Consultar(string nombreSP,string param)
         {
             conexion.Open();
             SqlCommand comando = new SqlCommand();

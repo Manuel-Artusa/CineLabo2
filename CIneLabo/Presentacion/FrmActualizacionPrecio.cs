@@ -1,5 +1,6 @@
 ﻿using CIneLabo.Data;
 using CIneLabo.Data.DBHelper;
+using CIneLabo.Entidades.Cine;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -56,8 +57,7 @@ namespace CIneLabo.Presentacion
             txtPorcentaje.Text = (((valorDolarActual - dolarAntes) / dolarAntes) * 100).ToString();
         }
 
-
-        private void button2_Click_1(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             string sp = "AjustarPreciosPorDolar";
             List<Parametro> lst = new List<Parametro>();
@@ -66,6 +66,16 @@ namespace CIneLabo.Presentacion
             DataTable table = DbHelper.GetInstancia().Consultar(sp, lst);
             dgvPeliPrecio.DataSource = null;
             llenarDGV();
+        }
+
+        private void lblValDolAnt_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

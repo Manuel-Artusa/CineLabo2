@@ -30,9 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPodio));
             dgvPodio = new DataGridView();
-            Colposicion = new DataGridViewTextBoxColumn();
-            ColNombre = new DataGridViewTextBoxColumn();
-            ColPuntos = new DataGridViewTextBoxColumn();
             txtSegundo = new TextBox();
             txtPrimero = new TextBox();
             txtTercero = new TextBox();
@@ -44,6 +41,9 @@
             button1 = new Button();
             label3 = new Label();
             label1 = new Label();
+            Colposicion = new DataGridViewTextBoxColumn();
+            ColNombre = new DataGridViewTextBoxColumn();
+            ColPuntos = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvPodio).BeginInit();
             SuspendLayout();
             // 
@@ -62,30 +62,6 @@
             dgvPodio.Size = new Size(758, 393);
             dgvPodio.TabIndex = 0;
             dgvPodio.CellContentClick += dgvPodio_CellContentClick;
-            // 
-            // Colposicion
-            // 
-            Colposicion.HeaderText = "Posicion";
-            Colposicion.MinimumWidth = 6;
-            Colposicion.Name = "Colposicion";
-            Colposicion.ReadOnly = true;
-            Colposicion.Width = 200;
-            // 
-            // ColNombre
-            // 
-            ColNombre.HeaderText = "Nombre y Apellido";
-            ColNombre.MinimumWidth = 6;
-            ColNombre.Name = "ColNombre";
-            ColNombre.ReadOnly = true;
-            ColNombre.Width = 350;
-            // 
-            // ColPuntos
-            // 
-            ColPuntos.HeaderText = "Puntos";
-            ColPuntos.MinimumWidth = 6;
-            ColPuntos.Name = "ColPuntos";
-            ColPuntos.ReadOnly = true;
-            ColPuntos.Width = 200;
             // 
             // txtSegundo
             // 
@@ -211,6 +187,7 @@
             button1.TabIndex = 7;
             button1.Text = "VOLVER";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label3
             // 
@@ -235,6 +212,30 @@
             label1.Size = new Size(375, 25);
             label1.TabIndex = 99;
             label1.Text = "MEJORES CLIENTES POR GENERO";
+            // 
+            // Colposicion
+            // 
+            Colposicion.HeaderText = "ID";
+            Colposicion.MinimumWidth = 6;
+            Colposicion.Name = "Colposicion";
+            Colposicion.ReadOnly = true;
+            Colposicion.Width = 200;
+            // 
+            // ColNombre
+            // 
+            ColNombre.HeaderText = "Nombre y Apellido";
+            ColNombre.MinimumWidth = 6;
+            ColNombre.Name = "ColNombre";
+            ColNombre.ReadOnly = true;
+            ColNombre.Width = 350;
+            // 
+            // ColPuntos
+            // 
+            ColPuntos.HeaderText = "Puntos";
+            ColPuntos.MinimumWidth = 6;
+            ColPuntos.Name = "ColPuntos";
+            ColPuntos.ReadOnly = true;
+            ColPuntos.Width = 200;
             // 
             // FrmPodio
             // 
@@ -279,11 +280,11 @@
         private GroupBox gbTercero;
         private Button btnActualizar;
         private ComboBox cboGenero;
-        private DataGridViewTextBoxColumn Colposicion;
-        private DataGridViewTextBoxColumn ColNombre;
-        private DataGridViewTextBoxColumn ColPuntos;
         private Button button1;
         private Label label3;
         private Label label1;
+        private DataGridViewTextBoxColumn Colposicion;
+        private DataGridViewTextBoxColumn ColNombre;
+        private DataGridViewTextBoxColumn ColPuntos;
     }
 }

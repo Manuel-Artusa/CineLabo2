@@ -1,4 +1,5 @@
 ﻿using CIneLabo.Presentacion;
+using CinesFront.Presentacion;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -64,13 +65,57 @@ namespace CineApp.Forms
 
         private void lblReporte_Click(object sender, EventArgs e)
         {
+            if (btnClientes.Enabled == true)
+            {
+                btnClientes.Enabled = false;
+                btnClientes.Visible = false;
+                btnButacas.Enabled = false;
+                btnButacas.Visible = false;
+                btnVentas.Enabled = false;
+                btnVentas.Visible = false;
+                btnActualizarPrecio.Enabled = false;
+                btnActualizarPrecio.Visible = false;
+                btnButacasDisponibles.Enabled = false;
+                btnButacasDisponibles.Visible = false;
+                btnMejoresClientes.Enabled = false;
+                btnMejoresClientes.Visible = false;
+                btnVentasPorMes.Enabled = false;
+                btnVentasPorMes.Visible = false;
+                btnFormasPago.Enabled = false;
+                btnFormasPago.Visible = false;
+            }
+            else
+            {
+                btnClientes.Enabled = true;
+                btnClientes.Visible = true;
+                btnButacas.Enabled = true;
+                btnButacas.Visible = true;
+                btnVentas.Enabled = true;
+                btnVentas.Visible = true;
+            }
 
         }
 
         private void iconoReporte_Click(object sender, EventArgs e)
         {
-            FrmPodio podio = new FrmPodio();
-            podio.ShowDialog();
+            if (btnClientes.Enabled == true)
+            {
+                btnClientes.Enabled = false;
+                btnClientes.Visible = false;
+                btnButacas.Enabled = false;
+                btnButacas.Visible = false;
+                btnVentas.Enabled = false;
+                btnVentas.Visible = false;
+            }
+            else
+            {
+                btnClientes.Enabled = true;
+                btnClientes.Visible = true;
+                btnButacas.Enabled = true;
+                btnButacas.Visible = true;
+                btnVentas.Enabled = true;
+                btnVentas.Visible = true;
+            }
 
         }
 
@@ -80,6 +125,74 @@ namespace CineApp.Forms
             {
                 this.Close();
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FrmPodio podio = new FrmPodio();
+            podio.ShowDialog();
+        }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            if (btnMejoresClientes.Enabled == false)
+            {
+                btnMejoresClientes.Enabled = true;
+                btnMejoresClientes.Visible = true;
+            }
+            else { btnMejoresClientes.Enabled = false; btnMejoresClientes.Visible = false; }
+        }
+
+        private void btnButacas_Click(object sender, EventArgs e)
+        {
+            if (btnButacasDisponibles.Enabled == false) { btnButacasDisponibles.Enabled = true; btnButacasDisponibles.Visible = true; }
+            else { btnButacasDisponibles.Enabled = false; btnButacasDisponibles.Visible = false; }
+        }
+
+        private void btnVentas_Click(object sender, EventArgs e)
+        {
+            if (btnVentasPorMes.Enabled == false)
+            {
+                btnVentasPorMes.Enabled = true;
+                btnVentasPorMes.Visible = true;
+                btnFormasPago.Enabled = true;
+                btnFormasPago.Visible = true;
+                btnActualizarPrecio.Enabled = true;
+                btnActualizarPrecio.Visible = true;
+            }
+            else
+            {
+                btnVentasPorMes.Enabled = false;
+                btnVentasPorMes.Visible = false;
+                btnFormasPago.Enabled = false;
+                btnFormasPago.Visible = false;
+                btnActualizarPrecio.Enabled = false;
+                btnActualizarPrecio.Visible = false;
+            }
+        }
+
+        private void btnButacasDisponibles_Click(object sender, EventArgs e)
+        {
+            FrmButacasDisponibles butDisponible = new FrmButacasDisponibles();
+            butDisponible.ShowDialog();
+        }
+
+        private void btnVentasPorMes_Click(object sender, EventArgs e)
+        {
+            FrmInformeDeVentasPorMes ventasMes = new FrmInformeDeVentasPorMes();
+            ventasMes.ShowDialog();
+        }
+
+        private void btnFormasPago_Click(object sender, EventArgs e)
+        {
+            FrmInformeMejoresFormasDePago formaPago = new FrmInformeMejoresFormasDePago();
+            formaPago.ShowDialog();
+        }
+
+        private void btnActualizarPrecio_Click(object sender, EventArgs e)
+        {
+            FrmActualizacionPrecio actPrecio = new FrmActualizacionPrecio();
+            actPrecio.ShowDialog();
         }
     }
 }
