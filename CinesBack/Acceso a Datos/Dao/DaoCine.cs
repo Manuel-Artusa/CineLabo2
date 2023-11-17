@@ -22,7 +22,13 @@ namespace SistemaCineBack.Acceso_a_Datos.Dao
         }
 
 
+        public Peliculas TraerPeliculaPorId(int idPelicula)
+        {
+            List<Peliculas> lpeliculas = TraerPeliculas();
+            Peliculas peliculaEncontrada = lpeliculas.FirstOrDefault(p => p.IdPelicula == idPelicula);
+            return peliculaEncontrada;
 
+        }
 
         public List<Asientos> consultarAsientos()
         {
@@ -42,13 +48,13 @@ namespace SistemaCineBack.Acceso_a_Datos.Dao
         public List<Butacas> TraerButacas()
         {
 
-            return HelperDB.obtenerInstancia().TraerButacas(DateTime.Now, "", TimeSpan.Zero);
+            return HelperDB.obtenerInstancia().TraerButacas(DateTime.Now.ToShortDateString(), "");
 
         }
 
-        public List<Butacas> TraerButacas(DateTime fechaSeleccionada, string? peliculaSelccionada, TimeSpan hora)
+        public List<Butacas> TraerButacas(string fechaSeleccionada, string? peliculaSelccionada)
         {
-            return HelperDB.obtenerInstancia().TraerButacas(fechaSeleccionada, peliculaSelccionada, hora);
+            return HelperDB.obtenerInstancia().TraerButacas(fechaSeleccionada, peliculaSelccionada);
         }
         //Metodo Para COMPROBANTES
         public List<Comprobantes> TraerComprobantes()
@@ -91,13 +97,7 @@ namespace SistemaCineBack.Acceso_a_Datos.Dao
             }
             return ldetalles;
         }
-        public Peliculas TraerPeliculaPorId(int idPelicula)
-        {
-            List<Peliculas> lpeliculas = TraerPeliculas();
-            Peliculas peliculaEncontrada = lpeliculas.FirstOrDefault(p => p.IdPelicula == idPelicula);
-            return peliculaEncontrada;
-
-        }
+    
         //Metodo Para Funciones
         public List<Funciones> TraerFunciones(string pelicula, string fechita)
         {

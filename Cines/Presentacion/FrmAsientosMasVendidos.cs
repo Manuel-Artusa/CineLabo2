@@ -60,7 +60,7 @@ namespace Cines.Presentacion
             DateTime fechaSeleccionada = dtpDesde.Value;
             string peliculaSelccionada = cboPelicula.SelectedItem.ToString();
             List<Butacas> butacas = new List<Butacas>();
-             butacas = dao.TraerButacas(fechaSeleccionada, peliculaSelccionada, TimeSpan.Zero);
+             butacas = dao.TraerButacas(fechaSeleccionada.ToShortDateString(), peliculaSelccionada);
             foreach (Butacas b in butacas )
             {//Metodo para que me pinte de color las butacas que esten disponibles
                 PictureBox PB = new PictureBox();

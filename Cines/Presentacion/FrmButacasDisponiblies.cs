@@ -101,7 +101,7 @@ namespace CinesFront.Presentacion
                 try
                 {
                     // Obtener la lista de butacas disponibles para la película y fecha seleccionadas
-                    List<Butacas> butacas = fact.crearDao().TraerButacas(fechaSeleccionada, peliculaSelccionada, hora);
+                    List<Butacas> butacas = fact.crearDao().TraerButacas(fechaSeleccionada.ToShortDateString(), peliculaSelccionada);
 
                     // Iterar a través de los PictureBox en el diccionario
                     foreach (var kvp in diccionarioPictureBox)

@@ -21,7 +21,8 @@ namespace SistemaCineBack.Acceso_a_Datos.Dao
         List<Comprobantes> TraerComprobantes();
         DataTable obtenerInformeVentasPorMes(int Mes, int Anio);
         List<Peliculas> TraerPeliculas();
-        List<Butacas> TraerButacas(DateTime fechaSeleccionada, string? peliculaSelccionada, TimeSpan hora);
+        List<Butacas> TraerButacas(string fechaSeleccionada, string? peliculaSelccionada);
         List<Funciones> TraerFunciones(string pelicula, string fechita);
+        public Peliculas TraerPeliculaPorId(int idPelicula);
     }
 }

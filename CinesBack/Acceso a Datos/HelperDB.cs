@@ -92,7 +92,7 @@ namespace SistemaCineBack.Acceso_a_Datos
             return (int)pOut.Value;
         }
         //Metodo Traer Butacas
-        public List<Butacas> TraerButacas(DateTime fechaFuncion, string pelicula, TimeSpan Hora)
+        public List<Butacas> TraerButacas(string fechaFuncion, string pelicula)
         {
             List<Butacas> lButacas = new List<Butacas>();
 
@@ -107,7 +107,7 @@ namespace SistemaCineBack.Acceso_a_Datos
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add(new SqlParameter("@FechaFuncion", fechaFuncion));
                         cmd.Parameters.Add(new SqlParameter("@Pelicula", pelicula));
-                        cmd.Parameters.Add(new SqlParameter("@HoraFuncion", Hora.Ticks));
+                        //cmd.Parameters.Add(new SqlParameter("@HoraFuncion", Hora.Ticks));
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {
                             while (reader.Read())
