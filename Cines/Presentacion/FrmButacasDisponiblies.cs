@@ -1,6 +1,8 @@
 ﻿using Cines.Acceso_a_Datos.Factory;
 using Cines.Clases.Cine;
 using Cines.Clases.Cines.Cine;
+using CinesFront.Http;
+using Newtonsoft.Json;
 using SistemaCineBack.Acceso_a_Datos.Dao;
 using System;
 using System.Collections.Generic;
@@ -22,6 +24,11 @@ namespace CinesFront.Presentacion
         private Butacas butaca;
         private aFactoria fact;
         private Dictionary<int, PictureBox> diccionarioPictureBox;
+
+
+
+
+
         public FrmButacasDisponiblies()
         {
             InitializeComponent();
@@ -29,6 +36,7 @@ namespace CinesFront.Presentacion
             ClickEnBoton = false;
             diccionarioPictureBox = new Dictionary<int, PictureBox>();
             EnlazarButacasConNumeritos();
+           
 
         }
 
@@ -60,9 +68,13 @@ namespace CinesFront.Presentacion
             diccionarioPictureBox.Add(24, pictureBox24);
             diccionarioPictureBox.Add(25, pictureBox25);
         }
-        private void FrmButacasDisponiblies_Load(object sender, EventArgs e)
+        private async void FrmButacasDisponiblies_LoadAsync(object sender, EventArgs e)
         {
-            //Cargo el comboBox de Peliculas
+            //cargarComboPelicula();
+            await cargarButacas();
+        }
+        private void cargarComboPelicula()
+        {
             cboPelicula.DataSource = fact.crearDao().TraerPeliculas();
             cboPelicula.ValueMember = "TITULO";
             cboPelicula.DisplayMember = "ID_PELICULA";
@@ -70,14 +82,12 @@ namespace CinesFront.Presentacion
             cboPelicula.SelectedItem = 1;
 
 
-           
+
             foreach (var kvp in diccionarioPictureBox)
             {
                 kvp.Value.Click += PictureBox_Click;
             }
-
         }
-
         public void MostrarButacasDisponibles()
         {
             // Obtener la fecha seleccionada del DateTimePicker
@@ -188,17 +198,49 @@ namespace CinesFront.Presentacion
 
         }
 
-        private void btnHabilitarFuncion_Click(object sender, EventArgs e)
+        private async void btnHabilitarFuncion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void FrmButacasDisponiblies_Load_1(object sender, EventArgs e)
+        {
+            await cargarButacas();
+        }
+        private async Task cargarButacas()
+        {
+            string url = string.Format("https://localhost:7011/Peliculas");
+            var data = await
+            ClienteSingleton.GetInstance().GetAsync(url);
+            List<Peliculas> peliculas = JsonConvert.DeserializeObject<List<Peliculas>>(data);
+            cboPelicula.DataSource = peliculas;
+            cboPelicula.ValueMember = "TITULO";
+            cboPelicula.DisplayMember = "ID_PELICULA";
+            cboPelicula.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboPelicula.SelectedItem = 1;
+            
+        }
+
+        private async void btnHabilitarFuncion_Click_1(object sender, EventArgs e)
         {
             if (cboPelicula.SelectedItem != null)
             {
-
-                //Cargo el comboBox de funciones
-                cboFunciones.DataSource = fact.crearDao().TraerFunciones(cboPelicula.Text, dtpDesde.Value.ToShortDateString());
-                cboFunciones.ValueMember = "IdFuncion";
-                cboFunciones.DisplayMember = "Hora";
-                cboFunciones.DropDownStyle = ComboBoxStyle.DropDownList;
-                cboFunciones.SelectedItem = null;
-            }        }
+                await cargarComboFuncion(dtpDesde.Value.ToShortDateString(), cboPelicula.Text);
+           
+            }
+        }
+        private async Task cargarComboFuncion(string fecha, string pelicula)
+        {
+            //Cargo el comboBox de funciones
+            string url = string.Format("https://localhost:7011/Funciones" + fecha + "");
+            var data = await
+                ClienteSingleton.GetInstance().GetAsync(url);
+            List<Funciones> lstFunciones = JsonConvert.DeserializeObject<List<Funciones>>(data);
+            cboFunciones.DataSource = lstFunciones;
+            cboFunciones.ValueMember = "IdFuncion";
+            cboFunciones.DisplayMember = "Hora";
+            cboFunciones.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboFunciones.SelectedItem = null;
+        }
     }
 }

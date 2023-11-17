@@ -25,7 +25,7 @@ namespace Cines
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
-            new FrmVentas().ShowDialog();
+            //new FrmVentas().ShowDialog();
         }
     }
 }
