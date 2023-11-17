@@ -33,10 +33,17 @@ namespace CIneLabo.Presentacion
             dgvPeliPrecio.Rows.Clear();
             foreach (DataRow fila in table.Rows)
             {
+<<<<<<< HEAD
                 dgvPeliPrecio.Rows.Add(new object[] { fila["NombrePelicula"],
                                                    fila["Precio"].ToString()});
             }
 
+=======
+                dgvPeliPrecio.Rows.Add(new object[] { fila["NombrePelicula"],                                                   
+                                                   fila["Precio"].ToString()});
+            }
+            
+>>>>>>> 476b5ae036dece9b065858a05448aa8e6d04e10e
         }
         private void cargarvalordolar()
         {
@@ -66,6 +73,7 @@ namespace CIneLabo.Presentacion
             DataTable table = DbHelper.GetInstancia().Consultar(sp, lst);
             dgvPeliPrecio.DataSource = null;
             llenarDGV();
+<<<<<<< HEAD
         }
 
         private void lblValDolAnt_Click(object sender, EventArgs e)
@@ -75,8 +83,13 @@ namespace CIneLabo.Presentacion
 
         private void label3_Click(object sender, EventArgs e)
         {
+=======
+>>>>>>> 476b5ae036dece9b065858a05448aa8e6d04e10e
 
         }
+
+
+
     }
 }
 

@@ -18,7 +18,11 @@ namespace CIneLabo.Data.DBHelper
         private DbHelper()
         {
 
+<<<<<<< HEAD
             conexion = new SqlConnection(@"Data Source =.\SQLEXPRESS; Initial Catalog = cine2; Integrated Security = True");
+=======
+            conexion = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=cine2;Integrated Security=True");
+>>>>>>> 476b5ae036dece9b065858a05448aa8e6d04e10e
 
         }
 
@@ -33,6 +37,19 @@ namespace CIneLabo.Data.DBHelper
             return instancia;
         }
 
+        public string ConsultarValorSP(string nombreSP)
+        {
+            string resultado = null;
+            conexion.Open();
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = conexion;
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = nombreSP;
+            object valor = comando.ExecuteScalar();
+            resultado = valor.ToString();
+            conexion.Close();
+            return resultado;
+        }
 
         public DataTable Consultar(string nombreSP)
         {

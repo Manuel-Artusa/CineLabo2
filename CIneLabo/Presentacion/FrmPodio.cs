@@ -111,6 +111,7 @@ namespace CIneLabo.Presentacion
             Mostrartop3Clientes(generoSeleccionado);
         }
 
+<<<<<<< HEAD
         private void button1_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿Estas seguro que desea volver al menú principal?", "SALIR", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes)
@@ -118,5 +119,8 @@ namespace CIneLabo.Presentacion
                 this.Close();
             }
         }
+=======
+
+>>>>>>> 476b5ae036dece9b065858a05448aa8e6d04e10e
     }
 }

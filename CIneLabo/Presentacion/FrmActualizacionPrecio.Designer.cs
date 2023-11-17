@@ -39,8 +39,11 @@
             dgvPeliPrecio = new DataGridView();
             ColPelicula = new DataGridViewTextBoxColumn();
             ColPrecio = new DataGridViewTextBoxColumn();
+<<<<<<< HEAD
             label3 = new Label();
             label4 = new Label();
+=======
+>>>>>>> 476b5ae036dece9b065858a05448aa8e6d04e10e
             ((System.ComponentModel.ISupportInitialize)dgvPeliPrecio).BeginInit();
             SuspendLayout();
             // 
@@ -69,24 +72,38 @@
             button2.Size = new Size(216, 70);
             button2.TabIndex = 1;
             button2.Text = "Actualizar Precio";
+<<<<<<< HEAD
             button2.UseVisualStyleBackColor = false;
+=======
+            button2.UseVisualStyleBackColor = true;
+>>>>>>> 476b5ae036dece9b065858a05448aa8e6d04e10e
             button2.Click += button2_Click;
             // 
             // txtDolarAntes
             // 
             txtDolarAntes.Enabled = false;
+<<<<<<< HEAD
             txtDolarAntes.Location = new Point(47, 201);
             txtDolarAntes.Margin = new Padding(4);
+=======
+            txtDolarAntes.Location = new Point(30, 55);
+>>>>>>> 476b5ae036dece9b065858a05448aa8e6d04e10e
             txtDolarAntes.Name = "txtDolarAntes";
             txtDolarAntes.Size = new Size(168, 28);
             txtDolarAntes.TabIndex = 2;
             // 
             // txtPorcentaje
             // 
+<<<<<<< HEAD
             txtPorcentaje.Location = new Point(47, 331);
             txtPorcentaje.Margin = new Padding(4);
             txtPorcentaje.Name = "txtPorcentaje";
             txtPorcentaje.Size = new Size(122, 28);
+=======
+            txtPorcentaje.Location = new Point(393, 138);
+            txtPorcentaje.Name = "txtPorcentaje";
+            txtPorcentaje.Size = new Size(90, 23);
+>>>>>>> 476b5ae036dece9b065858a05448aa8e6d04e10e
             txtPorcentaje.TabIndex = 3;
             // 
             // txtValorDolarActual
@@ -127,6 +144,7 @@
             // label2
             // 
             label2.AutoSize = true;
+<<<<<<< HEAD
             label2.BackColor = SystemColors.Desktop;
             label2.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.Gold;
@@ -134,6 +152,12 @@
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(192, 22);
+=======
+            label2.BackColor = Color.Silver;
+            label2.Location = new Point(393, 107);
+            label2.Name = "label2";
+            label2.Size = new Size(113, 15);
+>>>>>>> 476b5ae036dece9b065858a05448aa8e6d04e10e
             label2.TabIndex = 7;
             label2.Text = "Porcentaje Sugerido";
             // 
@@ -141,6 +165,7 @@
             // 
             dgvPeliPrecio.AllowUserToAddRows = false;
             dgvPeliPrecio.AllowUserToDeleteRows = false;
+<<<<<<< HEAD
             dgvPeliPrecio.BackgroundColor = SystemColors.Desktop;
             dgvPeliPrecio.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvPeliPrecio.Columns.AddRange(new DataGridViewColumn[] { ColPelicula, ColPrecio });
@@ -151,6 +176,15 @@
             dgvPeliPrecio.RowHeadersWidth = 51;
             dgvPeliPrecio.RowTemplate.Height = 25;
             dgvPeliPrecio.Size = new Size(379, 428);
+=======
+            dgvPeliPrecio.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPeliPrecio.Columns.AddRange(new DataGridViewColumn[] { ColPelicula, ColPrecio });
+            dgvPeliPrecio.Location = new Point(30, 118);
+            dgvPeliPrecio.Name = "dgvPeliPrecio";
+            dgvPeliPrecio.ReadOnly = true;
+            dgvPeliPrecio.RowTemplate.Height = 25;
+            dgvPeliPrecio.Size = new Size(294, 254);
+>>>>>>> 476b5ae036dece9b065858a05448aa8e6d04e10e
             dgvPeliPrecio.TabIndex = 8;
             // 
             // ColPelicula
@@ -193,10 +227,15 @@
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
+<<<<<<< HEAD
             BackColor = SystemColors.Desktop;
             ClientSize = new Size(1133, 628);
             Controls.Add(label4);
             Controls.Add(label3);
+=======
+            BackColor = Color.Black;
+            ClientSize = new Size(546, 416);
+>>>>>>> 476b5ae036dece9b065858a05448aa8e6d04e10e
             Controls.Add(dgvPeliPrecio);
             Controls.Add(label2);
             Controls.Add(label1);
