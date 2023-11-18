@@ -1,6 +1,7 @@
 ﻿using Cines.Acceso_a_Datos.Factory;
 using Cines.Clases.Cine;
 using Cines.Clases.Cines.Cine;
+using CinesBack.Clases;
 using CinesFront.Http;
 using Newtonsoft.Json;
 using SistemaCineBack.Acceso_a_Datos.Dao;
@@ -205,7 +206,7 @@ namespace CinesFront.Presentacion
 
         private async void FrmButacasDisponiblies_Load_1(object sender, EventArgs e)
         {
-            await cargarButacas();
+            await cargarButacas();          
         }
         private async Task cargarButacas()
         {
@@ -219,28 +220,42 @@ namespace CinesFront.Presentacion
             cboPelicula.DropDownStyle = ComboBoxStyle.DropDownList;
             cboPelicula.SelectedItem = 1;
             
-        }
+        }   
 
         private async void btnHabilitarFuncion_Click_1(object sender, EventArgs e)
         {
             if (cboPelicula.SelectedItem != null)
-            {
+            {             
                 await cargarComboFuncion(dtpDesde.Value.ToShortDateString(), cboPelicula.Text);
            
             }
         }
         private async Task cargarComboFuncion(string fecha, string pelicula)
         {
-            //Cargo el comboBox de funciones
-            string url = string.Format("https://localhost:7011/Funciones" + fecha + "");
-            var data = await
-                ClienteSingleton.GetInstance().GetAsync(url);
-            List<Funciones> lstFunciones = JsonConvert.DeserializeObject<List<Funciones>>(data);
-            cboFunciones.DataSource = lstFunciones;
-            cboFunciones.ValueMember = "IdFuncion";
-            cboFunciones.DisplayMember = "Hora";
-            cboFunciones.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboFunciones.SelectedItem = null;
+            try
+            {
+                var parametros = new Dictionary<string, string>
+        {
+            { "pelicula", pelicula },
+            { "fechita", fecha }
+        };
+                var contenido = JsonConvert.SerializeObject(parametros);
+                string url = $"https://localhost:7011/Traer_Funciones?pelicula={pelicula}&fechita={fecha}";
+
+                // Leer y deserializar los datos de la respuesta
+                var data = await ClienteSingleton.GetInstance().PostAsync(url, contenido);
+                List<Funciones> funcionesList = JsonConvert.DeserializeObject<List<Funciones>>(data);
+
+                cboFunciones.DataSource = funcionesList;
+                cboFunciones.ValueMember = "IdFuncion";
+                cboFunciones.DisplayMember = "Hora";
+                cboFunciones.DropDownStyle = ComboBoxStyle.DropDownList;
+                cboFunciones.SelectedItem = null;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

@@ -16,7 +16,7 @@ namespace CinesAPI.Controllers
                 dataApi = new DataApi();
             }
             [HttpGet("/Peliculas")]
-            public ActionResult getPeliculas()
+            public IActionResult getPeliculas()
             {
                 try
                 {
@@ -30,7 +30,7 @@ namespace CinesAPI.Controllers
                 }
             }
             [HttpGet("/Comprobantes")]
-            public ActionResult getComprobantes()
+            public IActionResult getComprobantes()
             {
                 try
                 {
@@ -44,7 +44,7 @@ namespace CinesAPI.Controllers
                 }
             }
             [HttpGet("/DetalleComprobante")]
-            public ActionResult getDetalle()
+            public IActionResult getDetalle()
             {
                 try
                 {
@@ -58,7 +58,7 @@ namespace CinesAPI.Controllers
                 }
             }
             [HttpGet("/Butacas")]
-            public ActionResult getButacas(string fecha, string pelicula)
+            public IActionResult getButacas(string fecha, string pelicula)
             {
                 try
                 {
@@ -71,22 +71,22 @@ namespace CinesAPI.Controllers
                     return StatusCode(500, "Error Interno, Intente mas Tarde");
                 }
             }
-            [HttpGet("/Funciones")]
-            public ActionResult getFunciones(string pelicula, string fechita)
-            {
-                try
-                {
-                    List<Funciones> funciones = dataApi.TraerFunciones(pelicula, fechita);
-                    return Ok(funciones);
-                }
-                catch (Exception)
-                {
+            //[HttpGet("/Funciones")]
+            //public ActionResult getFunciones(string pelicula, string fechita)
+            //{
+            //    try
+            //    {
+            //        List<Funciones> funciones = dataApi.TraerFunciones(pelicula, fechita);
+            //        return Ok(funciones);
+            //    }
+            //    catch (Exception)
+            //    {
 
-                    return StatusCode(500, "Error Interno, Intente mas Tarde");
-                }
-            }
+            //        return StatusCode(500, "Error Interno, Intente mas Tarde");
+            //    }
+            //}
             [HttpGet("/Peliculas ID")]
-            public ActionResult obtenerPeliculasID(int id)
+            public IActionResult obtenerPeliculasID(int id)
             {
                 try
                 {
@@ -100,7 +100,7 @@ namespace CinesAPI.Controllers
                 }
             }
             [HttpGet("/Informe")]
-            public ActionResult obtenerInformes(int mes, int año)
+            public IActionResult obtenerInformes(int mes, int año)
             {
                 return Ok(dataApi.obtenerInformeVentasPorMes(mes, año));
             }
@@ -117,5 +117,19 @@ namespace CinesAPI.Controllers
                     throw;
                 }
             }
+        [HttpPost("/Traer_Funciones")]
+        public IActionResult getFunciones(string pelicula, string fechita)
+        {
+            try
+            {
+                List<Funciones> funciones = dataApi.TraerFunciones(pelicula, fechita);
+                return Ok(funciones);
+            }
+            catch (Exception)
+            {
+
+                return StatusCode(500, "Error Interno, Intente mas Tarde");
+            }
         }
+    }
 }
