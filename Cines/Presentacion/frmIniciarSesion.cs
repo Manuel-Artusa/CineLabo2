@@ -19,8 +19,8 @@ namespace CineApp.Forms
 
         private void btnIniciarSesionAceptar_Click(object sender, EventArgs e)
         {
-            frmCliente cliente = new frmCliente();
-            cliente.ShowDialog();
+            frmAdministrador admin = new frmAdministrador();
+            admin.ShowDialog();
             this.Close();
         }
 
@@ -31,9 +31,7 @@ namespace CineApp.Forms
 
         private void btnIniciarSesionCancelar_Click(object sender, EventArgs e)
         {
-            frmRegistrar registrar = new frmRegistrar();
-            registrar.ShowDialog();
-            this.Close();
+
         }
 
         private void gbIniciarSesion_Enter(object sender, EventArgs e)

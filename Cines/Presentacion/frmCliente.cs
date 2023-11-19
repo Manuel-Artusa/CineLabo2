@@ -1,5 +1,4 @@
 ﻿using CineApp.Forms;
-using CinesFront.Presentacion;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,10 +20,7 @@ namespace CineApp
 
         private void btnComprarEntradas_Click(object sender, EventArgs e)
         {
-            
-            frmComprarEntrada comprarEntrada = new frmComprarEntrada();
-            comprarEntrada.ShowDialog();
-            this.Close();
+
         }
 
         private void btnNombreUsuario_Click(object sender, EventArgs e)
@@ -45,11 +41,6 @@ namespace CineApp
         {
             if (MessageBox.Show("¿Estas seguro que deseas salir?", "SALIR", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                 this.Close();
-        }
-
-        private void frmCliente_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -25,8 +25,8 @@ namespace CinesFront.Presentacion
         private Butacas butaca;
         private aFactoria fact;
         private Dictionary<int, PictureBox> diccionarioPictureBox;
-
-
+        IDao dao;
+        
 
 
 
@@ -37,7 +37,7 @@ namespace CinesFront.Presentacion
             ClickEnBoton = false;
             diccionarioPictureBox = new Dictionary<int, PictureBox>();
             EnlazarButacasConNumeritos();
-           
+            dao = new DaoCine();
 
         }
 
@@ -72,7 +72,7 @@ namespace CinesFront.Presentacion
         private async void FrmButacasDisponiblies_LoadAsync(object sender, EventArgs e)
         {
             //cargarComboPelicula();
-            await cargarButacas();
+            await cargarPeliculas();
         }
         private void cargarComboPelicula()
         {
@@ -206,9 +206,9 @@ namespace CinesFront.Presentacion
 
         private async void FrmButacasDisponiblies_Load_1(object sender, EventArgs e)
         {
-            await cargarButacas();          
+            await cargarPeliculas();          
         }
-        private async Task cargarButacas()
+        private async Task cargarPeliculas()
         {
             string url = string.Format("https://localhost:7011/Peliculas");
             var data = await
@@ -239,13 +239,13 @@ namespace CinesFront.Presentacion
             { "pelicula", pelicula },
             { "fechita", fecha }
         };
-                var contenido = JsonConvert.SerializeObject(parametros);
-                string url = $"https://localhost:7011/Traer_Funciones?pelicula={pelicula}&fechita={fecha}";
+                //var contenido = JsonConvert.SerializeObject(parametros);
+                //string url = $"https://localhost:7011/Traer_Funciones?pelicula={pelicula}&fechita={fecha}";
 
-                // Leer y deserializar los datos de la respuesta
-                var data = await ClienteSingleton.GetInstance().PostAsync(url, contenido);
-                List<Funciones> funcionesList = JsonConvert.DeserializeObject<List<Funciones>>(data);
-
+                //// Leer y deserializar los datos de la respuesta
+                //var data = await ClienteSingleton.GetInstance().PostAsync(url, contenido);
+                //List<Funciones> funcionesList = JsonConvert.DeserializeObject<List<Funciones>>(data);
+                List<Funciones> funcionesList = dao.TraerFunciones(pelicula, fecha);
                 cboFunciones.DataSource = funcionesList;
                 cboFunciones.ValueMember = "IdFuncion";
                 cboFunciones.DisplayMember = "Hora";

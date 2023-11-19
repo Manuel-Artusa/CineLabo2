@@ -33,10 +33,10 @@ namespace CinesFront.Http
         StringContent content = new StringContent(data, Encoding.UTF8,
         "application/json");
         var result = await client.PostAsync(url, content);
-        var response = "";
+        var httpResponse = "";
         if (result.IsSuccessStatusCode)
-            response = await result.Content.ReadAsStringAsync();
-        return response;
+                httpResponse = await result.Content.ReadAsStringAsync();
+        return httpResponse;
     }
         public async Task<string> PutAsync(string url, string data)
         {
