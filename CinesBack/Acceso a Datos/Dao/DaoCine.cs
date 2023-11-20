@@ -13,6 +13,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace SistemaCineBack.Acceso_a_Datos.Dao
 {
     public class DaoCine : IDao
@@ -204,6 +205,63 @@ namespace SistemaCineBack.Acceso_a_Datos.Dao
             }
 
             return lpeliculas;
+        }
+
+        public bool Crear(Comprobantes comprobante)
+        {
+            bool resultado = true;
+            SqlConnection conexion = HelperDB.GetInstancia().GetConnection();
+            SqlTransaction t = null;
+            try
+            {
+                conexion.Open();
+                t = conexion.BeginTransaction();
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = conexion;
+                comando.Transaction = t;
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandText = "SP_INSERTAR_MAESTRO";
+                comando.Parameters.AddWithValue("@cliente", comprobante.cliente);
+                comando.Parameters.AddWithValue("@fecha", comprobante.fecha);
+                
+
+                SqlParameter parametro = new SqlParameter();
+                parametro.ParameterName = "@presupuesto_nro";
+                parametro.SqlDbType = SqlDbType.Int;
+                parametro.Direction = ParameterDirection.Output;
+                comando.Parameters.Add(parametro);
+
+                comando.ExecuteNonQuery();
+
+                int presupuestoNro = (int)parametro.Value;
+                int detalleNro = 1;
+                SqlCommand cmdDetalle;
+
+                foreach (DetalleComprobante dc in comprobante.Detalle)
+                {
+                    cmdDetalle = new SqlCommand("SP_INSERTAR_DETALLE", conexion, t);
+                    cmdDetalle.CommandType = CommandType.StoredProcedure;
+                    cmdDetalle.Parameters.AddWithValue("@presupuesto_nro", dc.funcione);
+                    cmdDetalle.Parameters.AddWithValue("@id_producto", dc.precio);
+                    cmdDetalle.Parameters.AddWithValue("@cantidad", dp.Cantidad);
+                    cmdDetalle.ExecuteNonQuery();
+                    detalleNro++;
+                }
+                t.Commit();
+            }
+            catch
+            {
+                if (t != null)
+                    t.Rollback();
+                resultado = false;
+            }
+            finally
+            {
+                if (conexion != null && conexion.State == ConnectionState.Open)
+                    conexion.Close();
+            }
+
+            return resultado;
         }
 
         public DataTable obtenerInformeVentasPorMes(int mes, int anio)
