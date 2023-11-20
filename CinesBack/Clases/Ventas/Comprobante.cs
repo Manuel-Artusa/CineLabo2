@@ -11,7 +11,7 @@ namespace Cines.Clases.Ventas
         public DateTime fecha { get; set; }
         public CineClase cine { get; set; }
         public FormaCompra forma { get; set; }
-        public List<DetalleComprobante> Detalle { get; set; }
+        public DetalleComprobante det { get; set; }
 
 
         public Comprobantes()

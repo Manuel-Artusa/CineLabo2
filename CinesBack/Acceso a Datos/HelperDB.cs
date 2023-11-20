@@ -8,6 +8,8 @@ using System.Data.SqlClient;
 using SistemaCineBack.Acceso_a_Datos.Parametros;
 using Cines.Clases.Cine;
 using Cines.Clases.Cines.Cine;
+using Cines.Clases.Personas;
+using Cines.Clases.Ventas;
 
 namespace SistemaCineBack.Acceso_a_Datos
 {
@@ -176,7 +178,7 @@ namespace SistemaCineBack.Acceso_a_Datos
             cnn.Close();
             return tabla;
         }
-        public bool ejecutarSql(string spMaestro, string spDetalle, Funciones funciones)
+        public bool ejecutarSql(string spComprobante, string spCliente, Funciones funciones, Clientes cliente, Comprobantes comprobantes)
         {
             bool aux = true;
             SqlTransaction t = null;
@@ -184,16 +186,36 @@ namespace SistemaCineBack.Acceso_a_Datos
             {
                 cnn.Open();
                 t = cnn.BeginTransaction();
-                SqlCommand cmd = new SqlCommand(spMaestro, cnn, t);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("", "");
-                SqlParameter param = new SqlParameter();
-                param.ParameterName = "";
-                param.SqlDbType = SqlDbType.Int;
-                param.Direction = ParameterDirection.Output;
-                cmd.Parameters.Add(param);
-                int id = (int)param.Value;
+                SqlCommand cmdComprobante = new SqlCommand(spComprobante, cnn, t);
+                cmdComprobante.CommandType = CommandType.StoredProcedure;
+                cmdComprobante.Parameters.AddWithValue("@fecha", funciones.Fecha);
+                SqlParameter pClienteOut = new SqlParameter();
+                pClienteOut.ParameterName = "@idCliente";
+                pClienteOut.SqlDbType = SqlDbType.Int;
+                pClienteOut.Direction = ParameterDirection.Output;
+                cmdComprobante.Parameters.Add(pClienteOut);
+                SqlParameter pIdComprobanteOut = new SqlParameter();
+                pIdComprobanteOut.ParameterName = "@idComprobante";
+                pIdComprobanteOut.SqlDbType = SqlDbType.Int;
+                pIdComprobanteOut.Direction = ParameterDirection.Output;
+                cmdComprobante.Parameters.Add(pClienteOut);
+                int idCliente = (int)pClienteOut.Value;
+                int idComprobante = (int)pIdComprobanteOut.Value;
 
+                SqlCommand cmdCliente = new SqlCommand(spCliente, cnn, t);
+                cmdCliente.CommandType = CommandType.StoredProcedure;
+                cmdCliente.Parameters.AddWithValue("@nombre", cliente.persona.Nombre);
+                cmdCliente.Parameters.AddWithValue("@apellido", cliente.persona.Apellido);
+                cmdCliente.Parameters.AddWithValue("@tipo_doc", 1);
+                cmdCliente.Parameters.AddWithValue("@documento", cliente.NroDocumento);
+                cmdCliente.Parameters.AddWithValue("@telefono", cliente.Telefono);
+                cmdCliente.Parameters.AddWithValue("@email", cliente.Mail);
+                cmdCliente.Parameters.AddWithValue("@idCliente", idCliente);
+
+
+                SqlCommand cmdDetalle = new SqlCommand("", cnn, t);
+                cmdDetalle.CommandType = CommandType.StoredProcedure;
+                cmdDetalle.Parameters.AddWithValue("", )
             }
             catch (Exception)
             {

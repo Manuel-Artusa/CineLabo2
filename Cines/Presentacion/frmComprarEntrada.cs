@@ -66,10 +66,11 @@ namespace CineApp.Forms
 
         private async Task CargarFuncionesAsync()
         {
-            string url = string.Format("https://localhost:7011/FuncionesTraer");
-            var data = await
-            ClienteSingleton.GetInstance().GetAsync(url);
-            List<Funciones> funciones = JsonConvert.DeserializeObject<List<Funciones>>(data);
+            //string url = string.Format("https://localhost:7011/FuncionesTraer");
+            //var data = await
+            //ClienteSingleton.GetInstance().GetAsync(url);
+            //List<Funciones> funciones = JsonConvert.DeserializeObject<List<Funciones>>(data);
+            List<Funciones> funciones = dao.TraerFunciones(cbPelicula.Text, dtpFechaCompra.ToString());
             cbPelicula.DataSource = funciones;
             cbPelicula.ValueMember = "HORA";
             cbPelicula.DisplayMember = "ID_FUNCION";
@@ -88,6 +89,11 @@ namespace CineApp.Forms
             cbPelicula.DisplayMember = "ID_PELICULA";
             cbPelicula.DropDownStyle = ComboBoxStyle.DropDownList;
             cbPelicula.SelectedItem = 1;
+
+        }
+
+        private void frmComprarEntrada_Load_1(object sender, EventArgs e)
+        {
 
         }
     }
