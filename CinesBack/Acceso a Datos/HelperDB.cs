@@ -14,12 +14,145 @@ namespace SistemaCineBack.Acceso_a_Datos
     class HelperDB
     {
         private static HelperDB instancia;
-        private SqlConnection cnn = new SqlConnection(@"Data Source=DESKTOP-72P6KAS\SQLEXPRESS;Initial Catalog=cine2;Integrated Security=True");
+        private SqlConnection cnn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=cine2;Integrated Security=True");
         public static HelperDB obtenerInstancia()
         {
             if (instancia == null)
             { instancia = new HelperDB(); }
             return instancia;
+        }
+        public SqlConnection GetConnection()
+        {
+            return cnn;
+        }
+        public static HelperDB GetInstancia()
+        {
+            if (instancia == null)
+                instancia = new HelperDB();
+            return instancia;
+        }
+
+        public string ConsultarValorSP(string nombreSP)
+        {
+            string resultado = null;
+            cnn.Open();
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = cnn;
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = nombreSP;
+            object valor = comando.ExecuteScalar();
+            resultado = valor.ToString();
+            cnn.Close();
+            return resultado;
+        }
+
+        public DataTable Consultar(string nombreSP)
+        {
+            cnn.Open();
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = cnn;
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = nombreSP;
+            DataTable tabla = new DataTable();
+            tabla.Load(comando.ExecuteReader());
+            cnn.Close();
+            return tabla;
+        }
+
+
+        public DataTable Consultar(string nombreSP, string param)
+        {
+            cnn.Open();
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = cnn;
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = nombreSP;
+            comando.Parameters.Add(param);
+            DataTable tabla = new DataTable();
+            tabla.Load(comando.ExecuteReader());
+            cnn.Close();
+            return tabla;
+        }
+        public DataTable Consultar(string nombreSP, List<Parametro> lParams)
+        {
+            cnn.Open();
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = cnn;
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = nombreSP;
+            foreach (Parametro p in lParams)
+            {
+                comando.Parameters.AddWithValue(p.clave, p.valor);
+            }
+            DataTable tabla = new DataTable();
+            tabla.Load(comando.ExecuteReader());
+            cnn.Close();
+            return tabla;
+        }
+
+        public DataTable ConsultarConParametros(string nombreSP, string Pelicula, string Fecha)
+        {
+            cnn.Open();
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = cnn;
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = nombreSP;
+            comando.Parameters.AddWithValue("@pelicula", Pelicula);
+            comando.Parameters.AddWithValue("@fecha", Fecha);
+            DataTable tabla = new DataTable();
+            tabla.Load(comando.ExecuteReader());
+            cnn.Close();
+            return tabla;
+        }
+
+        public DataTable ConsultarConParametrosFunciones(string nombreSP, string Pelicula, string Fecha, int Sala)
+        {
+            cnn.Open();
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = cnn;
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = nombreSP;
+            comando.Parameters.AddWithValue("@pelicula", Pelicula);
+            comando.Parameters.AddWithValue("@fecha", Fecha);
+            comando.Parameters.AddWithValue("@sala", Sala);
+            DataTable tabla = new DataTable();
+            tabla.Load(comando.ExecuteReader());
+            cnn.Close();
+            return tabla;
+        }
+
+        public DataTable ConsultarConParametrosButacas(string nombreSP, string Pelicula, string Fecha, int Sala, int Funcion)
+        {
+            cnn.Open();
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = cnn;
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = nombreSP;
+            comando.Parameters.AddWithValue("@pelicula", Pelicula);
+            comando.Parameters.AddWithValue("@fecha", Fecha);
+            comando.Parameters.AddWithValue("@sala", Sala);
+            comando.Parameters.AddWithValue("@funcion", Funcion);
+            DataTable tabla = new DataTable();
+            tabla.Load(comando.ExecuteReader());
+            cnn.Close();
+            return tabla;
+        }
+        public DataTable ConsultarConFechas(string v, DateTime fechaInicio, DateTime fechaFin/*, string nombreCine*/)
+        {
+            cnn.Open();
+
+            SqlCommand comando = new SqlCommand();
+            DataTable dt = new DataTable();
+            comando.Connection = cnn;
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = v;
+            comando.Parameters.AddWithValue("@FechaInicio", fechaInicio);
+            comando.Parameters.AddWithValue("@FechaFin", fechaFin);
+            //comando.Parameters.AddWithValue("@NombreCine", nombreCine);
+            SqlDataAdapter adapter = new SqlDataAdapter(comando);
+            adapter.Fill(dt);
+            cnn.Close();
+            return dt;
         }
         public DataTable consultar(string sp)
         {
@@ -31,7 +164,7 @@ namespace SistemaCineBack.Acceso_a_Datos
             cnn.Close();
             return tabla;
         }
-        public DataTable consultarConParametros(string sp,string pelicula, string fecha)
+        public DataTable consultarConParametros(string sp, string pelicula, string fecha)
         {
             DataTable tabla = new DataTable();
             cnn.Open();
@@ -98,31 +231,31 @@ namespace SistemaCineBack.Acceso_a_Datos
 
             try
             {
-               
-                
-                    cnn.Open();
 
-                    using (SqlCommand cmd = new SqlCommand("ButacasDisponiblesXfuncion", cnn))
+
+                cnn.Open();
+
+                using (SqlCommand cmd = new SqlCommand("ButacasDisponiblesXfuncion", cnn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@FechaFuncion", fechaFuncion));
+                    cmd.Parameters.Add(new SqlParameter("@Pelicula", pelicula));
+                    //cmd.Parameters.Add(new SqlParameter("@HoraFuncion", Hora.Ticks));
+                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.Add(new SqlParameter("@FechaFuncion", fechaFuncion));
-                        cmd.Parameters.Add(new SqlParameter("@Pelicula", pelicula));
-                        //cmd.Parameters.Add(new SqlParameter("@HoraFuncion", Hora.Ticks));
-                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        while (reader.Read())
                         {
-                            while (reader.Read())
+                            if (reader["ID_BUTACA"] != DBNull.Value && reader["NRO_BUTACA"] != DBNull.Value && reader["FILA"] != DBNull.Value)
                             {
-                                if (reader["ID_BUTACA"] != DBNull.Value && reader["NRO_BUTACA"] != DBNull.Value && reader["FILA"] != DBNull.Value)
-                                {
-                                    int id = (int)reader["ID_BUTACA"];
-                                    int nro = (int)reader["NRO_BUTACA"];
-                                    int fila = (int)reader["FILA"];
-                                    lButacas.Add(new Butacas(id, nro, fila));
-                                }
+                                int id = (int)reader["ID_BUTACA"];
+                                int nro = (int)reader["NRO_BUTACA"];
+                                int fila = (int)reader["FILA"];
+                                lButacas.Add(new Butacas(id, nro, fila));
                             }
                         }
                     }
-                
+                }
+
             }
             catch (Exception ex)
             {
@@ -130,7 +263,7 @@ namespace SistemaCineBack.Acceso_a_Datos
             }
 
             return lButacas;
-           
+
         }
         public void Open()
         {
@@ -147,3 +280,5 @@ namespace SistemaCineBack.Acceso_a_Datos
 
     }
 }
+
+   

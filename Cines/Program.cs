@@ -17,7 +17,7 @@ namespace Cines
             ApplicationConfiguration.Initialize();
             //Application.Run(new frmIniciarSesion());
             //Application.Run(new FrmCandyBar());
-            Application.Run(new FrmButacasDisponiblies());
+            Application.Run(new frmComprarEntrada());
         }
     }
 }

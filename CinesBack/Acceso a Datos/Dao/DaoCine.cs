@@ -2,6 +2,7 @@
 using Cines.Clases.Cines;
 using Cines.Clases.Cines.Cine;
 using Cines.Clases.Cines.Cines;
+using Cines.Clases.Ubicacion;
 using Cines.Clases.Ventas;
 using System;
 using System.Collections.Generic;
@@ -99,6 +100,7 @@ namespace SistemaCineBack.Acceso_a_Datos.Dao
         }
     
         //Metodo Para Funciones
+
         public List<Funciones> TraerFunciones(string pelicula, string fechita)
         {
             List<Funciones> lFunciones = new List<Funciones>();
@@ -134,6 +136,40 @@ namespace SistemaCineBack.Acceso_a_Datos.Dao
             return lFunciones;
         }
         //Metodo Para Peliculas
+        public List<Peliculas> ObtenerPeliculas()
+        {
+            List<Peliculas> lPeliculas = new List<Peliculas>();
+            DataTable table = HelperDB.GetInstancia().Consultar("SP_CONSULTAR_PELICULAS_DETALLADO2");
+
+            foreach (DataRow fila in table.Rows)
+            {
+                int idPeli = int.Parse(fila["ID_PELICULA"].ToString());
+                string titulo = fila["TITULO"].ToString();
+                TimeSpan duracion = TimeSpan.Parse(fila["Duracion"].ToString());
+
+                int idGenero = int.Parse(fila["id_genero"].ToString());
+                string nombreGenero = fila["NombreGenero"].ToString();
+                Genero genero = new Genero(idGenero, nombreGenero);
+
+                int idClasificacion = int.Parse(fila["id_clasificacion"].ToString());
+                string descripcion = fila["DescripcionClasificacion"].ToString();  
+                Clasificacion clasificacion = new Clasificacion(idClasificacion, descripcion);
+
+                int idIdioma = int.Parse(fila["id_idioma"].ToString());
+                string lenguaje = fila["Lenguaje"].ToString();  
+                Idioma idioma = new Idioma(idIdioma, lenguaje);
+
+                DateTime fecEstreno = DateTime.Parse(fila["Fec_Estreno"].ToString());
+                ;
+                int idPais = int.Parse(fila["ID_PAIS_ORIGEN"].ToString());
+                string pais = fila["pais"].ToString(); 
+                PaisOrigen paises = new PaisOrigen(idPais, pais);
+
+                Peliculas pelicula = new Peliculas(idPeli, titulo, duracion, genero, clasificacion, idioma, fecEstreno, paises);
+                lPeliculas.Add(pelicula);
+            }
+            return lPeliculas;
+        }
         public List<Peliculas> TraerPeliculas()
         {
             List<Peliculas> lpeliculas = new List<Peliculas>();
