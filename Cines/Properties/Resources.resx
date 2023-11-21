@@ -118,26 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="pantalla-de-cine" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pantalla-de-cine.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="silla" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\silla.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="gr-stocks-q8P8YoR6erg-unsplash" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gr-stocks-q8P8YoR6erg-unsplash.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pelicula" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pelicula.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Butaca" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Butaca.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Pochoclos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Pochoclos.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Caramelos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Caramelos.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Refresco" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Refresco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Chocolate Aguila" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Chocolate Aguila.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,19 +127,55 @@
   <data name="Hot Dog" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Hot Dog.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Nachos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Nachos.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="boton_nosotros" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\boton_nosotros.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Palomitas2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Palomitas2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pantalla-de-cine" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pantalla-de-cine.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="silla" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\silla.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="boton_menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\boton_menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pelicula" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pelicula.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="boton_reporte" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\boton_reporte.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Pretzel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pretzel.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Refresco" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Refresco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="boton_transaccion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\boton_transaccion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Nachos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Nachos.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pochoclos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pochoclos.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Caramelos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Caramelos.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="boton_soporte" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\boton_soporte.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gr-stocks-q8P8YoR6erg-unsplash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gr-stocks-q8P8YoR6erg-unsplash.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HELADO2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HELADO2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Palomitas2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Palomitas2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Butaca" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Butaca.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="boton_salir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\boton_salir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
