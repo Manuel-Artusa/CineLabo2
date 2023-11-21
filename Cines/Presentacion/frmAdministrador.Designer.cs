@@ -142,6 +142,7 @@
             iconoNosotros.SizeMode = PictureBoxSizeMode.StretchImage;
             iconoNosotros.TabIndex = 77;
             iconoNosotros.TabStop = false;
+            iconoNosotros.Click += iconoNosotros_Click;
             // 
             // lblSoporte
             // 
@@ -192,6 +193,7 @@
             lblNosotros.Size = new Size(183, 32);
             lblNosotros.TabIndex = 81;
             lblNosotros.Text = "NOSOTROS";
+            lblNosotros.Click += lblNosotros_Click;
             // 
             // btnSalir
             // 

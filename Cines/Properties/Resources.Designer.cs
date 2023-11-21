@@ -183,6 +183,46 @@ namespace CinesFront.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Icon_Login {
+            get {
+                object obj = ResourceManager.GetObject("Icon_Login", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_Login1 {
+            get {
+                object obj = ResourceManager.GetObject("Icon_Login1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ironman {
+            get {
+                object obj = ResourceManager.GetObject("ironman", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ironman1 {
+            get {
+                object obj = ResourceManager.GetObject("ironman1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Nachos {
             get {
                 object obj = ResourceManager.GetObject("Nachos", resourceCulture);
@@ -256,6 +296,26 @@ namespace CinesFront.Properties {
         internal static System.Drawing.Bitmap silla {
             get {
                 object obj = ResourceManager.GetObject("silla", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap spiderman {
+            get {
+                object obj = ResourceManager.GetObject("spiderman", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap superman {
+            get {
+                object obj = ResourceManager.GetObject("superman", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

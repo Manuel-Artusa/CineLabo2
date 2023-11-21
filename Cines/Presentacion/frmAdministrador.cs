@@ -198,5 +198,17 @@ namespace CineApp.Forms
         {
 
         }
+
+        private void lblNosotros_Click(object sender, EventArgs e)
+        {
+            frmNosotros nosotros = new frmNosotros();
+            nosotros.ShowDialog();
+        }
+
+        private void iconoNosotros_Click(object sender, EventArgs e)
+        {
+            frmNosotros nosotros = new frmNosotros();
+            nosotros.ShowDialog();
+        }
     }
 }

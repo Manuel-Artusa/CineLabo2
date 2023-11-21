@@ -61,7 +61,7 @@
             gbIniciarSesion.TabIndex = 17;
             gbIniciarSesion.TabStop = false;
             gbIniciarSesion.Text = "INICIAR SESION - BIENVENIDO DE VUELTA";
-            gbIniciarSesion.Enter += gbIniciarSesion_Enter;
+            gbIniciarSesion.Enter += this.gbIniciarSesion_Enter;
             // 
             // label1
             // 
@@ -78,8 +78,8 @@
             // pictureBox13
             // 
             pictureBox13.BackColor = SystemColors.Desktop;
-            //pictureBox13.BackgroundImage = CineLabo.Properties.Resources.Icon_Login;
             pictureBox13.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox13.Image = CinesFront.Properties.Resources.Icon_Login;
             pictureBox13.InitialImage = null;
             pictureBox13.Location = new Point(143, 40);
             pictureBox13.Margin = new Padding(3, 4, 3, 4);
@@ -102,7 +102,7 @@
             btnIniciarSesionRegistrar.TabIndex = 5;
             btnIniciarSesionRegistrar.Text = "REGISTRARME";
             btnIniciarSesionRegistrar.UseVisualStyleBackColor = false;
-            btnIniciarSesionRegistrar.Click += btnIniciarSesionCancelar_Click;
+            btnIniciarSesionRegistrar.Click += this.btnIniciarSesionCancelar_Click;
             // 
             // btnIniciarSesionAceptar
             // 
@@ -117,7 +117,7 @@
             btnIniciarSesionAceptar.TabIndex = 4;
             btnIniciarSesionAceptar.Text = "ACEPTAR";
             btnIniciarSesionAceptar.UseVisualStyleBackColor = false;
-            btnIniciarSesionAceptar.Click += btnIniciarSesionAceptar_Click;
+            btnIniciarSesionAceptar.Click += this.btnIniciarSesionAceptar_Click;
             // 
             // label4
             // 
@@ -174,7 +174,7 @@
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Iniciar Sesion";
-            Load += frmIniciarSesion_Load;
+            Load += this.frmIniciarSesion_Load;
             gbIniciarSesion.ResumeLayout(false);
             gbIniciarSesion.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();

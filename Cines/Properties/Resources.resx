@@ -133,11 +133,14 @@
   <data name="Palomitas2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Palomitas2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pantalla-de-cine" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pantalla-de-cine.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="HELADO2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HELADO2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="silla" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\silla.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="spiderman" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\spiderman.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="boton_menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\boton_menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,6 +151,12 @@
   <data name="boton_reporte" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\boton_reporte.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="superman" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\superman.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icon_Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon_Login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Pretzel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pretzel.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -157,8 +166,14 @@
   <data name="Nachos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Nachos.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="boton_salir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\boton_salir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Pochoclos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pochoclos.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ironman" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ironman.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Caramelos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Caramelos.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,13 +184,16 @@
   <data name="gr-stocks-q8P8YoR6erg-unsplash" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gr-stocks-q8P8YoR6erg-unsplash.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HELADO2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\HELADO2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pantalla-de-cine" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pantalla-de-cine.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ironman1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ironman.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Butaca" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Butaca.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="boton_salir" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\boton_salir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Icon_Login1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon_Login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
