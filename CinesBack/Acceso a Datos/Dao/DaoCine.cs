@@ -1,68 +1,105 @@
-﻿using Cines.Clases.Cine;
-using Cines.Clases.Cines;
-using Cines.Clases.Cines.Cine;
-using Cines.Clases.Cines.Cines;
-using Cines.Clases.Ubicacion;
-using Cines.Clases.Ventas;
+﻿using Cines.Clases.Cines.Cine;
+using SistemaCineBack.Acceso_a_Datos;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using Cines.Clases.Cine;
+using Cines.Clases.Ventas;
+using System.Runtime.Intrinsics.Arm;
+using Cines.Clases.Ubicacion;
 
-
-namespace SistemaCineBack.Acceso_a_Datos.Dao
+namespace CinesBack.Acceso_a_Datos.Dao
 {
-    public class DaoCine : IDao
+    public class DaoCine
     {
-        public bool borrar(Funciones funcion)
+        public bool Crear(Comprobantes comprobante)
         {
-            throw new NotImplementedException();
+            bool resultado = true;
+            SqlConnection conexion = HelperDB.GetInstancia().GetConnection();
+            SqlTransaction t = null;
+            try
+            {
+                conexion.Open();
+                t = conexion.BeginTransaction();
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = conexion;
+                comando.Transaction = t;
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandText = "SP_INSERTAR_MAESTRO";
+                comando.Parameters.AddWithValue("@nombre", comprobante.cliente.persona.Nombre);
+                comando.Parameters.AddWithValue("@nombre", comprobante.cliente.persona.Apellido);
+                comando.Parameters.AddWithValue("@fecha", comprobante.fecha);
+
+
+                SqlParameter parametro = new SqlParameter();
+                parametro.ParameterName = "@presupuesto_nro";
+                parametro.SqlDbType = SqlDbType.Int;
+                parametro.Direction = ParameterDirection.Output;
+                comando.Parameters.Add(parametro);
+
+                comando.ExecuteNonQuery();
+
+                int presupuestoNro = (int)parametro.Value;
+                int detalleNro = 1;
+                SqlCommand cmdDetalle;
+
+                foreach (DetalleComprobante dc in comprobante.Detalle)
+                {
+                    cmdDetalle = new SqlCommand("SP_INSERTAR_DETALLE", conexion, t);
+                    cmdDetalle.CommandType = CommandType.StoredProcedure;
+                    cmdDetalle.Parameters.AddWithValue("@id_comprobante", comprobante.IdComprobante);
+                    cmdDetalle.Parameters.AddWithValue("@id_funcion", dc.funcione.IdFuncion);
+                    cmdDetalle.Parameters.AddWithValue("@id_sala", dc.funcione.sala.IdSala);
+                    cmdDetalle.Parameters.AddWithValue("@pelicula", dc.funcione.pelicula);                    
+                    cmdDetalle.Parameters.AddWithValue("@id_butaca", dc.funcione.butacas);
+                    cmdDetalle.Parameters.AddWithValue("@precio", dc.precio);
+
+                    cmdDetalle.ExecuteNonQuery();
+                    detalleNro++;
+                }
+                t.Commit();
+            }
+            catch
+            {
+                if (t != null)
+                    t.Rollback();
+                resultado = false;
+            }
+            finally
+            {
+                if (conexion != null && conexion.State == ConnectionState.Open)
+                    conexion.Close();
+            }
+
+            return resultado;
         }
 
-
-        public Peliculas TraerPeliculaPorId(int idPelicula)
+        public List<DetalleComprobante> TraerDetalle()
         {
-            List<Peliculas> lpeliculas = TraerPeliculas();
-            Peliculas peliculaEncontrada = lpeliculas.FirstOrDefault(p => p.IdPelicula == idPelicula);
-            return peliculaEncontrada;
+            List<DetalleComprobante> ldetalles = new List<DetalleComprobante>();
+            DataTable dt = HelperDB.GetInstancia().consultar("SP_CONSULTAR_FUNCIONES");
+            foreach (DataRow r in dt.Rows)
+            {
+                DetalleComprobante dc = new DetalleComprobante();
+                dc.IdDetalleComprobante = Convert.ToInt32(r["ID_DET_COMPROBANTE"].ToString());                
+                dc.funcione.IdFuncion = Convert.ToInt32(r["id_funcion"].ToString());
+                dc.butacaXfuncion.IdButacasFuncion = Convert.ToInt32(r["id_butacas_funcion"].ToString());
+                dc.formaPago.IdFormaPago = Convert.ToInt32(r["id_forma_pago"].ToString());
+                dc.precio = Convert.ToDouble(r["Precio"].ToString());
 
+                ldetalles.Add(dc);
+            }
+            return ldetalles;
         }
 
-        public List<Asientos> consultarAsientos()
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool crear(Funciones funcion)
-        {
-            return HelperDB.obtenerInstancia().ejecutarSql("", "", funcion);
-        }
-
-        public int proximoID()
-        {
-            return HelperDB.obtenerInstancia().obtenerProximoId();
-        }
-
-        public List<Butacas> TraerButacas()
-        {
-
-            return HelperDB.obtenerInstancia().TraerButacas(DateTime.Now.ToShortDateString(), "");
-
-        }
-
-        public List<Butacas> TraerButacas(string fechaSeleccionada, string? peliculaSelccionada)
-        {
-            return HelperDB.obtenerInstancia().TraerButacas(fechaSeleccionada, peliculaSelccionada);
-        }
-        //Metodo Para COMPROBANTES
         public List<Comprobantes> TraerComprobantes()
         {
             List<Comprobantes> lcomprobantes = new List<Comprobantes>();
-            DataTable dt = HelperDB.obtenerInstancia().consultar("SP_CONSULTAR_COMPROBANTES");
+            DataTable dt = HelperDB.GetInstancia().consultar("SP_CONSULTAR_COMPROBANTES");
             foreach (DataRow r in dt.Rows)
             {
                 Comprobantes c = new Comprobantes();
@@ -74,39 +111,21 @@ namespace SistemaCineBack.Acceso_a_Datos.Dao
                 c.forma.IdFormaCompra = Convert.ToInt32(r["ID_FORMA_COMPRA"].ToString());
 
                 lcomprobantes.Add(c);
-
-
             }
             return lcomprobantes;
         }
 
-        //Metodo Para COMPROBANTES
-        public List<DetalleComprobante> TraerDetalle()
+        public int proximoID()
         {
-            List<DetalleComprobante> ldetalles = new List<DetalleComprobante>();
-            DataTable dt = HelperDB.obtenerInstancia().consultar("SP_CONSULTAR_FUNCIONES");
-            foreach (DataRow r in dt.Rows)
-            {
-                DetalleComprobante dc = new DetalleComprobante();
-                dc.IdDetalleComprobante = Convert.ToInt32(r["ID_DET_COMPROBANTE"].ToString());
-                dc.comprobante.IdComprobante = Convert.ToInt32(r["id_comprobante"].ToString());
-                dc.funcione.IdFuncion = Convert.ToInt32(r["id_funcion"].ToString());
-                dc.butacaXfuncion.IdButacasFuncion = Convert.ToInt32(r["id_butacas_funcion"].ToString());
-                dc.formaPago.IdFormaPago = Convert.ToInt32(r["id_forma_pago"].ToString());
-                dc.precio = Convert.ToDouble(r["Precio"].ToString());
-
-                ldetalles.Add(dc);
-            }
-            return ldetalles;
+            return HelperDB.GetInstancia().obtenerProximoId();
         }
-    
-        //Metodo Para Funciones
 
+        
         public List<Funciones> TraerFunciones(string pelicula, string fechita)
         {
             List<Funciones> lFunciones = new List<Funciones>();
 
-            DataTable funciones = HelperDB.obtenerInstancia().consultarConParametros("SP_CONSULTAR_FUNCIONES",pelicula,fechita);
+            DataTable funciones = HelperDB.GetInstancia().ConsultarFuncionConParametros("SP_CONSULTAR_FUNCIONES", pelicula, fechita);
             foreach (DataRow r in funciones.Rows)
             {
                 Funciones f = new Funciones();
@@ -136,46 +155,48 @@ namespace SistemaCineBack.Acceso_a_Datos.Dao
 
             return lFunciones;
         }
-        //Metodo Para Peliculas
-        public List<Peliculas> ObtenerPeliculas()
+        
+        public DataTable obtenerInformeVentasPorMes(int mes, int anio)
         {
-            List<Peliculas> lPeliculas = new List<Peliculas>();
-            DataTable table = HelperDB.GetInstancia().Consultar("SP_CONSULTAR_PELICULAS_DETALLADO2");
+            DataTable dataTable = new DataTable();
 
-            foreach (DataRow fila in table.Rows)
+            try
             {
-                int idPeli = int.Parse(fila["ID_PELICULA"].ToString());
-                string titulo = fila["TITULO"].ToString();
-                TimeSpan duracion = TimeSpan.Parse(fila["Duracion"].ToString());
+                // Obtén la instancia del HelperDB
+                HelperDB helper = HelperDB.GetInstancia();
 
-                int idGenero = int.Parse(fila["id_genero"].ToString());
-                string nombreGenero = fila["NombreGenero"].ToString();
-                Genero genero = new Genero(idGenero, nombreGenero);
+                // Abre la conexión
+                helper.Open();
 
-                int idClasificacion = int.Parse(fila["id_clasificacion"].ToString());
-                string descripcion = fila["DescripcionClasificacion"].ToString();  
-                Clasificacion clasificacion = new Clasificacion(idClasificacion, descripcion);
+                // Crea un nuevo SqlCommand con la conexión del HelperDB
+                SqlCommand cmd = new SqlCommand("InformeVentasPorMes");
+                cmd.CommandType = CommandType.StoredProcedure;
 
-                int idIdioma = int.Parse(fila["id_idioma"].ToString());
-                string lenguaje = fila["Lenguaje"].ToString();  
-                Idioma idioma = new Idioma(idIdioma, lenguaje);
+                // Agrega los parámetros
+                cmd.Parameters.AddWithValue("@Mes", mes);
+                cmd.Parameters.AddWithValue("@Anio", anio);
 
-                DateTime fecEstreno = DateTime.Parse(fila["Fec_Estreno"].ToString());
-                ;
-                int idPais = int.Parse(fila["ID_PAIS_ORIGEN"].ToString());
-                string pais = fila["pais"].ToString(); 
-                PaisOrigen paises = new PaisOrigen(idPais, pais);
-
-                Peliculas pelicula = new Peliculas(idPeli, titulo, duracion, genero, clasificacion, idioma, fecEstreno, paises);
-                lPeliculas.Add(pelicula);
+                // Crea un SqlDataAdapter y llena el DataTable
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(dataTable);
             }
-            return lPeliculas;
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al obtener informe de ventas: " + ex.ToString());
+            }
+            finally
+            {
+                // Cierra la conexión en el bloque finally para asegurarse de que se cierre incluso si hay una excepción.
+                HelperDB.GetInstancia().Close();
+            }
+
+            return dataTable;
         }
         public List<Peliculas> TraerPeliculas()
         {
             List<Peliculas> lpeliculas = new List<Peliculas>();
 
-            DataTable peliculas = HelperDB.obtenerInstancia().consultar("SP_CONSULTAR_PELICULAS");
+            DataTable peliculas = HelperDB.GetInstancia().consultar("SP_CONSULTAR_PELICULAS");
             foreach (DataRow r in peliculas.Rows)
             {
                 Peliculas p = new Peliculas();
@@ -206,99 +227,47 @@ namespace SistemaCineBack.Acceso_a_Datos.Dao
 
             return lpeliculas;
         }
-
-        public bool Crear(Comprobantes comprobante)
+        public List<Peliculas> ObtenerPeliculas()
         {
-            bool resultado = true;
-            SqlConnection conexion = HelperDB.GetInstancia().GetConnection();
-            SqlTransaction t = null;
-            try
+            List<Peliculas> lPeliculas = new List<Peliculas>();
+            DataTable table = HelperDB.GetInstancia().Consultar("SP_CONSULTAR_PELICULAS_DETALLADO2");
+
+            foreach (DataRow fila in table.Rows)
             {
-                conexion.Open();
-                t = conexion.BeginTransaction();
-                SqlCommand comando = new SqlCommand();
-                comando.Connection = conexion;
-                comando.Transaction = t;
-                comando.CommandType = CommandType.StoredProcedure;
-                comando.CommandText = "SP_INSERTAR_MAESTRO";
-                comando.Parameters.AddWithValue("@cliente", comprobante.cliente);
-                comando.Parameters.AddWithValue("@fecha", comprobante.fecha);
-                
+                int idPeli = int.Parse(fila["ID_PELICULA"].ToString());
+                string titulo = fila["TITULO"].ToString();
+                TimeSpan duracion = TimeSpan.Parse(fila["Duracion"].ToString());
 
-                SqlParameter parametro = new SqlParameter();
-                parametro.ParameterName = "@presupuesto_nro";
-                parametro.SqlDbType = SqlDbType.Int;
-                parametro.Direction = ParameterDirection.Output;
-                comando.Parameters.Add(parametro);
+                int idGenero = int.Parse(fila["id_genero"].ToString());
+                string nombreGenero = fila["NombreGenero"].ToString();
+                Genero genero = new Genero(idGenero, nombreGenero);
 
-                comando.ExecuteNonQuery();
+                int idClasificacion = int.Parse(fila["id_clasificacion"].ToString());
+                string descripcion = fila["DescripcionClasificacion"].ToString();
+                Clasificacion clasificacion = new Clasificacion(idClasificacion, descripcion);
 
-                int presupuestoNro = (int)parametro.Value;
-                int detalleNro = 1;
-                SqlCommand cmdDetalle;
+                int idIdioma = int.Parse(fila["id_idioma"].ToString());
+                string lenguaje = fila["Lenguaje"].ToString();
+                Idioma idioma = new Idioma(idIdioma, lenguaje);
 
-                foreach (DetalleComprobante dc in comprobante.Detalle)
-                {
-                    cmdDetalle = new SqlCommand("SP_INSERTAR_DETALLE", conexion, t);
-                    cmdDetalle.CommandType = CommandType.StoredProcedure;
-                    cmdDetalle.Parameters.AddWithValue("@presupuesto_nro", dc.funcione);
-                    cmdDetalle.Parameters.AddWithValue("@id_producto", dc.precio);
-                    cmdDetalle.Parameters.AddWithValue("@cantidad", dp.Cantidad);
-                    cmdDetalle.ExecuteNonQuery();
-                    detalleNro++;
-                }
-                t.Commit();
+                DateTime fecEstreno = DateTime.Parse(fila["Fec_Estreno"].ToString());
+                ;
+                int idPais = int.Parse(fila["ID_PAIS_ORIGEN"].ToString());
+                string pais = fila["pais"].ToString();
+                PaisOrigen paises = new PaisOrigen(idPais, pais);
+
+                Peliculas pelicula = new Peliculas(idPeli, titulo, duracion, genero, clasificacion, idioma, fecEstreno, paises);
+                lPeliculas.Add(pelicula);
             }
-            catch
-            {
-                if (t != null)
-                    t.Rollback();
-                resultado = false;
-            }
-            finally
-            {
-                if (conexion != null && conexion.State == ConnectionState.Open)
-                    conexion.Close();
-            }
-
-            return resultado;
+            return lPeliculas;
         }
 
-        public DataTable obtenerInformeVentasPorMes(int mes, int anio)
+        public Peliculas TraerPeliculaPorId(int idPelicula)
         {
-            DataTable dataTable = new DataTable();
+            List<Peliculas> lpeliculas = TraerPeliculas();
+            Peliculas peliculaEncontrada = lpeliculas.FirstOrDefault(p => p.IdPelicula == idPelicula);
+            return peliculaEncontrada;
 
-            try
-            {
-                // Obtén la instancia del HelperDB
-                HelperDB helper = HelperDB.obtenerInstancia();
-
-                // Abre la conexión
-                helper.Open();
-
-                // Crea un nuevo SqlCommand con la conexión del HelperDB
-                SqlCommand cmd = new SqlCommand("InformeVentasPorMes");
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                // Agrega los parámetros
-                cmd.Parameters.AddWithValue("@Mes", mes);
-                cmd.Parameters.AddWithValue("@Anio", anio);
-
-                // Crea un SqlDataAdapter y llena el DataTable
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                adapter.Fill(dataTable);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error al obtener informe de ventas: " + ex.ToString());
-            }
-            finally
-            {
-                // Cierra la conexión en el bloque finally para asegurarse de que se cierre incluso si hay una excepción.
-                HelperDB.obtenerInstancia().Close();
-            }
-
-            return dataTable;
         }
     }
 }

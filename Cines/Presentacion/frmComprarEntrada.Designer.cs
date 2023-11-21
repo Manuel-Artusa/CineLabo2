@@ -101,6 +101,7 @@
             dateTimePicker1 = new DateTimePicker();
             label36 = new Label();
             textBox2 = new TextBox();
+            CboButacas = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)pbButaca1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbButaca6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbButaca12).BeginInit();
@@ -476,7 +477,7 @@
             label31.BackColor = SystemColors.Desktop;
             label31.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Bold, GraphicsUnit.Point);
             label31.ForeColor = SystemColors.ControlLightLight;
-            label31.Location = new Point(56, 341);
+            label31.Location = new Point(56, 370);
             label31.Name = "label31";
             label31.Size = new Size(99, 18);
             label31.TabIndex = 92;
@@ -488,7 +489,7 @@
             lblSubtotal.BackColor = SystemColors.Desktop;
             lblSubtotal.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Bold, GraphicsUnit.Point);
             lblSubtotal.ForeColor = Color.Gold;
-            lblSubtotal.Location = new Point(225, 341);
+            lblSubtotal.Location = new Point(225, 370);
             lblSubtotal.Name = "lblSubtotal";
             lblSubtotal.Size = new Size(54, 18);
             lblSubtotal.TabIndex = 93;
@@ -950,6 +951,14 @@
             textBox2.Size = new Size(152, 23);
             textBox2.TabIndex = 143;
             // 
+            // CboButacas
+            // 
+            CboButacas.FormattingEnabled = true;
+            CboButacas.Location = new Point(264, 331);
+            CboButacas.Name = "CboButacas";
+            CboButacas.Size = new Size(140, 23);
+            CboButacas.TabIndex = 144;
+            // 
             // frmComprarEntrada
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -957,6 +966,7 @@
             AutoSize = true;
             BackColor = SystemColors.Desktop;
             ClientSize = new Size(1106, 631);
+            Controls.Add(CboButacas);
             Controls.Add(textBox2);
             Controls.Add(label36);
             Controls.Add(dateTimePicker1);
@@ -1138,5 +1148,6 @@
         private DateTimePicker dateTimePicker1;
         private Label label36;
         private TextBox textBox2;
+        private ComboBox CboButacas;
     }
 }

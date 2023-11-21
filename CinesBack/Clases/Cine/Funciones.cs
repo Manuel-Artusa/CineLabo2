@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cines.Clases.Cines.Cine;
+using System;
 using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,7 @@ namespace Cines.Clases.Cine
         public Salas sala { get; set; }
         public Peliculas pelicula { get; set; }
         public double Precio { get; set; }
-
+        public List<Butacas> butacas { get; set; }
         public TipoFormato formato { get; set; }
 
         public Funciones()

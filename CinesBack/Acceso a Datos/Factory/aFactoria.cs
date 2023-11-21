@@ -1,4 +1,4 @@
-﻿using SistemaCineBack.Acceso_a_Datos.Dao;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +9,6 @@ namespace Cines.Acceso_a_Datos.Factory
 {
     public abstract class aFactoria
     {
-        public abstract IDao crearDao();
+        
     }
 }

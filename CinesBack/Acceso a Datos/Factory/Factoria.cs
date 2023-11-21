@@ -7,11 +7,7 @@ using System.Threading.Tasks;
 
 namespace Cines.Acceso_a_Datos.Factory
 {
-     public class Factoria : aFactoria
+    public class Factoria : aFactoria
     {
-        public override IDao crearDao()
-        {
-            return new DaoCine();
-        }
     }
 }

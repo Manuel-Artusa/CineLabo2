@@ -1,6 +1,7 @@
 ﻿using Cines.Acceso_a_Datos.Factory;
 using Cines.Clases.Cine;
 using Cines.Clases.Cines.Cine;
+using CinesBack.Acceso_a_Datos.Dao;
 using CinesBack.Clases;
 using CinesFront.Http;
 using Newtonsoft.Json;
@@ -25,7 +26,7 @@ namespace CinesFront.Presentacion
         private Butacas butaca;
         private aFactoria fact;
         private Dictionary<int, PictureBox> diccionarioPictureBox;
-        IDao dao;
+        DaoCine dao;
         
 
 

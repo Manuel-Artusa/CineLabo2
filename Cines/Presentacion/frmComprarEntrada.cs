@@ -49,6 +49,7 @@ namespace CineApp.Forms
         private void pbButaca1_Click(object sender, EventArgs e)
         {
             CambiarColorDeBoton(pbButaca1, Color.DarkGreen);
+
         }
 
 

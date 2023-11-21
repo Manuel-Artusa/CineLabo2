@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" GeneratorFunctionsComponentClassName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="QueriesTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection ConnectionStringObject="Data Source=.\SQLEXPRESS;Initial Catalog=CineFinal35;Integrated Security=True" IsAppSettingsProperty="false" Modifier="Assembly" Name="desktop-f93rigr\sqlexpress.CineFinal35.dbo" ParameterPrefix="@" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DTCLIENTESTableAdapter" GeneratorDataComponentClassName="DTCLIENTESTableAdapter" Name="DTCLIENTES" UserDataComponentName="DTCLIENTESTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="desktop-f93rigr\sqlexpress.CineFinal35.dbo" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        CLIENTES.NOMBRE_CLIENTE + '  ' + CLIENTES.APELLIDO_CLIENTE AS 'Nombre y Apellido', SUM(DETALLE_COMPROBANTE.precio_total) AS 'Total Gastado'
+FROM            CLIENTES INNER JOIN
+                         COMPROBANTES ON CLIENTES.ID_CLIENTE = COMPROBANTES.ID_CLIENTE INNER JOIN
+                         DETALLE_COMPROBANTE ON COMPROBANTES.ID_COMPROBANTE = DETALLE_COMPROBANTE.id_comprobante
+GROUP BY CLIENTES.NOMBRE_CLIENTE, CLIENTES.APELLIDO_CLIENTE</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Total Gastado" DataSetColumn="Total Gastado" />
+              <Mapping SourceColumn="Nombre y Apellido" DataSetColumn="Nombre y Apellido" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="DataSet1" msprop:Generator_DataSetName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DTCLIENTES" msprop:Generator_RowEvHandlerName="DTCLIENTESRowChangeEventHandler" msprop:Generator_RowDeletedName="DTCLIENTESRowDeleted" msprop:Generator_RowDeletingName="DTCLIENTESRowDeleting" msprop:Generator_RowEvArgName="DTCLIENTESRowChangeEvent" msprop:Generator_TablePropName="DTCLIENTES" msprop:Generator_RowChangedName="DTCLIENTESRowChanged" msprop:Generator_RowChangingName="DTCLIENTESRowChanging" msprop:Generator_TableClassName="DTCLIENTESDataTable" msprop:Generator_RowClassName="DTCLIENTESRow" msprop:Generator_TableVarName="tableDTCLIENTES" msprop:Generator_UserTableName="DTCLIENTES">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Total_x0020_Gastado" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Total_Gastado" msprop:Generator_ColumnPropNameInTable="Total_GastadoColumn" msprop:Generator_ColumnVarNameInTable="columnTotal_Gastado" msprop:Generator_UserColumnName="Total Gastado" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Nombre_x0020_y_x0020_Apellido" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Nombre_y_Apellido" msprop:Generator_ColumnPropNameInTable="Nombre_y_ApellidoColumn" msprop:Generator_ColumnVarNameInTable="columnNombre_y_Apellido" msprop:Generator_UserColumnName="Nombre y Apellido" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="47" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
