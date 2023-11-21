@@ -22,10 +22,10 @@ namespace Cines.Clases.Ventas
             fecha = DateTime.Now;
             cine = new CineClase();
             forma = new FormaCompra();
-            Detalle = new DetalleComprobante();
+            //Detalle = new DetalleComprobante();
 
         }
-        public Comprobantes(int id, Clientes cli, Empleados emp,DateTime fec, CineClase cin, FormaCompra form, DetalleComprobante det)
+        public Comprobantes(int id, Clientes cli, Empleados emp,DateTime fec, CineClase cin, FormaCompra form)
         {
             IdComprobante = id;
             cliente = cli;
@@ -33,7 +33,7 @@ namespace Cines.Clases.Ventas
             fecha = fec;
             cine = cin;
             forma = form;
-            Detalle = det;
+           //
         }
 
     }

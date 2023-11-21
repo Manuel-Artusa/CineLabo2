@@ -109,48 +109,48 @@ namespace CinesFront.Presentacion
             // Verificar si se ha seleccionado una película
             if (peliculaSelccionada != null)
             {
-                try
-                {
-                    // Obtener la lista de butacas disponibles para la película y fecha seleccionadas
-                    List<Butacas> butacas = fact.crearDao().TraerButacas(fechaSeleccionada.ToShortDateString(), peliculaSelccionada);
+                //try
+                //{
+                //    // Obtener la lista de butacas disponibles para la película y fecha seleccionadas
+                //    List<Butacas> butacas = fact.crearDao().TraerButacas(fechaSeleccionada.ToShortDateString(), peliculaSelccionada);
 
-                    // Iterar a través de los PictureBox en el diccionario
-                    foreach (var kvp in diccionarioPictureBox)
-                    {
-                        // Obtener el número de butaca y el PictureBox correspondiente
-                        int numeroButaca = kvp.Key;
-                        PictureBox pictureBox = kvp.Value;
+                //    // Iterar a través de los PictureBox en el diccionario
+                //    foreach (var kvp in diccionarioPictureBox)
+                //    {
+                //        // Obtener el número de butaca y el PictureBox correspondiente
+                //        int numeroButaca = kvp.Key;
+                //        PictureBox pictureBox = kvp.Value;
 
-                        // Buscar la butaca con el número correspondiente en la lista
-                        Butacas but = butacas.FirstOrDefault(but => but.IdButaca == numeroButaca);
+                //        // Buscar la butaca con el número correspondiente en la lista
+                //        Butacas but = butacas.FirstOrDefault(but => but.IdButaca == numeroButaca);
 
-                        // Verificar si se encontró la butaca
-                        if (but != null)
-                        {
-                            // Verificar si la butaca está disponible
-                            if (but.Disponible)
-                            {
-                                // Pintar el PictureBox de verde si la butaca está disponible
-                                pictureBox.BackColor = Color.Green;
-                            }
-                            else
-                            {
-                                // Pintar el PictureBox de rojo si la butaca no está disponible
-                                pictureBox.BackColor = Color.Black;
-                            }
-                        }
-                        else
-                        {
-                            // Pintar el PictureBox de transparente si no existe la butaca
-                            pictureBox.BackColor = Color.Azure;
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    // Manejar cualquier excepción que pueda ocurrir al obtener las butacas
-                    MessageBox.Show($"Error al cargar butacas: {ex.Message}");
-                }
+                //        // Verificar si se encontró la butaca
+                //        if (but != null)
+                //        {
+                //            // Verificar si la butaca está disponible
+                //            if (but.Disponible)
+                //            {
+                //                // Pintar el PictureBox de verde si la butaca está disponible
+                //                pictureBox.BackColor = Color.Green;
+                //            }
+                //            else
+                //            {
+                //                // Pintar el PictureBox de rojo si la butaca no está disponible
+                //                pictureBox.BackColor = Color.Black;
+                //            }
+                //        }
+                //        else
+                //        {
+                //            // Pintar el PictureBox de transparente si no existe la butaca
+                //            pictureBox.BackColor = Color.Azure;
+                //        }
+                //    }
+                //}
+                //catch (Exception ex)
+                //{
+                //    // Manejar cualquier excepción que pueda ocurrir al obtener las butacas
+                //    MessageBox.Show($"Error al cargar butacas: {ex.Message}");
+                //}
             }
             else
             {

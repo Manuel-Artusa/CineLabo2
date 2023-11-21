@@ -2,6 +2,7 @@
 using Cines.Clases.Cines;
 using Cines.Clases.Cines.Cine;
 using Cines.Clases.Cines.Cines;
+using Cines.Clases.Personas;
 using Cines.Clases.Ubicacion;
 using Cines.Clases.Ventas;
 using System;
@@ -37,9 +38,9 @@ namespace SistemaCineBack.Acceso_a_Datos.Dao
             throw new NotImplementedException();
         }
 
-        public bool crear(Funciones funcion)
+        public bool crear(string spComprobante, string spCliente, Funciones funciones, Clientes cliente, Comprobantes comprobantes)
         {
-            return HelperDB.obtenerInstancia().ejecutarSql("", "", funcion);
+            return HelperDB.obtenerInstancia().ejecutarSql(spComprobante,spCliente,funciones,cliente,comprobantes);
         }
 
         public int proximoID()
@@ -47,16 +48,19 @@ namespace SistemaCineBack.Acceso_a_Datos.Dao
             return HelperDB.obtenerInstancia().obtenerProximoId();
         }
 
-        public List<Butacas> TraerButacas()
+       
+        public List<Butacas> TraerButacas(string fechaFuncion, string pelicula, int Sala, string Hora)
         {
+            List<Butacas> lbutacas = new List<Butacas>();
+            DataTable dt = HelperDB.obtenerInstancia().obtenerBut(fechaFuncion, pelicula, Sala, Hora);
+            foreach (DataRow r in dt.Rows)
+            {
+                Butacas b = new Butacas();
+                b.IdButaca = Convert.ToInt32(r["ID_Butaca"].ToString());
 
-            return HelperDB.obtenerInstancia().TraerButacas(DateTime.Now.ToShortDateString(), "");
-
-        }
-
-        public List<Butacas> TraerButacas(string fechaSeleccionada, string? peliculaSelccionada)
-        {
-            return HelperDB.obtenerInstancia().TraerButacas(fechaSeleccionada, peliculaSelccionada);
+                lbutacas.Add(b);
+            }
+            return lbutacas;
         }
         //Metodo Para COMPROBANTES
         public List<Comprobantes> TraerComprobantes()
@@ -89,9 +93,9 @@ namespace SistemaCineBack.Acceso_a_Datos.Dao
             {
                 DetalleComprobante dc = new DetalleComprobante();
                 dc.IdDetalleComprobante = Convert.ToInt32(r["ID_DET_COMPROBANTE"].ToString());
-                dc.comprobante.IdComprobante = Convert.ToInt32(r["id_comprobante"].ToString());
+                //dc.comprobante.IdComprobante = Convert.ToInt32(r["id_comprobante"].ToString());
                 dc.funcione.IdFuncion = Convert.ToInt32(r["id_funcion"].ToString());
-                dc.butacaXfuncion.IdButacasFuncion = Convert.ToInt32(r["id_butacas_funcion"].ToString());
+                dc.butaca.IdButaca = Convert.ToInt32(r["id_butaca"].ToString());
                 dc.formaPago.IdFormaPago = Convert.ToInt32(r["id_forma_pago"].ToString());
                 dc.precio = Convert.ToDouble(r["Precio"].ToString());
 
@@ -186,8 +190,8 @@ namespace SistemaCineBack.Acceso_a_Datos.Dao
 
                 p.Titulo = r["TITULO"].ToString();
 
-                if (int.TryParse(r["ID_GENERO"].ToString(), out int idGenero))
-                    p.Genero.IdGenero = idGenero;
+                //if (int.TryParse(r["ID_GENERO"].ToString(), out int idGenero))
+                //    p.Genero.IdGenero = idGenero;
 
                 if (TimeSpan.TryParse(r["DURACION"].ToString(), out TimeSpan duracion))
                     p.Duracion = duracion;
@@ -207,62 +211,62 @@ namespace SistemaCineBack.Acceso_a_Datos.Dao
             return lpeliculas;
         }
 
-        public bool Crear(Comprobantes comprobante)
-        {
-            bool resultado = true;
-            SqlConnection conexion = HelperDB.GetInstancia().GetConnection();
-            SqlTransaction t = null;
-            try
-            {
-                conexion.Open();
-                t = conexion.BeginTransaction();
-                SqlCommand comando = new SqlCommand();
-                comando.Connection = conexion;
-                comando.Transaction = t;
-                comando.CommandType = CommandType.StoredProcedure;
-                comando.CommandText = "SP_INSERTAR_MAESTRO";
-                comando.Parameters.AddWithValue("@cliente", comprobante.cliente);
-                comando.Parameters.AddWithValue("@fecha", comprobante.fecha);
+        //public bool Crear(Comprobantes comprobante)
+        //{
+        //    bool resultado = true;
+        //    SqlConnection conexion = HelperDB.GetInstancia().GetConnection();
+        //    SqlTransaction t = null;
+        //    try
+        //    {
+        //        conexion.Open();
+        //        t = conexion.BeginTransaction();
+        //        SqlCommand comando = new SqlCommand();
+        //        comando.Connection = conexion;
+        //        comando.Transaction = t;
+        //        comando.CommandType = CommandType.StoredProcedure;
+        //        comando.CommandText = "SP_INSERTAR_MAESTRO";
+        //        comando.Parameters.AddWithValue("@cliente", comprobante.cliente);
+        //        comando.Parameters.AddWithValue("@fecha", comprobante.fecha);
                 
 
-                SqlParameter parametro = new SqlParameter();
-                parametro.ParameterName = "@presupuesto_nro";
-                parametro.SqlDbType = SqlDbType.Int;
-                parametro.Direction = ParameterDirection.Output;
-                comando.Parameters.Add(parametro);
+        //        SqlParameter parametro = new SqlParameter();
+        //        parametro.ParameterName = "@presupuesto_nro";
+        //        parametro.SqlDbType = SqlDbType.Int;
+        //        parametro.Direction = ParameterDirection.Output;
+        //        comando.Parameters.Add(parametro);
 
-                comando.ExecuteNonQuery();
+        //        comando.ExecuteNonQuery();
 
-                int presupuestoNro = (int)parametro.Value;
-                int detalleNro = 1;
-                SqlCommand cmdDetalle;
+        //        int presupuestoNro = (int)parametro.Value;
+        //        int detalleNro = 1;
+        //        SqlCommand cmdDetalle;
 
-                foreach (DetalleComprobante dc in comprobante.Detalle)
-                {
-                    cmdDetalle = new SqlCommand("SP_INSERTAR_DETALLE", conexion, t);
-                    cmdDetalle.CommandType = CommandType.StoredProcedure;
-                    cmdDetalle.Parameters.AddWithValue("@presupuesto_nro", dc.funcione);
-                    cmdDetalle.Parameters.AddWithValue("@id_producto", dc.precio);
-                    cmdDetalle.Parameters.AddWithValue("@cantidad", dp.Cantidad);
-                    cmdDetalle.ExecuteNonQuery();
-                    detalleNro++;
-                }
-                t.Commit();
-            }
-            catch
-            {
-                if (t != null)
-                    t.Rollback();
-                resultado = false;
-            }
-            finally
-            {
-                if (conexion != null && conexion.State == ConnectionState.Open)
-                    conexion.Close();
-            }
+        //        foreach (DetalleComprobante dc in comprobante.Detalle)
+        //        {
+        //            cmdDetalle = new SqlCommand("SP_INSERTAR_DETALLE", conexion, t);
+        //            cmdDetalle.CommandType = CommandType.StoredProcedure;
+        //            cmdDetalle.Parameters.AddWithValue("@presupuesto_nro", dc.funcione);
+        //            cmdDetalle.Parameters.AddWithValue("@id_producto", dc.precio);
+        //            cmdDetalle.Parameters.AddWithValue("@cantidad", dp.Cantidad);
+        //            cmdDetalle.ExecuteNonQuery();
+        //            detalleNro++;
+        //        }
+        //        t.Commit();
+        //    }
+        //    catch
+        //    {
+        //        if (t != null)
+        //            t.Rollback();
+        //        resultado = false;
+        //    }
+        //    finally
+        //    {
+        //        if (conexion != null && conexion.State == ConnectionState.Open)
+        //            conexion.Close();
+        //    }
 
-            return resultado;
-        }
+        //    return resultado;
+        //}
 
         public DataTable obtenerInformeVentasPorMes(int mes, int anio)
         {
@@ -299,6 +303,23 @@ namespace SistemaCineBack.Acceso_a_Datos.Dao
             }
 
             return dataTable;
+        }
+
+        public List<Salas> TraerSala(int funcion)
+        {
+            List<Salas> lsalas = new List<Salas>();
+            DataTable dt = HelperDB.GetInstancia().ConsultarConParametros("SP_CONSULTAR_SALAS",funcion);
+            foreach(DataRow r in dt.Rows) 
+            {
+                Salas s = new Salas();
+                s.IdSala = Convert.ToInt32(r["id_sala"].ToString());
+
+
+                lsalas.Add(s);
+            }
+            
+            return lsalas;
+            
         }
     }
 }

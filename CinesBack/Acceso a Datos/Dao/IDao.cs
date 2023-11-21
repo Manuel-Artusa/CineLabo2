@@ -14,15 +14,16 @@ namespace SistemaCineBack.Acceso_a_Datos.Dao
 {
    public  interface IDao
     {
-        bool crear(Funciones funcion);
+       // bool crear(Funciones funcion);
         bool borrar(Funciones funcion);
         int proximoID();
         List<DetalleComprobante> TraerDetalle();
         List<Comprobantes> TraerComprobantes();
         DataTable obtenerInformeVentasPorMes(int Mes, int Anio);
         List<Peliculas> TraerPeliculas();
-        List<Butacas> TraerButacas(string fechaSeleccionada, string? peliculaSelccionada);
+        List<Butacas> TraerButacas(string fechaFuncion, string pelicula, int Sala, string Hora);
         List<Funciones> TraerFunciones(string pelicula, string fechita);
         public Peliculas TraerPeliculaPorId(int idPelicula);
+        List <Salas> TraerSala(int SALA);
     }
 }

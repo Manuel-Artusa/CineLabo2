@@ -33,9 +33,9 @@ namespace CinesBack.Fachada
             return dao.obtenerInformeVentasPorMes(mes, anio);
         }
 
-        public List<Butacas> TraerButacas(string Fecha, string pelicula)
+        public List<Butacas> TraerButacas(string Fecha, string pelicula, int sala, string hora)
         {
-            return dao.TraerButacas(Fecha, pelicula);
+            return dao.TraerButacas(Fecha, pelicula,sala,hora);
         }
     
 

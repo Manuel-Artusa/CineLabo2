@@ -58,11 +58,11 @@ namespace CinesAPI.Controllers
                 }
             }
             [HttpGet("/Butacas")]
-            public IActionResult getButacas(string fecha, string pelicula)
+            public IActionResult getButacas(string fecha, string pelicula,int sala,string hora)
             {
                 try
                 {
-                    List<Butacas> lstButacas = dataApi.TraerButacas(fecha, pelicula);
+                    List<Butacas> lstButacas = dataApi.TraerButacas(fecha, pelicula, sala, hora);
                     return Ok(lstButacas);
                 }
                 catch (Exception)

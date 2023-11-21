@@ -24,5 +24,8 @@ namespace CinesBack.Clases.Candy_Bar
             Precio = pre;
         }
 
+        public VentasCandyBar()
+        {
+        }
     }
 }

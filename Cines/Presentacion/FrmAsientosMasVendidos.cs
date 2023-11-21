@@ -55,30 +55,31 @@ namespace Cines.Presentacion
             diccionarioPictureBox.Add(24, pictureBox24);
             diccionarioPictureBox.Add(25, pictureBox25);
         }
-        public void MostrarButacasDisponibles()
-        {
-            DateTime fechaSeleccionada = dtpDesde.Value;
-            string peliculaSelccionada = cboPelicula.SelectedItem.ToString();
-            List<Butacas> butacas = new List<Butacas>();
-             butacas = dao.TraerButacas(fechaSeleccionada.ToShortDateString(), peliculaSelccionada);
-            foreach (Butacas b in butacas )
-            {//Metodo para que me pinte de color las butacas que esten disponibles
-                PictureBox PB = new PictureBox();
-                PB.BackColor = Color.DarkGreen;
-                if (butacas.Contains(b))
-                {
-                    PB.BackColor = Color.DarkGreen;
-                }
-                else
-                {
-                    PB.BackColor = Color.DarkRed;
-                }
+        //public void MostrarButacasDisponibles()
+        //{
+        //    DateTime fechaSeleccionada = dtpDesde.Value;
+        //    string peliculaSelccionada = cboPelicula.SelectedItem.ToString();
+        //    string SalaSeleccionada = 
+        //    List<Butacas> butacas = new List<Butacas>();
+        //     butacas = dao.TraerButacas(fechaSeleccionada.ToShortDateString(), peliculaSelccionada,);
+        //    foreach (Butacas b in butacas )
+        //    {//Metodo para que me pinte de color las butacas que esten disponibles
+        //        PictureBox PB = new PictureBox();
+        //        PB.BackColor = Color.DarkGreen;
+        //        if (butacas.Contains(b))
+        //        {
+        //            PB.BackColor = Color.DarkGreen;
+        //        }
+        //        else
+        //        {
+        //            PB.BackColor = Color.DarkRed;
+        //        }
 
-                // Agrega el PictureBox al Frm
+        //        // Agrega el PictureBox al Frm
 
 
-            }
-        }
+        //    }
+        //}
 
         public FrmAsientosMasVendidos()
         {

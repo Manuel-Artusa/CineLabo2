@@ -18,6 +18,6 @@ namespace CinesBack.Fachada
         public List<Funciones> TraerFunciones(string pelicula, string fechita); //API
         public List<Peliculas> TraerPeliculas(); //API
         public DataTable obtenerInformeVentasPorMes(int mes, int anio); //API
-        public List<Butacas> TraerButacas(string Fecha, string pelicula); //API
+        public List<Butacas> TraerButacas(string Fecha, string pelicula, int sala, string hora); //API
     }
 }

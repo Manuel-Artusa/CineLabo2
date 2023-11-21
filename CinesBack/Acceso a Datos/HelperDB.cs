@@ -10,13 +10,14 @@ using Cines.Clases.Cine;
 using Cines.Clases.Cines.Cine;
 using Cines.Clases.Personas;
 using Cines.Clases.Ventas;
+using System.Globalization;
 
 namespace SistemaCineBack.Acceso_a_Datos
 {
     class HelperDB
     {
         private static HelperDB instancia;
-        private SqlConnection cnn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=cine2;Integrated Security=True");
+        private SqlConnection cnn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=CineFinal35;Integrated Security=True");
         public static HelperDB obtenerInstancia()
         {
             if (instancia == null)
@@ -92,15 +93,15 @@ namespace SistemaCineBack.Acceso_a_Datos
             return tabla;
         }
 
-        public DataTable ConsultarConParametros(string nombreSP, string Pelicula, string Fecha)
+        public DataTable ConsultarConParametros(string nombreSP, int funcion)
         {
             cnn.Open();
             SqlCommand comando = new SqlCommand();
             comando.Connection = cnn;
             comando.CommandType = CommandType.StoredProcedure;
             comando.CommandText = nombreSP;
-            comando.Parameters.AddWithValue("@pelicula", Pelicula);
-            comando.Parameters.AddWithValue("@fecha", Fecha);
+            comando.Parameters.AddWithValue("@FUNCION", funcion);
+           
             DataTable tabla = new DataTable();
             tabla.Load(comando.ExecuteReader());
             cnn.Close();
@@ -215,7 +216,7 @@ namespace SistemaCineBack.Acceso_a_Datos
 
                 SqlCommand cmdDetalle = new SqlCommand("", cnn, t);
                 cmdDetalle.CommandType = CommandType.StoredProcedure;
-                cmdDetalle.Parameters.AddWithValue("", )
+                cmdDetalle.Parameters.AddWithValue("", "");
             }
             catch (Exception)
             {
@@ -247,44 +248,20 @@ namespace SistemaCineBack.Acceso_a_Datos
             return (int)pOut.Value;
         }
         //Metodo Traer Butacas
-        public List<Butacas> TraerButacas(string fechaFuncion, string pelicula)
+        public DataTable obtenerBut(string fechaFuncion, string pelicula, int Sala, string Hora)
         {
-            List<Butacas> lButacas = new List<Butacas>();
+            cnn.Open();
+            DataTable dt = new DataTable();
+            SqlCommand cmd = new SqlCommand("ObtenerButacasDisponiblesConInfo", cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@FechaFuncion", fechaFuncion));
+            cmd.Parameters.Add(new SqlParameter("@Titulo", pelicula));
+            cmd.Parameters.Add(new SqlParameter("@HoraFuncion", Hora));
+            cmd.Parameters.Add(new SqlParameter("@id_Sala", Sala));
+            dt.Load(cmd.ExecuteReader());
+            cnn.Close();
+            return dt;
 
-            try
-            {
-
-
-                cnn.Open();
-
-                using (SqlCommand cmd = new SqlCommand("ButacasDisponiblesXfuncion", cnn))
-                {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add(new SqlParameter("@FechaFuncion", fechaFuncion));
-                    cmd.Parameters.Add(new SqlParameter("@Pelicula", pelicula));
-                    //cmd.Parameters.Add(new SqlParameter("@HoraFuncion", Hora.Ticks));
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            if (reader["ID_BUTACA"] != DBNull.Value && reader["NRO_BUTACA"] != DBNull.Value && reader["FILA"] != DBNull.Value)
-                            {
-                                int id = (int)reader["ID_BUTACA"];
-                                int nro = (int)reader["NRO_BUTACA"];
-                                int fila = (int)reader["FILA"];
-                                lButacas.Add(new Butacas(id, nro, fila));
-                            }
-                        }
-                    }
-                }
-
-            }
-            catch (Exception ex)
-            {
-                // Manejar la excepción 
-            }
-
-            return lButacas;
 
         }
         public void Open()

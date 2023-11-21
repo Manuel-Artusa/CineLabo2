@@ -14,7 +14,9 @@ namespace Cines.Clases.Ventas
     {
         public int IdDetalleComprobante { get; set; }
         public Funciones funcione { get; set; }
-        public ButacasFunciones butacaXfuncion { get; set; }
+        public Butacas butaca { get; set; }
+        public Peliculas peliculas { get; set; }
+
         public FormaPago formaPago { get; set; }
         public VentasCandyBar CandyBar { get; set; }
         //public ButacasSalas butacasala { get; set; }
@@ -23,18 +25,19 @@ namespace Cines.Clases.Ventas
         public DetalleComprobante()
         {
             IdDetalleComprobante = 0;
-            
+            CandyBar = new VentasCandyBar();
             funcione = new Funciones();
-            butacaXfuncion = new ButacasFunciones();
+            butaca = new Butacas();
+            peliculas = new Peliculas();
             formaPago = new FormaPago();
             precio = 0;
         }
-        public DetalleComprobante(int id, Comprobantes comp, Funciones fun, ButacasFunciones bxf, FormaPago forma, double pre)
+        public DetalleComprobante(int id, Comprobantes comp, Funciones fun, Butacas bxf, FormaPago forma, double pre)
         {
             IdDetalleComprobante = id;
             
             funcione = fun;
-            butacaXfuncion = bxf;
+            butaca = bxf;
             formaPago = forma; 
             precio = pre;
         }
