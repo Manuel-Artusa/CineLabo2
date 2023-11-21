@@ -8,153 +8,18 @@ using System.Data.SqlClient;
 using SistemaCineBack.Acceso_a_Datos.Parametros;
 using Cines.Clases.Cine;
 using Cines.Clases.Cines.Cine;
-using Cines.Clases.Personas;
-using Cines.Clases.Ventas;
 
 namespace SistemaCineBack.Acceso_a_Datos
 {
     class HelperDB
     {
         private static HelperDB instancia;
-        private SqlConnection cnn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=cine2;Integrated Security=True");
+        private SqlConnection cnn = new SqlConnection(@"Data Source=DESKTOP-72P6KAS\SQLEXPRESS;Initial Catalog=Cine;Integrated Security=True");
         public static HelperDB obtenerInstancia()
         {
             if (instancia == null)
             { instancia = new HelperDB(); }
             return instancia;
-        }
-        public SqlConnection GetConnection()
-        {
-            return cnn;
-        }
-        public static HelperDB GetInstancia()
-        {
-            if (instancia == null)
-                instancia = new HelperDB();
-            return instancia;
-        }
-
-        public string ConsultarValorSP(string nombreSP)
-        {
-            string resultado = null;
-            cnn.Open();
-            SqlCommand comando = new SqlCommand();
-            comando.Connection = cnn;
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.CommandText = nombreSP;
-            object valor = comando.ExecuteScalar();
-            resultado = valor.ToString();
-            cnn.Close();
-            return resultado;
-        }
-
-        public DataTable Consultar(string nombreSP)
-        {
-            cnn.Open();
-            SqlCommand comando = new SqlCommand();
-            comando.Connection = cnn;
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.CommandText = nombreSP;
-            DataTable tabla = new DataTable();
-            tabla.Load(comando.ExecuteReader());
-            cnn.Close();
-            return tabla;
-        }
-
-
-        public DataTable Consultar(string nombreSP, string param)
-        {
-            cnn.Open();
-            SqlCommand comando = new SqlCommand();
-            comando.Connection = cnn;
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.CommandText = nombreSP;
-            comando.Parameters.Add(param);
-            DataTable tabla = new DataTable();
-            tabla.Load(comando.ExecuteReader());
-            cnn.Close();
-            return tabla;
-        }
-        public DataTable Consultar(string nombreSP, List<Parametro> lParams)
-        {
-            cnn.Open();
-            SqlCommand comando = new SqlCommand();
-            comando.Connection = cnn;
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.CommandText = nombreSP;
-            foreach (Parametro p in lParams)
-            {
-                comando.Parameters.AddWithValue(p.clave, p.valor);
-            }
-            DataTable tabla = new DataTable();
-            tabla.Load(comando.ExecuteReader());
-            cnn.Close();
-            return tabla;
-        }
-
-        public DataTable ConsultarConParametros(string nombreSP, string Pelicula, string Fecha)
-        {
-            cnn.Open();
-            SqlCommand comando = new SqlCommand();
-            comando.Connection = cnn;
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.CommandText = nombreSP;
-            comando.Parameters.AddWithValue("@pelicula", Pelicula);
-            comando.Parameters.AddWithValue("@fecha", Fecha);
-            DataTable tabla = new DataTable();
-            tabla.Load(comando.ExecuteReader());
-            cnn.Close();
-            return tabla;
-        }
-
-        public DataTable ConsultarConParametrosFunciones(string nombreSP, string Pelicula, string Fecha, int Sala)
-        {
-            cnn.Open();
-            SqlCommand comando = new SqlCommand();
-            comando.Connection = cnn;
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.CommandText = nombreSP;
-            comando.Parameters.AddWithValue("@pelicula", Pelicula);
-            comando.Parameters.AddWithValue("@fecha", Fecha);
-            comando.Parameters.AddWithValue("@sala", Sala);
-            DataTable tabla = new DataTable();
-            tabla.Load(comando.ExecuteReader());
-            cnn.Close();
-            return tabla;
-        }
-
-        public DataTable ConsultarConParametrosButacas(string nombreSP, string Pelicula, string Fecha, int Sala, int Funcion)
-        {
-            cnn.Open();
-            SqlCommand comando = new SqlCommand();
-            comando.Connection = cnn;
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.CommandText = nombreSP;
-            comando.Parameters.AddWithValue("@pelicula", Pelicula);
-            comando.Parameters.AddWithValue("@fecha", Fecha);
-            comando.Parameters.AddWithValue("@sala", Sala);
-            comando.Parameters.AddWithValue("@funcion", Funcion);
-            DataTable tabla = new DataTable();
-            tabla.Load(comando.ExecuteReader());
-            cnn.Close();
-            return tabla;
-        }
-        public DataTable ConsultarConFechas(string v, DateTime fechaInicio, DateTime fechaFin/*, string nombreCine*/)
-        {
-            cnn.Open();
-
-            SqlCommand comando = new SqlCommand();
-            DataTable dt = new DataTable();
-            comando.Connection = cnn;
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.CommandText = v;
-            comando.Parameters.AddWithValue("@FechaInicio", fechaInicio);
-            comando.Parameters.AddWithValue("@FechaFin", fechaFin);
-            //comando.Parameters.AddWithValue("@NombreCine", nombreCine);
-            SqlDataAdapter adapter = new SqlDataAdapter(comando);
-            adapter.Fill(dt);
-            cnn.Close();
-            return dt;
         }
         public DataTable consultar(string sp)
         {
@@ -166,7 +31,7 @@ namespace SistemaCineBack.Acceso_a_Datos
             cnn.Close();
             return tabla;
         }
-        public DataTable consultarConParametros(string sp, string pelicula, string fecha)
+        public DataTable consultarConParametros(string sp,string pelicula, string fecha)
         {
             DataTable tabla = new DataTable();
             cnn.Open();
@@ -178,7 +43,7 @@ namespace SistemaCineBack.Acceso_a_Datos
             cnn.Close();
             return tabla;
         }
-        public bool ejecutarSql(string spComprobante, string spCliente, Funciones funciones, Clientes cliente, Comprobantes comprobantes)
+        public bool ejecutarSql(string spMaestro, string spDetalle, Funciones funciones)
         {
             bool aux = true;
             SqlTransaction t = null;
@@ -186,36 +51,16 @@ namespace SistemaCineBack.Acceso_a_Datos
             {
                 cnn.Open();
                 t = cnn.BeginTransaction();
-                SqlCommand cmdComprobante = new SqlCommand(spComprobante, cnn, t);
-                cmdComprobante.CommandType = CommandType.StoredProcedure;
-                cmdComprobante.Parameters.AddWithValue("@fecha", funciones.Fecha);
-                SqlParameter pClienteOut = new SqlParameter();
-                pClienteOut.ParameterName = "@idCliente";
-                pClienteOut.SqlDbType = SqlDbType.Int;
-                pClienteOut.Direction = ParameterDirection.Output;
-                cmdComprobante.Parameters.Add(pClienteOut);
-                SqlParameter pIdComprobanteOut = new SqlParameter();
-                pIdComprobanteOut.ParameterName = "@idComprobante";
-                pIdComprobanteOut.SqlDbType = SqlDbType.Int;
-                pIdComprobanteOut.Direction = ParameterDirection.Output;
-                cmdComprobante.Parameters.Add(pClienteOut);
-                int idCliente = (int)pClienteOut.Value;
-                int idComprobante = (int)pIdComprobanteOut.Value;
+                SqlCommand cmd = new SqlCommand(spMaestro, cnn, t);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("", "");
+                SqlParameter param = new SqlParameter();
+                param.ParameterName = "";
+                param.SqlDbType = SqlDbType.Int;
+                param.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(param);
+                int id = (int)param.Value;
 
-                SqlCommand cmdCliente = new SqlCommand(spCliente, cnn, t);
-                cmdCliente.CommandType = CommandType.StoredProcedure;
-                cmdCliente.Parameters.AddWithValue("@nombre", cliente.persona.Nombre);
-                cmdCliente.Parameters.AddWithValue("@apellido", cliente.persona.Apellido);
-                cmdCliente.Parameters.AddWithValue("@tipo_doc", 1);
-                cmdCliente.Parameters.AddWithValue("@documento", cliente.NroDocumento);
-                cmdCliente.Parameters.AddWithValue("@telefono", cliente.Telefono);
-                cmdCliente.Parameters.AddWithValue("@email", cliente.Mail);
-                cmdCliente.Parameters.AddWithValue("@idCliente", idCliente);
-
-
-                SqlCommand cmdDetalle = new SqlCommand("", cnn, t);
-                cmdDetalle.CommandType = CommandType.StoredProcedure;
-                cmdDetalle.Parameters.AddWithValue("", )
             }
             catch (Exception)
             {
@@ -253,31 +98,31 @@ namespace SistemaCineBack.Acceso_a_Datos
 
             try
             {
+               
+                
+                    cnn.Open();
 
-
-                cnn.Open();
-
-                using (SqlCommand cmd = new SqlCommand("ButacasDisponiblesXfuncion", cnn))
-                {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add(new SqlParameter("@FechaFuncion", fechaFuncion));
-                    cmd.Parameters.Add(new SqlParameter("@Pelicula", pelicula));
-                    //cmd.Parameters.Add(new SqlParameter("@HoraFuncion", Hora.Ticks));
-                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    using (SqlCommand cmd = new SqlCommand("ButacasDisponiblesXfuncion", cnn))
                     {
-                        while (reader.Read())
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add(new SqlParameter("@FechaFuncion", fechaFuncion));
+                        cmd.Parameters.Add(new SqlParameter("@Pelicula", pelicula));
+                        //cmd.Parameters.Add(new SqlParameter("@HoraFuncion", Hora.Ticks));
+                        using (SqlDataReader reader = cmd.ExecuteReader())
                         {
-                            if (reader["ID_BUTACA"] != DBNull.Value && reader["NRO_BUTACA"] != DBNull.Value && reader["FILA"] != DBNull.Value)
+                            while (reader.Read())
                             {
-                                int id = (int)reader["ID_BUTACA"];
-                                int nro = (int)reader["NRO_BUTACA"];
-                                int fila = (int)reader["FILA"];
-                                lButacas.Add(new Butacas(id, nro, fila));
+                                if (reader["ID_BUTACA"] != DBNull.Value && reader["NRO_BUTACA"] != DBNull.Value && reader["FILA"] != DBNull.Value)
+                                {
+                                    int id = (int)reader["ID_BUTACA"];
+                                    int nro = (int)reader["NRO_BUTACA"];
+                                    int fila = (int)reader["FILA"];
+                                    lButacas.Add(new Butacas(id, nro, fila));
+                                }
                             }
                         }
                     }
-                }
-
+                
             }
             catch (Exception ex)
             {
@@ -285,7 +130,7 @@ namespace SistemaCineBack.Acceso_a_Datos
             }
 
             return lButacas;
-
+           
         }
         public void Open()
         {
@@ -298,9 +143,46 @@ namespace SistemaCineBack.Acceso_a_Datos
             if (cnn.State == ConnectionState.Open)
                 cnn.Close();
         }
+        public bool borrarComprobantes(int id, string spBorrar)
+        {
+            bool aux = false;
+            SqlTransaction t = null;
+            try
+            {
+                cnn.Open();
+                t = cnn.BeginTransaction();
+                SqlCommand cmd = new SqlCommand(spBorrar, cnn, t);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.ExecuteNonQuery();
+                aux = true;
+                t.Commit();
+            }
+            catch (Exception)
+            {
+                t.Rollback();
 
+
+            }
+            finally
+            {
+                if (cnn != null && cnn.State == ConnectionState.Open)
+                    cnn.Close();
+            }
+            return aux;
+        }
+        public DataTable obtenerComprobantesParametros(int nroDoc, string apellido, string SP)
+        {
+            cnn.Open();
+            SqlCommand cmd = new SqlCommand(SP, cnn);
+            DataTable tabla = new DataTable();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@documento", nroDoc);
+            cmd.Parameters.AddWithValue("@cliente", apellido);
+            tabla.Load(cmd.ExecuteReader());
+            cnn.Close();
+            return tabla;
+        }
 
     }
 }
-
-   

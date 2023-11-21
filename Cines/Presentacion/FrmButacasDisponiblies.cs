@@ -239,13 +239,13 @@ namespace CinesFront.Presentacion
             { "pelicula", pelicula },
             { "fechita", fecha }
         };
-                //var contenido = JsonConvert.SerializeObject(parametros);
-                //string url = $"https://localhost:7011/Traer_Funciones?pelicula={pelicula}&fechita={fecha}";
+                var contenido = JsonConvert.SerializeObject(parametros);
+                string url = $"https://localhost:7011/Traer_Funciones?pelicula={pelicula}&fechita={fecha}";
 
-                //// Leer y deserializar los datos de la respuesta
-                //var data = await ClienteSingleton.GetInstance().PostAsync(url, contenido);
-                //List<Funciones> funcionesList = JsonConvert.DeserializeObject<List<Funciones>>(data);
-                List<Funciones> funcionesList = dao.TraerFunciones(pelicula, fecha);
+                // Leer y deserializar los datos de la respuesta
+                var data = await ClienteSingleton.GetInstance().PostAsync(url, contenido);
+                List<Funciones> funcionesList = JsonConvert.DeserializeObject<List<Funciones>>(data);
+                //List<Funciones> funcionesList = dao.TraerFunciones(pelicula, fecha);
                 cboFunciones.DataSource = funcionesList;
                 cboFunciones.ValueMember = "IdFuncion";
                 cboFunciones.DisplayMember = "Hora";

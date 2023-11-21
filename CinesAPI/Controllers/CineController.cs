@@ -117,12 +117,6 @@ namespace CinesAPI.Controllers
                     throw;
                 }
             }
-        [HttpGet("/FuncionesTraer")]
-        public IActionResult GetFunciones(string pelicula, string fecha)
-        {
-            return Ok(dataApi.TraerFunciones(pelicula,fecha));
-        }
-
         [HttpPost("/Traer_Funciones")]
         public IActionResult getFunciones(string pelicula, string fechita)
         {

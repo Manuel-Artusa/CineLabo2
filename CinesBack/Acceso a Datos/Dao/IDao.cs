@@ -24,5 +24,6 @@ namespace SistemaCineBack.Acceso_a_Datos.Dao
         List<Butacas> TraerButacas(string fechaSeleccionada, string? peliculaSelccionada);
         List<Funciones> TraerFunciones(string pelicula, string fechita);
         public Peliculas TraerPeliculaPorId(int idPelicula);
+        public List<Comprobantes> obtenerComprobantesParametros(int nroDoc, string apellido);
     }
 }

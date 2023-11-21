@@ -16,8 +16,8 @@ namespace Cines
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             //Application.Run(new frmIniciarSesion());
-            //Application.Run(new FrmCandyBar());
-            Application.Run(new frmComprarEntrada());
+            //Application.Run(new FrmButacasDisponiblies());
+            Application.Run(new FrmConsultarComprobante());
         }
     }
 }
