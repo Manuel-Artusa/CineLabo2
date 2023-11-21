@@ -2,6 +2,7 @@
 using Cines.Clases.Cines;
 using Cines.Clases.Cines.Cine;
 using Cines.Clases.Cines.Cines;
+using Cines.Clases.Personas;
 using Cines.Clases.Ventas;
 using System;
 using System.Collections.Generic;
@@ -35,9 +36,9 @@ namespace SistemaCineBack.Acceso_a_Datos.Dao
             throw new NotImplementedException();
         }
 
-        public bool crear(Funciones funcion)
+        public bool crear(Comprobantes comprobantes, Clientes c)
         {
-            return HelperDB.obtenerInstancia().ejecutarSql("", "", funcion);
+            return HelperDB.obtenerInstancia().ejecutarSql("GenerarCompra", "GenerarDetalle", "GenerarCliente", comprobantes, c);
         }
 
         public int proximoID()

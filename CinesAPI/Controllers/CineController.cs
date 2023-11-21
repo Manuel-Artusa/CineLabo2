@@ -1,5 +1,6 @@
 using Cines.Clases.Cine;
 using Cines.Clases.Cines.Cine;
+using Cines.Clases.Personas;
 using Cines.Clases.Ventas;
 using CinesBack.Fachada;
 using Microsoft.AspNetCore.Mvc;
@@ -144,5 +145,18 @@ namespace CinesAPI.Controllers
                 return StatusCode(500, "Error Interno, Intente mas Tarde");
             }
         }
+        //[HttpPost("/InsertarComprobante")]
+        //public IActionResult InsertarComprobante(Comprobantes c, Clientes cl)
+        //{
+        //    try
+        //    {
+        //        return Ok(dataApi.insertarComprobante(c, cl));
+        //    }
+        //    catch (Exception)
+        //    {
+
+        //        return StatusCode(500, "Error Interno, Intente mas Tarde");
+        //    }
+        //}
     }
 }

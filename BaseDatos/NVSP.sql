@@ -77,20 +77,20 @@ EXEC ObtenerButacasDisponiblesConInfo @titulo = 'Iron',@FechaFuncion ='17/11/202
 		VALUES (@Cliente,1,@Fecha,1)
 	end;
 -------------------------------------------------------------------------------------------------------------------------------------------------
-  create procedure GenerarCliente
+  alter procedure GenerarCliente
   @nombre varchar(20),
   @apellido varchar (20),
   @tipo_doc int,
   @documento int,
   @telefono int,
-  @email varchar (70)
-
-
+  @email varchar (70),
+  @idCliente int output
   as
   begin
-		insert into CLIENTES(NOMBRE_CLIENTE,APELLIDO_CLIENTE,ID_TIPO_DOC,DOCUMENTO,TELEFONO,EMAIL)
+		insert into Clientes(NOMBRE_CLIENTE,APELLIDO_CLIENTE,ID_TIPO_DOC,DOCUMENTO,TELEFONO,EMAIL)
 		values (@nombre,@apellido,@tipo_doc,@documento,@telefono,@email)
-		end;
+		set @idCliente = SCOPE_IDENTITY();
+end;
 		-------------------------------------------------------------------------------------------------------------------------------------------------
 CREATE PROCEDURE GenerarDetalle
 @Comprobante int,

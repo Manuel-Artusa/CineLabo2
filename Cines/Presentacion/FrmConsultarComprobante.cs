@@ -94,7 +94,9 @@ namespace CinesFront.Presentacion
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            if(DialogResult.Yes == MessageBox.Show("Desea Salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                this.Dispose();
+           
         }
 
         private async void btnElminar_Click(object sender, EventArgs e)

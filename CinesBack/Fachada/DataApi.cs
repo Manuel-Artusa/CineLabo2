@@ -1,5 +1,6 @@
 ﻿using Cines.Clases.Cine;
 using Cines.Clases.Cines.Cine;
+using Cines.Clases.Personas;
 using Cines.Clases.Ventas;
 using SistemaCineBack.Acceso_a_Datos.Dao;
 using System;
@@ -22,6 +23,11 @@ namespace CinesBack.Fachada
         public bool borrarComprobante(string id)
         {
             return dao.borrar(id);
+        }
+
+        public bool insertarComprobante(Comprobantes comprobantes, Clientes c)
+        {
+            return dao.crear(comprobantes, c);
         }
 
         public List<Comprobantes> obtenerComprobantes()

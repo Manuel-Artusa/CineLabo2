@@ -250,3 +250,6 @@ CREATE TABLE DETALLE_COMPROBANTE (
 
 
 
+alter table FUNCIONES
+add constraint fk_pelicula foreign key(ID_PELICULA)
+references PELICULAS(ID_PELICULA)

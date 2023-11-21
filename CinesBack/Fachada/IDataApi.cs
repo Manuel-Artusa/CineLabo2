@@ -1,5 +1,6 @@
 ﻿using Cines.Clases.Cine;
 using Cines.Clases.Cines.Cine;
+using Cines.Clases.Personas;
 using Cines.Clases.Ventas;
 using System;
 using System.Collections.Generic;
@@ -20,5 +21,6 @@ namespace CinesBack.Fachada
         public DataTable obtenerInformeVentasPorMes(int mes, int anio); //API
         public List<Butacas> TraerButacas(string Fecha, string pelicula); //API
         public bool borrarComprobante(string id);
+        public bool insertarComprobante(Comprobantes comprobantes, Clientes c);
     }
 }

@@ -12,7 +12,7 @@ namespace Cines.Clases.Ventas
         public CineClase cine { get; set; }
         public FormaCompra forma { get; set; }
 
-        
+        public List<DetalleComprobante> detalle { get; set; }
 
         public Comprobantes()
         {
@@ -22,7 +22,7 @@ namespace Cines.Clases.Ventas
             fecha = DateTime.Now;
             cine = new CineClase();
             forma = new FormaCompra();
-           
+            detalle = new List<DetalleComprobante>();
 
         }
         public Comprobantes(int id, Clientes cli, Empleados emp,DateTime fec, CineClase cin, FormaCompra form)
@@ -34,6 +34,14 @@ namespace Cines.Clases.Ventas
             cine = cin;
             forma = form;
             
+        }
+        public void agregarDetalle(DetalleComprobante d)
+        {
+            detalle.Add(d);
+        }
+        public void quitarDetalle(int posicion)
+        {
+            detalle.RemoveAt(posicion);
         }
 
     }

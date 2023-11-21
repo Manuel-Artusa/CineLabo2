@@ -28,311 +28,301 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label2 = new Label();
-            pictureBox1 = new PictureBox();
-            pictureBox11 = new PictureBox();
-            lblNombrePelicula = new Label();
-            label12 = new Label();
-            lblDuracion = new Label();
-            lblGenero = new Label();
-            lblClasificacion = new Label();
-            lblFormato = new Label();
-            lblIdioma = new Label();
-            lblFecha = new Label();
-            lblDirector = new Label();
-            btnComprarEntradas = new Button();
-            btnSalir = new Button();
-            btnNombreUsuario = new Button();
-            pictureBox2 = new PictureBox();
-            pictureBox3 = new PictureBox();
-            pictureBox4 = new PictureBox();
-            pictureBox5 = new PictureBox();
-            pictureBox6 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            SuspendLayout();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.lblNombrePelicula = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lblDuracion = new System.Windows.Forms.Label();
+            this.lblGenero = new System.Windows.Forms.Label();
+            this.lblClasificacion = new System.Windows.Forms.Label();
+            this.lblFormato = new System.Windows.Forms.Label();
+            this.lblIdioma = new System.Windows.Forms.Label();
+            this.lblFecha = new System.Windows.Forms.Label();
+            this.lblDirector = new System.Windows.Forms.Label();
+            this.btnComprarEntradas = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnNombreUsuario = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.SuspendLayout();
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.BackColor = SystemColors.Desktop;
-            label2.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = Color.Gold;
-            label2.Location = new Point(28, 709);
-            label2.Name = "label2";
-            label2.Size = new Size(1840, 32);
-            label2.TabIndex = 2;
-            label2.Text = "CARTELERA  ______________________________________________________________________________________________________";
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.Desktop;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.Gold;
+            this.label2.Location = new System.Drawing.Point(24, 532);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(1493, 26);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "CARTELERA  ______________________________________________________________________" +
+    "________________________________";
             // 
             // pictureBox1
             // 
-            pictureBox1.BackColor = SystemColors.ControlLightLight;
-            pictureBox1.Location = new Point(289, 72);
-            pictureBox1.Margin = new Padding(3, 4, 3, 4);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(390, 610);
-            pictureBox1.TabIndex = 3;
-            pictureBox1.TabStop = false;
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pictureBox1.Location = new System.Drawing.Point(253, 54);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(341, 458);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // pictureBox11
             // 
-            pictureBox11.BackColor = SystemColors.ControlLightLight;
-            pictureBox11.Location = new Point(81, 745);
-            pictureBox11.Margin = new Padding(3, 4, 3, 4);
-            pictureBox11.Name = "pictureBox11";
-            pictureBox11.Size = new Size(200, 305);
-            pictureBox11.TabIndex = 13;
-            pictureBox11.TabStop = false;
+            this.pictureBox11.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pictureBox11.Location = new System.Drawing.Point(71, 559);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(175, 229);
+            this.pictureBox11.TabIndex = 13;
+            this.pictureBox11.TabStop = false;
             // 
             // lblNombrePelicula
             // 
-            lblNombrePelicula.AutoSize = true;
-            lblNombrePelicula.BackColor = SystemColors.Desktop;
-            lblNombrePelicula.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            lblNombrePelicula.ForeColor = Color.Gold;
-            lblNombrePelicula.Location = new Point(743, 124);
-            lblNombrePelicula.Name = "lblNombrePelicula";
-            lblNombrePelicula.Size = new Size(344, 32);
-            lblNombrePelicula.TabIndex = 18;
-            lblNombrePelicula.Text = "NOMBRE DE PELICULA";
+            this.lblNombrePelicula.AutoSize = true;
+            this.lblNombrePelicula.BackColor = System.Drawing.SystemColors.Desktop;
+            this.lblNombrePelicula.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblNombrePelicula.ForeColor = System.Drawing.Color.Gold;
+            this.lblNombrePelicula.Location = new System.Drawing.Point(650, 93);
+            this.lblNombrePelicula.Name = "lblNombrePelicula";
+            this.lblNombrePelicula.Size = new System.Drawing.Size(277, 26);
+            this.lblNombrePelicula.TabIndex = 18;
+            this.lblNombrePelicula.Text = "NOMBRE DE PELICULA";
             // 
             // label12
             // 
-            label12.AutoSize = true;
-            label12.BackColor = SystemColors.Desktop;
-            label12.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label12.ForeColor = Color.Gold;
-            label12.Location = new Point(1197, 124);
-            label12.Name = "label12";
-            label12.Size = new Size(798, 32);
-            label12.TabIndex = 19;
-            label12.Text = "_________________________________________________";
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.SystemColors.Desktop;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label12.ForeColor = System.Drawing.Color.Gold;
+            this.label12.Location = new System.Drawing.Point(1047, 93);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(649, 26);
+            this.label12.TabIndex = 19;
+            this.label12.Text = "_________________________________________________";
             // 
             // lblDuracion
             // 
-            lblDuracion.AutoSize = true;
-            lblDuracion.BackColor = SystemColors.Desktop;
-            lblDuracion.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblDuracion.ForeColor = Color.Gold;
-            lblDuracion.Location = new Point(744, 215);
-            lblDuracion.Name = "lblDuracion";
-            lblDuracion.Size = new Size(132, 25);
-            lblDuracion.TabIndex = 20;
-            lblDuracion.Text = "DURACION:";
+            this.lblDuracion.AutoSize = true;
+            this.lblDuracion.BackColor = System.Drawing.SystemColors.Desktop;
+            this.lblDuracion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblDuracion.ForeColor = System.Drawing.Color.Gold;
+            this.lblDuracion.Location = new System.Drawing.Point(651, 161);
+            this.lblDuracion.Name = "lblDuracion";
+            this.lblDuracion.Size = new System.Drawing.Size(108, 20);
+            this.lblDuracion.TabIndex = 20;
+            this.lblDuracion.Text = "DURACION:";
             // 
             // lblGenero
             // 
-            lblGenero.AutoSize = true;
-            lblGenero.BackColor = SystemColors.Desktop;
-            lblGenero.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblGenero.ForeColor = Color.Gold;
-            lblGenero.Location = new Point(744, 291);
-            lblGenero.Name = "lblGenero";
-            lblGenero.Size = new Size(109, 25);
-            lblGenero.TabIndex = 21;
-            lblGenero.Text = "GENERO:";
+            this.lblGenero.AutoSize = true;
+            this.lblGenero.BackColor = System.Drawing.SystemColors.Desktop;
+            this.lblGenero.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblGenero.ForeColor = System.Drawing.Color.Gold;
+            this.lblGenero.Location = new System.Drawing.Point(651, 218);
+            this.lblGenero.Name = "lblGenero";
+            this.lblGenero.Size = new System.Drawing.Size(90, 20);
+            this.lblGenero.TabIndex = 21;
+            this.lblGenero.Text = "GENERO:";
             // 
             // lblClasificacion
             // 
-            lblClasificacion.AutoSize = true;
-            lblClasificacion.BackColor = SystemColors.Desktop;
-            lblClasificacion.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblClasificacion.ForeColor = Color.Gold;
-            lblClasificacion.Location = new Point(744, 364);
-            lblClasificacion.Name = "lblClasificacion";
-            lblClasificacion.Size = new Size(187, 25);
-            lblClasificacion.TabIndex = 22;
-            lblClasificacion.Text = "CLASIFICACION:";
+            this.lblClasificacion.AutoSize = true;
+            this.lblClasificacion.BackColor = System.Drawing.SystemColors.Desktop;
+            this.lblClasificacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblClasificacion.ForeColor = System.Drawing.Color.Gold;
+            this.lblClasificacion.Location = new System.Drawing.Point(651, 273);
+            this.lblClasificacion.Name = "lblClasificacion";
+            this.lblClasificacion.Size = new System.Drawing.Size(150, 20);
+            this.lblClasificacion.TabIndex = 22;
+            this.lblClasificacion.Text = "CLASIFICACION:";
             // 
             // lblFormato
             // 
-            lblFormato.AutoSize = true;
-            lblFormato.BackColor = SystemColors.Desktop;
-            lblFormato.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblFormato.ForeColor = Color.Gold;
-            lblFormato.Location = new Point(744, 435);
-            lblFormato.Name = "lblFormato";
-            lblFormato.Size = new Size(127, 25);
-            lblFormato.TabIndex = 23;
-            lblFormato.Text = "FORMATO:";
+            this.lblFormato.AutoSize = true;
+            this.lblFormato.BackColor = System.Drawing.SystemColors.Desktop;
+            this.lblFormato.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblFormato.ForeColor = System.Drawing.Color.Gold;
+            this.lblFormato.Location = new System.Drawing.Point(651, 326);
+            this.lblFormato.Name = "lblFormato";
+            this.lblFormato.Size = new System.Drawing.Size(100, 20);
+            this.lblFormato.TabIndex = 23;
+            this.lblFormato.Text = "FORMATO:";
             // 
             // lblIdioma
             // 
-            lblIdioma.AutoSize = true;
-            lblIdioma.BackColor = SystemColors.Desktop;
-            lblIdioma.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblIdioma.ForeColor = Color.Gold;
-            lblIdioma.Location = new Point(744, 510);
-            lblIdioma.Name = "lblIdioma";
-            lblIdioma.Size = new Size(96, 25);
-            lblIdioma.TabIndex = 24;
-            lblIdioma.Text = "IDIOMA:";
+            this.lblIdioma.AutoSize = true;
+            this.lblIdioma.BackColor = System.Drawing.SystemColors.Desktop;
+            this.lblIdioma.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblIdioma.ForeColor = System.Drawing.Color.Gold;
+            this.lblIdioma.Location = new System.Drawing.Point(651, 382);
+            this.lblIdioma.Name = "lblIdioma";
+            this.lblIdioma.Size = new System.Drawing.Size(78, 20);
+            this.lblIdioma.TabIndex = 24;
+            this.lblIdioma.Text = "IDIOMA:";
             // 
             // lblFecha
             // 
-            lblFecha.AutoSize = true;
-            lblFecha.BackColor = SystemColors.Desktop;
-            lblFecha.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblFecha.ForeColor = Color.Gold;
-            lblFecha.Location = new Point(744, 651);
-            lblFecha.Name = "lblFecha";
-            lblFecha.Size = new Size(236, 25);
-            lblFecha.TabIndex = 25;
-            lblFecha.Text = "FECHA DE ESTRENO:";
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.BackColor = System.Drawing.SystemColors.Desktop;
+            this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblFecha.ForeColor = System.Drawing.Color.Gold;
+            this.lblFecha.Location = new System.Drawing.Point(651, 488);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(193, 20);
+            this.lblFecha.TabIndex = 25;
+            this.lblFecha.Text = "FECHA DE ESTRENO:";
             // 
             // lblDirector
             // 
-            lblDirector.AutoSize = true;
-            lblDirector.BackColor = SystemColors.Desktop;
-            lblDirector.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblDirector.ForeColor = Color.Gold;
-            lblDirector.Location = new Point(744, 582);
-            lblDirector.Name = "lblDirector";
-            lblDirector.Size = new Size(129, 25);
-            lblDirector.TabIndex = 26;
-            lblDirector.Text = "DIRECTOR:";
+            this.lblDirector.AutoSize = true;
+            this.lblDirector.BackColor = System.Drawing.SystemColors.Desktop;
+            this.lblDirector.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblDirector.ForeColor = System.Drawing.Color.Gold;
+            this.lblDirector.Location = new System.Drawing.Point(651, 436);
+            this.lblDirector.Name = "lblDirector";
+            this.lblDirector.Size = new System.Drawing.Size(106, 20);
+            this.lblDirector.TabIndex = 26;
+            this.lblDirector.Text = "DIRECTOR:";
             // 
             // btnComprarEntradas
             // 
-            btnComprarEntradas.BackColor = SystemColors.Desktop;
-            btnComprarEntradas.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnComprarEntradas.ForeColor = Color.Red;
-            btnComprarEntradas.Location = new Point(1232, 618);
-            btnComprarEntradas.Margin = new Padding(3, 4, 3, 4);
-            btnComprarEntradas.Name = "btnComprarEntradas";
-            btnComprarEntradas.Size = new Size(636, 58);
-            btnComprarEntradas.TabIndex = 27;
-            btnComprarEntradas.Text = "COMPRAR ENTRADAS";
-            btnComprarEntradas.UseVisualStyleBackColor = false;
-            btnComprarEntradas.Click += btnComprarEntradas_Click;
+            this.btnComprarEntradas.BackColor = System.Drawing.SystemColors.Desktop;
+            this.btnComprarEntradas.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnComprarEntradas.ForeColor = System.Drawing.Color.Red;
+            this.btnComprarEntradas.Location = new System.Drawing.Point(1078, 464);
+            this.btnComprarEntradas.Name = "btnComprarEntradas";
+            this.btnComprarEntradas.Size = new System.Drawing.Size(556, 44);
+            this.btnComprarEntradas.TabIndex = 27;
+            this.btnComprarEntradas.Text = "COMPRAR ENTRADAS";
+            this.btnComprarEntradas.UseVisualStyleBackColor = false;
+            this.btnComprarEntradas.Click += new System.EventHandler(this.btnComprarEntradas_Click_1);
             // 
             // btnSalir
             // 
-            btnSalir.BackColor = SystemColors.Desktop;
-            btnSalir.Enabled = false;
-            btnSalir.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnSalir.ForeColor = SystemColors.ButtonHighlight;
-            btnSalir.Location = new Point(1644, 82);
-            btnSalir.Margin = new Padding(3, 4, 3, 4);
-            btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(268, 58);
-            btnSalir.TabIndex = 28;
-            btnSalir.Text = "SALIR";
-            btnSalir.UseVisualStyleBackColor = false;
-            btnSalir.Visible = false;
-            btnSalir.Click += btnSalir_Click;
+            this.btnSalir.BackColor = System.Drawing.SystemColors.Desktop;
+            this.btnSalir.Enabled = false;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnSalir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSalir.Location = new System.Drawing.Point(1438, 62);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(234, 44);
+            this.btnSalir.TabIndex = 28;
+            this.btnSalir.Text = "SALIR";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Visible = false;
             // 
             // btnNombreUsuario
             // 
-            btnNombreUsuario.BackColor = SystemColors.Desktop;
-            btnNombreUsuario.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnNombreUsuario.ForeColor = SystemColors.ButtonHighlight;
-            btnNombreUsuario.Location = new Point(1367, 28);
-            btnNombreUsuario.Margin = new Padding(3, 4, 3, 4);
-            btnNombreUsuario.Name = "btnNombreUsuario";
-            btnNombreUsuario.Size = new Size(545, 58);
-            btnNombreUsuario.TabIndex = 29;
-            btnNombreUsuario.Text = "NOMBRE_USUARIO";
-            btnNombreUsuario.UseVisualStyleBackColor = false;
-            btnNombreUsuario.Click += btnNombreUsuario_Click;
+            this.btnNombreUsuario.BackColor = System.Drawing.SystemColors.Desktop;
+            this.btnNombreUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnNombreUsuario.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnNombreUsuario.Location = new System.Drawing.Point(1196, 21);
+            this.btnNombreUsuario.Name = "btnNombreUsuario";
+            this.btnNombreUsuario.Size = new System.Drawing.Size(477, 44);
+            this.btnNombreUsuario.TabIndex = 29;
+            this.btnNombreUsuario.Text = "NOMBRE_USUARIO";
+            this.btnNombreUsuario.UseVisualStyleBackColor = false;
             // 
             // pictureBox2
             // 
-            pictureBox2.BackColor = SystemColors.ControlLightLight;
-            pictureBox2.Location = new Point(396, 745);
-            pictureBox2.Margin = new Padding(3, 4, 3, 4);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(200, 305);
-            pictureBox2.TabIndex = 30;
-            pictureBox2.TabStop = false;
+            this.pictureBox2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pictureBox2.Location = new System.Drawing.Point(346, 559);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(175, 229);
+            this.pictureBox2.TabIndex = 30;
+            this.pictureBox2.TabStop = false;
             // 
             // pictureBox3
             // 
-            pictureBox3.BackColor = SystemColors.ControlLightLight;
-            pictureBox3.Location = new Point(712, 745);
-            pictureBox3.Margin = new Padding(3, 4, 3, 4);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(200, 305);
-            pictureBox3.TabIndex = 31;
-            pictureBox3.TabStop = false;
+            this.pictureBox3.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pictureBox3.Location = new System.Drawing.Point(623, 559);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(175, 229);
+            this.pictureBox3.TabIndex = 31;
+            this.pictureBox3.TabStop = false;
             // 
             // pictureBox4
             // 
-            pictureBox4.BackColor = SystemColors.ControlLightLight;
-            pictureBox4.Location = new Point(1025, 745);
-            pictureBox4.Margin = new Padding(3, 4, 3, 4);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(200, 305);
-            pictureBox4.TabIndex = 32;
-            pictureBox4.TabStop = false;
+            this.pictureBox4.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pictureBox4.Location = new System.Drawing.Point(897, 559);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(175, 229);
+            this.pictureBox4.TabIndex = 32;
+            this.pictureBox4.TabStop = false;
             // 
             // pictureBox5
             // 
-            pictureBox5.BackColor = SystemColors.ControlLightLight;
-            pictureBox5.Location = new Point(1339, 745);
-            pictureBox5.Margin = new Padding(3, 4, 3, 4);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(200, 305);
-            pictureBox5.TabIndex = 33;
-            pictureBox5.TabStop = false;
+            this.pictureBox5.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pictureBox5.Location = new System.Drawing.Point(1172, 559);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(175, 229);
+            this.pictureBox5.TabIndex = 33;
+            this.pictureBox5.TabStop = false;
             // 
             // pictureBox6
             // 
-            pictureBox6.BackColor = SystemColors.ControlLightLight;
-            pictureBox6.Location = new Point(1647, 745);
-            pictureBox6.Margin = new Padding(3, 4, 3, 4);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(200, 305);
-            pictureBox6.TabIndex = 34;
-            pictureBox6.TabStop = false;
+            this.pictureBox6.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pictureBox6.Location = new System.Drawing.Point(1441, 559);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(175, 229);
+            this.pictureBox6.TabIndex = 34;
+            this.pictureBox6.TabStop = false;
             // 
             // frmCliente
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.Desktop;
-            ClientSize = new Size(1924, 1055);
-            Controls.Add(pictureBox6);
-            Controls.Add(pictureBox5);
-            Controls.Add(pictureBox4);
-            Controls.Add(pictureBox3);
-            Controls.Add(pictureBox2);
-            Controls.Add(btnNombreUsuario);
-            Controls.Add(btnSalir);
-            Controls.Add(btnComprarEntradas);
-            Controls.Add(lblDirector);
-            Controls.Add(lblFecha);
-            Controls.Add(lblIdioma);
-            Controls.Add(lblFormato);
-            Controls.Add(lblClasificacion);
-            Controls.Add(lblGenero);
-            Controls.Add(lblDuracion);
-            Controls.Add(label12);
-            Controls.Add(lblNombrePelicula);
-            Controls.Add(pictureBox11);
-            Controls.Add(pictureBox1);
-            Controls.Add(label2);
-            FormBorderStyle = FormBorderStyle.FixedToolWindow;
-            Margin = new Padding(3, 4, 3, 4);
-            MaximizeBox = false;
-            Name = "frmCliente";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Cine";
-            WindowState = FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Desktop;
+            this.ClientSize = new System.Drawing.Size(1684, 791);
+            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.btnNombreUsuario);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.btnComprarEntradas);
+            this.Controls.Add(this.lblDirector);
+            this.Controls.Add(this.lblFecha);
+            this.Controls.Add(this.lblIdioma);
+            this.Controls.Add(this.lblFormato);
+            this.Controls.Add(this.lblClasificacion);
+            this.Controls.Add(this.lblGenero);
+            this.Controls.Add(this.lblDuracion);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.lblNombrePelicula);
+            this.Controls.Add(this.pictureBox11);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximizeBox = false;
+            this.Name = "frmCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Cine";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmCliente_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

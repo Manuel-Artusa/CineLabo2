@@ -28,903 +28,954 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblNombrePelicula = new Label();
-            pbButaca1 = new PictureBox();
-            pbButaca2 = new PictureBox();
-            pbButaca3 = new PictureBox();
-            pbButaca4 = new PictureBox();
-            pbButaca5 = new PictureBox();
-            pbButaca6 = new PictureBox();
-            pbButaca12 = new PictureBox();
-            pbButaca11 = new PictureBox();
-            pbButaca10 = new PictureBox();
-            pbButaca9 = new PictureBox();
-            pbButaca8 = new PictureBox();
-            pbButaca7 = new PictureBox();
-            pbButaca18 = new PictureBox();
-            pbButaca17 = new PictureBox();
-            pbButaca16 = new PictureBox();
-            pbButaca15 = new PictureBox();
-            pbButaca14 = new PictureBox();
-            pbButaca13 = new PictureBox();
-            pictureBox19 = new PictureBox();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            label7 = new Label();
-            label8 = new Label();
-            label9 = new Label();
-            label10 = new Label();
-            label11 = new Label();
-            label12 = new Label();
-            label13 = new Label();
-            label14 = new Label();
-            label15 = new Label();
-            label16 = new Label();
-            label17 = new Label();
-            label18 = new Label();
-            label19 = new Label();
-            label20 = new Label();
-            label21 = new Label();
-            label22 = new Label();
-            label23 = new Label();
-            label24 = new Label();
-            label25 = new Label();
-            btnConfirmar = new Button();
-            btnCancelar = new Button();
-            tbNombre = new TextBox();
-            tbApellido = new TextBox();
-            tbCantidad = new TextBox();
-            cbPelicula = new ComboBox();
-            cbFuncion = new ComboBox();
-            label27 = new Label();
-            lblTotal = new Label();
-            label29 = new Label();
-            textBox1 = new TextBox();
-            lblDescuento = new Label();
-            label30 = new Label();
-            label31 = new Label();
-            lblSubtotal = new Label();
-            btnVolver = new Button();
-            ((System.ComponentModel.ISupportInitialize)pbButaca1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbButaca2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbButaca3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbButaca4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbButaca5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbButaca6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbButaca12).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbButaca11).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbButaca10).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbButaca9).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbButaca8).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbButaca7).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbButaca18).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbButaca17).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbButaca16).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbButaca15).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbButaca14).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbButaca13).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox19).BeginInit();
-            SuspendLayout();
+            this.lblNombrePelicula = new System.Windows.Forms.Label();
+            this.pbButaca1 = new System.Windows.Forms.PictureBox();
+            this.pbButaca2 = new System.Windows.Forms.PictureBox();
+            this.pbButaca3 = new System.Windows.Forms.PictureBox();
+            this.pbButaca4 = new System.Windows.Forms.PictureBox();
+            this.pbButaca5 = new System.Windows.Forms.PictureBox();
+            this.pbButaca6 = new System.Windows.Forms.PictureBox();
+            this.pbButaca12 = new System.Windows.Forms.PictureBox();
+            this.pbButaca11 = new System.Windows.Forms.PictureBox();
+            this.pbButaca10 = new System.Windows.Forms.PictureBox();
+            this.pbButaca9 = new System.Windows.Forms.PictureBox();
+            this.pbButaca8 = new System.Windows.Forms.PictureBox();
+            this.pbButaca7 = new System.Windows.Forms.PictureBox();
+            this.pbButaca18 = new System.Windows.Forms.PictureBox();
+            this.pbButaca17 = new System.Windows.Forms.PictureBox();
+            this.pbButaca16 = new System.Windows.Forms.PictureBox();
+            this.pbButaca15 = new System.Windows.Forms.PictureBox();
+            this.pbButaca14 = new System.Windows.Forms.PictureBox();
+            this.pbButaca13 = new System.Windows.Forms.PictureBox();
+            this.pictureBox19 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.btnConfirmar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.tbNombre = new System.Windows.Forms.TextBox();
+            this.tbApellido = new System.Windows.Forms.TextBox();
+            this.txtDNI = new System.Windows.Forms.TextBox();
+            this.cbPelicula = new System.Windows.Forms.ComboBox();
+            this.cbFuncion = new System.Windows.Forms.ComboBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.lblTelfono = new System.Windows.Forms.Label();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.lblDescuento = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.lblSubtotal = new System.Windows.Forms.Label();
+            this.btnVolver = new System.Windows.Forms.Button();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
+            this.lblCorreo = new System.Windows.Forms.Label();
+            this.btnTraerFunciones = new System.Windows.Forms.Button();
+            this.lblFecha = new System.Windows.Forms.Label();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            ((System.ComponentModel.ISupportInitialize)(this.pbButaca1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbButaca2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbButaca3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbButaca4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbButaca5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbButaca6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbButaca12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbButaca11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbButaca10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbButaca9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbButaca8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbButaca7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbButaca18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbButaca17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbButaca16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbButaca15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbButaca14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbButaca13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
+            this.SuspendLayout();
             // 
             // lblNombrePelicula
             // 
-            lblNombrePelicula.AutoSize = true;
-            lblNombrePelicula.BackColor = SystemColors.Desktop;
-            lblNombrePelicula.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            lblNombrePelicula.ForeColor = Color.Gold;
-            lblNombrePelicula.Location = new Point(990, 32);
-            lblNombrePelicula.Name = "lblNombrePelicula";
-            lblNombrePelicula.Size = new Size(324, 26);
-            lblNombrePelicula.TabIndex = 19;
-            lblNombrePelicula.Text = "SELECCIONE UNA BUTACA";
+            this.lblNombrePelicula.AutoSize = true;
+            this.lblNombrePelicula.BackColor = System.Drawing.SystemColors.Desktop;
+            this.lblNombrePelicula.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblNombrePelicula.ForeColor = System.Drawing.Color.Gold;
+            this.lblNombrePelicula.Location = new System.Drawing.Point(990, 32);
+            this.lblNombrePelicula.Name = "lblNombrePelicula";
+            this.lblNombrePelicula.Size = new System.Drawing.Size(324, 26);
+            this.lblNombrePelicula.TabIndex = 19;
+            this.lblNombrePelicula.Text = "SELECCIONE UNA BUTACA";
             // 
             // pbButaca1
             // 
-            pbButaca1.BackColor = SystemColors.Desktop;
-            pbButaca1.Image = CinesFront.Properties.Resources.Butaca;
-            pbButaca1.Location = new Point(670, 182);
-            pbButaca1.Name = "pbButaca1";
-            pbButaca1.Size = new Size(116, 173);
-            pbButaca1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbButaca1.TabIndex = 20;
-            pbButaca1.TabStop = false;
-            pbButaca1.Click += pbButaca1_Click;
+            this.pbButaca1.BackColor = System.Drawing.SystemColors.Desktop;
+            this.pbButaca1.Image = global::CinesFront.Properties.Resources.Butaca;
+            this.pbButaca1.Location = new System.Drawing.Point(670, 182);
+            this.pbButaca1.Name = "pbButaca1";
+            this.pbButaca1.Size = new System.Drawing.Size(116, 173);
+            this.pbButaca1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbButaca1.TabIndex = 20;
+            this.pbButaca1.TabStop = false;
+            this.pbButaca1.Click += new System.EventHandler(this.pbButaca1_Click_1);
             // 
             // pbButaca2
             // 
-            pbButaca2.BackColor = Color.Maroon;
-            pbButaca2.Image = CinesFront.Properties.Resources.Butaca;
-            pbButaca2.Location = new Point(858, 182);
-            pbButaca2.Name = "pbButaca2";
-            pbButaca2.Size = new Size(116, 173);
-            pbButaca2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbButaca2.TabIndex = 25;
-            pbButaca2.TabStop = false;
+            this.pbButaca2.BackColor = System.Drawing.Color.Maroon;
+            this.pbButaca2.Image = global::CinesFront.Properties.Resources.Butaca;
+            this.pbButaca2.Location = new System.Drawing.Point(858, 182);
+            this.pbButaca2.Name = "pbButaca2";
+            this.pbButaca2.Size = new System.Drawing.Size(116, 173);
+            this.pbButaca2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbButaca2.TabIndex = 25;
+            this.pbButaca2.TabStop = false;
+            this.pbButaca2.Click += new System.EventHandler(this.pbButaca2_Click);
             // 
             // pbButaca3
             // 
-            pbButaca3.BackColor = SystemColors.Desktop;
-            pbButaca3.Image = CinesFront.Properties.Resources.Butaca;
-            pbButaca3.Location = new Point(1039, 182);
-            pbButaca3.Name = "pbButaca3";
-            pbButaca3.Size = new Size(116, 173);
-            pbButaca3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbButaca3.TabIndex = 26;
-            pbButaca3.TabStop = false;
-            pbButaca3.Click += pbButaca3_Click;
+            this.pbButaca3.BackColor = System.Drawing.SystemColors.Desktop;
+            this.pbButaca3.Image = global::CinesFront.Properties.Resources.Butaca;
+            this.pbButaca3.Location = new System.Drawing.Point(1039, 182);
+            this.pbButaca3.Name = "pbButaca3";
+            this.pbButaca3.Size = new System.Drawing.Size(116, 173);
+            this.pbButaca3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbButaca3.TabIndex = 26;
+            this.pbButaca3.TabStop = false;
             // 
             // pbButaca4
             // 
-            pbButaca4.BackColor = SystemColors.Desktop;
-            pbButaca4.Image = CinesFront.Properties.Resources.Butaca;
-            pbButaca4.Location = new Point(1216, 182);
-            pbButaca4.Name = "pbButaca4";
-            pbButaca4.Size = new Size(116, 173);
-            pbButaca4.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbButaca4.TabIndex = 27;
-            pbButaca4.TabStop = false;
+            this.pbButaca4.BackColor = System.Drawing.SystemColors.Desktop;
+            this.pbButaca4.Image = global::CinesFront.Properties.Resources.Butaca;
+            this.pbButaca4.Location = new System.Drawing.Point(1216, 182);
+            this.pbButaca4.Name = "pbButaca4";
+            this.pbButaca4.Size = new System.Drawing.Size(116, 173);
+            this.pbButaca4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbButaca4.TabIndex = 27;
+            this.pbButaca4.TabStop = false;
             // 
             // pbButaca5
             // 
-            pbButaca5.BackColor = SystemColors.Desktop;
-            pbButaca5.BackgroundImage = CinesFront.Properties.Resources.Butaca;
-            pbButaca5.Image = CinesFront.Properties.Resources.Butaca;
-            pbButaca5.Location = new Point(1390, 182);
-            pbButaca5.Name = "pbButaca5";
-            pbButaca5.Size = new Size(116, 173);
-            pbButaca5.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbButaca5.TabIndex = 28;
-            pbButaca5.TabStop = false;
+            this.pbButaca5.BackColor = System.Drawing.SystemColors.Desktop;
+            this.pbButaca5.BackgroundImage = global::CinesFront.Properties.Resources.Butaca;
+            this.pbButaca5.Image = global::CinesFront.Properties.Resources.Butaca;
+            this.pbButaca5.Location = new System.Drawing.Point(1390, 182);
+            this.pbButaca5.Name = "pbButaca5";
+            this.pbButaca5.Size = new System.Drawing.Size(116, 173);
+            this.pbButaca5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbButaca5.TabIndex = 28;
+            this.pbButaca5.TabStop = false;
             // 
             // pbButaca6
             // 
-            pbButaca6.BackColor = SystemColors.Desktop;
-            pbButaca6.BackgroundImage = CinesFront.Properties.Resources.Butaca;
-            pbButaca6.Image = CinesFront.Properties.Resources.Butaca;
-            pbButaca6.Location = new Point(1562, 182);
-            pbButaca6.Name = "pbButaca6";
-            pbButaca6.Size = new Size(116, 173);
-            pbButaca6.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbButaca6.TabIndex = 39;
-            pbButaca6.TabStop = false;
-            pbButaca6.Click += pbButaca6_Click;
+            this.pbButaca6.BackColor = System.Drawing.SystemColors.Desktop;
+            this.pbButaca6.BackgroundImage = global::CinesFront.Properties.Resources.Butaca;
+            this.pbButaca6.Image = global::CinesFront.Properties.Resources.Butaca;
+            this.pbButaca6.Location = new System.Drawing.Point(1562, 182);
+            this.pbButaca6.Name = "pbButaca6";
+            this.pbButaca6.Size = new System.Drawing.Size(116, 173);
+            this.pbButaca6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbButaca6.TabIndex = 39;
+            this.pbButaca6.TabStop = false;
             // 
             // pbButaca12
             // 
-            pbButaca12.BackColor = SystemColors.Desktop;
-            pbButaca12.BackgroundImage = CinesFront.Properties.Resources.Butaca;
-            pbButaca12.Image = CinesFront.Properties.Resources.Butaca;
-            pbButaca12.Location = new Point(1562, 400);
-            pbButaca12.Name = "pbButaca12";
-            pbButaca12.Size = new Size(116, 173);
-            pbButaca12.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbButaca12.TabIndex = 45;
-            pbButaca12.TabStop = false;
-            pbButaca12.Click += pbButaca12_Click;
+            this.pbButaca12.BackColor = System.Drawing.SystemColors.Desktop;
+            this.pbButaca12.BackgroundImage = global::CinesFront.Properties.Resources.Butaca;
+            this.pbButaca12.Image = global::CinesFront.Properties.Resources.Butaca;
+            this.pbButaca12.Location = new System.Drawing.Point(1562, 400);
+            this.pbButaca12.Name = "pbButaca12";
+            this.pbButaca12.Size = new System.Drawing.Size(116, 173);
+            this.pbButaca12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbButaca12.TabIndex = 45;
+            this.pbButaca12.TabStop = false;
             // 
             // pbButaca11
             // 
-            pbButaca11.BackColor = SystemColors.Desktop;
-            pbButaca11.BackgroundImage = CinesFront.Properties.Resources.Butaca;
-            pbButaca11.Image = CinesFront.Properties.Resources.Butaca;
-            pbButaca11.Location = new Point(1390, 400);
-            pbButaca11.Name = "pbButaca11";
-            pbButaca11.Size = new Size(116, 173);
-            pbButaca11.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbButaca11.TabIndex = 44;
-            pbButaca11.TabStop = false;
-            pbButaca11.Click += pbButaca11_Click;
+            this.pbButaca11.BackColor = System.Drawing.SystemColors.Desktop;
+            this.pbButaca11.BackgroundImage = global::CinesFront.Properties.Resources.Butaca;
+            this.pbButaca11.Image = global::CinesFront.Properties.Resources.Butaca;
+            this.pbButaca11.Location = new System.Drawing.Point(1390, 400);
+            this.pbButaca11.Name = "pbButaca11";
+            this.pbButaca11.Size = new System.Drawing.Size(116, 173);
+            this.pbButaca11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbButaca11.TabIndex = 44;
+            this.pbButaca11.TabStop = false;
             // 
             // pbButaca10
             // 
-            pbButaca10.BackColor = SystemColors.Desktop;
-            pbButaca10.BackgroundImage = CinesFront.Properties.Resources.Butaca;
-            pbButaca10.Image = CinesFront.Properties.Resources.Butaca;
-            pbButaca10.Location = new Point(1216, 400);
-            pbButaca10.Name = "pbButaca10";
-            pbButaca10.Size = new Size(116, 173);
-            pbButaca10.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbButaca10.TabIndex = 43;
-            pbButaca10.TabStop = false;
-            pbButaca10.Click += pbButaca10_Click;
+            this.pbButaca10.BackColor = System.Drawing.SystemColors.Desktop;
+            this.pbButaca10.BackgroundImage = global::CinesFront.Properties.Resources.Butaca;
+            this.pbButaca10.Image = global::CinesFront.Properties.Resources.Butaca;
+            this.pbButaca10.Location = new System.Drawing.Point(1216, 400);
+            this.pbButaca10.Name = "pbButaca10";
+            this.pbButaca10.Size = new System.Drawing.Size(116, 173);
+            this.pbButaca10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbButaca10.TabIndex = 43;
+            this.pbButaca10.TabStop = false;
             // 
             // pbButaca9
             // 
-            pbButaca9.BackColor = SystemColors.Desktop;
-            pbButaca9.BackgroundImage = CinesFront.Properties.Resources.Butaca;
-            pbButaca9.Image = CinesFront.Properties.Resources.Butaca;
-            pbButaca9.Location = new Point(1039, 400);
-            pbButaca9.Name = "pbButaca9";
-            pbButaca9.Size = new Size(116, 173);
-            pbButaca9.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbButaca9.TabIndex = 42;
-            pbButaca9.TabStop = false;
-            pbButaca9.Click += pbButaca9_Click;
+            this.pbButaca9.BackColor = System.Drawing.SystemColors.Desktop;
+            this.pbButaca9.BackgroundImage = global::CinesFront.Properties.Resources.Butaca;
+            this.pbButaca9.Image = global::CinesFront.Properties.Resources.Butaca;
+            this.pbButaca9.Location = new System.Drawing.Point(1039, 400);
+            this.pbButaca9.Name = "pbButaca9";
+            this.pbButaca9.Size = new System.Drawing.Size(116, 173);
+            this.pbButaca9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbButaca9.TabIndex = 42;
+            this.pbButaca9.TabStop = false;
             // 
             // pbButaca8
             // 
-            pbButaca8.BackColor = SystemColors.Desktop;
-            pbButaca8.BackgroundImage = CinesFront.Properties.Resources.Butaca;
-            pbButaca8.Image = CinesFront.Properties.Resources.Butaca;
-            pbButaca8.Location = new Point(858, 400);
-            pbButaca8.Name = "pbButaca8";
-            pbButaca8.Size = new Size(116, 173);
-            pbButaca8.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbButaca8.TabIndex = 41;
-            pbButaca8.TabStop = false;
-            pbButaca8.Click += pbButaca8_Click;
+            this.pbButaca8.BackColor = System.Drawing.SystemColors.Desktop;
+            this.pbButaca8.BackgroundImage = global::CinesFront.Properties.Resources.Butaca;
+            this.pbButaca8.Image = global::CinesFront.Properties.Resources.Butaca;
+            this.pbButaca8.Location = new System.Drawing.Point(858, 400);
+            this.pbButaca8.Name = "pbButaca8";
+            this.pbButaca8.Size = new System.Drawing.Size(116, 173);
+            this.pbButaca8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbButaca8.TabIndex = 41;
+            this.pbButaca8.TabStop = false;
             // 
             // pbButaca7
             // 
-            pbButaca7.BackColor = SystemColors.Desktop;
-            pbButaca7.BackgroundImage = CinesFront.Properties.Resources.Butaca;
-            pbButaca7.Image = CinesFront.Properties.Resources.Butaca;
-            pbButaca7.Location = new Point(670, 400);
-            pbButaca7.Name = "pbButaca7";
-            pbButaca7.Size = new Size(116, 173);
-            pbButaca7.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbButaca7.TabIndex = 40;
-            pbButaca7.TabStop = false;
-            pbButaca7.Click += pbButaca7_Click;
+            this.pbButaca7.BackColor = System.Drawing.SystemColors.Desktop;
+            this.pbButaca7.BackgroundImage = global::CinesFront.Properties.Resources.Butaca;
+            this.pbButaca7.Image = global::CinesFront.Properties.Resources.Butaca;
+            this.pbButaca7.Location = new System.Drawing.Point(670, 400);
+            this.pbButaca7.Name = "pbButaca7";
+            this.pbButaca7.Size = new System.Drawing.Size(116, 173);
+            this.pbButaca7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbButaca7.TabIndex = 40;
+            this.pbButaca7.TabStop = false;
             // 
             // pbButaca18
             // 
-            pbButaca18.BackColor = SystemColors.Desktop;
-            pbButaca18.BackgroundImage = CinesFront.Properties.Resources.Butaca;
-            pbButaca18.Image = CinesFront.Properties.Resources.Butaca;
-            pbButaca18.Location = new Point(1562, 616);
-            pbButaca18.Name = "pbButaca18";
-            pbButaca18.Size = new Size(116, 173);
-            pbButaca18.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbButaca18.TabIndex = 51;
-            pbButaca18.TabStop = false;
-            pbButaca18.Click += pbButaca18_Click;
+            this.pbButaca18.BackColor = System.Drawing.SystemColors.Desktop;
+            this.pbButaca18.BackgroundImage = global::CinesFront.Properties.Resources.Butaca;
+            this.pbButaca18.Image = global::CinesFront.Properties.Resources.Butaca;
+            this.pbButaca18.Location = new System.Drawing.Point(1562, 616);
+            this.pbButaca18.Name = "pbButaca18";
+            this.pbButaca18.Size = new System.Drawing.Size(116, 173);
+            this.pbButaca18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbButaca18.TabIndex = 51;
+            this.pbButaca18.TabStop = false;
             // 
             // pbButaca17
             // 
-            pbButaca17.BackColor = SystemColors.Desktop;
-            pbButaca17.BackgroundImage = CinesFront.Properties.Resources.Butaca;
-            pbButaca17.Image = CinesFront.Properties.Resources.Butaca;
-            pbButaca17.Location = new Point(1390, 616);
-            pbButaca17.Name = "pbButaca17";
-            pbButaca17.Size = new Size(116, 173);
-            pbButaca17.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbButaca17.TabIndex = 50;
-            pbButaca17.TabStop = false;
-            pbButaca17.Click += pbButaca17_Click;
+            this.pbButaca17.BackColor = System.Drawing.SystemColors.Desktop;
+            this.pbButaca17.BackgroundImage = global::CinesFront.Properties.Resources.Butaca;
+            this.pbButaca17.Image = global::CinesFront.Properties.Resources.Butaca;
+            this.pbButaca17.Location = new System.Drawing.Point(1390, 616);
+            this.pbButaca17.Name = "pbButaca17";
+            this.pbButaca17.Size = new System.Drawing.Size(116, 173);
+            this.pbButaca17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbButaca17.TabIndex = 50;
+            this.pbButaca17.TabStop = false;
             // 
             // pbButaca16
             // 
-            pbButaca16.BackColor = SystemColors.Desktop;
-            pbButaca16.BackgroundImage = CinesFront.Properties.Resources.Butaca;
-            pbButaca16.Image = CinesFront.Properties.Resources.Butaca;
-            pbButaca16.Location = new Point(1216, 616);
-            pbButaca16.Name = "pbButaca16";
-            pbButaca16.Size = new Size(116, 173);
-            pbButaca16.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbButaca16.TabIndex = 49;
-            pbButaca16.TabStop = false;
-            pbButaca16.Click += pbButaca16_Click;
+            this.pbButaca16.BackColor = System.Drawing.SystemColors.Desktop;
+            this.pbButaca16.BackgroundImage = global::CinesFront.Properties.Resources.Butaca;
+            this.pbButaca16.Image = global::CinesFront.Properties.Resources.Butaca;
+            this.pbButaca16.Location = new System.Drawing.Point(1216, 616);
+            this.pbButaca16.Name = "pbButaca16";
+            this.pbButaca16.Size = new System.Drawing.Size(116, 173);
+            this.pbButaca16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbButaca16.TabIndex = 49;
+            this.pbButaca16.TabStop = false;
             // 
             // pbButaca15
             // 
-            pbButaca15.BackColor = SystemColors.Desktop;
-            pbButaca15.BackgroundImage = CinesFront.Properties.Resources.Butaca;
-            pbButaca15.Image = CinesFront.Properties.Resources.Butaca;
-            pbButaca15.Location = new Point(1039, 616);
-            pbButaca15.Name = "pbButaca15";
-            pbButaca15.Size = new Size(116, 173);
-            pbButaca15.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbButaca15.TabIndex = 48;
-            pbButaca15.TabStop = false;
-            pbButaca15.Click += pbButaca15_Click;
+            this.pbButaca15.BackColor = System.Drawing.SystemColors.Desktop;
+            this.pbButaca15.BackgroundImage = global::CinesFront.Properties.Resources.Butaca;
+            this.pbButaca15.Image = global::CinesFront.Properties.Resources.Butaca;
+            this.pbButaca15.Location = new System.Drawing.Point(1039, 616);
+            this.pbButaca15.Name = "pbButaca15";
+            this.pbButaca15.Size = new System.Drawing.Size(116, 173);
+            this.pbButaca15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbButaca15.TabIndex = 48;
+            this.pbButaca15.TabStop = false;
             // 
             // pbButaca14
             // 
-            pbButaca14.BackColor = SystemColors.Desktop;
-            pbButaca14.BackgroundImage = CinesFront.Properties.Resources.Butaca;
-            pbButaca14.Image = CinesFront.Properties.Resources.Butaca;
-            pbButaca14.Location = new Point(858, 616);
-            pbButaca14.Name = "pbButaca14";
-            pbButaca14.Size = new Size(116, 173);
-            pbButaca14.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbButaca14.TabIndex = 47;
-            pbButaca14.TabStop = false;
-            pbButaca14.Click += pbButaca14_Click;
+            this.pbButaca14.BackColor = System.Drawing.SystemColors.Desktop;
+            this.pbButaca14.BackgroundImage = global::CinesFront.Properties.Resources.Butaca;
+            this.pbButaca14.Image = global::CinesFront.Properties.Resources.Butaca;
+            this.pbButaca14.Location = new System.Drawing.Point(858, 616);
+            this.pbButaca14.Name = "pbButaca14";
+            this.pbButaca14.Size = new System.Drawing.Size(116, 173);
+            this.pbButaca14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbButaca14.TabIndex = 47;
+            this.pbButaca14.TabStop = false;
             // 
             // pbButaca13
             // 
-            pbButaca13.BackColor = SystemColors.Desktop;
-            pbButaca13.BackgroundImage = CinesFront.Properties.Resources.Butaca;
-            pbButaca13.Image = CinesFront.Properties.Resources.Butaca;
-            pbButaca13.Location = new Point(670, 616);
-            pbButaca13.Name = "pbButaca13";
-            pbButaca13.Size = new Size(116, 173);
-            pbButaca13.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbButaca13.TabIndex = 46;
-            pbButaca13.TabStop = false;
-            pbButaca13.Click += pbButaca13_Click;
+            this.pbButaca13.BackColor = System.Drawing.SystemColors.Desktop;
+            this.pbButaca13.BackgroundImage = global::CinesFront.Properties.Resources.Butaca;
+            this.pbButaca13.Image = global::CinesFront.Properties.Resources.Butaca;
+            this.pbButaca13.Location = new System.Drawing.Point(670, 616);
+            this.pbButaca13.Name = "pbButaca13";
+            this.pbButaca13.Size = new System.Drawing.Size(116, 173);
+            this.pbButaca13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbButaca13.TabIndex = 46;
+            this.pbButaca13.TabStop = false;
             // 
             // pictureBox19
             // 
-            pictureBox19.BackColor = SystemColors.ControlDarkDark;
-            pictureBox19.Location = new Point(696, 86);
-            pictureBox19.Name = "pictureBox19";
-            pictureBox19.Size = new Size(958, 46);
-            pictureBox19.TabIndex = 52;
-            pictureBox19.TabStop = false;
+            this.pictureBox19.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.pictureBox19.Location = new System.Drawing.Point(696, 86);
+            this.pictureBox19.Name = "pictureBox19";
+            this.pictureBox19.Size = new System.Drawing.Size(958, 46);
+            this.pictureBox19.TabIndex = 52;
+            this.pictureBox19.TabStop = false;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.BackColor = SystemColors.ControlDarkDark;
-            label1.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = SystemColors.ControlLightLight;
-            label1.Location = new Point(1113, 94);
-            label1.Name = "label1";
-            label1.Size = new Size(132, 26);
-            label1.TabIndex = 53;
-            label1.Text = "PANTALLA";
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(1113, 94);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(132, 26);
+            this.label1.TabIndex = 53;
+            this.label1.Text = "PANTALLA";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.BackColor = SystemColors.Desktop;
-            label2.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = Color.Gold;
-            label2.Location = new Point(714, 149);
-            label2.Name = "label2";
-            label2.Size = new Size(25, 26);
-            label2.TabIndex = 54;
-            label2.Text = "1";
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.Desktop;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.Gold;
+            this.label2.Location = new System.Drawing.Point(714, 149);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(25, 26);
+            this.label2.TabIndex = 54;
+            this.label2.Text = "1";
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.BackColor = SystemColors.Desktop;
-            label3.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.ForeColor = Color.Gold;
-            label3.Location = new Point(902, 149);
-            label3.Name = "label3";
-            label3.Size = new Size(25, 26);
-            label3.TabIndex = 55;
-            label3.Text = "2";
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.Desktop;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.Gold;
+            this.label3.Location = new System.Drawing.Point(902, 149);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(25, 26);
+            this.label3.TabIndex = 55;
+            this.label3.Text = "2";
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.BackColor = SystemColors.Desktop;
-            label4.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.ForeColor = Color.Gold;
-            label4.Location = new Point(1078, 149);
-            label4.Name = "label4";
-            label4.Size = new Size(25, 26);
-            label4.TabIndex = 56;
-            label4.Text = "3";
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.Desktop;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.Gold;
+            this.label4.Location = new System.Drawing.Point(1078, 149);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(25, 26);
+            this.label4.TabIndex = 56;
+            this.label4.Text = "3";
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.BackColor = SystemColors.Desktop;
-            label5.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.ForeColor = Color.Gold;
-            label5.Location = new Point(1265, 149);
-            label5.Name = "label5";
-            label5.Size = new Size(25, 26);
-            label5.TabIndex = 57;
-            label5.Text = "4";
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.SystemColors.Desktop;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.Color.Gold;
+            this.label5.Location = new System.Drawing.Point(1265, 149);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(25, 26);
+            this.label5.TabIndex = 57;
+            this.label5.Text = "4";
             // 
             // label6
             // 
-            label6.AutoSize = true;
-            label6.BackColor = SystemColors.Desktop;
-            label6.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.ForeColor = Color.Gold;
-            label6.Location = new Point(1435, 149);
-            label6.Name = "label6";
-            label6.Size = new Size(25, 26);
-            label6.TabIndex = 58;
-            label6.Text = "5";
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.SystemColors.Desktop;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.Color.Gold;
+            this.label6.Location = new System.Drawing.Point(1435, 149);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(25, 26);
+            this.label6.TabIndex = 58;
+            this.label6.Text = "5";
             // 
             // label7
             // 
-            label7.AutoSize = true;
-            label7.BackColor = SystemColors.Desktop;
-            label7.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.ForeColor = Color.Gold;
-            label7.Location = new Point(1613, 149);
-            label7.Name = "label7";
-            label7.Size = new Size(25, 26);
-            label7.TabIndex = 59;
-            label7.Text = "6";
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.SystemColors.Desktop;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.ForeColor = System.Drawing.Color.Gold;
+            this.label7.Location = new System.Drawing.Point(1613, 149);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(25, 26);
+            this.label7.TabIndex = 59;
+            this.label7.Text = "6";
             // 
             // label8
             // 
-            label8.AutoSize = true;
-            label8.BackColor = SystemColors.Desktop;
-            label8.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.ForeColor = Color.Gold;
-            label8.Location = new Point(714, 368);
-            label8.Name = "label8";
-            label8.Size = new Size(25, 26);
-            label8.TabIndex = 60;
-            label8.Text = "7";
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.SystemColors.Desktop;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label8.ForeColor = System.Drawing.Color.Gold;
+            this.label8.Location = new System.Drawing.Point(714, 368);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(25, 26);
+            this.label8.TabIndex = 60;
+            this.label8.Text = "7";
             // 
             // label9
             // 
-            label9.AutoSize = true;
-            label9.BackColor = SystemColors.Desktop;
-            label9.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.ForeColor = Color.Gold;
-            label9.Location = new Point(902, 368);
-            label9.Name = "label9";
-            label9.Size = new Size(25, 26);
-            label9.TabIndex = 61;
-            label9.Text = "8";
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.SystemColors.Desktop;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label9.ForeColor = System.Drawing.Color.Gold;
+            this.label9.Location = new System.Drawing.Point(902, 368);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(25, 26);
+            this.label9.TabIndex = 61;
+            this.label9.Text = "8";
             // 
             // label10
             // 
-            label10.AutoSize = true;
-            label10.BackColor = SystemColors.Desktop;
-            label10.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label10.ForeColor = Color.Gold;
-            label10.Location = new Point(1088, 368);
-            label10.Name = "label10";
-            label10.Size = new Size(25, 26);
-            label10.TabIndex = 62;
-            label10.Text = "9";
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.SystemColors.Desktop;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label10.ForeColor = System.Drawing.Color.Gold;
+            this.label10.Location = new System.Drawing.Point(1088, 368);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(25, 26);
+            this.label10.TabIndex = 62;
+            this.label10.Text = "9";
             // 
             // label11
             // 
-            label11.AutoSize = true;
-            label11.BackColor = SystemColors.Desktop;
-            label11.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label11.ForeColor = Color.Gold;
-            label11.Location = new Point(1250, 368);
-            label11.Name = "label11";
-            label11.Size = new Size(38, 26);
-            label11.TabIndex = 63;
-            label11.Text = "10";
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.SystemColors.Desktop;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label11.ForeColor = System.Drawing.Color.Gold;
+            this.label11.Location = new System.Drawing.Point(1250, 368);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(38, 26);
+            this.label11.TabIndex = 63;
+            this.label11.Text = "10";
             // 
             // label12
             // 
-            label12.AutoSize = true;
-            label12.BackColor = SystemColors.Desktop;
-            label12.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label12.ForeColor = Color.Gold;
-            label12.Location = new Point(1435, 368);
-            label12.Name = "label12";
-            label12.Size = new Size(38, 26);
-            label12.TabIndex = 64;
-            label12.Text = "11";
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.SystemColors.Desktop;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label12.ForeColor = System.Drawing.Color.Gold;
+            this.label12.Location = new System.Drawing.Point(1435, 368);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(38, 26);
+            this.label12.TabIndex = 64;
+            this.label12.Text = "11";
             // 
             // label13
             // 
-            label13.AutoSize = true;
-            label13.BackColor = SystemColors.Desktop;
-            label13.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label13.ForeColor = Color.Gold;
-            label13.Location = new Point(1613, 368);
-            label13.Name = "label13";
-            label13.Size = new Size(38, 26);
-            label13.TabIndex = 65;
-            label13.Text = "12";
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.SystemColors.Desktop;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label13.ForeColor = System.Drawing.Color.Gold;
+            this.label13.Location = new System.Drawing.Point(1613, 368);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(38, 26);
+            this.label13.TabIndex = 65;
+            this.label13.Text = "12";
             // 
             // label14
             // 
-            label14.AutoSize = true;
-            label14.BackColor = SystemColors.Desktop;
-            label14.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label14.ForeColor = Color.Gold;
-            label14.Location = new Point(714, 584);
-            label14.Name = "label14";
-            label14.Size = new Size(38, 26);
-            label14.TabIndex = 66;
-            label14.Text = "13";
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.SystemColors.Desktop;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label14.ForeColor = System.Drawing.Color.Gold;
+            this.label14.Location = new System.Drawing.Point(714, 584);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(38, 26);
+            this.label14.TabIndex = 66;
+            this.label14.Text = "13";
             // 
             // label15
             // 
-            label15.AutoSize = true;
-            label15.BackColor = SystemColors.Desktop;
-            label15.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label15.ForeColor = Color.Gold;
-            label15.Location = new Point(902, 584);
-            label15.Name = "label15";
-            label15.Size = new Size(38, 26);
-            label15.TabIndex = 67;
-            label15.Text = "14";
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.SystemColors.Desktop;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label15.ForeColor = System.Drawing.Color.Gold;
+            this.label15.Location = new System.Drawing.Point(902, 584);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(38, 26);
+            this.label15.TabIndex = 67;
+            this.label15.Text = "14";
             // 
             // label16
             // 
-            label16.AutoSize = true;
-            label16.BackColor = SystemColors.Desktop;
-            label16.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label16.ForeColor = Color.Gold;
-            label16.Location = new Point(1088, 584);
-            label16.Name = "label16";
-            label16.Size = new Size(38, 26);
-            label16.TabIndex = 68;
-            label16.Text = "15";
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.SystemColors.Desktop;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label16.ForeColor = System.Drawing.Color.Gold;
+            this.label16.Location = new System.Drawing.Point(1088, 584);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(38, 26);
+            this.label16.TabIndex = 68;
+            this.label16.Text = "15";
             // 
             // label17
             // 
-            label17.AutoSize = true;
-            label17.BackColor = SystemColors.Desktop;
-            label17.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label17.ForeColor = Color.Gold;
-            label17.Location = new Point(1265, 584);
-            label17.Name = "label17";
-            label17.Size = new Size(38, 26);
-            label17.TabIndex = 69;
-            label17.Text = "16";
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.SystemColors.Desktop;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label17.ForeColor = System.Drawing.Color.Gold;
+            this.label17.Location = new System.Drawing.Point(1265, 584);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(38, 26);
+            this.label17.TabIndex = 69;
+            this.label17.Text = "16";
             // 
             // label18
             // 
-            label18.AutoSize = true;
-            label18.BackColor = SystemColors.Desktop;
-            label18.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label18.ForeColor = Color.Gold;
-            label18.Location = new Point(1435, 584);
-            label18.Name = "label18";
-            label18.Size = new Size(38, 26);
-            label18.TabIndex = 70;
-            label18.Text = "17";
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.SystemColors.Desktop;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label18.ForeColor = System.Drawing.Color.Gold;
+            this.label18.Location = new System.Drawing.Point(1435, 584);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(38, 26);
+            this.label18.TabIndex = 70;
+            this.label18.Text = "17";
             // 
             // label19
             // 
-            label19.AutoSize = true;
-            label19.BackColor = SystemColors.Desktop;
-            label19.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label19.ForeColor = Color.Gold;
-            label19.Location = new Point(1613, 584);
-            label19.Name = "label19";
-            label19.Size = new Size(38, 26);
-            label19.TabIndex = 71;
-            label19.Text = "18";
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.SystemColors.Desktop;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label19.ForeColor = System.Drawing.Color.Gold;
+            this.label19.Location = new System.Drawing.Point(1613, 584);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(38, 26);
+            this.label19.TabIndex = 71;
+            this.label19.Text = "18";
             // 
             // label20
             // 
-            label20.AutoSize = true;
-            label20.BackColor = SystemColors.Desktop;
-            label20.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label20.ForeColor = Color.Gold;
-            label20.Location = new Point(153, 32);
-            label20.Name = "label20";
-            label20.Size = new Size(278, 26);
-            label20.TabIndex = 72;
-            label20.Text = "DATOS DE LA COMPRA";
+            this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.SystemColors.Desktop;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label20.ForeColor = System.Drawing.Color.Gold;
+            this.label20.Location = new System.Drawing.Point(153, 32);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(278, 26);
+            this.label20.TabIndex = 72;
+            this.label20.Text = "DATOS DE LA COMPRA";
             // 
             // label21
             // 
-            label21.AutoSize = true;
-            label21.BackColor = SystemColors.Desktop;
-            label21.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label21.ForeColor = SystemColors.ControlLightLight;
-            label21.Location = new Point(70, 112);
-            label21.Name = "label21";
-            label21.Size = new Size(115, 26);
-            label21.TabIndex = 73;
-            label21.Text = "NOMBRE";
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.SystemColors.Desktop;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label21.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label21.Location = new System.Drawing.Point(76, 112);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(115, 26);
+            this.label21.TabIndex = 73;
+            this.label21.Text = "NOMBRE";
             // 
             // label22
             // 
-            label22.AutoSize = true;
-            label22.BackColor = SystemColors.Desktop;
-            label22.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label22.ForeColor = SystemColors.ControlLightLight;
-            label22.Location = new Point(70, 166);
-            label22.Name = "label22";
-            label22.Size = new Size(128, 26);
-            label22.TabIndex = 74;
-            label22.Text = "APELLIDO";
+            this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.SystemColors.Desktop;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label22.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label22.Location = new System.Drawing.Point(76, 164);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(128, 26);
+            this.label22.TabIndex = 74;
+            this.label22.Text = "APELLIDO";
             // 
             // label23
             // 
-            label23.AutoSize = true;
-            label23.BackColor = SystemColors.Desktop;
-            label23.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label23.ForeColor = SystemColors.ControlLightLight;
-            label23.Location = new Point(72, 222);
-            label23.Name = "label23";
-            label23.Size = new Size(127, 26);
-            label23.TabIndex = 75;
-            label23.Text = "PELICULA";
+            this.label23.AutoSize = true;
+            this.label23.BackColor = System.Drawing.SystemColors.Desktop;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label23.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label23.Location = new System.Drawing.Point(76, 216);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(127, 26);
+            this.label23.TabIndex = 75;
+            this.label23.Text = "PELICULA";
             // 
             // label24
             // 
-            label24.AutoSize = true;
-            label24.BackColor = SystemColors.Desktop;
-            label24.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label24.ForeColor = SystemColors.ControlLightLight;
-            label24.Location = new Point(70, 272);
-            label24.Name = "label24";
-            label24.Size = new Size(119, 26);
-            label24.TabIndex = 76;
-            label24.Text = "FUNCION";
+            this.label24.AutoSize = true;
+            this.label24.BackColor = System.Drawing.SystemColors.Desktop;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label24.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label24.Location = new System.Drawing.Point(76, 476);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(119, 26);
+            this.label24.TabIndex = 76;
+            this.label24.Text = "FUNCION";
             // 
             // label25
             // 
-            label25.AutoSize = true;
-            label25.BackColor = SystemColors.Desktop;
-            label25.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label25.ForeColor = SystemColors.ControlLightLight;
-            label25.Location = new Point(70, 325);
-            label25.Name = "label25";
-            label25.Size = new Size(273, 26);
-            label25.TabIndex = 77;
-            label25.Text = "BUTACAS A COMPRAR";
+            this.label25.AutoSize = true;
+            this.label25.BackColor = System.Drawing.SystemColors.Desktop;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label25.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label25.Location = new System.Drawing.Point(76, 320);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(53, 26);
+            this.label25.TabIndex = 77;
+            this.label25.Text = "DNI";
             // 
             // btnConfirmar
             // 
-            btnConfirmar.BackColor = SystemColors.Desktop;
-            btnConfirmar.FlatAppearance.BorderColor = Color.FromArgb(0, 192, 0);
-            btnConfirmar.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnConfirmar.ForeColor = Color.GreenYellow;
-            btnConfirmar.Location = new Point(70, 616);
-            btnConfirmar.Name = "btnConfirmar";
-            btnConfirmar.Size = new Size(552, 44);
-            btnConfirmar.TabIndex = 79;
-            btnConfirmar.Text = "CONFIRMAR";
-            btnConfirmar.UseVisualStyleBackColor = false;
-            btnConfirmar.Click += btnConfirmar_Click;
+            this.btnConfirmar.BackColor = System.Drawing.SystemColors.Desktop;
+            this.btnConfirmar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnConfirmar.ForeColor = System.Drawing.Color.GreenYellow;
+            this.btnConfirmar.Location = new System.Drawing.Point(72, 683);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(552, 44);
+            this.btnConfirmar.TabIndex = 79;
+            this.btnConfirmar.Text = "CONFIRMAR";
+            this.btnConfirmar.UseVisualStyleBackColor = false;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click_1);
             // 
             // btnCancelar
             // 
-            btnCancelar.BackColor = SystemColors.Desktop;
-            btnCancelar.FlatAppearance.BorderColor = Color.FromArgb(0, 192, 0);
-            btnCancelar.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnCancelar.ForeColor = Color.Red;
-            btnCancelar.Location = new Point(72, 842);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(552, 44);
-            btnCancelar.TabIndex = 80;
-            btnCancelar.Text = "CANCELAR";
-            btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.BackColor = System.Drawing.SystemColors.Desktop;
+            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCancelar.ForeColor = System.Drawing.Color.Red;
+            this.btnCancelar.Location = new System.Drawing.Point(72, 842);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(552, 44);
+            this.btnCancelar.TabIndex = 80;
+            this.btnCancelar.Text = "CANCELAR";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // tbNombre
             // 
-            tbNombre.Enabled = false;
-            tbNombre.Location = new Point(274, 112);
-            tbNombre.Name = "tbNombre";
-            tbNombre.Size = new Size(332, 23);
-            tbNombre.TabIndex = 81;
+            this.tbNombre.Enabled = false;
+            this.tbNombre.Location = new System.Drawing.Point(274, 112);
+            this.tbNombre.Name = "tbNombre";
+            this.tbNombre.Size = new System.Drawing.Size(332, 23);
+            this.tbNombre.TabIndex = 81;
             // 
             // tbApellido
             // 
-            tbApellido.Enabled = false;
-            tbApellido.Location = new Point(274, 166);
-            tbApellido.Name = "tbApellido";
-            tbApellido.Size = new Size(332, 23);
-            tbApellido.TabIndex = 82;
+            this.tbApellido.Enabled = false;
+            this.tbApellido.Location = new System.Drawing.Point(274, 166);
+            this.tbApellido.Name = "tbApellido";
+            this.tbApellido.Size = new System.Drawing.Size(332, 23);
+            this.tbApellido.TabIndex = 82;
             // 
-            // tbCantidad
+            // txtDNI
             // 
-            tbCantidad.Location = new Point(423, 330);
-            tbCantidad.Name = "tbCantidad";
-            tbCantidad.Size = new Size(183, 23);
-            tbCantidad.TabIndex = 83;
+            this.txtDNI.Location = new System.Drawing.Point(274, 330);
+            this.txtDNI.Name = "txtDNI";
+            this.txtDNI.Size = new System.Drawing.Size(332, 23);
+            this.txtDNI.TabIndex = 83;
             // 
             // cbPelicula
             // 
-            cbPelicula.FormattingEnabled = true;
-            cbPelicula.Location = new Point(274, 225);
-            cbPelicula.Name = "cbPelicula";
-            cbPelicula.Size = new Size(332, 23);
-            cbPelicula.TabIndex = 84;
+            this.cbPelicula.FormattingEnabled = true;
+            this.cbPelicula.Location = new System.Drawing.Point(274, 225);
+            this.cbPelicula.Name = "cbPelicula";
+            this.cbPelicula.Size = new System.Drawing.Size(332, 23);
+            this.cbPelicula.TabIndex = 84;
             // 
             // cbFuncion
             // 
-            cbFuncion.FormattingEnabled = true;
-            cbFuncion.Location = new Point(274, 278);
-            cbFuncion.Name = "cbFuncion";
-            cbFuncion.Size = new Size(332, 23);
-            cbFuncion.TabIndex = 85;
+            this.cbFuncion.FormattingEnabled = true;
+            this.cbFuncion.Location = new System.Drawing.Point(276, 476);
+            this.cbFuncion.Name = "cbFuncion";
+            this.cbFuncion.Size = new System.Drawing.Size(332, 23);
+            this.cbFuncion.TabIndex = 85;
             // 
             // label27
             // 
-            label27.AutoSize = true;
-            label27.BackColor = SystemColors.Desktop;
-            label27.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label27.ForeColor = SystemColors.ControlLightLight;
-            label27.Location = new Point(70, 550);
-            label27.Name = "label27";
-            label27.Size = new Size(92, 26);
-            label27.TabIndex = 86;
-            label27.Text = "TOTAL:";
+            this.label27.AutoSize = true;
+            this.label27.BackColor = System.Drawing.SystemColors.Desktop;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label27.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label27.Location = new System.Drawing.Point(68, 633);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(92, 26);
+            this.label27.TabIndex = 86;
+            this.label27.Text = "TOTAL:";
             // 
             // lblTotal
             // 
-            lblTotal.AutoSize = true;
-            lblTotal.BackColor = SystemColors.Desktop;
-            lblTotal.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            lblTotal.ForeColor = Color.Gold;
-            lblTotal.Location = new Point(326, 550);
-            lblTotal.Name = "lblTotal";
-            lblTotal.Size = new Size(78, 26);
-            lblTotal.TabIndex = 87;
-            lblTotal.Text = "$ 0.00";
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.BackColor = System.Drawing.SystemColors.Desktop;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTotal.ForeColor = System.Drawing.Color.Gold;
+            this.lblTotal.Location = new System.Drawing.Point(326, 639);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(78, 26);
+            this.lblTotal.TabIndex = 87;
+            this.lblTotal.Text = "$ 0.00";
+            this.lblTotal.Click += new System.EventHandler(this.lblTotal_Click);
             // 
-            // label29
+            // lblTelfono
             // 
-            label29.AutoSize = true;
-            label29.BackColor = SystemColors.Desktop;
-            label29.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label29.ForeColor = SystemColors.ControlLightLight;
-            label29.Location = new Point(70, 379);
-            label29.Name = "label29";
-            label29.Size = new Size(290, 26);
-            label29.TabIndex = 88;
-            label29.Text = "CODIGO PROMOCIONAL";
+            this.lblTelfono.AutoSize = true;
+            this.lblTelfono.BackColor = System.Drawing.SystemColors.Desktop;
+            this.lblTelfono.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTelfono.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblTelfono.Location = new System.Drawing.Point(76, 372);
+            this.lblTelfono.Name = "lblTelfono";
+            this.lblTelfono.Size = new System.Drawing.Size(137, 26);
+            this.lblTelfono.TabIndex = 88;
+            this.lblTelfono.Text = "TELEFONO";
             // 
-            // textBox1
+            // txtTelefono
             // 
-            textBox1.Location = new Point(423, 384);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(181, 23);
-            textBox1.TabIndex = 89;
+            this.txtTelefono.Location = new System.Drawing.Point(276, 374);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(330, 23);
+            this.txtTelefono.TabIndex = 89;
             // 
             // lblDescuento
             // 
-            lblDescuento.AutoSize = true;
-            lblDescuento.BackColor = SystemColors.Desktop;
-            lblDescuento.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            lblDescuento.ForeColor = Color.Gold;
-            lblDescuento.Location = new Point(310, 500);
-            lblDescuento.Name = "lblDescuento";
-            lblDescuento.Size = new Size(93, 26);
-            lblDescuento.TabIndex = 91;
-            lblDescuento.Text = "- $ 0.00";
+            this.lblDescuento.AutoSize = true;
+            this.lblDescuento.BackColor = System.Drawing.SystemColors.Desktop;
+            this.lblDescuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblDescuento.ForeColor = System.Drawing.Color.Gold;
+            this.lblDescuento.Location = new System.Drawing.Point(310, 589);
+            this.lblDescuento.Name = "lblDescuento";
+            this.lblDescuento.Size = new System.Drawing.Size(93, 26);
+            this.lblDescuento.TabIndex = 91;
+            this.lblDescuento.Text = "- $ 0.00";
             // 
             // label30
             // 
-            label30.AutoSize = true;
-            label30.BackColor = SystemColors.Desktop;
-            label30.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label30.ForeColor = SystemColors.ControlLightLight;
-            label30.Location = new Point(70, 500);
-            label30.Name = "label30";
-            label30.Size = new Size(166, 26);
-            label30.TabIndex = 90;
-            label30.Text = "DESCUENTO:";
+            this.label30.AutoSize = true;
+            this.label30.BackColor = System.Drawing.SystemColors.Desktop;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label30.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label30.Location = new System.Drawing.Point(70, 589);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(166, 26);
+            this.label30.TabIndex = 90;
+            this.label30.Text = "DESCUENTO:";
             // 
             // label31
             // 
-            label31.AutoSize = true;
-            label31.BackColor = SystemColors.Desktop;
-            label31.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label31.ForeColor = SystemColors.ControlLightLight;
-            label31.Location = new Point(70, 446);
-            label31.Name = "label31";
-            label31.Size = new Size(141, 26);
-            label31.TabIndex = 92;
-            label31.Text = "SUBTOTAL:";
+            this.label31.AutoSize = true;
+            this.label31.BackColor = System.Drawing.SystemColors.Desktop;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label31.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label31.Location = new System.Drawing.Point(70, 535);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(141, 26);
+            this.label31.TabIndex = 92;
+            this.label31.Text = "SUBTOTAL:";
             // 
             // lblSubtotal
             // 
-            lblSubtotal.AutoSize = true;
-            lblSubtotal.BackColor = SystemColors.Desktop;
-            lblSubtotal.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            lblSubtotal.ForeColor = Color.Gold;
-            lblSubtotal.Location = new Point(326, 446);
-            lblSubtotal.Name = "lblSubtotal";
-            lblSubtotal.Size = new Size(78, 26);
-            lblSubtotal.TabIndex = 93;
-            lblSubtotal.Text = "$ 0.00";
+            this.lblSubtotal.AutoSize = true;
+            this.lblSubtotal.BackColor = System.Drawing.SystemColors.Desktop;
+            this.lblSubtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblSubtotal.ForeColor = System.Drawing.Color.Gold;
+            this.lblSubtotal.Location = new System.Drawing.Point(326, 535);
+            this.lblSubtotal.Name = "lblSubtotal";
+            this.lblSubtotal.Size = new System.Drawing.Size(78, 26);
+            this.lblSubtotal.TabIndex = 93;
+            this.lblSubtotal.Text = "$ 0.00";
             // 
             // btnVolver
             // 
-            btnVolver.BackColor = SystemColors.Desktop;
-            btnVolver.FlatAppearance.BorderColor = Color.FromArgb(0, 192, 0);
-            btnVolver.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnVolver.ForeColor = Color.Crimson;
-            btnVolver.Location = new Point(72, 700);
-            btnVolver.Name = "btnVolver";
-            btnVolver.Size = new Size(552, 44);
-            btnVolver.TabIndex = 94;
-            btnVolver.Text = "VOLVER";
-            btnVolver.UseVisualStyleBackColor = false;
-            btnVolver.Click += btnVolver_Click;
+            this.btnVolver.BackColor = System.Drawing.SystemColors.Desktop;
+            this.btnVolver.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnVolver.ForeColor = System.Drawing.Color.Crimson;
+            this.btnVolver.Location = new System.Drawing.Point(72, 792);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(552, 44);
+            this.btnVolver.TabIndex = 94;
+            this.btnVolver.Text = "VOLVER";
+            this.btnVolver.UseVisualStyleBackColor = false;
+            // 
+            // txtCorreo
+            // 
+            this.txtCorreo.Location = new System.Drawing.Point(276, 420);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(330, 23);
+            this.txtCorreo.TabIndex = 95;
+            // 
+            // lblCorreo
+            // 
+            this.lblCorreo.AutoSize = true;
+            this.lblCorreo.BackColor = System.Drawing.SystemColors.Desktop;
+            this.lblCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblCorreo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblCorreo.Location = new System.Drawing.Point(76, 424);
+            this.lblCorreo.Name = "lblCorreo";
+            this.lblCorreo.Size = new System.Drawing.Size(115, 26);
+            this.lblCorreo.TabIndex = 96;
+            this.lblCorreo.Text = "CORREO";
+            // 
+            // btnTraerFunciones
+            // 
+            this.btnTraerFunciones.BackColor = System.Drawing.SystemColors.Desktop;
+            this.btnTraerFunciones.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnTraerFunciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnTraerFunciones.ForeColor = System.Drawing.Color.GreenYellow;
+            this.btnTraerFunciones.Location = new System.Drawing.Point(72, 733);
+            this.btnTraerFunciones.Name = "btnTraerFunciones";
+            this.btnTraerFunciones.Size = new System.Drawing.Size(552, 44);
+            this.btnTraerFunciones.TabIndex = 97;
+            this.btnTraerFunciones.Text = "TRAER FUNCIONES";
+            this.btnTraerFunciones.UseVisualStyleBackColor = false;
+            this.btnTraerFunciones.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // lblFecha
+            // 
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.BackColor = System.Drawing.SystemColors.Desktop;
+            this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblFecha.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblFecha.Location = new System.Drawing.Point(76, 268);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(77, 26);
+            this.lblFecha.TabIndex = 98;
+            this.lblFecha.Text = "Fecha";
+            // 
+            // dtpFecha
+            // 
+            this.dtpFecha.Location = new System.Drawing.Point(274, 278);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(334, 23);
+            this.dtpFecha.TabIndex = 99;
             // 
             // frmComprarEntrada
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            AutoSize = true;
-            BackColor = SystemColors.Desktop;
-            ClientSize = new Size(1199, 650);
-            Controls.Add(btnVolver);
-            Controls.Add(lblSubtotal);
-            Controls.Add(label31);
-            Controls.Add(lblDescuento);
-            Controls.Add(label30);
-            Controls.Add(textBox1);
-            Controls.Add(label29);
-            Controls.Add(lblTotal);
-            Controls.Add(label27);
-            Controls.Add(cbFuncion);
-            Controls.Add(cbPelicula);
-            Controls.Add(tbCantidad);
-            Controls.Add(tbApellido);
-            Controls.Add(tbNombre);
-            Controls.Add(btnCancelar);
-            Controls.Add(btnConfirmar);
-            Controls.Add(label25);
-            Controls.Add(label24);
-            Controls.Add(label23);
-            Controls.Add(label22);
-            Controls.Add(label21);
-            Controls.Add(label20);
-            Controls.Add(label19);
-            Controls.Add(label18);
-            Controls.Add(label17);
-            Controls.Add(label16);
-            Controls.Add(label15);
-            Controls.Add(label14);
-            Controls.Add(label13);
-            Controls.Add(label12);
-            Controls.Add(label11);
-            Controls.Add(label10);
-            Controls.Add(label9);
-            Controls.Add(label8);
-            Controls.Add(label7);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(pictureBox19);
-            Controls.Add(pbButaca18);
-            Controls.Add(pbButaca17);
-            Controls.Add(pbButaca16);
-            Controls.Add(pbButaca15);
-            Controls.Add(pbButaca14);
-            Controls.Add(pbButaca13);
-            Controls.Add(pbButaca12);
-            Controls.Add(pbButaca11);
-            Controls.Add(pbButaca10);
-            Controls.Add(pbButaca9);
-            Controls.Add(pbButaca8);
-            Controls.Add(pbButaca7);
-            Controls.Add(pbButaca6);
-            Controls.Add(pbButaca5);
-            Controls.Add(pbButaca4);
-            Controls.Add(pbButaca3);
-            Controls.Add(pbButaca2);
-            Controls.Add(pbButaca1);
-            Controls.Add(lblNombrePelicula);
-            MaximizeBox = false;
-            MinimizeBox = false;
-            Name = "frmComprarEntrada";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "CARRITO DE COMPRAS";
-            WindowState = FormWindowState.Maximized;
-            Load += frmComprarEntrada_Load;
-            ((System.ComponentModel.ISupportInitialize)pbButaca1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbButaca2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbButaca3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbButaca4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbButaca5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbButaca6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbButaca12).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbButaca11).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbButaca10).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbButaca9).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbButaca8).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbButaca7).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbButaca18).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbButaca17).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbButaca16).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbButaca15).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbButaca14).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbButaca13).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox19).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.BackColor = System.Drawing.SystemColors.Desktop;
+            this.ClientSize = new System.Drawing.Size(1878, 901);
+            this.Controls.Add(this.dtpFecha);
+            this.Controls.Add(this.lblFecha);
+            this.Controls.Add(this.btnTraerFunciones);
+            this.Controls.Add(this.lblCorreo);
+            this.Controls.Add(this.txtCorreo);
+            this.Controls.Add(this.btnVolver);
+            this.Controls.Add(this.lblSubtotal);
+            this.Controls.Add(this.label31);
+            this.Controls.Add(this.lblDescuento);
+            this.Controls.Add(this.label30);
+            this.Controls.Add(this.txtTelefono);
+            this.Controls.Add(this.lblTelfono);
+            this.Controls.Add(this.lblTotal);
+            this.Controls.Add(this.label27);
+            this.Controls.Add(this.cbFuncion);
+            this.Controls.Add(this.cbPelicula);
+            this.Controls.Add(this.txtDNI);
+            this.Controls.Add(this.tbApellido);
+            this.Controls.Add(this.tbNombre);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnConfirmar);
+            this.Controls.Add(this.label25);
+            this.Controls.Add(this.label24);
+            this.Controls.Add(this.label23);
+            this.Controls.Add(this.label22);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox19);
+            this.Controls.Add(this.pbButaca18);
+            this.Controls.Add(this.pbButaca17);
+            this.Controls.Add(this.pbButaca16);
+            this.Controls.Add(this.pbButaca15);
+            this.Controls.Add(this.pbButaca14);
+            this.Controls.Add(this.pbButaca13);
+            this.Controls.Add(this.pbButaca12);
+            this.Controls.Add(this.pbButaca11);
+            this.Controls.Add(this.pbButaca10);
+            this.Controls.Add(this.pbButaca9);
+            this.Controls.Add(this.pbButaca8);
+            this.Controls.Add(this.pbButaca7);
+            this.Controls.Add(this.pbButaca6);
+            this.Controls.Add(this.pbButaca5);
+            this.Controls.Add(this.pbButaca4);
+            this.Controls.Add(this.pbButaca3);
+            this.Controls.Add(this.pbButaca2);
+            this.Controls.Add(this.pbButaca1);
+            this.Controls.Add(this.lblNombrePelicula);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "frmComprarEntrada";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "CARRITO DE COMPRAS";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmComprarEntrada_Load_1);
+            ((System.ComponentModel.ISupportInitialize)(this.pbButaca1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbButaca2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbButaca3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbButaca4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbButaca5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbButaca6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbButaca12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbButaca11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbButaca10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbButaca9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbButaca8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbButaca7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbButaca18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbButaca17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbButaca16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbButaca15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbButaca14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbButaca13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
@@ -978,17 +1029,22 @@
         public Button btnCancelar;
         private TextBox tbNombre;
         private TextBox tbApellido;
-        private TextBox tbCantidad;
+        private TextBox txtDNI;
         private ComboBox cbPelicula;
         private ComboBox cbFuncion;
         private Label label27;
         private Label lblTotal;
-        private Label label29;
-        private TextBox textBox1;
+        private Label lblTelfono;
+        private TextBox txtTelefono;
         private Label lblDescuento;
         private Label label30;
         private Label label31;
         private Label lblSubtotal;
         public Button btnVolver;
+        private TextBox txtCorreo;
+        private Label lblCorreo;
+        public Button btnTraerFunciones;
+        private Label lblFecha;
+        private DateTimePicker dtpFecha;
     }
 }

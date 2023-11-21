@@ -8,6 +8,8 @@ using System.Data.SqlClient;
 using SistemaCineBack.Acceso_a_Datos.Parametros;
 using Cines.Clases.Cine;
 using Cines.Clases.Cines.Cine;
+using Cines.Clases.Ventas;
+using Cines.Clases.Personas;
 
 namespace SistemaCineBack.Acceso_a_Datos
 {
@@ -43,24 +45,64 @@ namespace SistemaCineBack.Acceso_a_Datos
             cnn.Close();
             return tabla;
         }
-        public bool ejecutarSql(string spMaestro, string spDetalle, Funciones funciones)
+        public bool ejecutarSql(string spComprobante, string spDetalle,string spCliente, Comprobantes comprobantes, Clientes c)
         {
             bool aux = true;
+            cnn.Open();
             SqlTransaction t = null;
             try
             {
-                cnn.Open();
                 t = cnn.BeginTransaction();
-                SqlCommand cmd = new SqlCommand(spMaestro, cnn, t);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("", "");
-                SqlParameter param = new SqlParameter();
-                param.ParameterName = "";
-                param.SqlDbType = SqlDbType.Int;
+                SqlCommand cmdCliente = new SqlCommand(spCliente, cnn,t);
+                cmdCliente.CommandType = CommandType.StoredProcedure;
+                cmdCliente.Parameters.AddWithValue("@nombre",c.persona.Nombre);
+                cmdCliente.Parameters.AddWithValue("@apellido", c.persona.Apellido);
+                //cmdCliente.Parameters.AddWithValue("@tipo_doc", 1);
+                cmdCliente.Parameters.AddWithValue("@documento", c.NroDocumento);
+                cmdCliente.Parameters.AddWithValue("@telefono", c.Telefono);
+                cmdCliente.Parameters.AddWithValue("@email", c.Mail);
+                SqlParameter param = new SqlParameter("@idCliente", SqlDbType.Int);
                 param.Direction = ParameterDirection.Output;
-                cmd.Parameters.Add(param);
-                int id = (int)param.Value;
+                cmdCliente.Parameters.Add(param);                         
+                cmdCliente.ExecuteNonQuery();
+                int idCliente = (int)param.Value;
 
+                SqlCommand cmdCompra = new SqlCommand(spComprobante, cnn, t);
+                cmdCompra.CommandType = CommandType.StoredProcedure;
+                cmdCompra.Parameters.AddWithValue("@Cliente",idCliente);
+                cmdCompra.Parameters.AddWithValue("@fecha", comprobantes.fecha);
+                SqlParameter pIdComprobanteOut = new SqlParameter();
+                pIdComprobanteOut.ParameterName = "@idComprobante";
+                pIdComprobanteOut.Direction = ParameterDirection.Output;
+                pIdComprobanteOut.SqlDbType = SqlDbType.Int;
+                cmdCompra.Parameters.Add(pIdComprobanteOut);
+                cmdCompra.ExecuteNonQuery();
+
+                int idComprobante = (int)pIdComprobanteOut.Value;
+               
+                foreach(DetalleComprobante d in comprobantes.detalle)
+                {
+                    SqlCommand cmdDetalle = new SqlCommand(spDetalle, cnn, t);
+                    cmdDetalle.CommandType = CommandType.StoredProcedure;
+                    cmdDetalle.Parameters.AddWithValue("@idComprobante", idComprobante);
+                    cmdDetalle.Parameters.AddWithValue("@idCandy",0);
+                    cmdDetalle.Parameters.AddWithValue("@idFuncion", d.funcione.IdFuncion);
+                    cmdDetalle.Parameters.AddWithValue("@idSala", d.funcione.sala.IdSala);
+                    cmdDetalle.Parameters.AddWithValue("@precio", d.funcione.Precio);
+                    cmdDetalle.ExecuteNonQuery();
+                    foreach(Butacas b in d.funcione.sala.butacas)
+                    {
+                        SqlCommand cmdSala = new SqlCommand("SP_INSERTAR_SALA", cnn, t);
+                        cmdSala.CommandType = CommandType.StoredProcedure;
+                        cmdSala.Parameters.AddWithValue("@idButaca", b.IdButaca);
+                        cmdSala.ExecuteNonQuery();
+                    }
+                  
+
+                }
+
+              
+                t.Commit();
             }
             catch (Exception)
             {
