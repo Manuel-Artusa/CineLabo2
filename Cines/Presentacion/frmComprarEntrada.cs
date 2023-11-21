@@ -215,8 +215,8 @@ namespace CineApp.Forms
 
             c.fecha = DateTime.Today;
 
-            d.funcione.IdFuncion = 1;
-            d.funcione.sala.IdSala = 1;
+            d.funcione.IdFuncion = 5;
+            d.funcione.sala.IdSala = 4;
             d.funcione.Precio = Convert.ToDouble(lblTotal.Text);
             c.detalle.Add(d);          
             Butacas b = new Butacas();

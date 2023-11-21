@@ -16,7 +16,7 @@ namespace SistemaCineBack.Acceso_a_Datos
     class HelperDB
     {
         private static HelperDB instancia;
-        private SqlConnection cnn = new SqlConnection(@"Data Source=DESKTOP-72P6KAS\SQLEXPRESS;Initial Catalog=Cine;Integrated Security=True");
+        private SqlConnection cnn = new SqlConnection(@"Data Source=DESKTOP-72P6KAS\SQLEXPRESS;Initial Catalog=cines_final;Integrated Security=True");
         public static HelperDB obtenerInstancia()
         {
             if (instancia == null)
@@ -49,7 +49,7 @@ namespace SistemaCineBack.Acceso_a_Datos
         {
             bool aux = true;
             
-            SqlTransaction t = null;
+                    SqlTransaction t = null;
             try
             {
                 cnn.Open();

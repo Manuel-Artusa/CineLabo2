@@ -1,3 +1,7 @@
+create database cines_final
+go
+use cines_final
+go
 --Formato 3D - 2D - 4D
 create table Tipo_formato
 (id_tipo_formato int identity (1,1) primary key,
@@ -69,16 +73,16 @@ CONSTRAINT FK_LOCALIDAD_BARRIOS  FOREIGN KEY (ID_LOCALIDAD)
 references LOCALIDADES(ID_LOCALIDAD))
 --CLIENTSES
 CREATE TABLE CLIENTES(
-ID_CLIENTE INT PRIMARY KEY,
+ID_CLIENTE INT identity(1,1) PRIMARY KEY  ,
 NOMBRE_CLIENTE VARCHAR(25),
 /*SOCIO BOOL*/ 
 APELLIDO_CLIENTE VARCHAR(20),
 ID_TIPO_DOC INT,
 DOCUMENTO BIGINT,
 TELEFONO BIGINT,
-EMAIL VARCHAR(50),
-CONSTRAINT FK_CLIENTES_TIPODOC FOREIGN KEY(ID_TIPO_DOC)
-REFERENCES TIPOS_DOC(ID_TIPO_DOC))
+EMAIL VARCHAR(50))
+
+
 --Empleados
 CREATE TABLE EMPLEADOS(
 ID_EMPLEADO INT IDENTITY(1,1) PRIMARY KEY,
@@ -99,32 +103,7 @@ ID_BARRIO INT,
 NOMBRE_CINE VARCHAR(20),
 CONSTRAINT FK_CINES_BARRIOS FOREIGN KEY(ID_BARRIO)
 REFERENCES BARRIOS(ID_BARRIO))
---SALAS
-CREATE TABLE SALAS(
-ID_SALA INT IDENTITY(1,1) PRIMARY KEY,
-CANTIDAD_ASIENTOS INT,
-ID_CINE INT
-CONSTRAINT FK_SALA_CINE FOREIGN KEY(ID_CINE)
-REFERENCES CINES(ID_CINE)
-
-)
---BUTACAS
-CREATE TABLE BUTACAS(
-ID_BUTACA INT IDENTITY(1,1) PRIMARY KEY ,
-NRO_BUTACA INT,
-FILA char(2))
----TABLA INTERMEDIA BUTACAS SALAS(VARIOS A VARIOS)
-create table butacas_salas
-(id_butacas_sala int identity (1,1) primary key,
-id_sala int,
-id_butaca int
-
-constraint fk_butacas_salas_sala foreign key (id_sala)
-references salas(id_sala),
-constraint fk_butacas_salas_butaca foreign key (id_butaca)
-references butacas(id_butaca)
-)
---PELICULAS
+--Peliculas
 CREATE TABLE PELICULAS(
 ID_PELICULA INT IDENTITY(1,1) PRIMARY KEY,
 TITULO VARCHAR(100),
@@ -134,6 +113,7 @@ ID_IDIOMA INT,
 FEC_ESTRENO DATETIME,
 ID_PAIS_ORIGEN INT
 
+
 CONSTRAINT FK_PELI_CLASIFICACION FOREIGN KEY(ID_CLASIFICACION)
 REFERENCES CLASIFICACION (ID_CLASIFICACION),
 CONSTRAINT FK_PELI_IDIOMA FOREIGN KEY (ID_IDIOMA)
@@ -141,16 +121,38 @@ REFERENCES IDIOMAS(ID_IDIOMA),
 CONSTRAINT FK_PELI_PAIS FOREIGN KEY(ID_PAIS_ORIGEN)
 REFERENCES PAIS_ORIGEN(ID_PAIS_ORIGEN)
 )
---FUNCIONES
+--Funciones 
 CREATE TABLE FUNCIONES(
 ID_FUNCION INT IDENTITY(1,1) PRIMARY KEY,
+ID_PELICULA INT,
 HORA TIME,
 FECHA DATETIME,
 PRECIO_ACTUAL MONEY,
 ID_TIPO_FORMATO INT,
+constraint fk_pelicula foreign key(ID_PELICULA)
+references PELICULAS(ID_PELICULA),
+
 CONSTRAINT FK_FUNCION_TIPO_FORMATO FOREIGN KEY (ID_TIPO_FORMATO)
 REFERENCES TIPO_FORMATO(ID_TIPO_FORMATO)
 )
+--butacas
+create table butacas(
+id_butaca int identity(1,1) primary key,
+nro_butaca int,
+fila varchar(1))
+--SALAS
+CREATE TABLE SALAS(
+ID_SALA INT IDENTITY(1,1) PRIMARY KEY,
+id_butaca int,
+CANTIDAD_ASIENTOS INT,
+ID_CINE INT,
+id_funcion int
+constraint fk_funcion foreign key(id_funcion)
+references FUNCIONES(ID_FUNCION),
+constraint fk_butaca foreign key(id_butaca)
+references Butacas(id_butaca))
+
+
 --Tabla intermedio en Pelicula Genero
 create table Peliculas_Genero
 (id_pelicula_genero int identity (1,1) primary key,
@@ -161,37 +163,7 @@ REFERENCES peliculas(id_pelicula),
 CONSTRAINT fk_peliculas_genero_genero FOREIGN KEY (ID_genero)
 REFERENCES generos(id_genero)
 )
---tabla intermedia en pelicula funciones
-create table Pelicula_Funciones
-(id_pelicula_funcion int identity (1,1) primary key,
-id_pelicula int,
-id_funcion int
-CONSTRAINT FK_PELICULA_FUNCIONES_PELICULA FOREIGN KEY (ID_PELICULA)
-REFERENCES PELICULAS(ID_PELICULA),
-CONSTRAINT FK_PELICULA_FUNCIONES_FUNCION FOREIGN KEY (ID_FUNCION)
-REFERENCES FUNCIONES(ID_FUNCION)
-)
---TABLA INTERMEDIA FUNCIONES SALAS
-CREATE TABLE FUNCIONES_SALAS
-(ID_FUNCION_SALA INT IDENTITY (1,1) PRIMARY KEY,
-ID_FUNCION INT,
-ID_SALA INT 
 
-CONSTRAINT FK_FUNCIONES_SALAS_FUNCION FOREIGN KEY (ID_FUNCION)
-REFERENCES FUNCIONES(ID_FUNCION),
-CONSTRAINT FK_FUNCIONES_SALAS_SALA FOREIGN KEY (ID_SALA)
-REFERENCES SALAS (ID_SALA)
-)
---TABLA INTERMEDIA
-CREATE TABLE ACTORES_PELICULAS(
-ID_ACTORES_PELICULAS INT IDENTITY(1,1)PRIMARY KEY,
-ID_PELICULA INT,
-ID_ACTOR INT 
-CONSTRAINT FK_ACTORES_PELICULAS_PELI FOREIGN KEY(ID_PELICULA)
-REFERENCES PELICULAS(ID_PELICULA),
-CONSTRAINT FK_ACT_PELI_ACTORES FOREIGN KEY(ID_ACTOR)
-REFERENCES ACTORES(ID_ACTOR)
-)
 --Productos Candy bar
 CREATE TABLE PRODUCTOS_CANDY_BAR (
     ID_PRODUCTO_CANDY_BAR INT IDENTITY(1, 1) PRIMARY KEY,
@@ -211,24 +183,22 @@ REFERENCES CLIENTES(ID_CLIENTE),
 CONSTRAINT FK_COMP_EMPLEADO FOREIGN KEY(ID_EMPLEADO)
 REFERENCES EMPLEADOS(ID_EMPLEADO),
 CONSTRAINT FK_COMP_CINE FOREIGN KEY(ID_CINE)
-REFERENCES CINES(ID_CINE))
+REFERENCES CINES(ID_CINE),
+constraint FK_CLIENTE_S foreign key(ID_CLIENTE)
+ references CLIENTES(ID_CLIENTE))
 
 -- Tabla para las Ventas del Candy Bar
 CREATE TABLE VENTAS_CANDY_BAR (
     ID_VENTA_CANDY_BAR INT IDENTITY(1, 1) PRIMARY KEY,
-    ID_COMPROBANTE INT,
     ID_PRODUCTO_CANDY_BAR INT,
     CANTIDAD INT,
     PRECIO_TOTAL MONEY,
-    CONSTRAINT FK_VENTAS_COMPROBANTE FOREIGN KEY (ID_COMPROBANTE)
-        REFERENCES COMPROBANTES (ID_COMPROBANTE),
     CONSTRAINT FK_VENTAS_PRODUCTO_CANDY_BAR FOREIGN KEY (ID_PRODUCTO_CANDY_BAR)
         REFERENCES PRODUCTOS_CANDY_BAR (ID_PRODUCTO_CANDY_BAR)
 );
 CREATE TABLE DETALLE_COMPROBANTE (
     id_detalle_comprobante int identity (1,1) primary key,
     id_comprobante int,
-    id_venta_candy_bar int,
     id_funcion int,
     id_sala int,
     id_pelicula int,
@@ -236,50 +206,57 @@ CREATE TABLE DETALLE_COMPROBANTE (
 	precio_total money
     CONSTRAINT FK_DETALLE_COMP_COMPROBANTE FOREIGN KEY (id_comprobante)
         REFERENCES COMPROBANTES (ID_COMPROBANTE),
-    CONSTRAINT FK_DETALLE_COMP_VENTA_CANDY_BAR FOREIGN KEY (id_venta_candy_bar)
-        REFERENCES VENTAS_CANDY_BAR (ID_VENTA_CANDY_BAR),
     CONSTRAINT FK_DETALLE_COMP_SALA FOREIGN KEY (id_sala)
         REFERENCES SALAS (ID_SALA),
     CONSTRAINT FK_DETALLE_COMP_FUNCIONES FOREIGN KEY (id_funcion)
         REFERENCES FUNCIONES(ID_FUNCION),
-    CONSTRAINT FK_DETALLE_COMP_PELICULA FOREIGN KEY (id_pelicula)
-        REFERENCES PELICULAS (ID_PELICULA),
 	CONSTRAINT FK_DETALLE_COMP_BUTACAS FOREIGN KEY (id_butaca)
 	REFERENCES BUTACAS (ID_BUTACA)
 );
 
+CREATE TABLE USUARIOS (
+    ID_USUARIO INT IDENTITY(1,1) PRIMARY KEY,
+    ID_EMPLEADO INT,
+    USUARIO VARCHAR(50),
+    CONTRASENIA VARCHAR(50),
+    CONSTRAINT FK_USUARIOS_EMPLEADO FOREIGN KEY (ID_EMPLEADO) REFERENCES EMPLEADOS (ID_EMPLEADO)
+);
 
 
-alter table FUNCIONES
-add ID_PELICULA INT
-
-alter table Funciones
-add constraint fk_pelicula foreign key(ID_PELICULA)
-references PELICULAS(ID_PELICULA)
 
 
 
-alter table salas
-add id_funcion int
+
+--alter table salas
+--add id_funcion int
 
 
-alter table salas
-add constraint fk_funcion foreign key(id_funcion)
-references FUNCIONES(ID_FUNCION)
+--alter table salas
+--add constraint fk_funcion foreign key(id_funcion)
+--references FUNCIONES(ID_FUNCION)
 
 
-alter table Salas 
-add id_butaca int
+--alter table Salas 
+--add id_butaca int
 
 
-alter table Salas
-add constraint fk_butaca foreign key(id_butaca)
-references Butacas(id_butaca)
+--alter table Salas
+--add constraint fk_butaca foreign key(id_butaca)
+--references Butacas(id_butaca)
 
-drop table butacas_salas
+--drop table butacas_salas
 
-select * FROM CLIENTES c
-join TIPOS_DOC t on t.ID_TIPO_DOC = c.ID_TIPO_DOC
+--select * FROM CLIENTES c
+--join TIPOS_DOC t on t.ID_TIPO_DOC = c.ID_TIPO_DOC
 
-alter table Clientes 
-alter column ID_CLIENTE int IDENTITY(1,1)
+--alter table Clientes 
+--alter column ID_CLIENTE int IDENTITY(1,1)
+
+--alter table Comprobantes
+--add constraint FK_CLIENTE_S foreign key(ID_CLIENTE)
+-- references CLIENTES(ID_CLIENTE)
+
+ 
+
+-- alter table Detalle_Comprobante
+-- drop column id_venta_candy_bar

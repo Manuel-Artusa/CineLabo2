@@ -116,18 +116,22 @@ VALUES
 (4, 'Cine La Loma '),
 (5, 'Cine San Carlos');
 
-INSERT INTO SALAS(ID_CINE,CANTIDAD_ASIENTOS)
+select * from SALAS
+select * from FUNCIONES
+INSERT INTO SALAS(ID_CINE,CANTIDAD_ASIENTOS, id_butaca,id_funcion) 
 VALUES
-(2,18),
-(2,18),
-(2,18),
-(2,18),
-(2,18),
-(2,18),
-(2,18),
-(2,18),
-(2,18),
-(2,18);
+(2,18,1,5),
+(2,18,12,5),
+(2,18,3,6),
+(2,18,2,7),
+(2,18,13,5),
+(2,18,7,5),
+(2,18,10,5),
+(2,18,11,5),
+(2,18,6,5),
+(2,18,8,5);
+select * from salas
+
 
 INSERT INTO CLASIFICACION ( DESCRIPCION)
 VALUES
@@ -310,61 +314,57 @@ VALUES
 ('Avengers: Endgame', '3:02:00', 2, 1, '24-04-2019', 4); -- Avengers: Endgame (2019)
 
 
-
--- Puedes continuar con más películas de Marvel si lo deseas
-select * from FUNCIONES
-
-
 -- Día 1
 set dateformat ymd
-INSERT INTO FUNCIONES (HORA, FECHA, PRECIO_ACTUAL, ID_TIPO_FORMATO)
+INSERT INTO FUNCIONES (HORA, FECHA, PRECIO_ACTUAL, ID_TIPO_FORMATO, id_pelicula) --dawwad
 VALUES 
-('14:00:00', '2023-11-17', 10.00, 1), 
-('17:30:00', '2023-11-17', 12.50, 2),
-('20:00:00', '2023-11-17', 15.00, 3),
-('22:30:00', '2023-11-17', 13.50, 1),
-('14:00:00', '2023-11-18', 10.00, 1), 
-('17:30:00', '2023-11-18', 12.50, 2),
-('20:00:00', '2023-11-18', 15.00, 3),
-('22:30:00', '2023-11-18', 13.50, 1),
-('14:00:00', '2023-11-19', 10.00, 1), 
-('17:30:00', '2023-11-19', 12.50, 2),
-('20:00:00', '2023-11-19', 15.00, 3),
-('22:30:00', '2023-11-19', 13.50, 1),
-('14:00:00', '2023-11-20', 10.00, 1), 
-('17:30:00', '2023-11-20', 12.50, 2),
-('20:00:00', '2023-11-20', 15.00, 3),
-('22:30:00', '2023-11-20', 13.50, 1),
-('14:00:00', '2023-11-21', 10.00, 1), 
-('17:30:00', '2023-11-21', 12.50, 2),
-('20:00:00', '2023-11-21', 15.00, 3),
-('22:30:00', '2023-11-21', 13.50, 1),
-('14:00:00', '2023-11-22', 10.00, 1), 
-('17:30:00', '2023-11-22', 12.50, 2),
-('20:00:00', '2023-11-22', 15.00, 3),
-('22:30:00', '2023-11-22', 13.50, 1),
-('14:00:00', '2023-11-23', 10.00, 1), 
-('17:30:00', '2023-11-23', 12.50, 2),
-('20:00:00', '2023-11-23', 15.00, 3),
-('22:30:00', '2023-11-24', 13.50, 1),
-('14:00:00', '2023-11-24', 10.00, 1), 
-('17:30:00', '2023-11-24', 12.50, 2),
-('20:00:00', '2023-11-24', 15.00, 3),
-('22:30:00', '2023-11-25', 13.50, 1),
-('14:00:00', '2023-11-25', 10.00, 1), 
-('17:30:00', '2023-11-25', 12.50, 2),
-('20:00:00', '2023-11-25', 15.00, 3),
-('22:30:00', '2023-11-26', 13.50, 1),
-('14:00:00', '2023-11-26', 10.00, 1), 
-('17:30:00', '2023-11-26', 12.50, 2),
-('20:00:00', '2023-11-26', 15.00, 3),
-('22:30:00', '2023-11-27', 13.50, 1),
-('14:00:00', '2023-11-27', 10.00, 1), 
-('17:30:00', '2023-11-27', 12.50, 2),
-('20:00:00', '2023-11-27', 15.00, 3),
-('22:30:00', '2023-11-28', 13.50, 1);
+('14:00:00', '2023-11-17', 10.00, 1,21), 
+('17:30:00', '2023-11-17', 12.50, 2,22),
+('20:00:00', '2023-11-17', 15.00, 3,23),
+('22:30:00', '2023-11-17', 13.50, 1,24),
+('14:00:00', '2023-11-18', 10.00, 1,25), 
+('17:30:00', '2023-11-18', 12.50, 2,26),
+('20:00:00', '2023-11-18', 15.00, 3,27),
+('22:30:00', '2023-11-18', 13.50, 1,28),
+('14:00:00', '2023-11-19', 10.00, 1,29), 
+('17:30:00', '2023-11-19', 12.50, 2,21),
+('20:00:00', '2023-11-19', 15.00, 3,31),
+('22:30:00', '2023-11-19', 13.50, 1,22),
+('14:00:00', '2023-11-20', 10.00, 1,33), 
+('17:30:00', '2023-11-20', 12.50, 2,34),
+('20:00:00', '2023-11-20', 15.00, 3,25),
+('22:30:00', '2023-11-20', 13.50, 1,26),
+('14:00:00', '2023-11-21', 10.00, 1,27), 
+('17:30:00', '2023-11-21', 12.50, 2,38),
+('20:00:00', '2023-11-21', 15.00, 3,39),
+('22:30:00', '2023-11-21', 13.50, 1,21),
+('14:00:00', '2023-11-22', 10.00, 1,22), 
+('17:30:00', '2023-11-22', 12.50, 2,23),
+('20:00:00', '2023-11-22', 15.00, 3,40),
+('22:30:00', '2023-11-22', 13.50, 1,25),
+('14:00:00', '2023-11-23', 10.00, 1,26), 
+('17:30:00', '2023-11-23', 12.50, 2,27),
+('20:00:00', '2023-11-23', 15.00, 3,28),
+('22:30:00', '2023-11-24', 13.50, 1,29),
+('14:00:00', '2023-11-24', 10.00, 1,21), 
+('17:30:00', '2023-11-24', 12.50, 2,32),
+('20:00:00', '2023-11-24', 15.00, 3,33),
+('22:30:00', '2023-11-25', 13.50, 1,34),
+('14:00:00', '2023-11-25', 10.00, 1,35), 
+('17:30:00', '2023-11-25', 12.50, 2,36),
+('20:00:00', '2023-11-25', 15.00, 3,37),
+('22:30:00', '2023-11-26', 13.50, 1,38),
+('14:00:00', '2023-11-26', 10.00, 1,39), 
+('17:30:00', '2023-11-26', 12.50, 2,30),
+('20:00:00', '2023-11-26', 15.00, 3,31),
+('22:30:00', '2023-11-27', 13.50, 1,32),
+('14:00:00', '2023-11-27', 10.00, 1,33), 
+('17:30:00', '2023-11-27', 12.50, 2,34),
+('20:00:00', '2023-11-27', 15.00, 3,35),
+('22:30:00', '2023-11-28', 13.50, 1,36);
 
 
+select * from PELICULAS
 select * from SALAS
 select * from CINES
 select * from CLIENTES
@@ -373,33 +373,33 @@ select * from FUNCIONES
 select * from ACTORES
 
 -- Inserciones en la tabla ACTORES_PELICULAS
-INSERT INTO ACTORES_PELICULAS (ID_ACTOR, ID_PELICULA)
-VALUES
-(1, 1),  -- Brad Pitt en Casablanca (1942)
-(2, 2),  -- Tom Hanks en Lo que el Viento se Llevó (1939)
-(3, 3),  -- Meryl Streep en El Padrino (1972)
-(4, 4),  -- Angelina Jolie en Cantando Bajo la Lluvia (1952)
-(5, 5),  -- Leonardo DiCaprio en Tiempos Modernos (1936)
-(6, 6),  -- Tom Cruise en Ciudadano Kane (1941)
-(7, 7),  -- Julia Roberts en El Mago de Oz (1939)
-(8, 8),  -- Johnny Depp en Lo que el Viento se Llevó (Reestreno en 1961)
-(9, 9),  -- Will Smith en 12 Hombres en Pugna (1957)
-(10, 10), -- Scarlett Johansson en El Ciudadano Ilustre (2016)
-(11, 11), -- Robert Downey Jr. en El Resplandor (1980)
-(12, 12), -- Jennifer Lawrence en Blade Runner (1982)
-(13, 13), -- Denzel Washington en ET, el Extraterrestre (1982)
-(14, 14), -- Charlize Theron en Star Wars: Episodio IV (1977)
-(15, 15), -- Matt Damon en Los Cazafantasmas (1984)
-(16, 16), -- Nicole Kidman en Iron Man (2008)
-(17, 17), -- Bradley Cooper en Los Vengadores (2012)
-(18, 18), -- Natalie Portman en Guardianes de la Galaxia (2014)
-(19, 19), -- Chris Hemsworth en Black Panther (2018)
-(20, 20);
-INSERT INTO ACTORES_PELICULAS (ID_ACTOR, ID_PELICULA)
-VALUES-- Anne Hathaway en Avengers: Endgame (2019)
-(11,20),
-(19,20),
-(10,20);
+--INSERT INTO ACTORES_PELICULAS (ID_ACTOR, ID_PELICULA)
+--VALUES
+--(1, 1),  -- Brad Pitt en Casablanca (1942)
+--(2, 2),  -- Tom Hanks en Lo que el Viento se Llevó (1939)
+--(3, 3),  -- Meryl Streep en El Padrino (1972)
+--(4, 4),  -- Angelina Jolie en Cantando Bajo la Lluvia (1952)
+--(5, 5),  -- Leonardo DiCaprio en Tiempos Modernos (1936)
+--(6, 6),  -- Tom Cruise en Ciudadano Kane (1941)
+--(7, 7),  -- Julia Roberts en El Mago de Oz (1939)
+--(8, 8),  -- Johnny Depp en Lo que el Viento se Llevó (Reestreno en 1961)
+--(9, 9),  -- Will Smith en 12 Hombres en Pugna (1957)
+--(10, 10), -- Scarlett Johansson en El Ciudadano Ilustre (2016)
+--(11, 11), -- Robert Downey Jr. en El Resplandor (1980)
+--(12, 12), -- Jennifer Lawrence en Blade Runner (1982)
+--(13, 13), -- Denzel Washington en ET, el Extraterrestre (1982)
+--(14, 14), -- Charlize Theron en Star Wars: Episodio IV (1977)
+--(15, 15), -- Matt Damon en Los Cazafantasmas (1984)
+--(16, 16), -- Nicole Kidman en Iron Man (2008)
+--(17, 17), -- Bradley Cooper en Los Vengadores (2012)
+--(18, 18), -- Natalie Portman en Guardianes de la Galaxia (2014)
+--(19, 19), -- Chris Hemsworth en Black Panther (2018)
+--(20, 20);
+--INSERT INTO ACTORES_PELICULAS (ID_ACTOR, ID_PELICULA)
+--VALUES-- Anne Hathaway en Avengers: Endgame (2019)
+--(11,20),
+--(19,20),
+--(10,20);
 -- Insertar productos en la tabla PRODUCTOS_CANDY_BAR
 INSERT INTO PRODUCTOS_CANDY_BAR (NOMBRE, DESCRIPCION, PRECIO)
 VALUES
@@ -432,66 +432,66 @@ VALUES (1,'A'),
 	   (18,'C');
 	   SELECT * FROM SALAS
 	   SELECT * FROM BUTACAS
-INSERT butacas_salas(id_butaca,id_sala)
-VALUES(1,1),
-	  (2,1),
-	  (3,1),
-	  (4,1),
-	  (5,1),
-	  (6,1),
-	  (7,1),
-	  (8,1),
-	  (9,1),
-	  (10,1),
-	  (11,1),
-	  (12,1),
-	  (13,1),
-	  (14,1),
-	  (15,1),
-	  (16,1),
-	  (17,1),
-	  (18,1);
+--INSERT butacas_salas(id_butaca,id_sala)
+--VALUES(1,1),
+--	  (2,1),
+--	  (3,1),
+--	  (4,1),
+--	  (5,1),
+--	  (6,1),
+--	  (7,1),
+--	  (8,1),
+--	  (9,1),
+--	  (10,1),
+--	  (11,1),
+--	  (12,1),
+--	  (13,1),
+--	  (14,1),
+--	  (15,1),
+--	  (16,1),
+--	  (17,1),
+--	  (18,1);
 
 
 -- Insert para la tabla CLIENTES
-INSERT INTO CLIENTES (ID_CLIENTE,NOMBRE_CLIENTE, APELLIDO_CLIENTE, ID_TIPO_DOC, DOCUMENTO, TELEFONO, EMAIL)
+INSERT INTO CLIENTES (NOMBRE_CLIENTE, APELLIDO_CLIENTE, ID_TIPO_DOC, DOCUMENTO, TELEFONO, EMAIL)
 VALUES
-    (1,'Juan', 'Pérez', 1, 12345678, 987654321, 'juan.perez@example.com'),
-    (2,'María', 'González', 2, 23456789, 876543210, 'maria.gonzalez@example.com'),
-    (3,'Carlos', 'López', 1, 34567890, 765432109, 'carlos.lopez@example.com'),
-    (4,'Laura', 'Martínez', 2, 45678901, 654321098, 'laura.martinez@example.com'),
-    (5,'Luis', 'Ramírez', 1, 56789012, 543210987, 'luis.ramirez@example.com'),
-    (6,'Ana', 'Sánchez', 2, 67890123, 432109876, 'ana.sanchez@example.com'),
-    (7,'Javier', 'Hernández', 1, 78901234, 321098765, 'javier.hernandez@example.com'),
-    (8,'Sofía', 'Díaz', 2, 89012345, 210987654, 'sofia.diaz@example.com'),
-    (9,'Carlos', 'González', 1, 12345678, 987654321, 'carlos.gonzalez@example.com'),
-    (10,'Laura', 'Martínez', 2, 23456789, 876543219, 'laura.martinez@example.com'),
-    (11,'Roberto', 'Pérez', 1, 34567890, 765432198, 'roberto.perez@example.com'),
-    (12,'Isabel', 'López', 2, 45678901, 654321987, 'isabel.lopez@example.com'),
-    (13,'Ana', 'Ramírez', 1, 56789012, 543219876, 'ana.ramirez@example.com'),
-    (14,'Javier', 'Sánchez', 2, 67890123, 432198765, 'javier.sanchez@example.com'),
-    (15,'Marta', 'Torres', 1, 78901234, 321987654, 'marta.torres@example.com'),
-    (16,'Andrés', 'López', 2, 89012345, 219876543, 'andres.lopez@example.com'),
-    (17,'Jennifer', 'Lopez', 1, 12345678, 555555555, 'jlo@example.com'),
-    (18,'Brad', 'Pitt', 2, 23456789, 666666666, 'brad@example.com'),
-    (19,'Angelina', 'Jolie', 1, 34567890, 777777777, 'angelina@example.com'),
-    (20,'Leonardo', 'DiCaprio', 2, 45678901, 888888888, 'leo@example.com'),
-    (21,'Lionel', 'Messi', 1, 20345678, 1122334455, 'lionel@example.com'),
-    (22,'Diego', 'Maradona', 2, 30456789, 2233445566, 'diego@example.com'),
-    (23,'Carlos', 'Gardel', 1, 40567890, 3344556677, 'carlos@example.com'),
-    (24,'Eva', 'Perón', 2, 50678901, 4455667788, 'eva@example.com'),
-    (25,'Marta', 'Minujin', 1, 60789012, 5566778899, 'marta@example.com'),
-    (26,'Jorge Luis', 'Borges', 2, 70890123, 6677889900, 'borges@example.com'),
-    (27,'Susana', 'Giménez', 1, 80901234, 7788990011, 'susana@example.com'),
-    (28,'René', 'Favaloro', 2, 90012345, 8899001122, 'rene@example.com'),
-    (29,'Juan', 'Pérez', 1, 56789012, 5566778899, 'juanperez@example.com'),
-    (30,'Ana', 'García', 2, 67890123, 6677889900, 'anagarcia@example.com'),
-    (31,'Luis', 'Rodríguez', 1, 78901234, 7788990011, 'luisrodriguez@example.com'),
-    (32,'Laura', 'Martínez', 2, 89012345, 8899001122, 'lauramartinez@example.com'),
-    (33,'María', 'López', 1, 90123456, 9000111222, 'marialopez@example.com'),
-    (34,'Carlos', 'Fernández', 2, 12345678, 1001112223, 'carlosfernandez@example.com'),
-    (35,'Elena', 'Gómez', 1, 23456789, 1112223344, 'elenagomez@example.com'),
-    (36,'Pedro', 'Sánchez', 2, 34567890, 2223334455, 'pedrosanchez@example.com');
+    ('Juan', 'Pérez', 1, 12345678, 987654321, 'juan.perez@example.com'),
+    ('María', 'González', 2, 23456789, 876543210, 'maria.gonzalez@example.com'),
+    ('Carlos', 'López', 1, 34567890, 765432109, 'carlos.lopez@example.com'),
+    ('Laura', 'Martínez', 2, 45678901, 654321098, 'laura.martinez@example.com'),
+    ('Luis', 'Ramírez', 1, 56789012, 543210987, 'luis.ramirez@example.com'),
+    ('Ana', 'Sánchez', 2, 67890123, 432109876, 'ana.sanchez@example.com'),
+    ('Javier', 'Hernández', 1, 78901234, 321098765, 'javier.hernandez@example.com'),
+    ('Sofía', 'Díaz', 2, 89012345, 210987654, 'sofia.diaz@example.com'),
+    ('Carlos', 'González', 1, 12345678, 987654321, 'carlos.gonzalez@example.com'),
+    ('Laura', 'Martínez', 2, 23456789, 876543219, 'laura.martinez@example.com'),
+    ('Roberto', 'Pérez', 1, 34567890, 765432198, 'roberto.perez@example.com'),
+    ('Isabel', 'López', 2, 45678901, 654321987, 'isabel.lopez@example.com'),
+    ('Ana', 'Ramírez', 1, 56789012, 543219876, 'ana.ramirez@example.com'),
+    ('Javier', 'Sánchez', 2, 67890123, 432198765, 'javier.sanchez@example.com'),
+    ('Marta', 'Torres', 1, 78901234, 321987654, 'marta.torres@example.com'),
+    ('Andrés', 'López', 2, 89012345, 219876543, 'andres.lopez@example.com'),
+    ('Jennifer', 'Lopez', 1, 12345678, 555555555, 'jlo@example.com'),
+    ('Brad', 'Pitt', 2, 23456789, 666666666, 'brad@example.com'),
+    ('Angelina', 'Jolie', 1, 34567890, 777777777, 'angelina@example.com'),
+    ('Leonardo', 'DiCaprio', 2, 45678901, 888888888, 'leo@example.com'),
+    ('Lionel', 'Messi', 1, 20345678, 1122334455, 'lionel@example.com'),
+    ('Diego', 'Maradona', 2, 30456789, 2233445566, 'diego@example.com'),
+    ('Carlos', 'Gardel', 1, 40567890, 3344556677, 'carlos@example.com'),
+    ('Eva', 'Perón', 2, 50678901, 4455667788, 'eva@example.com'),
+    ('Marta', 'Minujin', 1, 60789012, 5566778899, 'marta@example.com'),
+    ('Jorge Luis', 'Borges', 2, 70890123, 6677889900, 'borges@example.com'),
+    ('Susana', 'Giménez', 1, 80901234, 7788990011, 'susana@example.com'),
+    ('René', 'Favaloro', 2, 90012345, 8899001122, 'rene@example.com'),
+    ('Juan', 'Pérez', 1, 56789012, 5566778899, 'juanperez@example.com'),
+    ('Ana', 'García', 2, 67890123, 6677889900, 'anagarcia@example.com'),
+    ('Luis', 'Rodríguez', 1, 78901234, 7788990011, 'luisrodriguez@example.com'),
+    ('Laura', 'Martínez', 2, 89012345, 8899001122, 'lauramartinez@example.com'),
+    ('María', 'López', 1, 90123456, 9000111222, 'marialopez@example.com'),
+    ('Carlos', 'Fernández', 2, 12345678, 1001112223, 'carlosfernandez@example.com'),
+    ('Elena', 'Gómez', 1, 23456789, 1112223344, 'elenagomez@example.com'),
+    ('Pedro', 'Sánchez', 2, 34567890, 2223334455, 'pedrosanchez@example.com');
 
 INSERT INTO COMPROBANTES (ID_CLIENTE, ID_EMPLEADO, FECHA, ID_CINE)
 VALUES
@@ -670,7 +670,8 @@ VALUES
     (12, 5, '2022-07-06 08:15:00', 2);
 	
 
-	INSERT INTO Peliculas_Genero(id_pelicula,id_genero)
+select * from COMPROBANTES
+	INSERT INTO Peliculas_Genero(id_pelicula,id_genero) --awdaw
 	VALUES(1,9),
 		  (1,8),
 		  (2,1),
@@ -706,235 +707,237 @@ VALUES
 		  (20,4),
 		  (20,6);
 
-		  select * from Pelicula_Funciones
-		  select * from PELICULAS
-		  select * from FUNCIONES
+		 -- select * from Pelicula_Funciones
+		 -- select * from PELICULAS
+		 -- select * from FUNCIONES
 		  	
 
 
 		  
 			
-			select * from DETALLE_COMPROBANTE
-			select * from VENTAS_CANDY_BAR --
-			select * from butacas_salas
-			select * from Pelicula_Funciones--
-			SELECT * FROM PRODUCTOS_CANDY_BAR
-			insert into VENTAS_CANDY_BAR(ID_COMPROBANTE,ID_PRODUCTO_CANDY_BAR, CANTIDAD,PRECIO_TOTAL)
-			values (1,1,1,10.00),
-					(2,2,2,14.00),
-					(3,3,1,9.00),
-					(4,4,1,5.00),
-					(5,1,1,10.00),
-					(6,2,1,7.00),
-					(7,3,1,9.00),
-					(8,4,1,5.00),
-					(9,1,1,10.00),
-					(10,2,1,7.00),
-					(11,3,1,9.00),
-					(12,4,1,5.00),
-					(13,4,1,5.00),
-					(14,1,1,10.00),
-					(15,2,1,7.00),
-					(16,1,1,10.00),
-					(17,1,1,10.00),
-					(18,1,1,10.00);
+			--select * from DETALLE_COMPROBANTE
+			--select * from VENTAS_CANDY_BAR --
+			--select * from butacas_salas
+			--select * from Pelicula_Funciones--
+			--SELECT * FROM PRODUCTOS_CANDY_BAR
+			--insert into VENTAS_CANDY_BAR(ID_COMPROBANTE,ID_PRODUCTO_CANDY_BAR, CANTIDAD,PRECIO_TOTAL)
+			--values (1,1,1,10.00),
+			--		(2,2,2,14.00),
+			--		(3,3,1,9.00),
+			--		(4,4,1,5.00),
+			--		(5,1,1,10.00),
+			--		(6,2,1,7.00),
+			--		(7,3,1,9.00),
+			--		(8,4,1,5.00),
+			--		(9,1,1,10.00),
+			--		(10,2,1,7.00),
+			--		(11,3,1,9.00),
+			--		(12,4,1,5.00),
+			--		(13,4,1,5.00),
+			--		(14,1,1,10.00),
+			--		(15,2,1,7.00),
+			--		(16,1,1,10.00),
+			--		(17,1,1,10.00),
+			--		(18,1,1,10.00);
 					select * from PELICULAS
 					select * from FUNCIONES
-					INSERT INTO Pelicula_Funciones(id_funcion,id_pelicula)
-					values (1,1),
-						   (1,2),
-						   (1,3),
-						   (1,4),
-						   (2,5),
-						   (2,6),
-						   (2,7),
-						   (2,8),
-						   (3,9),
-						   (3,10),
-						   (3,11),
-						   (3,12),
-						   (4,13),
-						   (4,14),
-						   (4,15),
-						   (4,16),
-						   (5,17),
-						   (5,18),
-						   (5,19),
-						   (5,20),
-						   (6,1),
-						   (6,2),
-						   (6,3),
-						   (6,4),
-						   (7,5),
-						   (7,6),
-						   (7,1),
-						   (7,2),
-						   (8,3),
-						   (8,4),
-						   (8,5),
-						   (8,6),
-						   (9,7),
-						   (9,8),
-						   (9,9),
-						   (9,10),
-						   (10,11),
-						   (10,12),
-						   (10,13),
-						   (10,14),
-						   (11,15),
-						   (12,16),
-						   (12,17),
-						   (12,18),
-						   (12,19),
-						   (13,20),
-						   (13,1),
-						   (13,2),
-						   (13,3),
-						   (14,4),
-						   (14,5),
-						   (14,6),
-						   (15, 7),
-    (15, 8),
-    (15, 9),
-    (15, 10),
-    (16, 11),
-    (16, 12),
-    (16, 13),
-    (16, 14),
-    (17, 15),
-    (18, 16),
-    (18, 17),
-    (18, 18),
-    (18, 19),
-    (19, 20),
-    (19, 1),
-    (19, 2),
-    (19, 3),
-    (20, 4),
-    (20, 5),
-    (20, 6),
-    (21, 7),
-    (21, 8),
-    (21, 9),
-    (21, 10),
-    (22, 11),
-    (22, 12),
-    (22, 13),
-    (22, 14),
-    (23, 15),
-    (24, 16),
-    (24, 17),
-    (24, 18),
-    (25, 19),
-    (25, 20),
-    (25, 1),
-    (25, 2),
-    (26, 3),
-    (26, 4),
-    (26, 5),
-    (26, 6),
-    (27, 7),
-    (27, 8),
-    (27, 9),
-    (27, 10),
-    (28, 11),
-    (28, 12),
-    (28, 13),
-    (28, 14),
-    (29, 15),
-    (29, 16),
-    (29, 17),
-    (29, 18),
-    (30, 19),
-    (30, 20),
-    (30, 1),
-    (30, 2),
-    (31, 3),
-    (31, 4),
-    (31, 5),
-    (31, 6),
-    (32, 7),
-    (32, 8),
-    (32, 9),
-    (32, 10),
-    (33, 11),
-    (33, 12),
-    (33, 13),
-    (33, 14),
-    (34, 15),
-    (34, 16),
-    (34, 17),
-    (34, 18),
-    (35, 19),
-    (35, 20),
-    (35, 1),
-    (35, 2),
-    (35, 3),
-    (35, 4),
-    (35, 5),
-    (35, 6);
-	insert into FUNCIONES_SALAS (ID_FUNCION,ID_SALA)
-	values (1,1),
-			(2,1),
-			(3,1),
-			(4,1),
-			(5,1),
-			(6,1),
-			(7,1),
-			(8,1),
-			(9,1),
-			(10,1),
-			(11,1),
-			(12,1),
-			(13,1),
-			(14,1),
-			(15,1),
-			(16,1),
-			(17,1),
-			(18,1),
-			(19,1),
-			(20,1);
+	--				INSERT INTO Pelicula_Funciones(id_funcion,id_pelicula)
+	--				values (1,1),
+	--					   (1,2),
+	--					   (1,3),
+	--					   (1,4),
+	--					   (2,5),
+	--					   (2,6),
+	--					   (2,7),
+	--					   (2,8),
+	--					   (3,9),
+	--					   (3,10),
+	--					   (3,11),
+	--					   (3,12),
+	--					   (4,13),
+	--					   (4,14),
+	--					   (4,15),
+	--					   (4,16),
+	--					   (5,17),
+	--					   (5,18),
+	--					   (5,19),
+	--					   (5,20),
+	--					   (6,1),
+	--					   (6,2),
+	--					   (6,3),
+	--					   (6,4),
+	--					   (7,5),
+	--					   (7,6),
+	--					   (7,1),
+	--					   (7,2),
+	--					   (8,3),
+	--					   (8,4),
+	--					   (8,5),
+	--					   (8,6),
+	--					   (9,7),
+	--					   (9,8),
+	--					   (9,9),
+	--					   (9,10),
+	--					   (10,11),
+	--					   (10,12),
+	--					   (10,13),
+	--					   (10,14),
+	--					   (11,15),
+	--					   (12,16),
+	--					   (12,17),
+	--					   (12,18),
+	--					   (12,19),
+	--					   (13,20),
+	--					   (13,1),
+	--					   (13,2),
+	--					   (13,3),
+	--					   (14,4),
+	--					   (14,5),
+	--					   (14,6),
+	--					   (15, 7),
+ --   (15, 8),
+ --   (15, 9),
+ --   (15, 10),
+ --   (16, 11),
+ --   (16, 12),
+ --   (16, 13),
+ --   (16, 14),
+ --   (17, 15),
+ --   (18, 16),
+ --   (18, 17),
+ --   (18, 18),
+ --   (18, 19),
+ --   (19, 20),
+ --   (19, 1),
+ --   (19, 2),
+ --   (19, 3),
+ --   (20, 4),
+ --   (20, 5),
+ --   (20, 6),
+ --   (21, 7),
+ --   (21, 8),
+ --   (21, 9),
+ --   (21, 10),
+ --   (22, 11),
+ --   (22, 12),
+ --   (22, 13),
+ --   (22, 14),
+ --   (23, 15),
+ --   (24, 16),
+ --   (24, 17),
+ --   (24, 18),
+ --   (25, 19),
+ --   (25, 20),
+ --   (25, 1),
+ --   (25, 2),
+ --   (26, 3),
+ --   (26, 4),
+ --   (26, 5),
+ --   (26, 6),
+ --   (27, 7),
+ --   (27, 8),
+ --   (27, 9),
+ --   (27, 10),
+ --   (28, 11),
+ --   (28, 12),
+ --   (28, 13),
+ --   (28, 14),
+ --   (29, 15),
+ --   (29, 16),
+ --   (29, 17),
+ --   (29, 18),
+ --   (30, 19),
+ --   (30, 20),
+ --   (30, 1),
+ --   (30, 2),
+ --   (31, 3),
+ --   (31, 4),
+ --   (31, 5),
+ --   (31, 6),
+ --   (32, 7),
+ --   (32, 8),
+ --   (32, 9),
+ --   (32, 10),
+ --   (33, 11),
+ --   (33, 12),
+ --   (33, 13),
+ --   (33, 14),
+ --   (34, 15),
+ --   (34, 16),
+ --   (34, 17),
+ --   (34, 18),
+ --   (35, 19),
+ --   (35, 20),
+ --   (35, 1),
+ --   (35, 2),
+ --   (35, 3),
+ --   (35, 4),
+ --   (35, 5),
+ --   (35, 6);
+	--insert into FUNCIONES_SALAS (ID_FUNCION,ID_SALA)
+	--values (1,1),
+	--		(2,1),
+	--		(3,1),
+	--		(4,1),
+	--		(5,1),
+	--		(6,1),
+	--		(7,1),
+	--		(8,1),
+	--		(9,1),
+	--		(10,1),
+	--		(11,1),
+	--		(12,1),
+	--		(13,1),
+	--		(14,1),
+	--		(15,1),
+	--		(16,1),
+	--		(17,1),
+	--		(18,1),
+	--		(19,1),
+	--		(20,1);
 
 
+	select * from SALAS
 
-
-SELECT * FROM VENTAS_CANDY_BAR
-select * from butacas_salas
-INSERT INTO DETALLE_COMPROBANTE (id_comprobante, id_venta_candy_bar, id_butaca, id_sala, id_pelicula, id_funcion, precio_total)
+INSERT INTO DETALLE_COMPROBANTE (id_comprobante, id_butaca, id_sala, id_pelicula, id_funcion, precio_total) --asd
 VALUES
-    (1, 2, 4, 4, 2, 1, 25.00),
-    (2, 2, 2, 5, 3, 2, 30.50),
-    (3, 3, 3, 6, 2, 3, 22.75),
-    (4, 4, 4, 2, 8, 4, 28.00),
-    (5, 4, 4, 3, 8, 5, 28.00),
-    (6, 1, 4, 4, 5, 6, 25.00),
-    (7, 2, 2, 5, 3, 7, 30.50),
-    (8, 3, 3, 6, 2, 8, 22.75),
-    (9, 4, 4, 1, 2, 9, 28.00),
-    (10, 5, 5, 6, 2, 10, 20.25),
-    (11, 6, 6, 4, 5, 11, 35.75),
-    (12, 7, 7, 5, 7, 12, 27.50),
-    (13, 8, 8, 5, 3, 13, 33.25),
-    (14, 9, 10, 5, 8, 14, 18.75),
-    (15, 10, 10, 4, 9, 15, 29.50),
-    (16, 11, 11, 4, 4, 16, 24.25),
-    (17, 12, 12, 4, 1, 17, 31.00),
-    (18, 13, 13, 4, 5, 18, 15.00),
-    (19, 14, 14, 6, 8, 19, 28.50),
-    (20, 15, 15, 5, 2, 20, 22.75),
-    (21, 16, 16, 4, 7, 21, 27.00),
-    (22, 17, 17, 2, 2, 22, 32.50),
-    (23, 18, 18, 5, 6, 23, 26.75),
-    (24, 18, 4, 4, 2, 24, 21.25),
-    (25, 1, 1, 2, 3, 25, 23.00),
-    (26, 2, 1, 6, 9, 26, 29.75),
-    (27, 2, 3, 2, 4, 27, 34.25),
-    (28, 3, 3, 5, 7, 28, 27.50),
-    (29, 4, 4, 4, 2, 29, 22.00),
-    (30, 5, 5, 2, 5, 30, 30.75),
-    (31, 6, 6, 5, 5, 31, 25.25);
+    (1, 4, 4, 2, 5, 25.00),
+    (2,  2, 5, 3, 6, 30.50),
+    (3,  3, 6, 2, 7, 22.75),
+    (4,  4, 4, 8, 8, 28.00),
+    (5,  4, 4, 8, 9, 28.00),
+    (6,  4, 4, 5, 10, 25.00),
+    (7,  2, 5, 3, 11, 30.50),
+    (8,  3, 6, 2, 12, 22.75),
+    (9,  4, 4, 2, 13, 28.00),
+    (10,  5, 6, 2, 14, 20.25),
+    (11,  6, 4, 5, 15, 35.75),
+    (12,  7, 5, 7, 16, 27.50),
+    (13,  8, 5, 3, 17, 33.25),
+    (14,  10, 5, 8, 18, 18.75),
+    (15,  10, 4, 9, 19, 29.50),
+    (16,  11, 4, 4, 20, 24.25),
+    (17,  12, 4, 1, 21, 31.00),
+    (18,  13, 4, 5, 22, 15.00),
+    (19,  14, 6, 8, 23, 28.50),
+    (20,  15, 5, 2, 24, 22.75),
+    (21,  16, 4, 7, 25, 27.00),
+    (22,  17, 4, 2, 26, 32.50),
+    (23,  18, 5, 6, 27, 26.75),
+    (24,  4, 4, 2, 28, 21.25),
+    (25,  1, 4, 3, 29, 23.00),
+    (26,  1, 6, 9, 30, 29.75),
+    (27, 3, 4, 4, 31, 34.25),
+    (28,  3, 5, 7, 32, 27.50),
+    (29,  4, 4, 2, 33, 22.00),
+    (30,  5, 4, 5, 34, 30.75),
+    (31,  6, 5, 5, 31, 25.25);
 
+	select * from DETALLE_COMPROBANTE
+	select * from CLIENTES
+	select * from PELICULAS
 
-
-
-	
+	insert into usuarios( ID_EMPLEADO, USUARIO, CONTRASENIA)
+    Values(1,'Manu','123')
+insert into usuarios( ID_EMPLEADO, USUARIO, CONTRASENIA)
+    Values(2,'MARTO','Aprobanos')

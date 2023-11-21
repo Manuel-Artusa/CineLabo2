@@ -119,5 +119,10 @@ namespace CinesFront.Presentacion
             btnModificar.Enabled = false;
             btnElminar.Enabled = false;
         }
+
+        private void txtDoc_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

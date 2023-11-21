@@ -134,6 +134,7 @@
             this.txtDoc.Name = "txtDoc";
             this.txtDoc.Size = new System.Drawing.Size(198, 23);
             this.txtDoc.TabIndex = 8;
+            this.txtDoc.TextChanged += new System.EventHandler(this.txtDoc_TextChanged);
             // 
             // btnCancelar
             // 

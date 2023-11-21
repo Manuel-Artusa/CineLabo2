@@ -1,7 +1,7 @@
 
-CREATE PROCEDURE ObtenerButacasDisponiblesConInfo
+create PROCEDURE ObtenerButacasDisponiblesConInfo
     @Titulo VARCHAR(100),
-    @fechaFuncion datetime ,
+    @fechaFuncion varchar(10) ,
     @id_sala INT ,
     @HoraFuncion TIME 
 AS
@@ -9,7 +9,6 @@ BEGIN
     -- Seleccionar el nombre de la película, la función, el día, la sala y las butacas disponibles
     SELECT P.Titulo AS NombrePelicula, F.Hora AS HoraFuncion, B.id_butaca, B.nro_butaca, B.fila
     FROM BUTACAS b 
-	join butacas_salas bs on bs.id_butaca = b.ID_BUTACA
 	join FUNCIONES_SALAS fs on fs.ID_SALA = bs.id_sala
 	join Pelicula_Funciones pf on fs.ID_FUNCION = pf.id_funcion
 	join PELICULAS p on p.ID_PELICULA = pf.id_pelicula
@@ -21,8 +20,7 @@ BEGIN
 		where dc.id_butaca = bs.id_butacas_Sala
     )
     AND P.Titulo LIKE '%' + @Titulo + '%'
-	AND F.FECHA = @fechaFuncion
-          AND F.Hora = @HoraFuncion
+	AND F.FECHA = @fechaFuncion          AND F.Hora = @HoraFuncion
 		  AND FS.id_sala = @id_sala
 	 
 END;
@@ -43,16 +41,14 @@ EXEC ObtenerButacasDisponiblesConInfo @titulo = 'Iron',@FechaFuncion ='17/11/202
   where @fecha = f.FECHA
   AND @pelicula = p.TITULO
   END;
-  EXEC SP_CONSULTAR_FUNCIONES @Fecha = '17/11/2023', @pelicula = 'Iron Man'
-
- select * from FUNCIONES
- select * from PELICULAS
- update FUNCIONES 
- set ID_PELICULA = 16
+  EXEC SP_CONSULTAR_FUNCIONES @Fecha = '25-11-2023', @pelicula = 'Iron Man'
+  select * from FUNCIONEs f
+  join PELICULAS p on p.ID_PELICULA = f.ID_PELICULA
+  order by TITULO
 
   ---------------------------------------------------------------------------------------------------------------------------------------------------------------
    ------------------------------------------------------------------------------------------------------------------------------------------------
-  drop procedure SP_CONSULTAR_PELICULAS
+
   create procedure SP_CONSULTAR_PELICULAS
   AS
   BEGIN
@@ -60,9 +56,12 @@ EXEC ObtenerButacasDisponiblesConInfo @titulo = 'Iron',@FechaFuncion ='17/11/202
   FROM PELICULAS p
   END;
 
+
+  select * from COMPROBANTES c
+  join DETALLE_COMPROBANTE d on d.id_comprobante = c.ID_COMPROBANTE
+  join CLIENTES cl on cl.ID_CLIENTE = c.ID_CLIENTE
   EXEC SP_CONSULTAR_PELICULAS
    ------------------------------------------------------------------------------------------------------------------------------------------------
-   drop procedure SP_CONSULTAR_DETALLES
    create procedure SP_CONSULTAR_DETALLES
    AS
    BEGIN
@@ -75,7 +74,7 @@ EXEC ObtenerButacasDisponiblesConInfo @titulo = 'Iron',@FechaFuncion ='17/11/202
    SELECT * FROM COMPROBANTES
    END;
    -------------------------------------------------------------------------------------------------------------------------------------------------
-   alter procedure GenerarCompra
+   create procedure GenerarCompra
    @Cliente int,
    @Fecha datetime,
    @idComprobante int output
@@ -86,7 +85,7 @@ EXEC ObtenerButacasDisponiblesConInfo @titulo = 'Iron',@FechaFuncion ='17/11/202
 		set @idComprobante = SCOPE_IDENTITY();
 	end;
 -------------------------------------------------------------------------------------------------------------------------------------------------
-  alter procedure GenerarCliente
+  create procedure GenerarCliente
   @nombre varchar(20),
   @apellido varchar (20),
   @documento int,
@@ -95,23 +94,22 @@ EXEC ObtenerButacasDisponiblesConInfo @titulo = 'Iron',@FechaFuncion ='17/11/202
   @id_cliente int OUTPUT
   as
   begin
-		insert into Clientes(NOMBRE_CLIENTE,APELLIDO_CLIENTE,ID_TIPO_DOC,DOCUMENTO,TELEFONO,EMAIL)
-		values (@nombre,@apellido,1,@documento,@telefono,@email)
+		insert into Clientes(NOMBRE_CLIENTE,APELLIDO_CLIENTE, DOCUMENTO, TELEFONO, EMAIL)
+		values (@nombre,@apellido,@documento,@telefono,@email)
 		set @id_cliente = SCOPE_IDENTITY();
 end;
 
-exec GenerarCliente 'Franco', 'Lentini', 123123, 123, 'tummama'
+
 		-------------------------------------------------------------------------------------------------------------------------------------------------
-alter PROCEDURE GenerarDetalle
+create PROCEDURE GenerarDetalle
 @idComprobante int,
-@idCandy int,
 @idFuncion int,
 @idSala int,
 @precio float
 as
 begin
-     insert into DETALLE_COMPROBANTE(id_comprobante, id_venta_candy_bar, id_funcion, id_sala, precio_total)
-	 values(@idComprobante, @idCandy, @idFuncion, @idSala, @precio)
+     insert into DETALLE_COMPROBANTE(id_comprobante, id_funcion, id_sala, precio_total)
+	 values(@idComprobante, @idFuncion, @idSala, @precio)
 	 end;
 	 -------------------------------------------------------------------------------------------------------------------------------------------------
 create proc SP_INSERTAR_BUTACA
@@ -121,3 +119,51 @@ begin
 insert into SALAS(id_butaca) values (@idButaca)
 end
 
+
+
+
+create proc SP_CONSULTAR_COMPROBANTE_PARAMETROS
+@documento int,
+@cliente varchar(50)
+as
+begin
+select co.ID_COMPROBANTE, co.FECHA, precio_total, c.APELLIDO_CLIENTE, c.DOCUMENTO from COMPROBANTES co
+join CLIENTES c on c.ID_CLIENTE = co.ID_CLIENTE
+join DETALLE_COMPROBANTE d on co.id_comprobante = d.id_comprobante
+where c.APELLIDO_CLIENTE = @cliente and c.DOCUMENTO = @documento
+end
+
+exec SP_CONSULTAR_COMPROBANTE_PARAMETROS 12345678, Pérez
+
+
+select * from COMPROBANTES c
+join clientes cl on cl.id_cliente = c.id_cliente
+
+
+
+exec SP_CONSULTAR_COMPROBANTE_PARAMETROS 12345678, 'pérez'
+
+create proc SP_BORRAR_COMPROBANTE
+@id int
+as 
+begin
+delete DETALLE_COMPROBANTE
+where id_comprobante = @id
+delete COMPROBANTES
+where ID_COMPROBANTE = @id
+end
+
+CREATE PROCEDURE SP_IniciarSesionEmpleado
+    @Usuario VARCHAR(50),
+    @Contrasenia VARCHAR(50),
+    @IdEmpleado INT OUTPUT,
+    @IdCargo INT OUTPUT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT @IdEmpleado = e.ID_EMPLEADO, @IdCargo = ID_CARGO
+    FROM EMPLEADOS e
+    join USUARIOS u on u.ID_EMPLEADO= e.ID_EMPLEADO 
+    WHERE USUARIO = @Usuario AND CONTRASENIA = @Contrasenia;
+END;
