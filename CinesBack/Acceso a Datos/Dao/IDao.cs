@@ -26,5 +26,6 @@ namespace SistemaCineBack.Acceso_a_Datos.Dao
         List<Funciones> TraerFunciones(string pelicula, string fechita);
         public Peliculas TraerPeliculaPorId(int idPelicula);
         public List<Comprobantes> obtenerComprobantesParametros(int nroDoc, string apellido);
+        public bool IniciarSesion(string usuario, string contrasenia, out int idEmpleado, out int idCargo);
     }
 }

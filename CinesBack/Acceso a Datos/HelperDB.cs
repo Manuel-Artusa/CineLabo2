@@ -16,12 +16,16 @@ namespace SistemaCineBack.Acceso_a_Datos
     class HelperDB
     {
         private static HelperDB instancia;
-        private SqlConnection cnn = new SqlConnection(@"Data Source=DESKTOP-72P6KAS\SQLEXPRESS;Initial Catalog=Cine;Integrated Security=True");
+        private SqlConnection cnn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=cine;Integrated Security=True");
         public static HelperDB obtenerInstancia()
         {
             if (instancia == null)
             { instancia = new HelperDB(); }
             return instancia;
+        }
+        public SqlConnection GetConnection()
+        {
+            return cnn;
         }
         public DataTable consultar(string sp)
         {
@@ -33,7 +37,7 @@ namespace SistemaCineBack.Acceso_a_Datos
             cnn.Close();
             return tabla;
         }
-        public DataTable consultarConParametros(string sp,string pelicula, string fecha)
+        public DataTable consultarConParametros(string sp, string pelicula, string fecha)
         {
             DataTable tabla = new DataTable();
             cnn.Open();
@@ -45,18 +49,18 @@ namespace SistemaCineBack.Acceso_a_Datos
             cnn.Close();
             return tabla;
         }
-        public bool ejecutarSql(string spComprobante, string spDetalle,string spCliente, Comprobantes comprobantes, Clientes c)
+        public bool ejecutarSql(string spComprobante, string spDetalle, string spCliente, Comprobantes comprobantes, Clientes c)
         {
             bool aux = true;
-            
+
             SqlTransaction t = null;
             try
             {
                 cnn.Open();
                 t = cnn.BeginTransaction();
-                SqlCommand cmdCliente = new SqlCommand(spCliente, cnn,t);
+                SqlCommand cmdCliente = new SqlCommand(spCliente, cnn, t);
                 cmdCliente.CommandType = CommandType.StoredProcedure;
-                cmdCliente.Parameters.AddWithValue("@nombre",c.persona.Nombre);
+                cmdCliente.Parameters.AddWithValue("@nombre", c.persona.Nombre);
                 cmdCliente.Parameters.AddWithValue("@apellido", c.persona.Apellido);
                 //cmdCliente.Parameters.AddWithValue("@tipo_doc", 1);
                 cmdCliente.Parameters.AddWithValue("@documento", c.NroDocumento);
@@ -66,13 +70,13 @@ namespace SistemaCineBack.Acceso_a_Datos
                 param.ParameterName = "@id_cliente";
                 param.DbType = DbType.Int32;
                 param.Direction = ParameterDirection.Output;
-                cmdCliente.Parameters.Add(param);                         
+                cmdCliente.Parameters.Add(param);
                 cmdCliente.ExecuteNonQuery();
                 int idCliente = (int)param.Value;
 
                 SqlCommand cmdCompra = new SqlCommand(spComprobante, cnn, t);
                 cmdCompra.CommandType = CommandType.StoredProcedure;
-                cmdCompra.Parameters.AddWithValue("@Cliente",idCliente);
+                cmdCompra.Parameters.AddWithValue("@Cliente", idCliente);
                 cmdCompra.Parameters.AddWithValue("@fecha", comprobantes.fecha);
                 SqlParameter pIdComprobanteOut = new SqlParameter();
                 pIdComprobanteOut.ParameterName = "@idComprobante";
@@ -82,8 +86,8 @@ namespace SistemaCineBack.Acceso_a_Datos
                 cmdCompra.ExecuteNonQuery();
 
                 int idComprobante = (int)pIdComprobanteOut.Value;
-               
-                foreach(DetalleComprobante d in comprobantes.detalle)
+
+                foreach (DetalleComprobante d in comprobantes.detalle)
                 {
                     SqlCommand cmdDetalle = new SqlCommand(spDetalle, cnn, t);
                     cmdDetalle.CommandType = CommandType.StoredProcedure;
@@ -93,7 +97,7 @@ namespace SistemaCineBack.Acceso_a_Datos
                     cmdDetalle.Parameters.AddWithValue("@idSala", d.funcione.sala.IdSala);
                     cmdDetalle.Parameters.AddWithValue("@precio", d.funcione.Precio);
                     cmdDetalle.ExecuteNonQuery();
-                    foreach(Butacas b in d.funcione.sala.butacas)
+                    foreach (Butacas b in d.funcione.sala.butacas)
                     {
                         SqlCommand cmdSala = new SqlCommand("SP_INSERTAR_SALA", cnn, t);
                         cmdSala.CommandType = CommandType.StoredProcedure;
@@ -104,7 +108,7 @@ namespace SistemaCineBack.Acceso_a_Datos
                     aux = true;
                 }
 
-              
+
                 t.Commit();
             }
             catch (SqlException ex)
@@ -118,7 +122,7 @@ namespace SistemaCineBack.Acceso_a_Datos
                 if (cnn != null && cnn.State == ConnectionState.Open)
                     cnn.Close();
             }
-           
+
             return aux;
         }
         public int obtenerProximoId()
@@ -144,31 +148,31 @@ namespace SistemaCineBack.Acceso_a_Datos
 
             try
             {
-               
-                
-                    cnn.Open();
 
-                    using (SqlCommand cmd = new SqlCommand("ButacasDisponiblesXfuncion", cnn))
+
+                cnn.Open();
+
+                using (SqlCommand cmd = new SqlCommand("ButacasDisponiblesXfuncion", cnn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@FechaFuncion", fechaFuncion));
+                    cmd.Parameters.Add(new SqlParameter("@Pelicula", pelicula));
+                    //cmd.Parameters.Add(new SqlParameter("@HoraFuncion", Hora.Ticks));
+                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.Add(new SqlParameter("@FechaFuncion", fechaFuncion));
-                        cmd.Parameters.Add(new SqlParameter("@Pelicula", pelicula));
-                        //cmd.Parameters.Add(new SqlParameter("@HoraFuncion", Hora.Ticks));
-                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        while (reader.Read())
                         {
-                            while (reader.Read())
+                            if (reader["ID_BUTACA"] != DBNull.Value && reader["NRO_BUTACA"] != DBNull.Value && reader["FILA"] != DBNull.Value)
                             {
-                                if (reader["ID_BUTACA"] != DBNull.Value && reader["NRO_BUTACA"] != DBNull.Value && reader["FILA"] != DBNull.Value)
-                                {
-                                    int id = (int)reader["ID_BUTACA"];
-                                    int nro = (int)reader["NRO_BUTACA"];
-                                    int fila = (int)reader["FILA"];
-                                    lButacas.Add(new Butacas(id, nro, fila));
-                                }
+                                int id = (int)reader["ID_BUTACA"];
+                                int nro = (int)reader["NRO_BUTACA"];
+                                int fila = (int)reader["FILA"];
+                                lButacas.Add(new Butacas(id, nro, fila));
                             }
                         }
                     }
-                
+                }
+
             }
             catch (Exception ex)
             {
@@ -176,7 +180,7 @@ namespace SistemaCineBack.Acceso_a_Datos
             }
 
             return lButacas;
-           
+
         }
         public void Open()
         {
@@ -230,6 +234,7 @@ namespace SistemaCineBack.Acceso_a_Datos
             cnn.Close();
             return tabla;
         }
-
+        
     }
+   
 }
