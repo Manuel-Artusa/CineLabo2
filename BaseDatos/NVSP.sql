@@ -31,18 +31,25 @@ END;
 EXEC ObtenerButacasDisponiblesConInfo @titulo = 'Iron',@FechaFuncion ='17/11/2023', @HoraFuncion = '22:30:00', @id_sala = 1
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
-  create procedure SP_CONSULTAR_FUNCIONES
-  @fecha datetime,
+  alter procedure SP_CONSULTAR_FUNCIONES
+  @fecha varchar(50),
   @pelicula varchar(100)
   AS
   BEGIN
+  set dateformat dmy
   SELECT f.ID_FUNCION,f.FECHA,f.HORA,p.ID_PELICULA,p.TITULO,f.PRECIO_ACTUAL 
-  FROM FUNCIONES f join Pelicula_Funciones pf on pf.id_funcion = f.ID_FUNCION
-  join PELICULAS p on p.ID_PELICULA = pf.id_pelicula
+  FROM FUNCIONES f 
+  join PELICULAS p on p.id_pelicula = f.id_pelicula
   where @fecha = f.FECHA
   AND @pelicula = p.TITULO
   END;
   EXEC SP_CONSULTAR_FUNCIONES @Fecha = '17/11/2023', @pelicula = 'Iron Man'
+
+ select * from FUNCIONES
+ select * from PELICULAS
+ update FUNCIONES 
+ set ID_PELICULA = 16
+
   ---------------------------------------------------------------------------------------------------------------------------------------------------------------
    ------------------------------------------------------------------------------------------------------------------------------------------------
   drop procedure SP_CONSULTAR_PELICULAS
@@ -68,41 +75,49 @@ EXEC ObtenerButacasDisponiblesConInfo @titulo = 'Iron',@FechaFuncion ='17/11/202
    SELECT * FROM COMPROBANTES
    END;
    -------------------------------------------------------------------------------------------------------------------------------------------------
-   create procedure GenerarCompra
+   alter procedure GenerarCompra
    @Cliente int,
-   @Fecha datetime
+   @Fecha datetime,
+   @idComprobante int output
    as
    begin 
 		Insert into COMPROBANTES (id_cliente,id_empleado,fecha,id_cine)
 		VALUES (@Cliente,1,@Fecha,1)
+		set @idComprobante = SCOPE_IDENTITY();
 	end;
 -------------------------------------------------------------------------------------------------------------------------------------------------
   alter procedure GenerarCliente
   @nombre varchar(20),
   @apellido varchar (20),
-  @tipo_doc int,
   @documento int,
   @telefono int,
   @email varchar (70),
-  @idCliente int output
+  @id_cliente int OUTPUT
   as
   begin
 		insert into Clientes(NOMBRE_CLIENTE,APELLIDO_CLIENTE,ID_TIPO_DOC,DOCUMENTO,TELEFONO,EMAIL)
-		values (@nombre,@apellido,@tipo_doc,@documento,@telefono,@email)
-		set @idCliente = SCOPE_IDENTITY();
+		values (@nombre,@apellido,1,@documento,@telefono,@email)
+		set @id_cliente = SCOPE_IDENTITY();
 end;
+
+exec GenerarCliente 'Franco', 'Lentini', 123123, 123, 'tummama'
 		-------------------------------------------------------------------------------------------------------------------------------------------------
-CREATE PROCEDURE GenerarDetalle
-@Comprobante int,
-@CandyBar int null,
-@idButacas int,
+alter PROCEDURE GenerarDetalle
+@idComprobante int,
+@idCandy int,
 @idFuncion int,
-@idPelicula int,
-@idSala INT,
-@Precio money
+@idSala int,
+@precio float
 as
 begin
-     insert into detalle_comprobante(id_comprobante,id_venta_candy_bar,id_butaca,id_funcion,id_pelicula,id_sala,precio_total) 
-	 values (@Comprobante, @CandyBar, @idButacas,@idFuncion,@idPelicula,@idSala,@Precio)
+     insert into DETALLE_COMPROBANTE(id_comprobante, id_venta_candy_bar, id_funcion, id_sala, precio_total)
+	 values(@idComprobante, @idCandy, @idFuncion, @idSala, @precio)
 	 end;
 	 -------------------------------------------------------------------------------------------------------------------------------------------------
+create proc SP_INSERTAR_BUTACA
+@idButaca int 
+as
+begin 
+insert into SALAS(id_butaca) values (@idButaca)
+end
+

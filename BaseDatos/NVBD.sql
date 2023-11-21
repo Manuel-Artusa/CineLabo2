@@ -251,5 +251,35 @@ CREATE TABLE DETALLE_COMPROBANTE (
 
 
 alter table FUNCIONES
+add ID_PELICULA INT
+
+alter table Funciones
 add constraint fk_pelicula foreign key(ID_PELICULA)
 references PELICULAS(ID_PELICULA)
+
+
+
+alter table salas
+add id_funcion int
+
+
+alter table salas
+add constraint fk_funcion foreign key(id_funcion)
+references FUNCIONES(ID_FUNCION)
+
+
+alter table Salas 
+add id_butaca int
+
+
+alter table Salas
+add constraint fk_butaca foreign key(id_butaca)
+references Butacas(id_butaca)
+
+drop table butacas_salas
+
+select * FROM CLIENTES c
+join TIPOS_DOC t on t.ID_TIPO_DOC = c.ID_TIPO_DOC
+
+alter table Clientes 
+alter column ID_CLIENTE int IDENTITY(1,1)

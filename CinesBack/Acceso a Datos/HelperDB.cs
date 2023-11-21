@@ -48,10 +48,11 @@ namespace SistemaCineBack.Acceso_a_Datos
         public bool ejecutarSql(string spComprobante, string spDetalle,string spCliente, Comprobantes comprobantes, Clientes c)
         {
             bool aux = true;
-            cnn.Open();
+            
             SqlTransaction t = null;
             try
             {
+                cnn.Open();
                 t = cnn.BeginTransaction();
                 SqlCommand cmdCliente = new SqlCommand(spCliente, cnn,t);
                 cmdCliente.CommandType = CommandType.StoredProcedure;
@@ -61,7 +62,9 @@ namespace SistemaCineBack.Acceso_a_Datos
                 cmdCliente.Parameters.AddWithValue("@documento", c.NroDocumento);
                 cmdCliente.Parameters.AddWithValue("@telefono", c.Telefono);
                 cmdCliente.Parameters.AddWithValue("@email", c.Mail);
-                SqlParameter param = new SqlParameter("@idCliente", SqlDbType.Int);
+                SqlParameter param = new SqlParameter();
+                param.ParameterName = "@id_cliente";
+                param.DbType = DbType.Int32;
                 param.Direction = ParameterDirection.Output;
                 cmdCliente.Parameters.Add(param);                         
                 cmdCliente.ExecuteNonQuery();
@@ -74,7 +77,7 @@ namespace SistemaCineBack.Acceso_a_Datos
                 SqlParameter pIdComprobanteOut = new SqlParameter();
                 pIdComprobanteOut.ParameterName = "@idComprobante";
                 pIdComprobanteOut.Direction = ParameterDirection.Output;
-                pIdComprobanteOut.SqlDbType = SqlDbType.Int;
+                pIdComprobanteOut.DbType = DbType.Int32;
                 cmdCompra.Parameters.Add(pIdComprobanteOut);
                 cmdCompra.ExecuteNonQuery();
 
@@ -85,7 +88,7 @@ namespace SistemaCineBack.Acceso_a_Datos
                     SqlCommand cmdDetalle = new SqlCommand(spDetalle, cnn, t);
                     cmdDetalle.CommandType = CommandType.StoredProcedure;
                     cmdDetalle.Parameters.AddWithValue("@idComprobante", idComprobante);
-                    cmdDetalle.Parameters.AddWithValue("@idCandy",0);
+                    //cmdDetalle.Parameters.AddWithValue("@idCandy",0);
                     cmdDetalle.Parameters.AddWithValue("@idFuncion", d.funcione.IdFuncion);
                     cmdDetalle.Parameters.AddWithValue("@idSala", d.funcione.sala.IdSala);
                     cmdDetalle.Parameters.AddWithValue("@precio", d.funcione.Precio);
@@ -97,15 +100,16 @@ namespace SistemaCineBack.Acceso_a_Datos
                         cmdSala.Parameters.AddWithValue("@idButaca", b.IdButaca);
                         cmdSala.ExecuteNonQuery();
                     }
-                  
 
+                    aux = true;
                 }
 
               
                 t.Commit();
             }
-            catch (Exception)
+            catch (SqlException ex)
             {
+                Console.WriteLine($"Error: {ex.Message}");
                 aux = false;
                 t.Rollback();
             }
@@ -114,7 +118,7 @@ namespace SistemaCineBack.Acceso_a_Datos
                 if (cnn != null && cnn.State == ConnectionState.Open)
                     cnn.Close();
             }
-            t.Commit();
+           
             return aux;
         }
         public int obtenerProximoId()

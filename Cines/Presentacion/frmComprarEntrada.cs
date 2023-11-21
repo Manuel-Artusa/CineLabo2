@@ -157,6 +157,7 @@ namespace CineApp.Forms
         private async void frmComprarEntrada_Load_1(object sender, EventArgs e)
         {
             habilitar();
+            limpiarCampos();
            await cargarPeliculas();
             lblTotal.Text = "10.50";
         }
@@ -181,17 +182,24 @@ namespace CineApp.Forms
             cbPelicula.SelectedItem = 1;
 
         }
-        private void grabar(Comprobantes c, Clientes cl)
+        private bool grabar(Comprobantes c, Clientes cl)
         {
             //string Json = JsonConvert.SerializeObject(c);
             //string url = "https://localhost:7028/InsertarComprobante";
             //var data = await ClienteSingleton.GetInstance().PostAsync(url, Json);
             //MessageBox.Show(data, "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-             dao.crear(c, cl);
+             return dao.crear(c, cl);
         }
         private void limpiarCampos()
         {
-
+            txtCorreo.Text = String.Empty;
+            txtDNI.Text = String.Empty;
+            txtTelefono.Text = String.Empty;
+            tbApellido.Text = String.Empty;
+            tbNombre.Text = String.Empty;
+            cbFuncion.SelectedIndex = -1;
+            cbFuncion.Enabled = false;
+            cbPelicula.SelectedIndex = -1;
         }
         private void btnConfirmar_Click_1(object sender, EventArgs e)
         {
@@ -254,7 +262,8 @@ namespace CineApp.Forms
             Salas s = new Salas();
             s.agregarButacas(b);
 
-            grabar(c, cl);
+            if(grabar(c, cl) == true)
+                MessageBox.Show("Exito en la compra", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void pbButaca2_Click(object sender, EventArgs e)
@@ -304,6 +313,7 @@ namespace CineApp.Forms
         private void button1_Click(object sender, EventArgs e)
         {
             cargarFuncioneS(cbPelicula.Text, dtpFecha.Value.ToShortDateString());
+            cbFuncion.Enabled=true;
         }
 
         private void lblTotal_Click(object sender, EventArgs e)
