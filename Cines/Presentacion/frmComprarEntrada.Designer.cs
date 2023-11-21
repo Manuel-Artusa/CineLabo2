@@ -96,6 +96,24 @@
             btnVer2 = new Button();
             btnVerAsientos = new Button();
             txtSala = new TextBox();
+            button1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
+            button4 = new Button();
+            button5 = new Button();
+            button6 = new Button();
+            button7 = new Button();
+            button8 = new Button();
+            button9 = new Button();
+            button10 = new Button();
+            button11 = new Button();
+            button12 = new Button();
+            button13 = new Button();
+            button14 = new Button();
+            button15 = new Button();
+            button16 = new Button();
+            button17 = new Button();
+            button18 = new Button();
             ((System.ComponentModel.ISupportInitialize)pbButaca1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbButaca18).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbPantalla).BeginInit();
@@ -870,6 +888,168 @@
             txtSala.Size = new Size(152, 23);
             txtSala.TabIndex = 149;
             // 
+            // button1
+            // 
+            button1.Location = new Point(534, 218);
+            button1.Name = "button1";
+            button1.Size = new Size(39, 23);
+            button1.TabIndex = 150;
+            button1.Text = "Ver";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(644, 218);
+            button2.Name = "button2";
+            button2.Size = new Size(39, 23);
+            button2.TabIndex = 151;
+            button2.Text = "Ver";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(738, 218);
+            button3.Name = "button3";
+            button3.Size = new Size(39, 23);
+            button3.TabIndex = 152;
+            button3.Text = "Ver";
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            button4.Location = new Point(842, 218);
+            button4.Name = "button4";
+            button4.Size = new Size(39, 23);
+            button4.TabIndex = 153;
+            button4.Text = "Ver";
+            button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            button5.Location = new Point(938, 218);
+            button5.Name = "button5";
+            button5.Size = new Size(39, 23);
+            button5.TabIndex = 154;
+            button5.Text = "Ver";
+            button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            button6.Location = new Point(1038, 218);
+            button6.Name = "button6";
+            button6.Size = new Size(39, 23);
+            button6.TabIndex = 155;
+            button6.Text = "Ver";
+            button6.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            button7.Location = new Point(534, 325);
+            button7.Name = "button7";
+            button7.Size = new Size(39, 23);
+            button7.TabIndex = 156;
+            button7.Text = "Ver";
+            button7.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            button8.Location = new Point(631, 325);
+            button8.Name = "button8";
+            button8.Size = new Size(39, 23);
+            button8.TabIndex = 157;
+            button8.Text = "Ver";
+            button8.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            button9.Location = new Point(725, 325);
+            button9.Name = "button9";
+            button9.Size = new Size(39, 23);
+            button9.TabIndex = 158;
+            button9.Text = "Ver";
+            button9.UseVisualStyleBackColor = true;
+            // 
+            // button10
+            // 
+            button10.Location = new Point(842, 325);
+            button10.Name = "button10";
+            button10.Size = new Size(39, 23);
+            button10.TabIndex = 159;
+            button10.Text = "Ver";
+            button10.UseVisualStyleBackColor = true;
+            // 
+            // button11
+            // 
+            button11.Location = new Point(938, 325);
+            button11.Name = "button11";
+            button11.Size = new Size(39, 23);
+            button11.TabIndex = 160;
+            button11.Text = "Ver";
+            button11.UseVisualStyleBackColor = true;
+            // 
+            // button12
+            // 
+            button12.Location = new Point(1038, 325);
+            button12.Name = "button12";
+            button12.Size = new Size(39, 23);
+            button12.TabIndex = 161;
+            button12.Text = "Ver";
+            button12.UseVisualStyleBackColor = true;
+            // 
+            // button13
+            // 
+            button13.Location = new Point(534, 419);
+            button13.Name = "button13";
+            button13.Size = new Size(39, 23);
+            button13.TabIndex = 162;
+            button13.Text = "Ver";
+            button13.UseVisualStyleBackColor = true;
+            // 
+            // button14
+            // 
+            button14.Location = new Point(631, 419);
+            button14.Name = "button14";
+            button14.Size = new Size(39, 23);
+            button14.TabIndex = 163;
+            button14.Text = "Ver";
+            button14.UseVisualStyleBackColor = true;
+            // 
+            // button15
+            // 
+            button15.Location = new Point(725, 419);
+            button15.Name = "button15";
+            button15.Size = new Size(39, 23);
+            button15.TabIndex = 164;
+            button15.Text = "Ver";
+            button15.UseVisualStyleBackColor = true;
+            // 
+            // button16
+            // 
+            button16.Location = new Point(842, 419);
+            button16.Name = "button16";
+            button16.Size = new Size(39, 23);
+            button16.TabIndex = 165;
+            button16.Text = "Ver";
+            button16.UseVisualStyleBackColor = true;
+            // 
+            // button17
+            // 
+            button17.Location = new Point(938, 419);
+            button17.Name = "button17";
+            button17.Size = new Size(39, 23);
+            button17.TabIndex = 166;
+            button17.Text = "Ver";
+            button17.UseVisualStyleBackColor = true;
+            // 
+            // button18
+            // 
+            button18.Location = new Point(1038, 419);
+            button18.Name = "button18";
+            button18.Size = new Size(39, 23);
+            button18.TabIndex = 167;
+            button18.Text = "Ver";
+            button18.UseVisualStyleBackColor = true;
+            // 
             // frmComprarEntrada
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -877,6 +1057,24 @@
             AutoSize = true;
             BackColor = SystemColors.Desktop;
             ClientSize = new Size(1288, 631);
+            Controls.Add(button18);
+            Controls.Add(button17);
+            Controls.Add(button16);
+            Controls.Add(button15);
+            Controls.Add(button14);
+            Controls.Add(button13);
+            Controls.Add(button12);
+            Controls.Add(button11);
+            Controls.Add(button10);
+            Controls.Add(button9);
+            Controls.Add(button8);
+            Controls.Add(button7);
+            Controls.Add(button6);
+            Controls.Add(button5);
+            Controls.Add(button4);
+            Controls.Add(button3);
+            Controls.Add(button2);
+            Controls.Add(button1);
             Controls.Add(txtSala);
             Controls.Add(btnVerAsientos);
             Controls.Add(btnVer2);
@@ -1046,5 +1244,23 @@
         private Button btnVer2;
         private Button btnVerAsientos;
         private TextBox txtSala;
+        private Button button1;
+        private Button button2;
+        private Button button3;
+        private Button button4;
+        private Button button5;
+        private Button button6;
+        private Button button7;
+        private Button button8;
+        private Button button9;
+        private Button button10;
+        private Button button11;
+        private Button button12;
+        private Button button13;
+        private Button button14;
+        private Button button15;
+        private Button button16;
+        private Button button17;
+        private Button button18;
     }
 }

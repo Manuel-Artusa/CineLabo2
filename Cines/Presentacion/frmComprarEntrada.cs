@@ -26,18 +26,29 @@ namespace CineApp.Forms
         private aFactoria fact;
         private IDao dao;
         private Dictionary<int, PictureBox> diccionarioPictureBox;
+        private Dictionary<Button, bool> botonesEstado = new Dictionary<Button, bool>();
+        private List<Butacas> butacas;
         public frmComprarEntrada()
         {
             InitializeComponent();
             fact = new Factoria();
             dao = new DaoCine();
             diccionarioPictureBox = new Dictionary<int, PictureBox>();
-            EnlazarButacasConNumeritos();
+           // EnlazarButacasConNumeritos();
+            foreach (Control control in Controls)
+            {
+                if (control is Button)
+                {
+                    Button boton = (Button)control;
+                    botonesEstado.Add(boton, false); // Inicialmente, todos los botones están en estado 'false'
+                    ////boton.Click += Boton_Click; // Agrega el evento clic a cada botón
+                }
+            }
 
         }
         public void EnlazarButacasConNumeritos()
         {
-           
+
             diccionarioPictureBox.Add(2, pictureBox2);
             diccionarioPictureBox.Add(3, pictureBox3);
             diccionarioPictureBox.Add(4, pictureBox4);
@@ -45,7 +56,7 @@ namespace CineApp.Forms
             diccionarioPictureBox.Add(6, pictureBox6);
             diccionarioPictureBox.Add(7, pictureBox7);
             diccionarioPictureBox.Add(8, pictureBox8);
-            
+
 
             diccionarioPictureBox.Add(12, pictureBox11);
             diccionarioPictureBox.Add(13, pictureBox12);
@@ -134,7 +145,39 @@ namespace CineApp.Forms
 
 
         }
+        private void CargarButacas()
+        {
 
+            for (int i = 1; i <= 18; i++)
+            {
+
+                string nombreBoton = "Butaca" + i.ToString();
+                Button boton = Controls.Find(nombreBoton, true).FirstOrDefault() as Button;
+                if (boton != null)
+                {
+                    // Obtén la butaca correspondiente en la lista
+                    Butacas butaca = butacas[i - 1];
+
+                    if (butaca != null)
+                    {
+                        boton.Tag = butaca.IdButaca;
+                        if (butaca.IdButaca != null)
+                        {
+                            boton.BackColor = Color.Aqua;
+                            botonesEstado[boton] = false; // Cambia el estado del botón
+                        }
+                        else 
+                        {
+                            boton.BackColor = Color.DarkBlue;
+                            botonesEstado[boton] = true;
+                            boton.Enabled = false;
+
+                        }
+                    }
+                }
+            }
+
+        }
         private void GetButacas()
         {
             string FechaSeleccionada = dtpFechaCompra.Value.ToString();
@@ -170,19 +213,33 @@ namespace CineApp.Forms
 
 
 
-        private void AsignarColoresButacas(List<Butacas> butacasVendidas)
+        private void AsignarColoresButacas(List<Butacas> butacasVendida)
         {
             foreach (var kvp in diccionarioPictureBox)
             {
-                int numeroButaca = kvp.Key;
+                int numeroButaca = (int)kvp.Key;
                 PictureBox pictureBox = kvp.Value;
 
-                bool butacaVendida = butacasVendidas.Any(b => b.IdButaca == numeroButaca);
 
-                AsignarColorButaca(pictureBox, butacaVendida);
+               // AsignarColorButaca(pictureBox, butacasVendida);
             }
 
         }
+        //private void PictureBox_click (object sender, EventArgs e) 
+        //{
+            
+        //        Butacas butacaVendida = butacasVendidas.FirstOrDefault(b => b.IdButaca == numeroButaca);
+        //        if(butacaVendida == null)
+        //        {
+        //            Butacas newButaca = new Butacas();
+        //            newButaca.IdButaca = numeroButaca;
+        //            butacasVendidas.Add(newButaca);
+        //        }
+        //        else
+        //        {
+        //            butacasVendidas.Remove(butacaVendida);
+        //        }
+        //}
         private void AsignarColorButaca(PictureBox pictureBox, bool butacaVendida)
         {
             pictureBox.BackColor = butacaVendida ? Color.Red : Color.White;

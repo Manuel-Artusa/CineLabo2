@@ -12,7 +12,7 @@ namespace Cines.Clases.Cines.Cine
         public int IdButaca { get; set; }
         public int NroButaca { get; set; }
         public int Fila { get; set; }
-        public bool Disponible { get; set; }
+        public string Disponible { get; set; }
         public Salas sala { get; set; }
 
 
