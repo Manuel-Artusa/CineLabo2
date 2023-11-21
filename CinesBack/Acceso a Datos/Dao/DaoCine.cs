@@ -220,5 +220,48 @@ namespace SistemaCineBack.Acceso_a_Datos.Dao
             }
             return lst;
         }
+        public bool IniciarSesion(string usuario, string contrasenia, out int idEmpleado, out int idCargo)
+        {
+            bool exitoso = false;
+            idEmpleado = 0;
+            idCargo = 0;
+
+            SqlConnection cnn = HelperDB.obtenerInstancia().GetConnection();
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand("SP_IniciarSesionEmpleado", cnn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Usuario", usuario);
+                cmd.Parameters.AddWithValue("@Contrasenia", contrasenia);
+
+                SqlParameter pIdEmpleado = new SqlParameter("@IdEmpleado", SqlDbType.Int);
+                pIdEmpleado.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(pIdEmpleado);
+
+                SqlParameter pIdCargo = new SqlParameter("@IdCargo", SqlDbType.Int);
+                pIdCargo.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(pIdCargo);
+
+                cnn.Open();
+                cmd.ExecuteNonQuery();
+
+                idEmpleado = Convert.ToInt32(pIdEmpleado.Value);
+                idCargo = Convert.ToInt32(pIdCargo.Value);
+                exitoso = idEmpleado != 0;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error en el inicio de sesión de empleado: {ex.Message}");
+            }
+            finally
+            {
+                if (cnn != null && cnn.State == ConnectionState.Open)
+                    cnn.Close();
+            }
+
+            return exitoso;
+        }
+
     }
 }
