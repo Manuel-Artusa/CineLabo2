@@ -17,7 +17,7 @@ namespace Cines.Clases.Ventas
         public ButacasFunciones butacaXfuncion { get; set; }
         public FormaPago formaPago { get; set; }
         public VentasCandyBar CandyBar { get; set; }
-        public ButacasSalas butacasala { get; set; }
+        public  List<Butacas> butacas { get; set; }
         public double precio { get; set; }
 
         public DetalleComprobante()

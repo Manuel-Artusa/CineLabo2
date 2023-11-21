@@ -54,10 +54,12 @@ namespace CinesBack.Acceso_a_Datos.Dao
                     cmdDetalle.Parameters.AddWithValue("@id_comprobante", comprobante.IdComprobante);
                     cmdDetalle.Parameters.AddWithValue("@id_funcion", dc.funcione.IdFuncion);
                     cmdDetalle.Parameters.AddWithValue("@id_sala", dc.funcione.sala.IdSala);
-                    cmdDetalle.Parameters.AddWithValue("@pelicula", dc.funcione.pelicula);                    
-                    cmdDetalle.Parameters.AddWithValue("@id_butaca", dc.funcione.butacas);
+                    cmdDetalle.Parameters.AddWithValue("@pelicula", dc.funcione.pelicula);                                                          
+                    foreach (Butacas butacas in dc.butacas)
+                    {
+                        cmdDetalle.Parameters.AddWithValue("@butacas", dc.butacas);
+                    }
                     cmdDetalle.Parameters.AddWithValue("@precio", dc.precio);
-
                     cmdDetalle.ExecuteNonQuery();
                     detalleNro++;
                 }

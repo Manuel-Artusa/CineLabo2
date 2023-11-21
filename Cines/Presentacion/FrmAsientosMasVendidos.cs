@@ -60,8 +60,8 @@ namespace Cines.Presentacion
             DateTime fechaSeleccionada = dtpDesde.Value;
             string peliculaSelccionada = cboPelicula.SelectedItem.ToString();
             List<Butacas> butacas = new List<Butacas>();
-             butacas = dao.TraerButacas(fechaSeleccionada.ToShortDateString(), peliculaSelccionada);
-            foreach (Butacas b in butacas )
+            butacas = dao.TraerButacas(fechaSeleccionada.ToShortDateString(), peliculaSelccionada);
+            foreach (Butacas b in butacas)
             {//Metodo para que me pinte de color las butacas que esten disponibles
                 PictureBox PB = new PictureBox();
                 PB.BackColor = Color.DarkGreen;
@@ -88,7 +88,7 @@ namespace Cines.Presentacion
         {
 
             cboPelicula.DataSource = dao.TraerPeliculas();
-            cboFunciones.DataSource = dao.TraerFunciones("",dtpDesde.Value.ToShortDateString());
+            cboFunciones.DataSource = dao.TraerFunciones("", dtpDesde.Value.ToShortDateString());
             cboFunciones.DropDownStyle = ComboBoxStyle.DropDownList;
             cboPelicula.DropDownStyle = ComboBoxStyle.DropDownList;
 
@@ -103,8 +103,8 @@ namespace Cines.Presentacion
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            
-                
+
+
 
 
         }

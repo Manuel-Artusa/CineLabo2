@@ -410,7 +410,7 @@
             label27.BackColor = SystemColors.Desktop;
             label27.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Bold, GraphicsUnit.Point);
             label27.ForeColor = SystemColors.ControlLightLight;
-            label27.Location = new Point(56, 445);
+            label27.Location = new Point(58, 425);
             label27.Name = "label27";
             label27.Size = new Size(65, 18);
             label27.TabIndex = 86;
@@ -422,7 +422,7 @@
             lblTotal.BackColor = SystemColors.Desktop;
             lblTotal.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Bold, GraphicsUnit.Point);
             lblTotal.ForeColor = Color.Gold;
-            lblTotal.Location = new Point(225, 445);
+            lblTotal.Location = new Point(227, 425);
             lblTotal.Name = "lblTotal";
             lblTotal.Size = new Size(54, 18);
             lblTotal.TabIndex = 87;
