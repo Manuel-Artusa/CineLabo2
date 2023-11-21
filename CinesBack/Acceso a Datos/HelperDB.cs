@@ -143,17 +143,18 @@ namespace SistemaCineBack.Acceso_a_Datos
             if (cnn.State == ConnectionState.Open)
                 cnn.Close();
         }
-        public bool borrarComprobantes(int id, string spBorrar)
+        public bool borrarComprobantes(string id, string spBorrar)
         {
             bool aux = false;
             SqlTransaction t = null;
+            int idComprobante = Convert.ToInt32(id);
             try
             {
                 cnn.Open();
                 t = cnn.BeginTransaction();
                 SqlCommand cmd = new SqlCommand(spBorrar, cnn, t);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@id", idComprobante);
                 cmd.ExecuteNonQuery();
                 aux = true;
                 t.Commit();

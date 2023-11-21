@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.dgvComprobantes = new System.Windows.Forms.DataGridView();
+            this.colNroComprobante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCargar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.lblDocumento = new System.Windows.Forms.Label();
@@ -39,9 +42,6 @@
             this.btnElminar = new System.Windows.Forms.Button();
             this.lblEliminarNro = new System.Windows.Forms.Label();
             this.txtNroComprobante = new System.Windows.Forms.TextBox();
-            this.colNroComprobante = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComprobantes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,6 +62,27 @@
             this.dgvComprobantes.TabIndex = 0;
             this.dgvComprobantes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvComprobantes_CellContentClick);
             // 
+            // colNroComprobante
+            // 
+            this.colNroComprobante.HeaderText = "Nro Comprobante";
+            this.colNroComprobante.Name = "colNroComprobante";
+            this.colNroComprobante.ReadOnly = true;
+            this.colNroComprobante.Width = 220;
+            // 
+            // colCliente
+            // 
+            this.colCliente.HeaderText = "Cliente";
+            this.colCliente.Name = "colCliente";
+            this.colCliente.ReadOnly = true;
+            this.colCliente.Width = 210;
+            // 
+            // colFecha
+            // 
+            this.colFecha.HeaderText = "Fecha";
+            this.colFecha.Name = "colFecha";
+            this.colFecha.ReadOnly = true;
+            this.colFecha.Width = 250;
+            // 
             // btnCargar
             // 
             this.btnCargar.Location = new System.Drawing.Point(713, 257);
@@ -80,6 +101,7 @@
             this.btnModificar.TabIndex = 2;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // lblDocumento
             // 
@@ -148,27 +170,6 @@
             this.txtNroComprobante.Name = "txtNroComprobante";
             this.txtNroComprobante.Size = new System.Drawing.Size(366, 23);
             this.txtNroComprobante.TabIndex = 11;
-            // 
-            // colNroComprobante
-            // 
-            this.colNroComprobante.HeaderText = "Nro Comprobante";
-            this.colNroComprobante.Name = "colNroComprobante";
-            this.colNroComprobante.ReadOnly = true;
-            this.colNroComprobante.Width = 220;
-            // 
-            // colCliente
-            // 
-            this.colCliente.HeaderText = "Cliente";
-            this.colCliente.Name = "colCliente";
-            this.colCliente.ReadOnly = true;
-            this.colCliente.Width = 210;
-            // 
-            // colFecha
-            // 
-            this.colFecha.HeaderText = "Fecha";
-            this.colFecha.Name = "colFecha";
-            this.colFecha.ReadOnly = true;
-            this.colFecha.Width = 250;
             // 
             // FrmConsultarComprobante
             // 

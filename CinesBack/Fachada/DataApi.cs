@@ -18,6 +18,12 @@ namespace CinesBack.Fachada
         {
             dao = new DaoCine();
         }
+
+        public bool borrarComprobante(string id)
+        {
+            return dao.borrar(id);
+        }
+
         public List<Comprobantes> obtenerComprobantes()
         {
             return dao.TraerComprobantes();

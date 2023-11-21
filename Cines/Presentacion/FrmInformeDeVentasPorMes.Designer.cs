@@ -28,127 +28,129 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            dataGridView1 = new DataGridView();
-            Total_Ventas = new DataGridViewTextBoxColumn();
-            Mes = new DataGridViewTextBoxColumn();
-            Anio = new DataGridViewTextBoxColumn();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            btnGenerarInforme = new Button();
-            dateTimePicker1 = new DateTimePicker();
-            dateTimePicker2 = new DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Total_Ventas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Anio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnGenerarInforme = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.SuspendLayout();
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(337, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(105, 15);
-            label1.TabIndex = 0;
-            label1.Text = "Informe de ventas ";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(337, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Informe de ventas ";
             // 
             // dataGridView1
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Total_Ventas, Mes, Anio });
-            dataGridView1.Location = new Point(200, 62);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(494, 168);
-            dataGridView1.TabIndex = 1;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Total_Ventas,
+            this.Mes,
+            this.Anio});
+            this.dataGridView1.Location = new System.Drawing.Point(200, 62);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(494, 168);
+            this.dataGridView1.TabIndex = 1;
             // 
             // Total_Ventas
             // 
-            Total_Ventas.HeaderText = "Total de ventas";
-            Total_Ventas.Name = "Total_Ventas";
-            Total_Ventas.Width = 150;
+            this.Total_Ventas.HeaderText = "Total de ventas";
+            this.Total_Ventas.Name = "Total_Ventas";
+            this.Total_Ventas.Width = 150;
             // 
             // Mes
             // 
-            Mes.HeaderText = "Mes";
-            Mes.Name = "Mes";
-            Mes.Width = 150;
+            this.Mes.HeaderText = "Mes";
+            this.Mes.Name = "Mes";
+            this.Mes.Width = 150;
             // 
             // Anio
             // 
-            Anio.HeaderText = "Año";
-            Anio.Name = "Anio";
-            Anio.Width = 150;
+            this.Anio.HeaderText = "Año";
+            this.Anio.Name = "Anio";
+            this.Anio.Width = 150;
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(2, 70);
-            label2.Name = "label2";
-            label2.Size = new Size(39, 15);
-            label2.TabIndex = 3;
-            label2.Text = "Desde";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(2, 70);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(39, 15);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Desde";
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(4, 107);
-            label3.Name = "label3";
-            label3.Size = new Size(37, 15);
-            label3.TabIndex = 5;
-            label3.Text = "Hasta";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(4, 107);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(37, 15);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Hasta";
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(12, 30);
-            label4.Name = "label4";
-            label4.Size = new Size(121, 15);
-            label4.TabIndex = 6;
-            label4.Text = "Debes seleccionar un:";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 30);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(121, 15);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Debes seleccionar un:";
             // 
             // btnGenerarInforme
             // 
-            btnGenerarInforme.Location = new Point(54, 186);
-            btnGenerarInforme.Name = "btnGenerarInforme";
-            btnGenerarInforme.Size = new Size(75, 23);
-            btnGenerarInforme.TabIndex = 7;
-            btnGenerarInforme.Text = "Generar";
-            btnGenerarInforme.UseVisualStyleBackColor = true;
+            this.btnGenerarInforme.Location = new System.Drawing.Point(111, 207);
+            this.btnGenerarInforme.Name = "btnGenerarInforme";
+            this.btnGenerarInforme.Size = new System.Drawing.Size(75, 23);
+            this.btnGenerarInforme.TabIndex = 7;
+            this.btnGenerarInforme.Text = "Generar";
+            this.btnGenerarInforme.UseVisualStyleBackColor = true;
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(47, 70);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(139, 23);
-            dateTimePicker1.TabIndex = 8;
+            this.dateTimePicker1.Location = new System.Drawing.Point(47, 70);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(139, 23);
+            this.dateTimePicker1.TabIndex = 8;
             // 
             // dateTimePicker2
             // 
-            dateTimePicker2.Location = new Point(47, 107);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(139, 23);
-            dateTimePicker2.TabIndex = 9;
+            this.dateTimePicker2.Location = new System.Drawing.Point(47, 107);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(139, 23);
+            this.dateTimePicker2.TabIndex = 9;
             // 
             // FrmInformeDeVentasPorMes
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 296);
-            Controls.Add(dateTimePicker2);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(btnGenerarInforme);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(dataGridView1);
-            Controls.Add(label1);
-            Name = "FrmInformeDeVentasPorMes";
-            Text = "FrmInformeDeVentasPorMes";
-            Load += FrmInformeDeVentasPorMes_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(754, 268);
+            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.btnGenerarInforme);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.label1);
+            this.Name = "FrmInformeDeVentasPorMes";
+            this.Text = "FrmInformeDeVentasPorMes";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

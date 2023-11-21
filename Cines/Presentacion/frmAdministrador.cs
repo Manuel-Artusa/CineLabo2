@@ -16,5 +16,10 @@ namespace CineApp.Forms
         {
             InitializeComponent();
         }
+
+        private void frmAdministrador_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

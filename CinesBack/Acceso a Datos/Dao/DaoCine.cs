@@ -16,9 +16,9 @@ namespace SistemaCineBack.Acceso_a_Datos.Dao
 {
     public class DaoCine : IDao
     {
-        public bool borrar(Funciones funcion)
+        public bool borrar(string id)
         {
-            throw new NotImplementedException();
+            return HelperDB.obtenerInstancia().borrarComprobantes(id, "SP_BORRAR_COMPROBANTE");
         }
 
 

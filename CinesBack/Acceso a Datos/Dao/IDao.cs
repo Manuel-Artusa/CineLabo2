@@ -15,7 +15,7 @@ namespace SistemaCineBack.Acceso_a_Datos.Dao
    public  interface IDao
     {
         bool crear(Funciones funcion);
-        bool borrar(Funciones funcion);
+        bool borrar(string id);
         int proximoID();
         List<DetalleComprobante> TraerDetalle();
         List<Comprobantes> TraerComprobantes();

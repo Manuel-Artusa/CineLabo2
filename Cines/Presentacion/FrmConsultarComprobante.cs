@@ -20,18 +20,14 @@ namespace CinesFront.Presentacion
         IDao dao;
         Clientes cliente;
         Comprobantes c;     
-        private async Task eliminarComprobante(int id)
+        private async Task eliminarComprobante(string id)
         {
             string Json = JsonConvert.SerializeObject(id);
-            string url = "https://localhost:7028/BorrarComprobantes";
+            string url = "https://localhost:7011/borrarComprobante?id=" + id;
             var data = await ClienteSingleton.GetInstance().PutAsync(url, Json);
             MessageBox.Show(data, "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             dgvComprobantes.Rows.Clear();
-            await CargarDGV();
-            btnCargar.Enabled = true;
-            btnCargar.Enabled = false;
-            btnElminar.Enabled = false;
-            btnModificar.Enabled = false;
+            await CargarDGV();        
         }
         private void obtenerComprobantes()
         {
@@ -63,6 +59,7 @@ namespace CinesFront.Presentacion
                 dgvComprobantes.Rows.Add(new object[] { c.IdComprobante, cliente.persona.Apellido, c.fecha, "Eliminar Comprobante" });
             }
             return lista;
+           
         }
         public FrmConsultarComprobante()
         {
@@ -73,7 +70,8 @@ namespace CinesFront.Presentacion
 
         private void FrmConsultarComprobante_Load(object sender, EventArgs e)
         {
-
+            btnModificar.Enabled = false;
+            btnElminar.Enabled = false;
         }
         private async Task editarComprobante(Comprobantes comprobantes)
         {
@@ -85,9 +83,12 @@ namespace CinesFront.Presentacion
 
         private async void btnCargar_Click(object sender, EventArgs e)
         {
+            dgvComprobantes.Rows.Clear();
             cliente = new Clientes();
             cliente.NroDocumento = Convert.ToInt32(txtDoc.Text);
             cliente.persona.Apellido = txtCliente.Text;
+            btnElminar.Enabled = true;
+            btnModificar.Enabled = true;
             await CargarDGV();
         }
 
@@ -98,14 +99,23 @@ namespace CinesFront.Presentacion
 
         private async void btnElminar_Click(object sender, EventArgs e)
         {
-            int nro = Convert.ToInt32(txtNroComprobante.Text);
-            eliminarComprobante(nro);
+            
+            string nro = txtNroComprobante.Text;
+            await eliminarComprobante(nro);
+            btnModificar.Enabled = false;
+            btnElminar.Enabled = false;
 
         }
 
         private void dgvComprobantes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
            
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            btnModificar.Enabled = false;
+            btnElminar.Enabled = false;
         }
     }
 }

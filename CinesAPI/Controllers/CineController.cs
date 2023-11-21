@@ -131,5 +131,18 @@ namespace CinesAPI.Controllers
                 return StatusCode(500, "Error Interno, Intente mas Tarde");
             }
         }
+        [HttpPut("/borrarComprobante")]
+        public IActionResult borrarComprobante(string id)
+        {
+            try
+            {
+                return Ok(dataApi.borrarComprobante(id));
+            }
+            catch (Exception)
+            {
+
+                return StatusCode(500, "Error Interno, Intente mas Tarde");
+            }
+        }
     }
 }

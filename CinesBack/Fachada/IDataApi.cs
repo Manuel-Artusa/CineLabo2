@@ -19,5 +19,6 @@ namespace CinesBack.Fachada
         public List<Peliculas> TraerPeliculas(); //API
         public DataTable obtenerInformeVentasPorMes(int mes, int anio); //API
         public List<Butacas> TraerButacas(string Fecha, string pelicula); //API
+        public bool borrarComprobante(string id);
     }
 }
