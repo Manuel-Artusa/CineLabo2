@@ -1,5 +1,4 @@
-﻿using CIneLabo.Presentacion;
-using CinesFront.Presentacion;
+﻿using CinesFront.Presentacion;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -129,8 +128,8 @@ namespace CineApp.Forms
 
         private void button3_Click(object sender, EventArgs e)
         {
-            FrmPodio podio = new FrmPodio();
-            podio.ShowDialog();
+            //        FrmPodio podio = new FrmPodio();
+            //        podio.ShowDialog();
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
@@ -173,8 +172,8 @@ namespace CineApp.Forms
 
         private void btnButacasDisponibles_Click(object sender, EventArgs e)
         {
-            FrmButacasDisponibles butDisponible = new FrmButacasDisponibles();
-            butDisponible.ShowDialog();
+            //   FrmButacasDisponibles butDisponible = new FrmButacasDisponibles();
+            //   butDisponible.ShowDialog();
         }
 
         private void btnVentasPorMes_Click(object sender, EventArgs e)
@@ -185,14 +184,31 @@ namespace CineApp.Forms
 
         private void btnFormasPago_Click(object sender, EventArgs e)
         {
-            FrmInformeMejoresFormasDePago formaPago = new FrmInformeMejoresFormasDePago();
-            formaPago.ShowDialog();
+            //    FrmInformeMejoresFormasDePago formaPago = new FrmInformeMejoresFormasDePago();
+            //    formaPago.ShowDialog();
         }
 
         private void btnActualizarPrecio_Click(object sender, EventArgs e)
         {
-            FrmActualizacionPrecio actPrecio = new FrmActualizacionPrecio();
-            actPrecio.ShowDialog();
+            //    FrmActualizacionPrecio actPrecio = new FrmActualizacionPrecio();
+            //    actPrecio.ShowDialog();
+        }
+
+        private void lblSoporte_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblNosotros_Click(object sender, EventArgs e)
+        {
+            frmNosotros nosotros = new frmNosotros();
+            nosotros.ShowDialog();
+        }
+
+        private void iconoNosotros_Click(object sender, EventArgs e)
+        {
+            frmNosotros nosotros = new frmNosotros();
+            nosotros.ShowDialog();
         }
     }
 }

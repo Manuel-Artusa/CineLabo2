@@ -94,6 +94,7 @@
             this.btnTraerFunciones = new System.Windows.Forms.Button();
             this.lblFecha = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbButaca1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbButaca2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbButaca3)).BeginInit();
@@ -874,6 +875,20 @@
             this.dtpFecha.Size = new System.Drawing.Size(334, 23);
             this.dtpFecha.TabIndex = 99;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.Color.GreenYellow;
+            this.button1.Location = new System.Drawing.Point(448, 625);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(176, 44);
+            this.button1.TabIndex = 100;
+            this.button1.Text = "Butacas";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // frmComprarEntrada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -881,6 +896,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.Desktop;
             this.ClientSize = new System.Drawing.Size(1878, 901);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.btnTraerFunciones);
@@ -1046,5 +1062,6 @@
         public Button btnTraerFunciones;
         private Label lblFecha;
         private DateTimePicker dtpFecha;
+        public Button button1;
     }
 }

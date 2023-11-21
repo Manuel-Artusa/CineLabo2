@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdministrador));
             pbFondoMenu = new PictureBox();
             iconoMenu = new PictureBox();
             lblMenu = new Label();
@@ -70,7 +71,9 @@
             // iconoMenu
             // 
             iconoMenu.BackColor = Color.IndianRed;
-            iconoMenu.Image = CIneLabo.Properties.Resources.boton_menu;
+            iconoMenu.BackgroundImage = (Image)resources.GetObject("iconoMenu.BackgroundImage");
+            iconoMenu.BackgroundImageLayout = ImageLayout.Center;
+            iconoMenu.Image = CinesFront.Properties.Resources.boton_menu;
             iconoMenu.Location = new Point(36, 74);
             iconoMenu.Name = "iconoMenu";
             iconoMenu.Size = new Size(57, 54);
@@ -94,7 +97,8 @@
             // iconoSoporte
             // 
             iconoSoporte.BackColor = Color.IndianRed;
-            iconoSoporte.Image = CIneLabo.Properties.Resources.boton_soporte;
+            iconoSoporte.BackgroundImageLayout = ImageLayout.Center;
+            iconoSoporte.Image = CinesFront.Properties.Resources.boton_soporte;
             iconoSoporte.Location = new Point(36, 248);
             iconoSoporte.Name = "iconoSoporte";
             iconoSoporte.Size = new Size(57, 54);
@@ -105,7 +109,8 @@
             // iconoTransaccion
             // 
             iconoTransaccion.BackColor = Color.IndianRed;
-            iconoTransaccion.Image = CIneLabo.Properties.Resources.boton_transaccion;
+            iconoTransaccion.BackgroundImageLayout = ImageLayout.Center;
+            iconoTransaccion.Image = CinesFront.Properties.Resources.boton_transaccion;
             iconoTransaccion.Location = new Point(36, 405);
             iconoTransaccion.Name = "iconoTransaccion";
             iconoTransaccion.Size = new Size(57, 54);
@@ -116,7 +121,8 @@
             // iconoReporte
             // 
             iconoReporte.BackColor = Color.IndianRed;
-            iconoReporte.Image = CIneLabo.Properties.Resources.boton_reporte;
+            iconoReporte.BackgroundImageLayout = ImageLayout.Center;
+            iconoReporte.Image = CinesFront.Properties.Resources.boton_reporte;
             iconoReporte.Location = new Point(36, 582);
             iconoReporte.Name = "iconoReporte";
             iconoReporte.Size = new Size(57, 54);
@@ -128,13 +134,15 @@
             // iconoNosotros
             // 
             iconoNosotros.BackColor = Color.IndianRed;
-            iconoNosotros.Image = CIneLabo.Properties.Resources.boton_nosotros;
+            iconoNosotros.BackgroundImageLayout = ImageLayout.Center;
+            iconoNosotros.Image = CinesFront.Properties.Resources.boton_nosotros;
             iconoNosotros.Location = new Point(36, 752);
             iconoNosotros.Name = "iconoNosotros";
             iconoNosotros.Size = new Size(57, 54);
             iconoNosotros.SizeMode = PictureBoxSizeMode.StretchImage;
             iconoNosotros.TabIndex = 77;
             iconoNosotros.TabStop = false;
+            iconoNosotros.Click += iconoNosotros_Click;
             // 
             // lblSoporte
             // 
@@ -147,6 +155,7 @@
             lblSoporte.Size = new Size(159, 32);
             lblSoporte.TabIndex = 78;
             lblSoporte.Text = "SOPORTE";
+            lblSoporte.Click += lblSoporte_Click;
             // 
             // lblTransaccion
             // 
@@ -184,6 +193,7 @@
             lblNosotros.Size = new Size(183, 32);
             lblNosotros.TabIndex = 81;
             lblNosotros.Text = "NOSOTROS";
+            lblNosotros.Click += lblNosotros_Click;
             // 
             // btnSalir
             // 
@@ -203,7 +213,8 @@
             // iconoSalir
             // 
             iconoSalir.BackColor = Color.IndianRed;
-            iconoSalir.Image = CIneLabo.Properties.Resources.boton_salir;
+            iconoSalir.BackgroundImageLayout = ImageLayout.Center;
+            iconoSalir.Image = CinesFront.Properties.Resources.boton_salir;
             iconoSalir.Location = new Point(36, 923);
             iconoSalir.Name = "iconoSalir";
             iconoSalir.Size = new Size(57, 54);

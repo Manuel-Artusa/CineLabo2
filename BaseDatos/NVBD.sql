@@ -35,8 +35,11 @@ DESCRIPCION VARCHAR(20)
 --actores
 CREATE TABLE ACTORES(
 ID_ACTOR INT IDENTITY (1,1)PRIMARY KEY,
+id_pelicula int,
 NOMBRE VARCHAR(25),
 APELLIDO VARCHAR(25)
+constraint fk_pelicula foreign key(id_pelicula)
+references Peliculas(id_pelicula)
 )
 --directores
 CREATE TABLE DIRECTORES(

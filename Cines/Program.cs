@@ -1,6 +1,7 @@
+using CineApp;
 using CineApp.Forms;
-using Cines.Presentacion;
 using CinesFront.Presentacion;
+using CinesFront.Reportes;
 
 namespace Cines
 {
@@ -17,7 +18,7 @@ namespace Cines
             ApplicationConfiguration.Initialize();
             //Application.Run(new frmIniciarSesion());
             //Application.Run(new FrmButacasDisponiblies());
-            Application.Run(new frmIniciarSesion());
+            Application.Run(new frmCliente());
 
         }
     }

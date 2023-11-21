@@ -23,6 +23,10 @@ namespace SistemaCineBack.Acceso_a_Datos
             { instancia = new HelperDB(); }
             return instancia;
         }
+        public SqlConnection GetConnection()
+        {
+            return cnn;
+        }
         public DataTable consultar(string sp)
         {
             DataTable tabla = new DataTable();

@@ -21,7 +21,7 @@ namespace SistemaCineBack.Acceso_a_Datos.Dao
         {
             return HelperDB.obtenerInstancia().borrarComprobantes(id, "SP_BORRAR_COMPROBANTE");
         }
-
+      
 
         public Peliculas TraerPeliculaPorId(int idPelicula)
         {
@@ -263,5 +263,25 @@ namespace SistemaCineBack.Acceso_a_Datos.Dao
             return exitoso;
         }
 
+        public List<Peliculas> PeliculasConDetalles()
+        {
+            DataTable dt = HelperDB.obtenerInstancia().consultar("SP_Peliculas_Detalles");
+            List<Peliculas> lpeliculas = new List<Peliculas>();
+            foreach (DataRow row in dt.Rows)
+            {
+
+                Peliculas p = new Peliculas();
+                p.IdPelicula = Convert.ToInt32(row["ID_PELICULA"].ToString());
+                p.Titulo = row["TITULO"].ToString();
+
+                p.Genero.genero = row["Descripcion"].ToString();
+                p.clasificacion.Descripcion = row[4].ToString();
+                p.Idioma.Lenguaje = row["IDIOMA"].ToString();
+                p.Fec_Estreno = Convert.ToDateTime(row["FEC_ESTRENO"].ToString());
+                lpeliculas.Add(p);
+
+            }
+            return lpeliculas;
+        }
     }
 }

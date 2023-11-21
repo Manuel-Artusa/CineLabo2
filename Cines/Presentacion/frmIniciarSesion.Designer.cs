@@ -28,148 +28,147 @@
         /// </summary>
         private void InitializeComponent()
         {
-            gbIniciarSesion = new GroupBox();
-            label1 = new Label();
-            pictureBox13 = new PictureBox();
-            btnIniciarSesionRegistrar = new Button();
-            btnIniciarSesionAceptar = new Button();
-            label4 = new Label();
-            label3 = new Label();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
-            gbIniciarSesion.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
-            SuspendLayout();
+            this.gbIniciarSesion = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.btnIniciarSesionRegistrar = new System.Windows.Forms.Button();
+            this.btnIniciarSesionAceptar = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.gbIniciarSesion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            this.SuspendLayout();
             // 
             // gbIniciarSesion
             // 
-            gbIniciarSesion.Controls.Add(label1);
-            gbIniciarSesion.Controls.Add(pictureBox13);
-            gbIniciarSesion.Controls.Add(btnIniciarSesionRegistrar);
-            gbIniciarSesion.Controls.Add(btnIniciarSesionAceptar);
-            gbIniciarSesion.Controls.Add(label4);
-            gbIniciarSesion.Controls.Add(label3);
-            gbIniciarSesion.Controls.Add(textBox2);
-            gbIniciarSesion.Controls.Add(textBox1);
-            gbIniciarSesion.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            gbIniciarSesion.ForeColor = SystemColors.ButtonHighlight;
-            gbIniciarSesion.Location = new Point(10, 11);
-            gbIniciarSesion.Name = "gbIniciarSesion";
-            gbIniciarSesion.Size = new Size(464, 654);
-            gbIniciarSesion.TabIndex = 17;
-            gbIniciarSesion.TabStop = false;
-            gbIniciarSesion.Text = "INICIAR SESION - BIENVENIDO DE VUELTA";
-            gbIniciarSesion.Enter += gbIniciarSesion_Enter;
+            this.gbIniciarSesion.Controls.Add(this.label1);
+            this.gbIniciarSesion.Controls.Add(this.pictureBox13);
+            this.gbIniciarSesion.Controls.Add(this.btnIniciarSesionRegistrar);
+            this.gbIniciarSesion.Controls.Add(this.btnIniciarSesionAceptar);
+            this.gbIniciarSesion.Controls.Add(this.label4);
+            this.gbIniciarSesion.Controls.Add(this.label3);
+            this.gbIniciarSesion.Controls.Add(this.textBox2);
+            this.gbIniciarSesion.Controls.Add(this.textBox1);
+            this.gbIniciarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.gbIniciarSesion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.gbIniciarSesion.Location = new System.Drawing.Point(10, 11);
+            this.gbIniciarSesion.Name = "gbIniciarSesion";
+            this.gbIniciarSesion.Size = new System.Drawing.Size(464, 654);
+            this.gbIniciarSesion.TabIndex = 17;
+            this.gbIniciarSesion.TabStop = false;
+            this.gbIniciarSesion.Text = "INICIAR SESION - BIENVENIDO DE VUELTA";
+            this.gbIniciarSesion.Enter += new System.EventHandler(this.gbIniciarSesion_Enter_1);
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ImageAlign = ContentAlignment.MiddleLeft;
-            label1.Location = new Point(50, 533);
-            label1.Name = "label1";
-            label1.Size = new Size(361, 13);
-            label1.TabIndex = 7;
-            label1.Text = "¿Aún no tienes cuenta? Crea una apretando el botón de abajo";
-            label1.TextAlign = ContentAlignment.MiddleLeft;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label1.Location = new System.Drawing.Point(50, 533);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(361, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "¿Aún no tienes cuenta? Crea una apretando el botón de abajo";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox13
             // 
-            pictureBox13.BackColor = SystemColors.Desktop;
-            pictureBox13.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox13.InitialImage = null;
-            pictureBox13.Location = new Point(125, 30);
-            pictureBox13.Name = "pictureBox13";
-            pictureBox13.Size = new Size(237, 211);
-            pictureBox13.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox13.TabIndex = 6;
-            pictureBox13.TabStop = false;
+            this.pictureBox13.BackColor = System.Drawing.SystemColors.Desktop;
+            this.pictureBox13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox13.InitialImage = null;
+            this.pictureBox13.Location = new System.Drawing.Point(125, 30);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(237, 211);
+            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox13.TabIndex = 6;
+            this.pictureBox13.TabStop = false;
             // 
             // btnIniciarSesionRegistrar
             // 
-            btnIniciarSesionRegistrar.BackColor = SystemColors.ControlText;
-            btnIniciarSesionRegistrar.FlatAppearance.BorderColor = Color.Lime;
-            btnIniciarSesionRegistrar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnIniciarSesionRegistrar.ForeColor = Color.Yellow;
-            btnIniciarSesionRegistrar.Location = new Point(71, 568);
-            btnIniciarSesionRegistrar.Name = "btnIniciarSesionRegistrar";
-            btnIniciarSesionRegistrar.Size = new Size(332, 45);
-            btnIniciarSesionRegistrar.TabIndex = 5;
-            btnIniciarSesionRegistrar.Text = "REGISTRARME";
-            btnIniciarSesionRegistrar.UseVisualStyleBackColor = false;
-            btnIniciarSesionRegistrar.Click += btnIniciarSesionCancelar_Click;
+            this.btnIniciarSesionRegistrar.BackColor = System.Drawing.SystemColors.ControlText;
+            this.btnIniciarSesionRegistrar.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
+            this.btnIniciarSesionRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnIniciarSesionRegistrar.ForeColor = System.Drawing.Color.Yellow;
+            this.btnIniciarSesionRegistrar.Location = new System.Drawing.Point(71, 568);
+            this.btnIniciarSesionRegistrar.Name = "btnIniciarSesionRegistrar";
+            this.btnIniciarSesionRegistrar.Size = new System.Drawing.Size(332, 45);
+            this.btnIniciarSesionRegistrar.TabIndex = 5;
+            this.btnIniciarSesionRegistrar.Text = "REGISTRARME";
+            this.btnIniciarSesionRegistrar.UseVisualStyleBackColor = false;
             // 
             // btnIniciarSesionAceptar
             // 
-            btnIniciarSesionAceptar.BackColor = SystemColors.ControlText;
-            btnIniciarSesionAceptar.FlatAppearance.BorderColor = Color.Lime;
-            btnIniciarSesionAceptar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnIniciarSesionAceptar.ForeColor = Color.PaleGreen;
-            btnIniciarSesionAceptar.Location = new Point(71, 451);
-            btnIniciarSesionAceptar.Name = "btnIniciarSesionAceptar";
-            btnIniciarSesionAceptar.Size = new Size(332, 45);
-            btnIniciarSesionAceptar.TabIndex = 4;
-            btnIniciarSesionAceptar.Text = "ACEPTAR";
-            btnIniciarSesionAceptar.UseVisualStyleBackColor = false;
-            btnIniciarSesionAceptar.Click += btnIniciarSesionAceptar_Click;
+            this.btnIniciarSesionAceptar.BackColor = System.Drawing.SystemColors.ControlText;
+            this.btnIniciarSesionAceptar.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
+            this.btnIniciarSesionAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnIniciarSesionAceptar.ForeColor = System.Drawing.Color.PaleGreen;
+            this.btnIniciarSesionAceptar.Location = new System.Drawing.Point(71, 451);
+            this.btnIniciarSesionAceptar.Name = "btnIniciarSesionAceptar";
+            this.btnIniciarSesionAceptar.Size = new System.Drawing.Size(332, 45);
+            this.btnIniciarSesionAceptar.TabIndex = 4;
+            this.btnIniciarSesionAceptar.Text = "ACEPTAR";
+            this.btnIniciarSesionAceptar.UseVisualStyleBackColor = false;
+            this.btnIniciarSesionAceptar.Click += new System.EventHandler(this.btnIniciarSesionAceptar_Click_1);
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.ImageAlign = ContentAlignment.MiddleLeft;
-            label4.Location = new Point(68, 356);
-            label4.Name = "label4";
-            label4.Size = new Size(257, 13);
-            label4.TabIndex = 3;
-            label4.Text = "INGRESE LA CONTRASEÑA DEL USUARIO";
-            label4.TextAlign = ContentAlignment.MiddleLeft;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label4.Location = new System.Drawing.Point(68, 356);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(257, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "INGRESE LA CONTRASEÑA DEL USUARIO";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.ImageAlign = ContentAlignment.MiddleLeft;
-            label3.Location = new Point(68, 261);
-            label3.Name = "label3";
-            label3.Size = new Size(221, 13);
-            label3.TabIndex = 2;
-            label3.Text = "INGRESE SU NOMBRE DE USUARIO";
-            label3.TextAlign = ContentAlignment.MiddleLeft;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label3.Location = new System.Drawing.Point(68, 261);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(221, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "INGRESE SU NOMBRE DE USUARIO";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(71, 393);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(332, 19);
-            textBox2.TabIndex = 1;
+            this.textBox2.Location = new System.Drawing.Point(71, 393);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(332, 19);
+            this.textBox2.TabIndex = 1;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(71, 293);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(332, 19);
-            textBox1.TabIndex = 0;
+            this.textBox1.Location = new System.Drawing.Point(71, 293);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(332, 19);
+            this.textBox1.TabIndex = 0;
             // 
             // frmIniciarSesion
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.Desktop;
-            ClientSize = new Size(487, 632);
-            ControlBox = false;
-            Controls.Add(gbIniciarSesion);
-            MaximizeBox = false;
-            MinimizeBox = false;
-            Name = "frmIniciarSesion";
-            ShowIcon = false;
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Iniciar Sesion";
-            Load += frmIniciarSesion_Load;
-            gbIniciarSesion.ResumeLayout(false);
-            gbIniciarSesion.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Desktop;
+            this.ClientSize = new System.Drawing.Size(487, 632);
+            this.ControlBox = false;
+            this.Controls.Add(this.gbIniciarSesion);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "frmIniciarSesion";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Iniciar Sesion";
+            this.gbIniciarSesion.ResumeLayout(false);
+            this.gbIniciarSesion.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion

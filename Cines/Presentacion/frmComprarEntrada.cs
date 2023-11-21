@@ -24,14 +24,14 @@ namespace CineApp.Forms
         private Color originalColor;
         private Butacas butaca;
         private IDao dao;
-        private Dictionary<int, PictureBox> diccionarioPictureBox;
+        private Dictionary<int, PictureBox> diccionarioPictureBox = new Dictionary<int, PictureBox>();
 
         public frmComprarEntrada()
         {
             InitializeComponent();
             dao = new DaoCine();
-
-        }    
+            EnlazarButacasConNumeritos();
+        }
         private void CambiarColorDeBoton(PictureBox butaca, Color color1)
         {
             if (ClickEnBoton)
@@ -139,7 +139,7 @@ namespace CineApp.Forms
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            FrmButacasDisponiblies butacasDisponiblies = new FrmButacasDisponiblies();
+           
 
         }
 
@@ -158,7 +158,7 @@ namespace CineApp.Forms
         {
             habilitar();
             limpiarCampos();
-           await cargarPeliculas();
+            await cargarPeliculas();
             lblTotal.Text = "10.50";
         }
         private void cargarFuncioneS(string p, string fecha)
@@ -170,6 +170,7 @@ namespace CineApp.Forms
             cbFuncion.DropDownStyle = ComboBoxStyle.DropDownList;
             cbFuncion.SelectedItem = null;
         }
+
         private async Task cargarPeliculas()
         {
             string url = string.Format("https://localhost:7011/Peliculas");
@@ -188,7 +189,7 @@ namespace CineApp.Forms
             //string url = "https://localhost:7028/InsertarComprobante";
             //var data = await ClienteSingleton.GetInstance().PostAsync(url, Json);
             //MessageBox.Show(data, "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-             return dao.crear(c, cl);
+            return dao.crear(c, cl);
         }
         private void limpiarCampos()
         {
@@ -218,51 +219,15 @@ namespace CineApp.Forms
             d.funcione.IdFuncion = 5;
             d.funcione.sala.IdSala = 4;
             d.funcione.Precio = Convert.ToDouble(lblTotal.Text);
-            c.detalle.Add(d);          
+            c.detalle.Add(d);
             Butacas b = new Butacas();
-            if (pbButaca1.Focused)
-                b.IdButaca = 1;
-            if (pbButaca1.Focused)
-                b.IdButaca = 2;
-            if (pbButaca1.Focused)
-                b.IdButaca = 3;
-            if (pbButaca1.Focused)
-                b.IdButaca = 4;
-            if (pbButaca1.Focused)
-                b.IdButaca = 5;
-            if (pbButaca1.Focused)
-                b.IdButaca = 6;
-            if (pbButaca1.Focused)
-                b.IdButaca = 7;
-            if (pbButaca1.Focused)
-                b.IdButaca = 8;
-            if (pbButaca1.Focused)
-                b.IdButaca = 9;
-            if (pbButaca1.Focused)
-                b.IdButaca = 10;
-            if (pbButaca1.Focused)
-                b.IdButaca = 11;
-            if (pbButaca1.Focused)
-                b.IdButaca = 12;
-            if (pbButaca1.Focused)
-                b.IdButaca = 13;
-            if (pbButaca1.Focused)
-                b.IdButaca = 14;
-            if (pbButaca1.Focused)
-                b.IdButaca = 15;
-            if (pbButaca1.Focused)
-                b.IdButaca = 16;
-            if (pbButaca1.Focused)
-                b.IdButaca = 17;
-            if (pbButaca1.Focused)
-                b.IdButaca = 18;
 
 
             b.IdButaca = 1;
             Salas s = new Salas();
             s.agregarButacas(b);
 
-            if(grabar(c, cl) == true)
+            if (grabar(c, cl) == true)
                 MessageBox.Show("Exito en la compra", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -313,12 +278,81 @@ namespace CineApp.Forms
         private void button1_Click(object sender, EventArgs e)
         {
             cargarFuncioneS(cbPelicula.Text, dtpFecha.Value.ToShortDateString());
-            cbFuncion.Enabled=true;
+            cbFuncion.Enabled = true;
         }
 
         private void lblTotal_Click(object sender, EventArgs e)
         {
 
         }
+
+
+
+        public void EnlazarButacasConNumeritos()
+        {
+            diccionarioPictureBox.Add(1, pbButaca1);// nRO BUTACA
+            diccionarioPictureBox.Add(2, pbButaca2);
+            diccionarioPictureBox.Add(3, pbButaca3);
+            diccionarioPictureBox.Add(4, pbButaca4);
+            diccionarioPictureBox.Add(5, pbButaca5);
+            diccionarioPictureBox.Add(6, pbButaca6);
+            diccionarioPictureBox.Add(7, pbButaca7);
+            diccionarioPictureBox.Add(8, pbButaca8);
+            diccionarioPictureBox.Add(9, pbButaca9);
+            diccionarioPictureBox.Add(10, pbButaca10);
+            diccionarioPictureBox.Add(11, pbButaca11);
+            diccionarioPictureBox.Add(12, pbButaca12);
+            diccionarioPictureBox.Add(13, pbButaca13);
+            diccionarioPictureBox.Add(14, pbButaca14);
+            diccionarioPictureBox.Add(15, pbButaca15);
+            diccionarioPictureBox.Add(16, pbButaca16);
+            diccionarioPictureBox.Add(17, pbButaca17);
+            diccionarioPictureBox.Add(18, pbButaca18);
+
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            foreach (var kvp in diccionarioPictureBox)
+            {
+                int numero = kvp.Key;
+                PictureBox pictureBox = kvp.Value;
+
+                CambiarColorFondoPictureBox(numero, pictureBox);
+            }
+
+        }
+        private void CambiarColorFondoPictureBox(int numero, PictureBox pictureBox)
+        {
+            Random random = new Random();
+            int numeroAleatorio = random.Next(1, 19);
+
+            // Puedes ajustar el umbral según la probabilidad deseada
+            if (numeroAleatorio <= 10)
+            {
+                // Cambia el color de fondo si el número aleatorio está dentro de un rango específico
+
+                pictureBox.BackColor = Color.DarkGreen;
+            }
+            else
+            {
+                pictureBox.BackColor = Color.Maroon;
+            }
+            // De lo contrario, no cambia el color de fondo
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            {
+                foreach (var kvp in diccionarioPictureBox)
+                {
+                    int numero = kvp.Key;
+                    PictureBox pictureBox = kvp.Value;
+
+                    CambiarColorFondoPictureBox(numero, pictureBox);
+                }
+            }
+        }
     }
 }
+
